@@ -23,7 +23,7 @@ assert output_prompts_path.parent.exists(), output_prompts_path
 #######
 
 
-task_paths = list(input_tasks_dir.glob("*.json"))
+task_paths = sorted(input_tasks_dir.glob("*.json"))
 assert len(task_paths) == 27, (len(task_paths), input_tasks_dir)
 
 task_items = []
@@ -63,7 +63,7 @@ with output_tasks_path.open("w") as file:
 #####
 
 
-prompt_paths = list(input_prompts_dir.glob("*.txt"))
+prompt_paths = sorted(input_prompts_dir.glob("*.txt"))
 assert len(prompt_paths) == 27, (len(prompt_paths), input_prompts_dir)
 
 cat_prompts = {}

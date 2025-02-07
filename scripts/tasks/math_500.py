@@ -33,7 +33,7 @@ for index, item in enumerate(row_items):
         "problem": item["Question"],
         "target": item["Answer"],
     })
-assert len(task_items) == 500, len(items)
+assert len(task_items) == 500, len(task_items)
 
 
 random.seed(0)

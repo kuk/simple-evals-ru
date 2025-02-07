@@ -10,9 +10,14 @@ head data/tasks/gsm8k.json
 mkdir -p data/cache/math
 curl -o data/cache/math/math_test.csv https://openaipublic.blob.core.windows.net/simple-evals/math_test.csv
 curl -o data/cache/math/math_500_test.csv https://openaipublic.blob.core.windows.net/simple-evals/math_500_test.csv
-uv run scripts/tasks/math_.py data/cache/math/math_test.csv data/cache/math/math_500_test.csv data/tasks/math.json
-head data/tasks/math.json
+uv run scripts/tasks/math_500.py data/cache/math/math_test.csv data/cache/math/math_500_test.csv data/tasks/math_500.json
+head data/tasks/math_500.json
 
+mkdir -p data/cache/humaneval
+curl -L -o data/cache/humaneval/HumanEval.jsonl.gz https://github.com/openai/human-eval/raw/refs/heads/master/data/HumanEval.jsonl.gz
+gunzip data/cache/humaneval/HumanEval.jsonl.gz
+uv run scripts/tasks/humaneval.py data/cache/humaneval/HumanEval.jsonl data/tasks/humaneval.json
+head data/tasks/humaneval.json
 ```
 
 ```

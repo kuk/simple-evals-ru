@@ -5,6 +5,7 @@ requires-python = ">=3.11"
 dependencies = [
     "aiohttp>=3.11.12",
     "matplotlib>=3.10.0",
+    "pandas>=2.2.3",
 ]
 
 [tool.ruff]

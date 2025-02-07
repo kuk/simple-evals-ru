@@ -3,9 +3,9 @@
 
 ```
 mkdir -p data/cache/mgsm
-curl -o data/cache/mgsm/mgsm_en.tsv https://openaipublic.blob.core.windows.net/simple-evals/mgsm_en.tsv
-uv run scripts/tasks/mgsm.py data/cache/mgsm/mgsm_en.tsv data/tasks/gsm8k.json
-head data/tasks/gsm8k.json
+curl -o data/cache/mgsm/mgsm_ru.tsv https://openaipublic.blob.core.windows.net/simple-evals/mgsm_ru.tsv
+uv run scripts/tasks/mgsm.py data/cache/mgsm/mgsm_ru.tsv data/tasks/mgsm_ru.json
+head data/tasks/mgsm_ru.json
 
 mkdir -p data/cache/math
 curl -o data/cache/math/math_test.csv https://openaipublic.blob.core.windows.net/simple-evals/math_test.csv

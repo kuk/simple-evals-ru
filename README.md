@@ -18,6 +18,11 @@ curl -L -o data/cache/humaneval/HumanEval.jsonl.gz https://github.com/openai/hum
 gunzip data/cache/humaneval/HumanEval.jsonl.gz
 uv run scripts/tasks/humaneval.py data/cache/humaneval/HumanEval.jsonl data/tasks/humaneval.json
 head data/tasks/humaneval.json
+
+mkdir -p data/cache/mmlu
+curl -L -o data/cache/mmlu/test-00000-of-00001.parquet https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/resolve/main/data/test-00000-of-00001.parquet
+uv run scripts/tasks/mmlu.py data/cache/mmlu/test-00000-of-00001.parquet data/tasks/mmlu_pro_mini.json
+head data/tasks/mmlu_pro_mini.json
 ```
 
 ```

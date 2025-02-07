@@ -29,6 +29,11 @@ curl -L -o data/cache/simpleqa/simple_qa_test_set.csv https://openaipublic.blob.
 uv run scripts/tasks/simpleqa.py data/cache/simpleqa/simple_qa_test_set.csv data/tasks/simpleqa_mini.json
 head data/tasks/simpleqa_mini.json
 
+mkdir -p data/cache/bbh
+curl -L -o data/cache/bbh/main.zip https://github.com/suzgunmirac/BIG-Bench-Hard/archive/refs/heads/main.zip
+unzip -d data/cache/bbh data/cache/bbh/main.zip
+uv run scripts/tasks/bbh.py data/cache/bbh/BIG-Bench-Hard-main/bbh data/cache/bbh/BIG-Bench-Hard-main/cot-prompts data/tasks/bbh_sample.json data/tasks/bbh_prompts.json
+head data/tasks/bbh_sample.json data/tasks/bbh_prompts.json
 ```
 
 ```

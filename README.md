@@ -21,19 +21,19 @@ head data/tasks/humaneval.json
 
 mkdir -p data/cache/mmlu
 curl -L -o data/cache/mmlu/test-00000-of-00001.parquet https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/resolve/main/data/test-00000-of-00001.parquet
-uv run scripts/tasks/mmlu.py data/cache/mmlu/test-00000-of-00001.parquet data/tasks/mmlu_pro_mini.json
-head data/tasks/mmlu_pro_mini.json
+uv run scripts/tasks/mmlu.py data/cache/mmlu/test-00000-of-00001.parquet data/tasks/mmlu_pro_sample.json
+head data/tasks/mmlu_pro_sample.json
 
 mkdir -p data/cache/simpleqa
 curl -L -o data/cache/simpleqa/simple_qa_test_set.csv https://openaipublic.blob.core.windows.net/simple-evals/simple_qa_test_set.csv 
-uv run scripts/tasks/simpleqa.py data/cache/simpleqa/simple_qa_test_set.csv data/tasks/simpleqa_mini.json
-head data/tasks/simpleqa_mini.json
+uv run scripts/tasks/simpleqa.py data/cache/simpleqa/simple_qa_test_set.csv data/tasks/simpleqa_sample.json
+head data/tasks/simpleqa_sample.json
 
 mkdir -p data/cache/bbh
 curl -L -o data/cache/bbh/main.zip https://github.com/suzgunmirac/BIG-Bench-Hard/archive/refs/heads/main.zip
 unzip -d data/cache/bbh data/cache/bbh/main.zip
 uv run scripts/tasks/bbh.py data/cache/bbh/BIG-Bench-Hard-main/bbh data/cache/bbh/BIG-Bench-Hard-main/cot-prompts data/tasks/bbh_sample.json data/tasks/bbh_prompts.json
-head data/tasks/bbh_sample.json data/tasks/bbh_prompts.json
+head data/tasks/bbh_sample.json
 ```
 
 ```

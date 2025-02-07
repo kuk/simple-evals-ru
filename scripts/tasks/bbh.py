@@ -6,6 +6,8 @@ import re
 from pathlib import Path
 from collections import Counter
 
+random.seed(0)
+
 
 args = sys.argv[1:]
 assert len(args) == 4, args
@@ -37,7 +39,6 @@ for path in task_paths:
     for index, item in enumerate(example_items):
         item["id"] = f"{cat}/{index}"
 
-    random.seed(0)
     for item in random.sample(example_items, 50):
         task_items.append({
             "id": item["id"],
@@ -52,6 +53,7 @@ for cat, count in cat_counts.items():
     assert count == 50, (cat, count)
 
 
+random.shuffle(task_items)
 with output_tasks_path.open("w") as file:
     json.dump(task_items, file, indent=2)
 

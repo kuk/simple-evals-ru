@@ -27,10 +27,12 @@ for index, item in enumerate(row_items):
 # }
 
 
-task_items = []
 random.seed(0)
+random.shuffle(row_items)
 assert len(row_items) >= 1000, len(row_items)
-for item in random.sample(row_items, 1000):
+
+task_items = []
+for item in row_items[:1000]:
     item["metadata"] = ast.literal_eval(item["metadata"])
     task_items.append({
         "id": item["id"],

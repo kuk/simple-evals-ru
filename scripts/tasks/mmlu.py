@@ -37,16 +37,15 @@ row_items = pd.read_parquet(input_path).to_dict("records")
 #   "src": "ori_mmlu-business_ethics"
 # }
 
-
 random.seed(0)
 random.shuffle(row_items)
 
-broke_count = 0
+bad_index_count = 0
 cat_counts = Counter()
 task_items = []
 for item in row_items:
     if "ABCDEFGHIJ".find(item["answer"]) != item["answer_index"]:
-        broke_count += 1
+        bad_index_count += 1
         continue
 
     cat = item["category"]
@@ -56,6 +55,7 @@ for item in row_items:
 
     assert len(item["options"]) <= len("ABCDEFGHIJ"), len(item["options"])
     options = dict(zip("ABCDEFGHIJ", item["options"]))
+
     task_items.append({
         "id": item["question_id"],
         "cat": cat,
@@ -64,7 +64,7 @@ for item in row_items:
         "target": item["answer"]
     })
 
-assert broke_count == 1, broke_count
+assert bad_index_count == 1, bad_index_count
 assert len(cat_counts) == 14, len(cat_counts)
 for cat, count in cat_counts.items():
     assert count == 100, (cat, count)

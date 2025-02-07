@@ -1,6 +1,7 @@
 
 import sys
 import json
+import random
 from pathlib import Path
 
 
@@ -11,7 +12,7 @@ assert input_path.exists(), input_path
 assert output_path.parent.exists(), output_path
 
 
-data = []
+task_items = []
 with input_path.open() as file:
     for index, line in enumerate(file):
         parts = line.strip().split("\t")
@@ -22,13 +23,16 @@ with input_path.open() as file:
         assert target.isdigit(), target
         target = int(target)
 
-        data.append({
+        task_items.append({
             "id": index,
             "problem": problem,
             "target": target
         })
+assert len(task_items) == 250, len(task_items)
 
 
-assert len(data) == 250, len(data)
+random.seed(0)
+random.shuffle(task_items)
+
 with output_path.open("w") as file:
-    json.dump(data, file, ensure_ascii=False, indent=2)
+    json.dump(task_items, file, ensure_ascii=False, indent=2)

@@ -1,6 +1,7 @@
 
 import sys
 import json
+import random
 from pathlib import Path
 
 import pandas as pd
@@ -13,25 +14,30 @@ assert input_path.exists(), input_path
 assert input_500_path.exists(), input_path
 assert output_path.parent.exists(), output_path
 
+
 row_items = pd.read_csv(input_500_path).to_dict("records")
 select_problems = {_["Question"] for _ in row_items}
 assert len(select_problems) == 500, len(select_problems)
 
 
-data = []
-index = 0
-for row_item in pd.read_csv(input_path).to_dict("records"):
-    if row_item["Question"] not in select_problems:
+row_items = pd.read_csv(input_path).to_dict("records")
+task_items = []
+for index, item in enumerate(row_items):
+    item["id"] = index
+
+    if item["Question"] not in select_problems:
         continue
 
-    data.append({
-        "id": index,
-        "problem": row_item["Question"],
-        "target": row_item["Answer"],
+    task_items.append({
+        "id": item["id"],
+        "problem": item["Question"],
+        "target": item["Answer"],
     })
-    index += 1
-assert len(data) == 500, len(data)
+assert len(task_items) == 500, len(items)
 
+
+random.seed(0)
+random.shuffle(task_items)
 
 with output_path.open("w") as file:
-    json.dump(data, file, ensure_ascii=False, indent=2)
+    json.dump(task_items, file, ensure_ascii=False, indent=2)

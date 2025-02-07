@@ -23,6 +23,12 @@ mkdir -p data/cache/mmlu
 curl -L -o data/cache/mmlu/test-00000-of-00001.parquet https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/resolve/main/data/test-00000-of-00001.parquet
 uv run scripts/tasks/mmlu.py data/cache/mmlu/test-00000-of-00001.parquet data/tasks/mmlu_pro_mini.json
 head data/tasks/mmlu_pro_mini.json
+
+mkdir -p data/cache/simpleqa
+curl -L -o data/cache/simpleqa/simple_qa_test_set.csv https://openaipublic.blob.core.windows.net/simple-evals/simple_qa_test_set.csv 
+uv run scripts/tasks/simpleqa.py data/cache/simpleqa/simple_qa_test_set.csv data/tasks/simpleqa_mini.json
+head data/tasks/simpleqa_mini.json
+
 ```
 
 ```

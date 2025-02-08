@@ -39,7 +39,8 @@ head data/tasks/bbh_sample.json
 ```
 export NO_COLOR=1
 export PATH=/opt/homebrew/bin:$PATH
-. ~/proj/simple-evals-ru/.envrc
-uv run ruff check ~/proj/simple-evals-ru/scripts/tasks/*.py
-
+PROJ=~/proj/simple-evals-ru
+. $PROJ/.envrc
+uv run ruff check $PROJ/main.py $(find $PROJ/simple $PROJ/scripts $PROJ/tests -name '*.py')
+uv run pytest -s $PROJ/tests/*.py
 ```

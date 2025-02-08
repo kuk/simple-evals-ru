@@ -7,8 +7,20 @@ dependencies = [
     "matplotlib>=3.10.0",
 ]
 
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "INFO"
+
+asyncio_mode = "auto"
+# https://github.com/pytest-dev/pytest-asyncio/issues/924
+asyncio_default_fixture_loop_scope = "function"
+
+# https://github.com/astral-sh/uv/issues/7260
+pythonpath = ["."]
+
+
 [tool.ruff]
-# Group violations by containing file.
+# Group violations by containing file
 output-format = "concise"
 
 [tool.ruff.lint]
@@ -32,6 +44,7 @@ ignore = [
     "PLR2004",  # Magic value used in comparison, consider replacing with a constant
     "B905",  # `zip()` without an explicit `strict
     "PERF401",  # Use `list.extend` to create a transformed list
+    "PLR0913",  # Too many arguments in function definition
 ]
 
 [dependency-groups]
@@ -39,4 +52,6 @@ dev = [
     "pandas>=2.2.3",
     "pyarrow>=19.0.0",
     "ruff>=0.9.5",
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.25.3",
 ]

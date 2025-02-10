@@ -33,7 +33,6 @@ class GigachatClient:
         # https://developers.sber.ru/docs/ru/gigachat/limitations
         self.semaphore = asyncio.Semaphore(1)
 
-
     @retrying
     async def oauth(self):
         response = await self.session.post(

@@ -1,19 +1,15 @@
 
 def mmlu_instruction(question, options):
-    return f"""Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCD. Think step by step before answering.
+    lines = []
+    for letter in "ABCDEFGHIJ"[:len(options)]:
+        lines.append(f"{letter}) {options[letter]}")
+    options_text = "\n".join(lines)
+
+    return f"""Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
 
 {question}
 
-A) {options["A"]}
-B) {options["B"]}
-C) {options["C"]}
-D) {options["D"]}
-E) {options["E"]}
-F) {options["F"]}
-G) {options["G"]}
-H) {options["H"]}
-I) {options["I"]}
-J) {options["J"]}"""
+{options_text}"""
 
 
 def mmlu_postproc_instruction(answer):

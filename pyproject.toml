@@ -45,6 +45,10 @@ ignore = [
     "B905",  # `zip()` without an explicit `strict
     "PERF401",  # Use `list.extend` to create a transformed list
     "PLR0913",  # Too many arguments in function definition
+    "C901",  # `main` is too complex"
+    "PLR0912",  # Too many branches
+    "RET502",  # [*] Do not implicitly `return None
+    "PLR0915",  # Too many statements
 ]
 
 [dependency-groups]

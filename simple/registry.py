@@ -11,20 +11,9 @@ class Bench:
 
 BENCHES = [
     Bench(
-        id="bbh",
-        name="bbh-1k",
-        reqs=[
-            "openrouter",
-            "bbh_prompts"
-        ]
-    ),
-    Bench(
-        id="humaneval",
-        name="humaneval",
-        reqs=[
-            "openrouter",
-            "e2b"
-        ]
+        id="mgsm",
+        name="mgsm-en",
+        reqs=[]
     ),
     Bench(
         id="math",
@@ -34,9 +23,12 @@ BENCHES = [
         ]
     ),
     Bench(
-        id="mgsm",
-        name="mgsm-en",
-        reqs=[]
+        id="humaneval",
+        name="humaneval",
+        reqs=[
+            "openrouter",
+            "e2b"
+        ]
     ),
     Bench(
         id="mmlu",
@@ -51,7 +43,16 @@ BENCHES = [
         reqs=[
             "openrouter",
         ]
-    )
+    ),
+    Bench(
+        id="bbh",
+        name="bbh-1k",
+        reqs=[
+            "openrouter",
+            "bbh_prompts"
+        ]
+    ),
+
 ]
 
 # openai

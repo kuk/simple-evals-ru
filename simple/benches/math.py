@@ -52,6 +52,11 @@ No
 
 Yes
 
+    Expression 1: 5
+    Expression 2: x=5
+
+Yes
+
     Expression 1: 3245/5
     Expression 2: 649
 

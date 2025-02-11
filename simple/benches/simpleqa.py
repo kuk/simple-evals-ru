@@ -99,6 +99,7 @@ async def simpleqa_worker(model_client, task_item, res_item, context):
     res_item["instruction"] = task_item["problem"]
     response = await model_client(instruction=res_item["instruction"])
     res_item["answer"] = response["answer"]
+    res_item["usage"] = response["usage"]
     res_item["model_cost"] = response["cost"]
 
     response = await context["openrouter"](

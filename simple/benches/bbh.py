@@ -64,6 +64,7 @@ async def bbh_worker(model_client, task_item, res_item, context):
     )
     response = await model_client(instruction=res_item["instruction"])
     res_item["answer"] = response["answer"]
+    res_item["usage"] = response["usage"]
     res_item["model_cost"] = response["cost"]
 
     response = await context["openrouter"](

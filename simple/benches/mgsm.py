@@ -27,8 +27,9 @@ async def mgsm_worker(model_client, task_item, res_item, _):
     res_item["instruction"] = mgsm_instruction(task_item["problem"])
     response = await model_client(instruction=res_item["instruction"])
     res_item["answer"] = response["answer"]
+    res_item["usage"] = response["usage"]
     res_item["model_cost"] = response["cost"]
 
     res_item["pred"] = mgsm_answer_pred(res_item["answer"])
     res_item["is_correct"] = res_item["pred"] == task_item["target"]
-    res_item["bench_cost"] = response["cost"]
+    res_item["bench_cost"] = 0

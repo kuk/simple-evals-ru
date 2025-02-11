@@ -96,7 +96,8 @@ def simpleqa_judge_postproc(answer):
 
 
 async def simpleqa_worker(model_client, task_item, res_item, context):
-    response = await model_client(instruction=task_item["problem"])
+    res_item["instruction"] = task_item["problem"]
+    response = await model_client(instruction=res_item["instruction"])
     res_item["answer"] = response["answer"]
     res_item["model_cost"] = response["cost"]
 

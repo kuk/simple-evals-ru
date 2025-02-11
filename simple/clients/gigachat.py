@@ -59,7 +59,7 @@ class GigachatClient:
             self.expires_at = data["expires_at"] / 1000
 
     @retrying
-    async def completions(self, model, messages, temperature=0, max_tokens=512):
+    async def completions(self, model, messages, temperature=0, max_tokens=16000):
         # curl "https://gigachat.devices.sberbank.ru/api/v1/chat/completions" \
         # -H "Content-Type: application/json" \
         # -H "Accept: application/json" \

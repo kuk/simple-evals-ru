@@ -35,4 +35,6 @@ random.seed(0)
 random.shuffle(task_items)
 
 with output_path.open("w") as file:
-    json.dump(task_items, file, ensure_ascii=False, indent=2)
+    for item in task_items:
+        file.write(json.dumps(item, ensure_ascii=False))
+        file.write("\n")

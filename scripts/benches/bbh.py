@@ -55,7 +55,9 @@ for cat, count in cat_counts.items():
 
 random.shuffle(task_items)
 with output_tasks_path.open("w") as file:
-    json.dump(task_items, file, indent=2)
+    for item in task_items:
+        file.write(json.dumps(item, ensure_ascii=False))
+        file.write("\n")
 
 
 ########

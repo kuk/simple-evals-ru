@@ -7,6 +7,13 @@ dependencies = [
     "matplotlib>=3.10.0",
 ]
 
+[tool.uv]
+package = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["simple"]
+
 [tool.pytest.ini_options]
 log_cli = true
 log_cli_level = "INFO"
@@ -14,10 +21,6 @@ log_cli_level = "INFO"
 asyncio_mode = "auto"
 # https://github.com/pytest-dev/pytest-asyncio/issues/924
 asyncio_default_fixture_loop_scope = "function"
-
-# https://github.com/astral-sh/uv/issues/7260
-pythonpath = ["."]
-
 
 [tool.ruff]
 # Group violations by containing file
@@ -49,6 +52,7 @@ ignore = [
     "PLR0912",  # Too many branches
     "RET502",  # [*] Do not implicitly `return None
     "PLR0915",  # Too many statements
+    "T201",  # `print` found
 ]
 
 [dependency-groups]

@@ -37,6 +37,10 @@ head -3 data/benches/bbh.jsonl | jq .
 ```
 
 ```
+uv run scripts/report_results.py
+```
+
+```
 export NO_COLOR=1
 export PATH=/opt/homebrew/bin:$PATH
 PROJ=~/proj/simple-evals-ru

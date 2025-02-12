@@ -10,6 +10,8 @@ from .common import retrying
 YANDEXGPT_MODEL_PRICING = {
     "yandexgpt-lite": 0.20 / 1000,
     "yandexgpt": 1.20 / 1000,
+    "llama-lite": 0.20 / 1000,
+    "llama": 1.20 / 1000,
 }
 
 
@@ -95,9 +97,8 @@ class YandexgptClient:
             )
 
             usage = response["usage"]
-            for key, value in usage.items():
-                if value:
-                    usage[key] = int(value)
+            for key in ["inputTextTokens", "completionTokens", "totalTokens"]:
+                usage[key] = int(usage[key])
 
             return {
                 "answer": response["alternatives"][0]["message"]["text"],

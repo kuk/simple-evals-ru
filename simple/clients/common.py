@@ -42,16 +42,16 @@ def retrying(method):
                 retry += 1
                 if retry == max_retries:
                     logging.error(
-                        'Fail retry max_retries=%d error="%s"',
-                        max_retries, error
+                        'Fail retry max_retries=%d cls=%s msg="%s"',
+                        max_retries, error.__class__, str(error)
                     )
                     raise
 
                 base_delay, max_delay = 1, 60
                 delay = min(base_delay * (2 ** (retry - 1)), max_delay)
                 logger.warning(
-                    'Retry retry=%d max_retries=%d delay=%.2f error="%s"',
-                    retry, max_retries, delay, error
+                    'Retry retry=%d max_retries=%d delay=%.2f cls=%s msg="%s"',
+                    retry, max_retries, delay, error.__class__, str(error)
                 )
                 await asyncio.sleep(delay)
 

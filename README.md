@@ -37,6 +37,10 @@ head -3 data/benches/bbh.jsonl | jq .
 ```
 
 ```
+uv run scripts/run_benches.py -k 1
+```
+
+```
 rm -r errors
 uv run scripts/report_errors.py
 find errors -name '*.md' | grep giga | xargs cat | grip -
@@ -47,6 +51,6 @@ export NO_COLOR=1
 export PATH=/opt/homebrew/bin:$PATH
 PROJ=~/proj/simple-evals-ru
 . $PROJ/.envrc
-uv run ruff check $PROJ/main.py $(find $PROJ/simple $PROJ/scripts $PROJ/tests -name '*.py')
+uv run ruff check $(find $PROJ/simple $PROJ/scripts $PROJ/tests -name '*.py')
 uv run pytest -s $PROJ/tests/*.py
 ```

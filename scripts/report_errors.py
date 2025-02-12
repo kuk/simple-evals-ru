@@ -70,25 +70,20 @@ if __name__ == "__main__":
 
     bench_ids = sorted(_.id for _ in registry.BENCHES)
     model_ids = sorted(_.id for _ in registry.MODELS)
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-b", "--bench", dest="bench_ids", action="append", choices=bench_ids)
-    parser.add_argument("-m", "--model", dest="model_ids", action="append", choices=model_ids)
-
-    args = parser.parse_args()
-    if args.bench_ids:
-        bench_ids = args.bench_ids
-    if args.model_ids:
-        model_ids = args.model_ids
-
     id_benches = {_.id: _ for _ in registry.BENCHES}
     id_models = {_.id: _ for _ in registry.MODELS}
-    benches = [id_benches[_] for _ in bench_ids]
-    models = [id_models[_] for _ in model_ids]
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-b", dest="bench_ids", action="append", choices=bench_ids)
+    parser.add_argument("-m", dest="model_ids", action="append", choices=model_ids)
+
+    args = parser.parse_args()
+    benches = [id_benches[_] for _ in args.bench_ids or bench_ids]
+    models = [id_models[_] for _ in args.model_ids or model_ids]
 
     bench_model_res_items = {}
-    for bench in registry.BENCHES:
-        for model in registry.MODELS:
+    for bench in benches:
+        for model in models:
             path = PROJ_DIR / "data" / "results" / bench.id / f"{model.id}.jsonl"
             if path.exists():
                 res_items = [_ for _ in load_jsonl(path) if not _["is_correct"]]
@@ -100,7 +95,7 @@ if __name__ == "__main__":
         sys.exit()
 
     bench_id_task_items = {}
-    for bench in registry.BENCHES:
+    for bench in benches:
         path = PROJ_DIR / "data" / "benches" / f"{bench.id}.jsonl"
         assert path.exists(), path
         task_items = load_jsonl(path)

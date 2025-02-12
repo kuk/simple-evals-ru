@@ -5,6 +5,8 @@ requires-python = ">=3.11"
 dependencies = [
     "aiohttp>=3.11.12",
     "matplotlib>=3.10.0",
+    "pandas>=2.2.3",
+    "pyarrow>=19.0.0",
 ]
 
 [tool.uv]
@@ -57,8 +59,6 @@ ignore = [
 
 [dependency-groups]
 dev = [
-    "pandas>=2.2.3",
-    "pyarrow>=19.0.0",
     "ruff>=0.9.5",
     "pytest>=8.3.4",
     "pytest-asyncio>=0.25.3",

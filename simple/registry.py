@@ -92,15 +92,40 @@ class Model:
     name: str
     client: str
     client_model: str
+    currency: str = "usd"
 
 
 MODELS = [
+    Model(
+        id="08_gigachat_lite",
+        name="gigachat-lite",
+        client="gigachat",
+        client_model="GigaChat",
+        currency="rub",
+    ),
+
+    Model(
+        id="07_yandexgpt_4_lite",
+        name="yandexgpt-4-lite",
+        client="yandexgpt",
+        client_model="yandexgpt-lite/latest",
+        currency="rub",
+    ),
+    Model(
+        id="09_yandexgpt_3_lite",
+        name="yandexgpt-3-lite",
+        client="yandexgpt",
+        client_model="yandexgpt-lite/deprecated",
+        currency="rub",
+    ),
+
     Model(
         id="01_gemini_flash_1_5",
         name="gemini-flash-1.5",
         client="openrouter",
         client_model="google/gemini-flash-1.5",
     ),
+
     Model(
         id="02_llama_3_2_1b",
         name="llama-3.2-1b",
@@ -120,39 +145,23 @@ MODELS = [
         client_model="meta-llama/llama-3.1-8b-instruct",
     ),
     Model(
+        id="10_llama_3_1_8b",
+        name="llama-3.1-8b:yandex",
+        client="yandexgpt",
+        client_model="llama-lite/latest",
+        currency="rub",
+    ),
+    Model(
         id="05_llama_3_3_70b",
         name="llama-3.3-70b",
         client="openrouter",
         client_model="meta-llama/llama-3.3-70b-instruct",
     ),
+
     Model(
         id="06_qwen_2_5_7b",
         name="qwen-2.5-7b",
         client="openrouter",
         client_model="qwen/qwen-2.5-7b-instruct",
-    ),
-    Model(
-        id="07_yandexgpt_4_lite",
-        name="yandexgpt-4-lite",
-        client="yandexgpt",
-        client_model="yandexgpt-lite/latest",
-    ),
-    Model(
-        id="08_gigachat_lite",
-        name="gigachat-lite",
-        client="gigachat",
-        client_model="GigaChat"
-    ),
-    Model(
-        id="09_yandexgpt_3_lite",
-        name="yandexgpt-3-lite",
-        client="yandexgpt",
-        client_model="yandexgpt-lite/deprecated",
-    ),
-    Model(
-        id="10_llama_3_1_8b",
-        name="llama-3.1-8b:yandex",
-        client="yandexgpt",
-        client_model="llama-lite/latest",
     ),
 ]

@@ -26,7 +26,6 @@ BENCHES = [
         id="humaneval",
         name="humaneval",
         reqs=[
-            "openrouter",
             "e2b"
         ]
     ),
@@ -62,12 +61,14 @@ BENCHES = [
 #  sonnet-3.5
 #  haiku-3.5
 # gemini
+#  flash-1.5
 #  flash-2.0
+#  flash-2.0-turbo?
 #  pro-1.5
 # llama
-#  3.3-70b
-#  3.1-8b
-#  ?
+# . 3.3-70b
+# . 3.1-8b
+# . 
 # mistral
 #  nemo
 #  ?
@@ -78,11 +79,11 @@ BENCHES = [
 
 # yandexgpt
 #  pro
-#  lite
+# . lite
 # gigachat
 #  max
 #  pro
-#  lite
+# . lite
 
 
 @dataclass
@@ -100,23 +101,58 @@ MODELS = [
         client="openrouter",
         client_model="google/gemini-flash-1.5",
     ),
-
-    # Model(
-    #     id="",
-    #     name="yandexgpt-4-lite",
-    #     client="yandexgpt",
-    #     client_model="yandexgpt-lite/latest",
-    # ),
-    # Model(
-    #     id="",
-    #     name="gigachat-lite",
-    #     client="gigachat",
-    #     client_model="GigaChat"
-    # )
+    Model(
+        id="02_llama_3_2_1b",
+        name="llama-3.2-1b",
+        client="openrouter",
+        client_model="meta-llama/llama-3.2-1b-instruct",
+    ),
+    Model(
+        id="03_llama_3_2_3b",
+        name="llama-3.2-3b",
+        client="openrouter",
+        client_model="meta-llama/llama-3.2-3b-instruct",
+    ),
+    Model(
+        id="04_llama_3_1_8b",
+        name="llama-3.1-8b",
+        client="openrouter",
+        client_model="meta-llama/llama-3.1-8b-instruct",
+    ),
+    Model(
+        id="05_llama_3_3_70b",
+        name="llama-3.3-70b",
+        client="openrouter",
+        client_model="meta-llama/llama-3.3-70b-instruct",
+    ),
+    Model(
+        id="06_qwen_2_5_7b",
+        name="qwen-2.5-7b",
+        client="openrouter",
+        client_model="qwen/qwen-2.5-7b-instruct",
+    ),
+    Model(
+        id="07_yandexgpt_4_lite",
+        name="yandexgpt-4-lite",
+        client="yandexgpt",
+        client_model="yandexgpt-lite/latest",
+    ),
+    Model(
+        id="08_gigachat_lite",
+        name="gigachat-lite",
+        client="gigachat",
+        client_model="GigaChat"
+    ),
+    Model(
+        id="09_yandexgpt_3_lite",
+        name="yandexgpt-3-lite",
+        client="yandexgpt",
+        client_model="yandexgpt-lite/deprecated",
+    ),
+    Model(
+        id="10_llama_3_1_8b",
+        name="llama-3.1-8b:yandex",
+        client="yandexgpt",
+        client_model="llama-lite/latest",
+    ),
 ]
-
-# meta-llama/llama-3.2-1b-instruct
-# meta-llama/llama-3.2-3b-instruct
-# meta-llama/llama-3.1-8b-instruct
-# meta-llama/llama-3.3-70b-instruct
-# qwen/qwen-2.5-7b-instruct

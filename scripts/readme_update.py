@@ -46,10 +46,14 @@ def print_errors_table():
 
         for bench in BENCHES:
             path = PROJ_DIR / "data" / "results" / bench.id / f"{model.id}.jsonl"
-            errors = sum(not _["is_correct"] for _ in load_jsonl(path))
+            total, errors = 0, 0
+            for item in load_jsonl(path):
+                total += 1
+                errors += not item["is_correct"]
+
             print(
                 "<td>", f'<a href="errors/{bench.id}/{model.id}.md">',
-                errors,
+                errors, "/", total,
                 "</a>", "</td>"
             )
         print("</tr>")

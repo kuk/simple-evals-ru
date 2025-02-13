@@ -96,7 +96,6 @@ def prep_mgsm():
 
             target = target.replace(",", "")
             assert target.isdigit(), target
-            target = int(target)
 
             task_items.append({
                 "id": index,

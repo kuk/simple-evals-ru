@@ -1,6 +1,4 @@
 
-import re
-
 
 def mgsm_instruction(problem):
     return """Solve this math problem. Give the reasoning steps before giving the final answer on the last line by itself in the format of "Answer:". Do not add anything other than the integer answer after "Answer:".
@@ -8,28 +6,29 @@ def mgsm_instruction(problem):
 %s""" % problem
 
 
-def mgsm_answer_pred(answer):
-    matches = list(re.finditer(r"(Answer|Ответ)", answer))
-    if not matches:
-        return
+def mgsm_postproc_instruction(answer):
+    return """Given the solution to math problem extract the final answer. Respond with a number. In case you cannot find a final answer in given text, or the final answer is not a number, respond with "?".
 
-    match = matches[-1]
-    suffix = answer[match.end():]
+---
 
-    match = re.search(r"(\d+[.,]?\d*)", suffix)
-    if not match:
-        return
-
-    return int(re.sub(r"[,.]", "", match.group(1)))
+%s""" % answer
 
 
-async def mgsm_worker(model_client, task_item, res_item, _):
+async def mgsm_worker(model_client, task_item, res_item, context):
     res_item["instruction"] = mgsm_instruction(task_item["problem"])
     response = await model_client(instruction=res_item["instruction"])
     res_item["answer"] = response["answer"]
     res_item["usage"] = response["usage"]
     res_item["model_cost"] = response["cost"]
 
-    res_item["pred"] = mgsm_answer_pred(res_item["answer"])
+    response = await context["openrouter"](
+        model="google/gemini-flash-1.5",
+        instruction=mgsm_postproc_instruction(res_item["answer"])
+    )
+    res_item["pred"] = (
+        response["answer"].strip()
+        .replace(",", ".")
+        .removesuffix(".00")
+    )
+    res_item["bench_cost"] = response["cost"]
     res_item["is_correct"] = res_item["pred"] == task_item["target"]
-    res_item["bench_cost"] = 0

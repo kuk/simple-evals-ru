@@ -16,15 +16,11 @@ Examples
 Solution: ... The final answer is: $\boxed{(8, -2)}$
 Answer: (8, -2)
 
+Respond only with the final answer. You response should be a substring of solution text. In case you cannot find a final answer in given text, respond with "?".
+
 -----
 
-YOUR TASK
-
-The solution text is given in ```. Respond only with the final answer. You response should be a substring of solution text. In case you cannot find a final answer in given text, respond with "?".
-
-```
-%s
-```""" % answer
+%s""" % answer
 
 
 def math_judge_instruction(pred, target):

@@ -61,7 +61,7 @@ BENCHES = [
 #  sonnet-3.5
 #  haiku-3.5
 # gemini
-#  flash-1.5
+# . flash-1.5
 #  flash-2.0
 #  flash-2.0-turbo?
 #  pro-1.5

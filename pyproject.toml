@@ -3,6 +3,7 @@ name = "simple-evals-ru"
 version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = [
+    "adjusttext>=1.3.0",
     "aiohttp>=3.11.12",
     "matplotlib>=3.10.0",
     "pandas>=2.2.3",
@@ -55,6 +56,7 @@ ignore = [
     "RET502",  # [*] Do not implicitly `return None
     "PLR0915",  # Too many statements
     "T201",  # `print` found
+    "NPY002",  # Replace legacy `np.random.choice
 ]
 
 [dependency-groups]

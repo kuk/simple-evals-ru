@@ -1,4 +1,5 @@
 .envrc
+.DS_Store
 data/cache
 
 # Python-generated files

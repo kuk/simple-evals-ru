@@ -31,7 +31,8 @@ class GigachatClient:
         self.expires_at = None
 
         # https://developers.sber.ru/docs/ru/gigachat/limitations
-        self.semaphore = asyncio.Semaphore(1)
+        self.completions_semaphore = asyncio.Semaphore(1)
+        self.oauth_lock = asyncio.Lock()
 
     @retrying
     async def oauth(self):
@@ -53,10 +54,11 @@ class GigachatClient:
         return await response.json()
 
     async def maybe_oauth(self):
-        if not self.token or time.monotonic() >= self.expires_at:
-            data = await self.oauth()
-            self.token = data["access_token"]
-            self.expires_at = data["expires_at"] / 1000
+        async with self.oauth_lock:
+            if not self.token or time.monotonic() >= self.expires_at:
+                data = await self.oauth()
+                self.token = data["access_token"]
+                self.expires_at = data["expires_at"] / 1000
 
     @retrying
     async def completions(self, model, messages, temperature=0, max_tokens=16000):
@@ -81,47 +83,46 @@ class GigachatClient:
         #   "update_interval": 0
         # }"
 
-        response = await self.session.post(
-            "https://gigachat.devices.sberbank.ru/api/v1/chat/completions",
-            headers={
-                "Accept": "application/json",
-                "Authorization": f"Bearer {self.token}"
-            },
-            json={
-                "model": model,
-                "messages": messages,
-                "temperature": temperature,
-                "max_tokens": max_tokens,
-                "stream": False,
-            },
-            timeout=aiohttp.ClientTimeout(total=120),
-        )
-
-        # {"choices": [{"message": {"content": "$1 + 1 = 2$.", "role": "assistant"},
-        #               "index": 0,
-        #               "finish_reason": "stop"}],
-        #  "created": 1737888295,
-        #  "model": "GigaChat-Pro:1.0.26.20",
-        #  "object": "chat.completion",
-        #  "usage": {"prompt_tokens": 15, "completion_tokens": 10, "total_tokens": 25}}
-
-        response.raise_for_status()
-        return await response.json()
-
-    async def __call__(self, model, instruction):
-        async with self.semaphore:
-            await self.maybe_oauth()
-
-            response = await self.completions(
-                model=model,
-                messages=[{
-                    "role": "user",
-                    "content": instruction
-                }]
+        async with self.completions_semaphore:
+            response = await self.session.post(
+                "https://gigachat.devices.sberbank.ru/api/v1/chat/completions",
+                headers={
+                    "Accept": "application/json",
+                    "Authorization": f"Bearer {self.token}"
+                },
+                json={
+                    "model": model,
+                    "messages": messages,
+                    "temperature": temperature,
+                    "max_tokens": max_tokens,
+                    "stream": False,
+                },
+                timeout=aiohttp.ClientTimeout(total=120),
             )
 
-            return {
-                "answer": response["choices"][0]["message"]["content"],
-                "usage": response["usage"],
-                "cost": gigachat_usage_cost(model, response["usage"])
-            }
+            # {"choices": [{"message": {"content": "$1 + 1 = 2$.", "role": "assistant"},
+            #               "index": 0,
+            #               "finish_reason": "stop"}],
+            #  "created": 1737888295,
+            #  "model": "GigaChat-Pro:1.0.26.20",
+            #  "object": "chat.completion",
+            #  "usage": {"prompt_tokens": 15, "completion_tokens": 10, "total_tokens": 25}}
+
+            response.raise_for_status()
+            return await response.json()
+
+    async def __call__(self, model, instruction):
+        await self.maybe_oauth()
+        response = await self.completions(
+            model=model,
+            messages=[{
+                "role": "user",
+                "content": instruction
+            }]
+        )
+
+        return {
+            "answer": response["choices"][0]["message"]["content"],
+            "usage": response["usage"],
+            "cost": gigachat_usage_cost(model, response["usage"])
+        }

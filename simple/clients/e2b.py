@@ -5,7 +5,10 @@ import asyncio
 
 import aiohttp
 
-from .common import retrying
+from .common import (
+    RateLimiter,
+    retrying
+)
 
 
 # https://e2b.dev/pricing
@@ -19,10 +22,14 @@ class E2BClient:
             timeout=aiohttp.ClientTimeout(total=5)
         )
         # https://e2b.dev/pricing
-        self.semaphore = asyncio.Semaphore(20)
+        self.sandboxes_semaphore = asyncio.Semaphore(20)
+
+        # FIX? Actual rate limites are unknown
+        self.requests_rate_limit = RateLimiter(10, 1)
 
     @retrying
     async def create_sandbox(self, timeout=60, template_id="code-interpreter-v1"):
+        await self.requests_rate_limit.wait()
         response = await self.session.post(
             "https://api.e2b.dev/sandboxes",
             headers={
@@ -46,6 +53,7 @@ class E2BClient:
 
     @retrying
     async def kill(self, sandbox_id):
+        await self.requests_rate_limit.wait()
         response = await self.session.delete(
             f"https://api.e2b.dev/sandboxes/{sandbox_id}",
             headers={
@@ -63,6 +71,7 @@ class E2BClient:
             timeout=10,
             port=49999
     ):
+        await self.requests_rate_limit.wait()
         response = await self.session.post(
             f"https://{port}-{sandbox_id}-{client_id}.e2b.dev/execute",
             headers={
@@ -96,16 +105,16 @@ class E2BClient:
         return results
 
     async def __call__(self, code, timeout=10):
-        async with self.semaphore:
-            result = {
-                "execution": None,
-                "result": None,
-                "traceback": None,
-                "timed_out": None,
-                "duration": 0,
-                "cost": 0
-            }
+        result = {
+            "execution": None,
+            "result": None,
+            "traceback": None,
+            "timed_out": None,
+            "duration": 0,
+            "cost": 0
+        }
 
+        async with self.sandboxes_semaphore:
             response = await self.create_sandbox(timeout=timeout)
             client_id = response["clientID"]
             sandbox_id = response["sandboxID"]
@@ -124,15 +133,14 @@ class E2BClient:
             finally:
                 await self.kill(sandbox_id)
 
+        result["timed_out"] = True
+        for item in result["execution"]:
+            if item["type"] == "result":
+                result["result"] = item["text"]
+            elif item["type"] == "error":
+                result["traceback"] = item["traceback"]
+            elif item["type"] == "end_of_execution":
+                result["timed_out"] = False
 
-            result["timed_out"] = True
-            for item in result["execution"]:
-                if item["type"] == "result":
-                    result["result"] = item["text"]
-                elif item["type"] == "error":
-                    result["traceback"] = item["traceback"]
-                elif item["type"] == "end_of_execution":
-                    result["timed_out"] = False
-
-            return result
+        return result
 

@@ -30,27 +30,31 @@ class YandexgptClient:
         self.session = aiohttp.ClientSession()
 
         # https://yandex.cloud/ru/docs/foundation-models/concepts/limits#yandexgpt-quotas
-        self.semaphore = asyncio.Semaphore(10)
+        self.completion_semaphore = asyncio.Semaphore(10)
+        self.tokenize_semaphore = asyncio.Semaphore(50)
 
     @retrying
     async def completion(self, model, messages, temperature=0, max_tokens=16000):
         # https://yandex.cloud/ru/docs/foundation-models/text-generation/api-ref/TextGeneration/completion
-        response = await self.session.post(
-            "https://llm.api.cloud.yandex.net/foundationModels/v1/completion",
-            headers={
-                "Authorization": f"Api-Key {self.api_key}",
-            },
-            json={
-                "modelUri": f"gpt://{self.folder_id}/{model}",
-                "completionOptions": {
-                    "stream": False,
-                    "temperature": temperature,
-                    "maxTokens": max_tokens,
+        async with self.completion_semaphore:
+            response = await self.session.post(
+                "https://llm.api.cloud.yandex.net/foundationModels/v1/completion",
+                headers={
+                    "Authorization": f"Api-Key {self.api_key}",
                 },
-                "messages": messages
-            },
-            timeout=aiohttp.ClientTimeout(total=120)
-        )
+                json={
+                    "modelUri": f"gpt://{self.folder_id}/{model}",
+                    "completionOptions": {
+                        "stream": False,
+                        "temperature": temperature,
+                        "maxTokens": max_tokens,
+                    },
+                    "messages": messages
+                },
+                timeout=aiohttp.ClientTimeout(total=120)
+            )
+            response.raise_for_status()
+            data = await response.json()
 
         # {
         #   "error": {
@@ -81,27 +85,60 @@ class YandexgptClient:
         #     "modelVersion": "08.12.2023"
         #   }
         # }
-
-        response.raise_for_status()
-        data = await response.json()
         return data["result"]
 
-    async def __call__(self, model, instruction):
-        async with self.semaphore:
-            response = await self.completion(
-                model=model,
-                messages=[{
-                    "role": "user",
-                    "text": instruction
-                }]
+    @retrying
+    async def tokenize(self, model, text):
+        # https://yandex.cloud/ru/docs/foundation-models/text-generation/api-ref/Tokenizer/tokenize
+        async with self.tokenize_semaphore:
+            response = await self.session.post(
+                "https://llm.api.cloud.yandex.net/foundationModels/v1/tokenize",
+                headers={
+                    "Authorization": f"Api-Key {self.api_key}",
+                },
+                json={
+                    "modelUri": f"gpt://{self.folder_id}/{model}",
+                    "text": text
+                },
             )
 
-            usage = response["usage"]
-            for key in ["inputTextTokens", "completionTokens", "totalTokens"]:
-                usage[key] = int(usage[key])
+            response.raise_for_status()
+            data = await response.json()
 
-            return {
-                "answer": response["alternatives"][0]["message"]["text"],
-                "usage": usage,
-                "cost": yandexgpt_usage_cost(model, usage)
-            }
+        # "tokens": [
+        #  {
+        #    "id": "1",
+        #    "text": "<s>",
+        #    "special": true
+        #  },
+        #  {
+        #    "id": "849",
+        #    "text": "▁ми",
+        #    "special": false
+        #  },
+        #  {
+        #    "id": "845",
+        #    "text": "сси",
+        #    "special": false
+        #  },
+        # ...
+        return data["tokens"]
+
+    async def __call__(self, model, instruction):
+        response = await self.completion(
+            model=model,
+            messages=[{
+                "role": "user",
+                "text": instruction
+            }]
+        )
+
+        usage = response["usage"]
+        for key in ["inputTextTokens", "completionTokens", "totalTokens"]:
+            usage[key] = int(usage[key])
+
+        return {
+            "answer": response["alternatives"][0]["message"]["text"],
+            "usage": usage,
+            "cost": yandexgpt_usage_cost(model, usage)
+        }

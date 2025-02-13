@@ -5,6 +5,7 @@ import asyncio
 import logging
 import time
 import argparse
+import random
 from pathlib import Path
 from functools import partial
 
@@ -51,16 +52,16 @@ async def worker(bench_id, model_id, model_client, task_item, res_item, context)
     res_item["finished_at"] = time.time()
 
     path = PROJ_DIR / "data" / "results" / bench_id / f"{model_id}.jsonl"
-    if not path.parent.exists():
-        path.parent.mkdir(parents=True, exist_ok=True)
+    path.parent.mkdir(parents=True, exist_ok=True)
 
     async with LOCK:
         with path.open("a") as file:
             file.write(json.dumps(res_item, ensure_ascii=False) + "\n")
 
     context["in_progress"] -= 1
-    context["model_cost"] += res_item["model_cost"]
     context["bench_cost"] += res_item["bench_cost"]
+    coef = 100 if ID_MODELS[model_id].currency == "rub" else 1
+    context["model_cost"] += (res_item["model_cost"] / coef)
     logger.info(
         'RES is_correct=%r cost=%.5f+%.5f bench="%s" model="%s" task="%s"',
         int(res_item["is_correct"]),
@@ -180,32 +181,37 @@ async def main(args):
     }
     try:
         init_context(context, args.bench_ids, args.model_ids)
+        worker_coros = []
+        for bench_id in args.bench_ids:
+            task_items = load_task_items(bench_id, args.first_k_tasks)
+
+            for model_id in args.model_ids:
+                result_ids = load_result_ids(bench_id, model_id)
+
+                for task_item in task_items:
+                    context["total"] += 1
+                    if task_item["id"] in result_ids:
+                        context["in_cache"] += 1
+                        continue
+
+                    model = ID_MODELS[model_id]
+                    client_model = partial(
+                        context[model.client],
+                        model=model.client_model
+                    )
+                    res_item = {
+                        "id": task_item["id"]
+                    }
+                    worker_coros.append(worker(
+                        bench_id, model_id,
+                        client_model, task_item, res_item,
+                        context
+                    ))
+
+        random.shuffle(worker_coros)
         async with asyncio.TaskGroup() as task_group:
-            for bench_id in args.bench_ids:
-                task_items = load_task_items(bench_id, args.first_k_tasks)
-
-                for model_id in args.model_ids:
-                    result_ids = load_result_ids(bench_id, model_id)
-
-                    for task_item in task_items:
-                        context["total"] += 1
-                        if task_item["id"] in result_ids:
-                            context["in_cache"] += 1
-                            continue
-
-                        model = ID_MODELS[model_id]
-                        client_model = partial(
-                            context[model.client],
-                            model=model.client_model
-                        )
-                        res_item = {
-                            "id": task_item["id"]
-                        }
-                        task_group.create_task(worker(
-                            bench_id, model_id,
-                            client_model, task_item, res_item,
-                            context
-                        ))
+            for worker_coro in worker_coros:
+                task_group.create_task(worker_coro)
             task_group.create_task(monitor(context))
 
         if context["total"] == 0:

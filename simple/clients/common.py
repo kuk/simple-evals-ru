@@ -17,7 +17,9 @@ class RateLimiter:
         self.time_window = time_window
         self.request_times = deque()
 
-    async def maybe_sleep(self):
+    async def wait(self):
+        self.request_times.append(time.monotonic())
+
         while len(self.request_times) >= self.max_requests:
             oldest_time = self.request_times[0]
             time_delta = time.monotonic() - oldest_time
@@ -26,9 +28,6 @@ class RateLimiter:
                 self.request_times.popleft()
             else:
                 await asyncio.sleep(self.time_window - time_delta)
-
-    def add_request_time(self):
-        self.request_times.append(time.monotonic())
 
 
 def retrying(method):
@@ -43,7 +42,7 @@ def retrying(method):
                 if retry == max_retries:
                     logging.error(
                         'Fail retry max_retries=%d cls=%s msg="%s"',
-                        max_retries, error.__class__, str(error)
+                        max_retries, error.__class__.__name__, str(error)
                     )
                     raise
 
@@ -51,7 +50,7 @@ def retrying(method):
                 delay = min(base_delay * (2 ** (retry - 1)), max_delay)
                 logger.warning(
                     'Retry retry=%d max_retries=%d delay=%.2f cls=%s msg="%s"',
-                    retry, max_retries, delay, error.__class__, str(error)
+                    retry, max_retries, delay, error.__class__.__name__, str(error)
                 )
                 await asyncio.sleep(delay)
 

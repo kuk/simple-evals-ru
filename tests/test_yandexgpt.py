@@ -18,7 +18,12 @@ async def yandexgpt_client():
     await client.session.close()
 
 
-async def test_completion(yandexgpt_client):
+async def test_call(yandexgpt_client):
     response = await yandexgpt_client("yandexgpt-lite/latest", "1 + 1")
     assert "2" in response["answer"]
     assert response["cost"] > 0
+
+
+async def test_tokenize(yandexgpt_client):
+    response = await yandexgpt_client.tokenize("yandexgpt-lite/latest", "миссиссссипи")
+    assert len(response) > 1

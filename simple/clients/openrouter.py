@@ -1,6 +1,7 @@
 
 import re
 import logging
+import asyncio
 
 import aiohttp
 
@@ -18,9 +19,21 @@ class OpenrouterClient:
         self.api_key = api_key
         self.session = aiohttp.ClientSession()
 
-        self.rate_limiter = RateLimiter()
-        self.request_count = 0
+        self.completions_rate_limit = RateLimiter()
+        self.completions_requests_count = 0
+        self.lock = asyncio.Lock()
         self.model_pricing = {}
+
+    async def proc_response(self, response):
+        response.raise_for_status()
+        data = await response.json()
+
+        # {'error': {'message': 'Internal Server Error', 'code': 500},
+        # 'user_id': 'user_2lxWCedeJ9IINL0t1I11HmmWnYo'}
+        if "error" in data:
+            raise aiohttp.ClientError(data["error"]["message"])
+
+        return data
 
     @retrying
     async def post_request(self, url, data, timeout=None):
@@ -33,8 +46,7 @@ class OpenrouterClient:
             json=data,
             timeout=aiohttp.ClientTimeout(total=timeout)
         )
-        response.raise_for_status()
-        return await response.json()
+        return await self.proc_response(response)
 
     @retrying
     async def get_request(self, url, timeout=5):
@@ -45,10 +57,11 @@ class OpenrouterClient:
             },
             timeout=aiohttp.ClientTimeout(total=timeout)
         )
-        response.raise_for_status()
-        return await response.json()
+        return await self.proc_response(response)
 
     async def chat_completions(self, **kwargs):
+        self.completions_requests_count += 1
+        await self.completions_rate_limit.wait()
         return await self.post_request(
             url="https://openrouter.ai/api/v1/chat/completions",
             data=kwargs,
@@ -104,30 +117,28 @@ class OpenrouterClient:
         #   "name": "Liquid: LFM 3B"
         #  ...
 
-    async def maybe_update_rate_limiter(self):
-        if self.request_count % 100 != 0:
+    async def maybe_update_rate_limit(self):
+        if self.completions_requests_count % 100 != 0:
             return
-        self.request_count += 1
 
         response = await self.auth_key()
         max_requests = response["rate_limit"]["requests"]
-
         time_window = response["rate_limit"]["interval"]
         match = re.match(r"^(\d+)s$", time_window)  # 10s
         assert match, time_window
         time_window = int(match.group(1))
 
         if (
-                self.rate_limiter.max_requests != max_requests
-                or self.rate_limiter.time_window != time_window
+                self.completions_rate_limit.max_requests != max_requests
+                or self.completions_rate_limit.time_window != time_window
         ):
             logger.info(
-                "Updated rate limiter max_requests=%d time_window=%d",
+                "New rate limit max_requests=%d time_window=%d",
                 max_requests, time_window
             )
 
-        self.rate_limiter.max_requests = max_requests
-        self.rate_limiter.time_window = time_window
+        self.completions_rate_limit.max_requests = max_requests
+        self.completions_rate_limit.time_window = time_window
 
     async def maybe_update_model_pricing(self):
         if self.model_pricing:
@@ -148,10 +159,9 @@ class OpenrouterClient:
         )
 
     async def __call__(self, model, instruction):
-        await self.maybe_update_model_pricing()
-        await self.maybe_update_rate_limiter()
-        await self.rate_limiter.maybe_sleep()
-        self.rate_limiter.add_request_time()
+        async with self.lock:
+            await self.maybe_update_rate_limit()
+            await self.maybe_update_model_pricing()
 
         response = await self.chat_completions(
             model=model,

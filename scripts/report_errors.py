@@ -7,11 +7,17 @@ import logging
 from pathlib import Path
 from contextlib import contextmanager
 
-from simple import registry
+from simple.registry import (
+    MODELS,
+    BENCHES
+)
 
 
 CUR_DIR = Path(__file__).parent
 PROJ_DIR = CUR_DIR.parent
+
+ID_MODELS = {_.id: _ for _ in MODELS}
+ID_BENCHES = {_.id: _ for _ in BENCHES}
 
 
 @contextmanager
@@ -68,55 +74,51 @@ def load_jsonl(path):
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
 
-    bench_ids = sorted(_.id for _ in registry.BENCHES)
-    model_ids = sorted(_.id for _ in registry.MODELS)
-    id_benches = {_.id: _ for _ in registry.BENCHES}
-    id_models = {_.id: _ for _ in registry.MODELS}
+    bench_ids = sorted(_.id for _ in BENCHES)
+    model_ids = sorted(_.id for _ in MODELS)
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-b", dest="bench_ids", action="append", choices=bench_ids)
     parser.add_argument("-m", dest="model_ids", action="append", choices=model_ids)
 
     args = parser.parse_args()
-    benches = [id_benches[_] for _ in args.bench_ids or bench_ids]
-    models = [id_models[_] for _ in args.model_ids or model_ids]
 
     bench_model_res_items = {}
-    for bench in benches:
-        for model in models:
-            path = PROJ_DIR / "data" / "results" / bench.id / f"{model.id}.jsonl"
+    for bench_id in bench_ids:
+        for model_id in model_ids:
+            path = PROJ_DIR / "data" / "results" / bench_id / f"{model_id}.jsonl"
             if path.exists():
                 res_items = [_ for _ in load_jsonl(path) if not _["is_correct"]]
                 if res_items:
-                    bench_model_res_items[bench.id, model.id] = res_items
+                    bench_model_res_items[bench_id, model_id] = res_items
 
     if not bench_model_res_items:
         logging.info("No error results")
         sys.exit()
 
     bench_id_task_items = {}
-    for bench in benches:
-        path = PROJ_DIR / "data" / "benches" / f"{bench.id}.jsonl"
+    for bench_id in bench_ids:
+        path = PROJ_DIR / "data" / "benches" / f"{bench_id}.jsonl"
         assert path.exists(), path
         task_items = load_jsonl(path)
-        bench_id_task_items[bench.id] = {_["id"]: _ for _ in task_items}
+        bench_id_task_items[bench_id] = {_["id"]: _ for _ in task_items}
 
-    for model in models:
-        for bench in benches:
-            id_task_items = bench_id_task_items[bench.id]
+    for model_id in model_ids:
+        for bench_id in bench_ids:
+            id_task_items = bench_id_task_items[bench_id]
 
-            res_items = bench_model_res_items.get((bench.id, model.id))
+            res_items = bench_model_res_items.get((bench_id, model_id))
             if not res_items:
                 continue
 
-            path = PROJ_DIR / "errors" / bench.id / f"{model.id}.md"
+            path = PROJ_DIR / "errors" / bench_id / f"{model_id}.md"
             path.parent.mkdir(parents=True, exist_ok=True)
 
             logging.info('Write len(res_items)=%d, path="%s"', len(res_items), path.relative_to(PROJ_DIR))
             with path.open("w") as file, print_to(file):
-                print("#", bench.name, "/", model.name)
+                print("#", ID_BENCHES[bench_id].name, "/", ID_MODELS[model_id].name)
 
                 res_items.sort(key=lambda _: _["finished_at"], reverse=True)
                 for res_item in res_items[:20]:
                     task_item = id_task_items[res_item["id"]]
-                    print_result(bench.id, task_item, res_item)
+                    print_result(bench_id, task_item, res_item)

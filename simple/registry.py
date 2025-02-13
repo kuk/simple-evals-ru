@@ -36,13 +36,13 @@ BENCHES = [
             "openrouter",
         ]
     ),
-    Bench(
-        id="simpleqa",
-        name="simpleqa-1k",
-        reqs=[
-            "openrouter",
-        ]
-    ),
+    # Bench(
+    #     id="simpleqa",
+    #     name="simpleqa-1k",
+    #     reqs=[
+    #         "openrouter",
+    #     ]
+    # ),
     Bench(
         id="bbh",
         name="bbh-1k",

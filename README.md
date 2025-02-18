@@ -1,7 +1,7 @@
 
 # simple-evals-ru
 
-Репозиторий измеряет качество Yandexgpt и Gigachat на популярных англоязычных бенчмарках: MGSM, MATH, HumanEval, MMLU-Pro, BBH. Смотреть <a href="samples">примеры заданий и ответы моделей</a>. Читать <a href="#why_benches">причины, почему именно эти бенчмарки</a>.
+Репозиторий измеряет качество Yandexgpt и Gigachat на популярных англоязычных бенчмарках: MGSM, MATH, HumanEval, MMLU-Pro, BBH. Смотреть <a href="#samples">примеры заданий и ответы моделей</a>. Читать <a href="#why_benches">причины, почему именно эти бенчмарки</a>.
 
 Репо похож на <a href="https://github.com/openai/simple-evals">simple-evals</a> от Openai. Читать <a href="#compare_benches">как репо отличается от оригинала и зачем еще один замер, когда есть Мера и русская Арена</a>.
 

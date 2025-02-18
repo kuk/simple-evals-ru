@@ -2,6 +2,7 @@
 import asyncio
 import logging
 import time
+import random
 from functools import wraps
 from collections import deque
 
@@ -33,7 +34,7 @@ class RateLimiter:
 def retrying(method):
     @wraps(method)
     async def wrapper(*args, **kwargs):
-        retry, max_retries = 0, 5
+        retry, max_retries = 0, 10
         while retry <= max_retries:
             try:
                 return await method(*args, **kwargs)
@@ -46,10 +47,10 @@ def retrying(method):
                     )
                     raise
 
-                base_delay, max_delay = 1, 60
-                delay = min(base_delay * (2 ** (retry - 1)), max_delay)
+                base_delay, max_delay, jitter = 1, 100, random.random()
+                delay = min(base_delay * (2 ** (retry - 1) + jitter), max_delay)
                 logger.warning(
-                    'Retry retry=%d max_retries=%d delay=%.2f cls=%s msg="%s"',
+                    'Retry retry=%d max_retries=%d delay=%.1f cls=%s msg="%s"',
                     retry, max_retries, delay, error.__class__.__name__, str(error)
                 )
                 await asyncio.sleep(delay)

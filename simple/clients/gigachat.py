@@ -2,10 +2,17 @@
 import time
 import asyncio
 import uuid
+import logging
 
 import aiohttp
 
-from .common import retrying
+from .common import (
+    RateLimiter,
+    retrying
+)
+
+
+logger = logging.getLogger("simple")
 
 
 # https://developers.sber.ru/docs/ru/gigachat/api/tariffs
@@ -34,8 +41,12 @@ class GigachatClient:
         self.completions_semaphore = asyncio.Semaphore(1)
         self.oauth_lock = asyncio.Lock()
 
+        # Actual rate limits are unknown
+        self.requests_rate_limit = RateLimiter(1, 1)
+
     @retrying
     async def oauth(self):
+        await self.requests_rate_limit.wait()
         response = await self.session.post(
             "https://ngw.devices.sberbank.ru:9443/api/v2/oauth",
             headers={
@@ -55,10 +66,14 @@ class GigachatClient:
 
     async def maybe_oauth(self):
         async with self.oauth_lock:
-            if not self.token or time.monotonic() >= self.expires_at:
+            if not self.token or time.time() >= self.expires_at:
                 data = await self.oauth()
                 self.token = data["access_token"]
                 self.expires_at = data["expires_at"] / 1000
+                logger.info(
+                    "New token expires in %d sec",
+                    self.expires_at - time.time()
+                )
 
     @retrying
     async def completions(self, model, messages, temperature=0, max_tokens=16000):
@@ -84,6 +99,7 @@ class GigachatClient:
         # }"
 
         async with self.completions_semaphore:
+            await self.requests_rate_limit.wait()
             response = await self.session.post(
                 "https://gigachat.devices.sberbank.ru/api/v1/chat/completions",
                 headers={

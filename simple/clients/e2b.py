@@ -24,7 +24,7 @@ class E2BClient:
         # https://e2b.dev/pricing
         self.sandboxes_semaphore = asyncio.Semaphore(20)
 
-        # FIX? Actual rate limites are unknown
+        # Actual rate limits are unknown
         self.requests_rate_limit = RateLimiter(10, 1)
 
     @retrying

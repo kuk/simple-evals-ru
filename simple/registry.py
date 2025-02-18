@@ -73,16 +73,18 @@ BENCHES = [
 #  nemo
 #  ?
 # qwen
-#  ?
+# . 2.5-7b
+#  2.5-14b
+#  2.5-72b
 # deepseek
 #  v3
 
 # yandexgpt
-#  pro
+# . pro
 # . lite
 # gigachat
-#  max
-#  pro
+# . max
+# . pro
 # . lite
 
 
@@ -92,6 +94,7 @@ class Model:
     name: str
     client: str
     client_model: str
+    client_kwargs: dict = None
     currency: str = "usd"
 
 
@@ -103,6 +106,20 @@ MODELS = [
         client_model="GigaChat",
         currency="rub",
     ),
+    Model(
+        id="12_gigachat_pro",
+        name="gigachat-pro",
+        client="gigachat",
+        client_model="GigaChat-Pro",
+        currency="rub",
+    ),
+    Model(
+        id="14_gigachat_max",
+        name="gigachat-max",
+        client="gigachat",
+        client_model="GigaChat-Max",
+        currency="rub",
+    ),
 
     Model(
         id="07_yandexgpt_4_lite",
@@ -111,33 +128,41 @@ MODELS = [
         client_model="yandexgpt-lite/latest",
         currency="rub",
     ),
+    # Model(
+    #     id="09_yandexgpt_3_lite",
+    #     name="yandexgpt-3-lite",
+    #     client="yandexgpt",
+    #     client_model="yandexgpt-lite/deprecated",
+    #     currency="rub",
+    # ),
     Model(
-        id="09_yandexgpt_3_lite",
-        name="yandexgpt-3-lite",
+        id="11_yandexgpt_4_pro",
+        name="yandexgpt-4-pro",
         client="yandexgpt",
-        client_model="yandexgpt-lite/deprecated",
+        client_model="yandexgpt/latest",
         currency="rub",
     ),
 
-    Model(
-        id="01_gemini_flash_1_5",
-        name="gemini-flash-1.5",
-        client="openrouter",
-        client_model="google/gemini-flash-1.5",
-    ),
 
-    Model(
-        id="02_llama_3_2_1b",
-        name="llama-3.2-1b",
-        client="openrouter",
-        client_model="meta-llama/llama-3.2-1b-instruct",
-    ),
-    Model(
-        id="03_llama_3_2_3b",
-        name="llama-3.2-3b",
-        client="openrouter",
-        client_model="meta-llama/llama-3.2-3b-instruct",
-    ),
+    # Model(
+    #     id="01_gemini_flash_1_5",
+    #     name="gemini-flash-1.5",
+    #     client="openrouter",
+    #     client_model="google/gemini-flash-1.5",
+    # ),
+
+    # Model(
+    #     id="02_llama_3_2_1b",
+    #     name="llama-3.2-1b",
+    #     client="openrouter",
+    #     client_model="meta-llama/llama-3.2-1b-instruct",
+    # ),
+    # Model(
+    #     id="03_llama_3_2_3b",
+    #     name="llama-3.2-3b",
+    #     client="openrouter",
+    #     client_model="meta-llama/llama-3.2-3b-instruct",
+    # ),
     Model(
         id="04_llama_3_1_8b",
         name="llama-3.1-8b",
@@ -157,11 +182,31 @@ MODELS = [
         client="openrouter",
         client_model="meta-llama/llama-3.3-70b-instruct",
     ),
+    Model(
+        id="13_llama_3_3_70b",
+        name="llama-3.3-70b:yandex",
+        client="yandexgpt",
+        client_model="llama/latest",
+        currency="rub",
+    ),
+
+    # Model(
+    #     id="06_qwen_2_5_7b",
+    #     name="qwen-2.5-7b",
+    #     client="openrouter",
+    #     client_model="qwen/qwen-2.5-7b-instruct",
+    # ),
+    Model(
+        id="15_qwen_2_5_72b",
+        name="qwen-2.5-72b",
+        client="openrouter",
+        client_model="qwen/qwen-2.5-72b-instruct",
+    ),
 
     Model(
-        id="06_qwen_2_5_7b",
-        name="qwen-2.5-7b",
+        id="16_deepseek_v3",
+        name="deepseek-v3",
         client="openrouter",
-        client_model="qwen/qwen-2.5-7b-instruct",
+        client_model="deepseek/deepseek-chat",
     ),
 ]

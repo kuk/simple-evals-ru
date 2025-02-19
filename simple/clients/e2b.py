@@ -22,14 +22,14 @@ class E2BClient:
             timeout=aiohttp.ClientTimeout(total=5)
         )
         # https://e2b.dev/pricing
-        self.sandboxes_semaphore = asyncio.Semaphore(20)
+        self.semaphore = asyncio.Semaphore(20)
 
         # Actual rate limits are unknown
-        self.requests_rate_limit = RateLimiter(10, 1)
+        self.rate_limiter = RateLimiter(10, 1)
 
     @retrying
     async def create_sandbox(self, timeout=60, template_id="code-interpreter-v1"):
-        await self.requests_rate_limit.wait()
+        await self.rate_limiter.wait()
         response = await self.session.post(
             "https://api.e2b.dev/sandboxes",
             headers={
@@ -53,7 +53,7 @@ class E2BClient:
 
     @retrying
     async def kill(self, sandbox_id):
-        await self.requests_rate_limit.wait()
+        await self.rate_limiter.wait()
         response = await self.session.delete(
             f"https://api.e2b.dev/sandboxes/{sandbox_id}",
             headers={
@@ -71,7 +71,7 @@ class E2BClient:
             timeout=10,
             port=49999
     ):
-        await self.requests_rate_limit.wait()
+        await self.rate_limiter.wait()
         response = await self.session.post(
             f"https://{port}-{sandbox_id}-{client_id}.e2b.dev/execute",
             headers={
@@ -114,7 +114,7 @@ class E2BClient:
             "cost": 0
         }
 
-        async with self.sandboxes_semaphore:
+        async with self.semaphore:
             response = await self.create_sandbox(timeout=timeout)
             client_id = response["clientID"]
             sandbox_id = response["sandboxID"]

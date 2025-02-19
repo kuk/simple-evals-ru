@@ -1,8 +1,6 @@
 
-import time
 import asyncio
 import uuid
-import logging
 
 import aiohttp
 
@@ -10,9 +8,6 @@ from .common import (
     RateLimiter,
     retrying
 )
-
-
-logger = logging.getLogger("simple")
 
 
 # https://developers.sber.ru/docs/ru/gigachat/api/tariffs
@@ -38,15 +33,14 @@ class GigachatClient:
         self.expires_at = None
 
         # https://developers.sber.ru/docs/ru/gigachat/limitations
-        self.completions_semaphore = asyncio.Semaphore(1)
-        self.oauth_lock = asyncio.Lock()
+        self.semaphore = asyncio.Semaphore(1)
 
         # Actual rate limits are unknown
-        self.requests_rate_limit = RateLimiter(1, 1)
+        self.rate_limiter = RateLimiter(1, 1)
 
     @retrying
     async def oauth(self):
-        await self.requests_rate_limit.wait()
+        await self.rate_limiter.wait()
         response = await self.session.post(
             "https://ngw.devices.sberbank.ru:9443/api/v2/oauth",
             headers={
@@ -63,17 +57,6 @@ class GigachatClient:
 
         response.raise_for_status()
         return await response.json()
-
-    async def maybe_oauth(self):
-        async with self.oauth_lock:
-            if not self.token or time.time() >= self.expires_at:
-                data = await self.oauth()
-                self.token = data["access_token"]
-                self.expires_at = data["expires_at"] / 1000
-                logger.info(
-                    "New token expires in %d sec",
-                    self.expires_at - time.time()
-                )
 
     @retrying
     async def completions(self, model, messages, temperature=0, max_tokens=16000):
@@ -98,8 +81,8 @@ class GigachatClient:
         #   "update_interval": 0
         # }"
 
-        async with self.completions_semaphore:
-            await self.requests_rate_limit.wait()
+        async with self.semaphore:
+            await self.rate_limiter.wait()
             response = await self.session.post(
                 "https://gigachat.devices.sberbank.ru/api/v1/chat/completions",
                 headers={
@@ -127,8 +110,12 @@ class GigachatClient:
             response.raise_for_status()
             return await response.json()
 
+    async def update_oauth(self):
+        data = await self.oauth()
+        self.token = data["access_token"]
+        self.expires_at = data["expires_at"] / 1000
+
     async def __call__(self, model, instruction):
-        await self.maybe_oauth()
         response = await self.completions(
             model=model,
             messages=[{

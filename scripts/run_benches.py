@@ -63,10 +63,10 @@ async def worker(bench_id, model_id, model_client, task_item, res_item, context)
     coef = 100 if ID_MODELS[model_id].currency == "rub" else 1
     context["model_cost"] += (res_item["model_cost"] / coef)
     logger.info(
-        'RES is_correct=%r cost=%.5f+%.5f bench="%s" model="%s" task="%s"',
+        'is_correct=%r cost=%.5f+%.5f model="%s" bench="%s" task="%s"',
         int(res_item["is_correct"]),
         res_item["model_cost"], res_item["bench_cost"],
-        bench_id, model_id, task_item["id"]
+        model_id, bench_id, task_item["id"]
     )
 
 
@@ -78,9 +78,13 @@ async def monitor(context):
 
         if count % 50 == 0:
             logger.info(
-                "MON in_progress=%d cost=%.5f+%.5f",
+                "in_progress=%d cost=%.5f+%.5f",
                 context["in_progress"], context["model_cost"], context["bench_cost"]
             )
+
+        if count > 0 and count % 600 == 0:
+            await update_context(context)
+
         count += 1
         await asyncio.sleep(.1)
 
@@ -137,6 +141,27 @@ def init_context(context, bench_ids, model_ids):
             raise ValueError(model.client)
 
 
+async def update_context(context):
+    client = context.get("openrouter")
+    if client:
+        if not client.model_pricing:
+            await client.update_model_pricing()
+        await client.update_rate_limit()
+        logger.info(
+            "Openrouter rate limit %d reqs / %d secs",
+            client.rate_limiter.max_requests,
+            client.rate_limiter.time_window
+        )
+
+    client = context.get("gigachat")
+    if client:
+        await client.update_oauth()
+        logger.info(
+            "Gigachat token expires in %d sec",
+            client.expires_at - time.time()
+        )
+
+
 async def close_context(context):
     for key in ["openrouter", "yandexgpt", "gigachat", "e2b"]:
         if key in context:
@@ -181,6 +206,7 @@ async def main(args):
     }
     try:
         init_context(context, args.bench_ids, args.model_ids)
+        await update_context(context)
         worker_coros = []
         for bench_id in args.bench_ids:
             task_items = load_task_items(bench_id, args.first_k_tasks)
@@ -225,7 +251,7 @@ async def main(args):
 
 if __name__ == "__main__":
     logging.basicConfig(
-        format="%(asctime)s %(message)s",
+        format="%(asctime)s [%(module)s:%(funcName)s] %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S"
     )
     logger.setLevel(logging.DEBUG)

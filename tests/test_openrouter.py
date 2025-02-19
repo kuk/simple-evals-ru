@@ -12,6 +12,8 @@ async def openrouter_client():
     assert api_key
 
     client = OpenrouterClient(api_key=api_key)
+    await client.update_model_pricing()
+    await client.update_rate_limit()
     yield client
     await client.session.close()
 

@@ -34,7 +34,6 @@ for model_id in [
 
         "11_yandexgpt_4_pro", "12_gigachat_pro",
         "13_llama_3_3_70b", "14_gigachat_max",
-
 ]:
     model = ID_MODELS[model_id]
 

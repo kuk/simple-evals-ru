@@ -1,5 +1,4 @@
 
-import re
 import sys
 import json
 import random
@@ -29,9 +28,14 @@ def print_to(file):
         sys.stdout = orig_stdout
 
 
+def escape(value):
+    value = str(value)
+    return value.replace("<", "&lt;")
+
+
 def print_section(item, key):
     print(f"###### {key}")
-    print("<pre>", re.sub(r"</?pre>", "", str(item[key])), "</pre>")
+    print("<pre>", escape(item[key]), "</pre>")
 
 
 def print_result(bench_id, task_item, res_item):

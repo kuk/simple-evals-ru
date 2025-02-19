@@ -12,6 +12,7 @@ async def gigachat_client():
     assert secret
 
     client = GigachatClient(secret=secret)
+    await client.update_oauth()
     yield client
     await client.session.close()
 

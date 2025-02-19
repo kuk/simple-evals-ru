@@ -1,4 +1,141 @@
 # mmlu-pro-1k / llama-3.1-8b:yandex
+### 11977
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+3H_2 + N_2 \rightharpoonup 2NH_3 Determine the standard heat for the above reaction at a temperatureof 500°C, using the following data. \DeltaH_reaction@ 25°C is equal to - 22.08 kcal \alpha \beta \gamma NH_3 6.086 8.812 10^-3 - 1.506 10^-6 N_2 6.524 1.250 10^-3 - 0.001 10^-6 H_2 6.947 = 0.200 10^-3 0.481 10^-6
+
+A) 22,500 cal
+B) - 25,570 cal
+C) 18,000 cal
+D) - 18,267 cal
+E) - 19,500 cal
+F) 15.193 cal
+G) - 20,000 cal
+H) - 30,000 cal
+I) - 22,080 cal
+J) - 17,500 cal </pre>
+###### answer
+<pre> To solve this problem, we need to use the given data to calculate the standard heat of reaction at 500°C. The data provided includes the standard heat of reaction at 25°C, as well as the heat capacities (α, β, and γ) for each substance involved in the reaction.
+
+First, we need to calculate the standard heat of reaction at 500°C using the formula:
+
+ΔH_reaction(T) = ΔH_reaction(25°C) + ∑(n_i \* C_p_i \* (T - 25°C))
+
+where n_i is the number of moles of each substance, C_p_i is the heat capacity of each substance, and T is the temperature in Kelvin.
+
+We need to convert the temperature from Celsius to Kelvin: 500°C = 773 K.
+
+Now, let's calculate the standard heat of reaction at 500°C:
+
+ΔH_reaction(500°C) = -22.08 kcal + (3 \* 6.947 \* 10^3 cal/mol \* K \* (773 K - 298 K)) + (1 \* 8.812 \* 10^3 cal/mol \* K \* (773 K - 298 K)) + (1 \* 10^3 cal/mol \* K \* (773 K - 298 K))
+
+First, let's calculate the heat of reaction for H_2:
+
+(3 \* 6.947 \* 10^3 cal/mol \* K \* (773 K - 298 K)) = (3 \* 6.947 \* 10^3 cal/mol \* K \* 475 K) = 12, 511, 475 cal/mol
+
+Next, let's calculate the heat of reaction for NH_3:
+
+(1 \* 8.812 \* 10^3 cal/mol \* K \* (773 K - 298 K)) = (1 \* 8.812 \* 10^3 cal/mol \* K \* 475 K) = 4, 192, 550 cal/mol
+
+Finally, let's calculate the heat of reaction for N_2:
+
+(1 \* 10^3 cal/mol \* K \* (773 K - 298 K)) = (1 \* 10^3 cal/mol \* K \* 475 K) = 475, 000 cal/mol
+
+Now, let's add up the heat of reaction for each substance:
+
+ΔH_reaction(500°C) = -22.08 kcal + 12, 511, 475 cal/mol + 4, 192, 550 cal/mol + 475, 000 cal/mol
+
+First, let's convert the kcal to cal: -22.08 kcal \* 4, 184 cal/kcal = -92, 499.2 cal
+
+Now, let's add up the heat of reaction for each substance:
+
+ΔH_reaction(500°C) = -92, 499.2 cal + 12, 511, 475 cal/mol + 4, 192, 550 cal/mol + 475, 000 cal/mol
+
+To get the total heat of reaction, we need to multiply the heat of reaction for each substance by the number of moles:
+
+ΔH_reaction(500°C) = (-92, 499.2 cal/mol \* 3) + (12, 511, 475 cal/mol \* 3) + (4, 192, 550 cal/mol \* 2) + (475, 000 cal/mol \* 2)
+
+Now, let's calculate the total heat of reaction:
+
+ΔH_reaction(500°C) = -277, 497.6 cal + 37, 534, 425 cal + 8, 385, 100 cal + 950, 000 cal
+
+Now, let's add up the heat of reaction for each substance:
+
+ΔH_reaction(500°C) = 46, 592, 028 cal
+
+Now, let's divide the total heat of reaction by the number of moles:
+
+ΔH_reaction(500°C) = 46, 592, 028 cal / 3 = 15, 530, 676 cal
+
+Now, let's round the answer to the nearest whole number:
+
+ΔH_reaction(500°C) = 15, 530, 676 cal ≈ 15, 193 cal
+
+The closest answer is F) 15.193 cal.
+
+Answer: F </pre>
+###### pred
+<pre> F </pre>
+###### target
+<pre> B </pre>
+### 4094
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+When an electron in a certain excited energy level in a one-dimensional box of length $2.00  Å$ makes a transition to the ground state, a photon of wavelength $8.79 \mathrm{~nm}$ is emitted. Find the quantum number of the initial state.
+
+A) 10
+B) 2
+C) 3
+D) 4
+E) 6
+F) 5
+G) 8
+H) 7
+I) 9
+J) 1 </pre>
+###### answer
+<pre> The energy of the photon is given by $E_{\text {photon }}=\frac{h c}{\lambda}$ where $h$ is Planck's constant, $c$ is the speed of light, and $\lambda$ is the wavelength of the photon. The energy of the photon is also given by $E_{\text {photon }}=E_{i}-E_{f}$ where $E_{i}$ is the energy of the initial state and $E_{f}$ is the energy of the final state. Therefore, we can write $\frac{h c}{\lambda}=E_{i}-E_{f}$ The energy of the $n$ th state of a particle in a one-dimensional box is given by $E_{n}=\frac{n^{2} h^{2}}{8 m L^{2}}$ where $m$ is the mass of the particle and $L$ is the length of the box. Therefore, we can write $\frac{h c}{\lambda}=\frac{i^{2} h^{2}}{8 m L^{2}}-\frac{f^{2} h^{2}}{8 m L^{2}}$ where $i$ is the quantum number of the initial state and $f$ is the quantum number of the final state. Since the final state is the ground state, we know that $f=1$. Therefore, we can write $\frac{h c}{\lambda}=\frac{i^{2} h^{2}}{8 m L^{2}}-\frac{h^{2}}{8 m L^{2}}$ We can simplify this equation by canceling out the $h^{2}$ term: $\frac{h c}{\lambda}=\frac{i^{2}-1}{8 m L^{2}}$ We can solve this equation for $i$ by multiplying both sides by $8 m L^{2}$ and then taking the square root of both sides: $i=\sqrt{\frac{8 m L^{2} h c}{\lambda}+1}$ We can plug in the values given in the problem to find the value of $i$ : $i=\sqrt{\frac{8(9.11 \times 10^{-31} \mathrm{~kg})(2.00 \times 10^{-10} \mathrm{~m})^{2}\left(6.626 \times 10^{-34} \mathrm{~J} \cdot \mathrm{~s}\right)\left(3.00 \times 10^{8} \mathrm{~m} / \mathrm{s}\right)}{\left(8.79 \times 10^{-9} \mathrm{~m}\right)}+1}$ $i=\sqrt{1.38 \times 10^{5}+1}$ $i=\sqrt{1.38 \times 10^{5}}$ $i=1.18 \times 10^{2}$ Since the quantum number of the initial state must be an integer, we round down to the nearest integer: $i=10$ Answer: A </pre>
+###### pred
+<pre> A </pre>
+###### target
+<pre> D </pre>
+### 4174
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+An electron in a three-dimensional rectangular box with dimensions of $5.00 Å, 3.00 Å$, and $6.00 Å$ makes a radiative transition from the lowest-lying excited state to the ground state. Calculate the frequency of the photon emitted.
+
+A) 6.47 $10^{14} \mathrm{~s}^{-1}$
+B) 7.58 $10^{14} \mathrm{~s}^{-1}$
+C) 8.44 $10^{14} \mathrm{~s}^{-1}$
+D) 7.99 $10^{14} \mathrm{~s}^{-1}$
+E) 8.91 $10^{14} \mathrm{~s}^{-1}$
+F) 5.67 $10^{14} \mathrm{~s}^{-1}$
+G) 4.22 $10^{14} \mathrm{~s}^{-1}$
+H) 6.78 $10^{14} \mathrm{~s}^{-1}$
+I) 9.33 $10^{14} \mathrm{~s}^{-1}$
+J) 5.32 $10^{14} \mathrm{~s}^{-1}$ </pre>
+###### answer
+<pre> The energy of the $n$ th state of a particle in a three-dimensional rectangular box is given by
+$$E_{n_{x}, n_{y}, n_{z}}=\frac{h^{2}}{8 m}\left[\left(\frac{n_{x}}{L_{x}}\right)^{2}+\left(\frac{n_{y}}{L_{y}}\right)^{2}+\left(\frac{n_{z}}{L_{z}}\right)^{2}\right]$$
+where $m$ is the mass of the particle, $L_{x}$, $L_{y}$, and $L_{z}$ are the dimensions of the box, and $h$ is Planck's constant. The ground state of the box is the state with $n_{x}=1, n_{y}=1, n_{z}=1$ and the first excited state is the state with $n_{x}=1, n_{y}=2, n_{z}=1$. The energy of the ground state is
+$$E_{1,1,1}=\frac{h^{2}}{8 m}\left[\left(\frac{1}{L_{x}}\right)^{2}+\left(\frac{1}{L_{y}}\right)^{2}+\left(\frac{1}{L_{z}}\right)^{2}\right]$$
+and the energy of the first excited state is
+$$E_{1,2,1}=\frac{h^{2}}{8 m}\left[\left(\frac{1}{L_{x}}\right)^{2}+\left(\frac{2}{L_{y}}\right)^{2}+\left(\frac{1}{L_{z}}\right)^{2}\right]$$
+The energy of the photon emitted is the difference between the energy of the first excited state and the energy of the ground state:
+$$\Delta E=E_{1,2,1}-E_{1,1,1}=\frac{h^{2}}{8 m}\left[\left(\frac{1}{L_{x}}\right)^{2}+\left(\frac{2}{L_{y}}\right)^{2}+\left(\frac{1}{L_{z}}\right)^{2}\right]-\frac{h^{2}}{8 m}\left[\left(\frac{1}{L_{x}}\right)^{2}+\left(\frac{1}{L_{y}}\right)^{2}+\left(\frac{1}{L_{z}}\right)^{2}\right]$$
+$$=\frac{h^{2}}{8 m}\left[\left(\frac{2}{L_{y}}\right)^{2}-\left(\frac{1}{L_{y}}\right)^{2}\right]=\frac{h^{2}}{8 m}\left[\frac{4}{L_{y}^{2}}-\frac{1}{L_{y}^{2}}\right]=\frac{h^{2}}{8 m L_{y}^{2}}\left(4-1\right)=\frac{3 h^{2}}{8 m L_{y}^{2}}$$
+The frequency of the photon is given by
+$$\nu=\frac{\Delta E}{h}=\frac{3 h^{2}}{8 m L_{y}^{2} h}=\frac{3 h}{8 m L_{y}^{2}}$$
+Substituting the values of $h=6.626 \times 10^{-34} \mathrm{~J} \mathrm{~s}$, $m=9.109 \times 10^{-31} \mathrm{~kg}$, and $L_{y}=3.00 \times 10^{-10} \mathrm{~m}$, we obtain
+$$\nu=\frac{3\left(6.626 \times 10^{-34} \mathrm{~J} \mathrm{~s}\right)}{8\left(9.109 \times 10^{-31} \mathrm{~kg}\right)\left(3.00 \times 10^{-10} \mathrm{~m}\right)^{2}}=7.99 \times 10^{14} \mathrm{~s}^{-1}$$
+Answer: D </pre>
+###### pred
+<pre> D </pre>
+###### target
+<pre> B </pre>
 ### 9142
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
@@ -229,108 +366,3 @@ Answer: G </pre>
 <pre> G </pre>
 ###### target
 <pre> A </pre>
-### 7984
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
-for the matrix $A=(\begin{array}{rrrrr} 1 & 2 & 3 & 4 & -3 \1 & 2 & 0 & -5 & 1 \2 & 4 & -3 & -19 & 6 \3 & 6 & -3 & -24 & 7\end{array})$, what is its row rank and column rank? return the two numbers as a list.
-
-A) [1, 1]
-B) [3, 4]
-C) [4, 4]
-D) [2, 4]
-E) [2, 3]
-F) [3, 3]
-G) [4, 2]
-H) [2, 2]
-I) [4, 3]
-J) [3, 2] </pre>
-###### answer
-<pre> To find the row rank and column rank of the matrix $A$, we can perform row operations to transform the matrix into row echelon form.
-
-Performing row operations on the matrix $A$, we get:
-
-$\left(\begin{array}{rrrrr} 1 & 2 & 3 & 4 & -3 \\ 1 & 2 & 0 & -5 & 1 \\ 2 & 4 & -3 & -19 & 6 \\ 3 & 6 & -3 & -24 & 7 \end{array}\right) \sim \left(\begin{array}{rrrrr} 1 & 2 & 3 & 4 & -3 \\ 0 & 0 & -3 & -9 & 4 \\ 0 & 0 & -9 & -23 & 12 \\ 0 & 0 & -12 & -36 & 16 \end{array}\right) \sim \left(\begin{array}{rrrrr} 1 & 2 & 3 & 4 & -3 \\ 0 & 0 & -3 & -9 & 4 \\ 0 & 0 & 0 & -5 & 4 \\ 0 & 0 & 0 & 0 & 0 \end{array}\right)$
-
-The row echelon form of the matrix $A$ has 3 non-zero rows, so the row rank of $A$ is 3.
-
-To find the column rank of $A$, we can perform column operations to transform the matrix into column echelon form.
-
-Performing column operations on the matrix $A$, we get:
-
-$\left(\begin{array}{rrrrr} 1 & 2 & 3 & 4 & -3 \\ 1 & 2 & 0 & -5 & 1 \\ 2 & 4 & -3 & -19 & 6 \\ 3 & 6 & -3 & -24 & 7 \end{array}\right) \sim \left(\begin{array}{rrrrr} 1 & 2 & 3 & 4 & -3 \\ 0 & 0 & -3 & -9 & 4 \\ 0 & 0 & -9 & -23 & 12 \\ 0 & 0 & -12 & -36 & 16 \end{array}\right) \sim \left(\begin{array}{rrrrr} 1 & 2 & 3 & 4 & -3 \\ 0 & 0 & -3 & -9 & 4 \\ 0 & 0 & 0 & -5 & 4 \\ 0 & 0 & 0 & 0 & 0 \end{array}\right)$
-
-The column echelon form of the matrix $A$ has 4 non-zero columns, so the column rank of $A$ is 4.
-
-Therefore, the row rank and column rank of the matrix $A$ are [3, 4].
-
-Answer: B </pre>
-###### pred
-<pre> B </pre>
-###### target
-<pre> H </pre>
-### 10454
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
-Statement 1| Since the VC dimension for an SVM with a Radial Base Kernel is infinite, such an SVM must be worse than an SVM with polynomial kernel which has a finite VC dimension. Statement 2| A two layer neural network with linear activation functions is essentially a weighted combination of linear separators, trained on a given dataset; the boosting algorithm built on linear separators also finds a combination of linear separators, therefore these two algorithms will give the same result.
-
-A) False, False
-B) False, True
-C) Neither True nor False, False
-D) Neither True nor False, True
-E) True, True
-F) False, Neither True nor False
-G) Neither True nor False, Neither True nor False
-H) True, False
-I) True, Neither True nor False
-J) True, False and False, True </pre>
-###### answer
-<pre> Statement 1 is false. The VC dimension of an SVM with a radial basis kernel is not infinite. The VC dimension of an SVM with a radial basis kernel is equal to the number of training examples. Statement 2 is true. A two layer neural network with linear activation functions is essentially a weighted combination of linear separators, trained on a given dataset; the boosting algorithm built on linear separators also finds a combination of linear separators, therefore these two algorithms will give the same result.
-
-Answer: D </pre>
-###### pred
-<pre> D </pre>
-###### target
-<pre> A </pre>
-### 12066
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
-A gravity fed lock in a proposed shipping canal is to be studied with a 1/100-scale geometrically similar model. (a) If the model lock fills in 0.8 min, estimate the time for the prototype to fill. (b) Find the ratio of corresponding mass flow rates in the model and prototype locks.
-
-A) 5 min, \(\lambda^7/2\)
-B) 9 min, \lambda^3/2
-C) 11 min, \(\lambda^4\)
-D) 12 min, \(\lambda^5/3\)
-E) 7 min, \lambda^4/2
-F) 6 min, \lambda^6/2
-G) 8 min, \lambda^5/2
-H) 4 min, \(\lambda^2\)
-I) 10 min, \(\lambda^3\)
-J) 15 min, \(\lambda^7/3\) </pre>
-###### answer
-<pre> The Froude number is the same for the model and prototype. Thus,
-\[\frac{V_{m}}{\sqrt{gL_{m}}}=\frac{V_{p}}{\sqrt{gL_{p}}}\]
-or
-\[\frac{V_{p}}{V_{m}}=\sqrt{\frac{L_{p}}{L_{m}}}=\sqrt{\lambda}\]
-The time for the model to fill is
-\[t_{m}=\frac{V_{m}}{Q_{m}}\]
-where \(Q_{m}\) is the volumetric flow rate in the model. The time for the prototype to fill is
-\[t_{p}=\frac{V_{p}}{Q_{p}}\]
-Dividing the time for the prototype to fill by the time for the model to fill gives
-\[\frac{t_{p}}{t_{m}}=\frac{V_{p}}{Q_{p}}\frac{Q_{m}}{V_{m}}=\frac{V_{p}}{V_{m}} \frac{Q_{m}}{Q_{p}}=\sqrt{\lambda}\frac{Q_{m}}{Q_{p}}\]
-The ratio of the volumetric flow rates is
-\[\frac{Q_{m}}{Q_{p}}=\frac{V_{m}A_{m}}{V_{p}A_{p}}=\frac{V_{m}}{V_{p}}\frac{A_{ m}}{A_{p}}=\frac{V_{m}}{V_{p}}\frac{L_{m}^{2}}{L_{p}^{2}}=\frac{V_{m}}{V_{p}} \frac{1}{\lambda^{2}}=\frac{1}{\lambda^{3/2}}\]
-Thus,
-\[\frac{t_{p}}{t_{m}}=\sqrt{\lambda}\frac{Q_{m}}{Q_{p}}=\sqrt{\lambda}\frac{1}{ \lambda^{3/2}}=\frac{1}{\sqrt{\lambda}}\]
-or
-\[t_{p}=\frac{t_{m}}{\sqrt{\lambda}}=\frac{0.8\text{ min}}{\sqrt{100}}=0.08\text{ min}=4.8\text{ s}\]
-However, the answer choices are in minutes. Thus,
-\[t_{p}=\frac{t_{m}}{\sqrt{\lambda}}=\frac{0.8\text{ min}}{\sqrt{100}}=\frac{0.8 \text{ min}}{10}=\frac{0.8}{10}\text{ min}=0.08\text{ min}=4.8\text{ s}=0.08\text{ min}\]
-The closest answer is 4 min, \(\lambda^{2}\).
-Answer: H </pre>
-###### pred
-<pre> H </pre>
-###### target
-<pre> G </pre>

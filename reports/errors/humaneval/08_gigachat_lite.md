@@ -1,442 +1,143 @@
 # humaneval / gigachat-lite
-### HumanEval/82
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-
-def prime_length(string):
-    """Write a function that takes a string and returns True if the string
-    length is a prime number or False otherwise
-    Examples
-    prime_length('Hello') == True
-    prime_length('abcdcba') == True
-    prime_length('kittens') == True
-    prime_length('orange') == False
-    """
- </pre>
-###### answer
-<pre> ```python
-def prime_length(string):
-    # Check if the length of the string is greater than 1 (since 0 and 1 are not primes)
-    if len(string) > 1:
-        # Check if the length is divisible by any number other than 1 and itself
-        return all(string[:i] != string[i:] for i in range(2, len(string)))
-    else:
-        # Return False if the string length is less than or equal to 1
-        return False
-``` </pre>
-###### canonical_solution
-<pre>     l = len(string)
-    if l == 0 or l == 1:
-        return False
-    for i in range(2, l):
-        if l % i == 0:
-            return False
-    return True
- </pre>
-###### test
-<pre> def check(candidate):
-
-    # Check some simple cases
-    assert candidate('Hello') == True
-    assert candidate('abcdcba') == True
-    assert candidate('kittens') == True
-    assert candidate('orange') == False
-    assert candidate('wow') == True
-    assert candidate('world') == True
-    assert candidate('MadaM') == True
-    assert candidate('Wow') == True
-    assert candidate('') == False
-    assert candidate('HI') == True
-    assert candidate('go') == True
-    assert candidate('gogo') == False
-    assert candidate('aaaaaaaaaaaaaaa') == False
-
-    # Check some edge cases that are easy to work out by hand.
-    assert candidate('Madam') == True
-    assert candidate('M') == False
-    assert candidate('0') == False
-
- </pre>
-###### traceback
-<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 49
-     44     assert candidate('M') == False
-     45     assert candidate('0') == False
----> 49 check(prime_length)
-Cell In[1], line 31, in check(candidate)
-     29 assert candidate('abcdcba') == True
-     30 assert candidate('kittens') == True
----> 31 assert candidate('orange') == False
-     32 assert candidate('wow') == True
-     33 assert candidate('world') == True
-AssertionError:  </pre>
-### HumanEval/110
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-
-def exchange(lst1, lst2):
-    """In this problem, you will implement a function that takes two lists of numbers,
-    and determines whether it is possible to perform an exchange of elements
-    between them to make lst1 a list of only even numbers.
-    There is no limit on the number of exchanged elements between lst1 and lst2.
-    If it is possible to exchange elements between the lst1 and lst2 to make
-    all the elements of lst1 to be even, return "YES".
-    Otherwise, return "NO".
-    For example:
-    exchange([1, 2, 3, 4], [1, 2, 3, 4]) => "YES"
-    exchange([1, 2, 3, 4], [1, 5, 3, 4]) => "NO"
-    It is assumed that the input lists will be non-empty.
-    """
- </pre>
-###### answer
-<pre> ```python
-def exchange(lst1, lst2):
-    # Check if both lists are empty or not
-    if not lst1 or not lst2:
-        return "NO"
-    
-    # Iterate through lst1 and check each element
-    for num in lst1:
-        # Check if the current element is even
-        if num % 2 == 0:
-            continue
-        
-        # Find the corresponding index in lst2 where the element can be swapped
-        idx = next((i for i, x in enumerate(lst2) if x == num), None)
-        
-        # If there's no such element in lst2, return 'NO'
-        if idx is None:
-            return "NO"
-        
-        # Swap the found element with the first even element in lst1
-        lst1[lst1.index(num)] = lst1[0]
-        lst1[0] = num
-        break
-    
-    # Return "YES" if lst1 contains only even numbers after swap
-    return "YES" if all(x % 2 == 0 for x in lst1) else "NO"
-``` </pre>
-###### canonical_solution
-<pre>     odd = 0
-    even = 0
-    for i in lst1:
-        if i%2 == 1:
-            odd += 1
-    for i in lst2:
-        if i%2 == 0:
-            even += 1
-    if even >= odd:
-        return "YES"
-    return "NO"
-            
- </pre>
-###### test
-<pre> def check(candidate):
-
-    # Check some simple cases
-    assert candidate([1, 2, 3, 4], [1, 2, 3, 4]) == "YES"
-    assert candidate([1, 2, 3, 4], [1, 5, 3, 4]) == "NO"
-    assert candidate([1, 2, 3, 4], [2, 1, 4, 3]) == "YES" 
-    assert candidate([5, 7, 3], [2, 6, 4]) == "YES"
-    assert candidate([5, 7, 3], [2, 6, 3]) == "NO" 
-    assert candidate([3, 2, 6, 1, 8, 9], [3, 5, 5, 1, 1, 1]) == "NO"
-
-    # Check some edge cases that are easy to work out by hand.
-    assert candidate([100, 200], [200, 200]) == "YES"
-
- </pre>
-###### traceback
-<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 61
-     56     # Check some edge cases that are easy to work out by hand.
-     57     assert candidate([100, 200], [200, 200]) == "YES"
----> 61 check(exchange)
-Cell In[1], line 49, in check(candidate)
-     46 def check(candidate):
-     47 
-     48     # Check some simple cases
----> 49     assert candidate([1, 2, 3, 4], [1, 2, 3, 4]) == "YES"
-     50     assert candidate([1, 2, 3, 4], [1, 5, 3, 4]) == "NO"
-     51     assert candidate([1, 2, 3, 4], [2, 1, 4, 3]) == "YES" 
-AssertionError:  </pre>
-### HumanEval/95
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-
-def check_dict_case(dict):
-    """
-    Given a dictionary, return True if all keys are strings in lower 
-    case or all keys are strings in upper case, else return False.
-    The function should return False is the given dictionary is empty.
-    Examples:
-    check_dict_case({"a":"apple", "b":"banana"}) should return True.
-    check_dict_case({"a":"apple", "A":"banana", "B":"banana"}) should return False.
-    check_dict_case({"a":"apple", 8:"banana", "a":"apple"}) should return False.
-    check_dict_case({"Name":"John", "Age":"36", "City":"Houston"}) should return False.
-    check_dict_case({"STATE":"NC", "ZIP":"12345" }) should return True.
-    """
- </pre>
-###### answer
-<pre> ```python
-def check_dict_case(dict):
-    # Check if dict is empty
-    if not dict:
-        return False
-    
-    # Initialize counters for lower and upper case keys
-    lower_count = 0
-    upper_count = 0
-    
-    # Iterate over each key-value pair in the dictionary
-    for key in dict:
-        # Convert key to lowercase and increment counter
-        if key.islower():
-            lower_count += 1
-        
-        # Convert key to uppercase and increment counter
-        elif key.isupper():
-            upper_count += 1
-        
-        # If both cases are true, return False
-        elif key.isalpha() and (key.islower() or key.isupper()):
-            return False
-    
-    # Return True if either count equals len(dict)
-    return lower_count == len(dict) or upper_count == len(dict)
-``` </pre>
-###### canonical_solution
-<pre>     if len(dict.keys()) == 0:
-        return False
-    else:
-        state = "start"
-        for key in dict.keys():
-
-            if isinstance(key, str) == False:
-                state = "mixed"
-                break
-            if state == "start":
-                if key.isupper():
-                    state = "upper"
-                elif key.islower():
-                    state = "lower"
-                else:
-                    break
-            elif (state == "upper" and not key.isupper()) or (state == "lower" and not key.islower()):
-                    state = "mixed"
-                    break
-            else:
-                break
-        return state == "upper" or state == "lower" 
- </pre>
-###### test
-<pre> def check(candidate):
-
-    # Check some simple cases
-    assert candidate({"p":"pineapple", "b":"banana"}) == True, "First test error: " + str(candidate({"p":"pineapple", "b":"banana"}))
-    assert candidate({"p":"pineapple", "A":"banana", "B":"banana"}) == False, "Second test error: " + str(candidate({"p":"pineapple", "A":"banana", "B":"banana"}))
-    assert candidate({"p":"pineapple", 5:"banana", "a":"apple"}) == False, "Third test error: " + str(candidate({"p":"pineapple", 5:"banana", "a":"apple"}))
-    assert candidate({"Name":"John", "Age":"36", "City":"Houston"}) == False, "Fourth test error: " + str(candidate({"Name":"John", "Age":"36", "City":"Houston"}))
-    assert candidate({"STATE":"NC", "ZIP":"12345" }) == True, "Fifth test error: " + str(candidate({"STATE":"NC", "ZIP":"12345" }))      
-    assert candidate({"fruit":"Orange", "taste":"Sweet" }) == True, "Fourth test error: " + str(candidate({"fruit":"Orange", "taste":"Sweet" }))      
-
-
-    # Check some edge cases that are easy to work out by hand.
-    assert candidate({}) == False, "1st edge test error: " + str(candidate({}))
-
- </pre>
-###### traceback
-<pre> ---------------------------------------------------------------------------AttributeError                            Traceback (most recent call last)Cell In[1], line 61
-     56     # Check some edge cases that are easy to work out by hand.
-     57     assert candidate({}) == False, "1st edge test error: " + str(candidate({}))
----> 61 check(check_dict_case)
-Cell In[1], line 50, in check(candidate)
-     48 assert candidate({"p":"pineapple", "b":"banana"}) == True, "First test error: " + str(candidate({"p":"pineapple", "b":"banana"}))
-     49 assert candidate({"p":"pineapple", "A":"banana", "B":"banana"}) == False, "Second test error: " + str(candidate({"p":"pineapple", "A":"banana", "B":"banana"}))
----> 50 assert candidate({"p":"pineapple", 5:"banana", "a":"apple"}) == False, "Third test error: " + str(candidate({"p":"pineapple", 5:"banana", "a":"apple"}))
-     51 assert candidate({"Name":"John", "Age":"36", "City":"Houston"}) == False, "Fourth test error: " + str(candidate({"Name":"John", "Age":"36", "City":"Houston"}))
-     52 assert candidate({"STATE":"NC", "ZIP":"12345" }) == True, "Fifth test error: " + str(candidate({"STATE":"NC", "ZIP":"12345" }))      
-Cell In[1], line 30, in check_dict_case(dict)
-     27 # Iterate over each key-value pair in the dictionary
-     28 for key in dict:
-     29     # Convert key to lowercase and increment counter
----> 30     if key.islower():
-     31         lower_count += 1
-     33     # Convert key to uppercase and increment counter
-AttributeError: 'int' object has no attribute 'islower' </pre>
-### HumanEval/38
+### HumanEval/18
 ###### instruction
 <pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
 
 
-def encode_cyclic(s: str):
-    """
-    returns encoded string by cycling groups of three characters.
-    """
-    # split string to groups. Each of length 3.
-    groups = [s[(3 * i):min((3 * i + 3), len(s))] for i in range((len(s) + 2) // 3)]
-    # cycle elements in each group. Unless group has fewer elements than 3.
-    groups = [(group[1:] + group[0]) if len(group) == 3 else group for group in groups]
-    return "".join(groups)
-
-
-def decode_cyclic(s: str):
-    """
-    takes as input string encoded with encode_cyclic function. Returns decoded string.
+def how_many_times(string: str, substring: str) -> int:
+    """ Find how many times a given substring can be found in the original string. Count overlaping cases.
+    >>> how_many_times('', 'a')
+    0
+    >>> how_many_times('aaa', 'a')
+    3
+    >>> how_many_times('aaaa', 'aa')
+    3
     """
  </pre>
 ###### answer
 <pre> ```python
-def decode_cyclic(s: str):
-    """
-    Takes as input a string encoded with `encode_cyclic` function and returns the original unencoded string.
-    """
-    # Split the string into groups of 3 characters
-    groups = [s[i:i+3] for i in range(0, len(s), 3)]
-    
-    # Join the groups back together without any cyclic encoding
-    return ''.join(groups)
+def how_many_times(string: str, substring: str) -> int:
+    # Initialize count to 0
+    count = 0
+    # Get length of the substring
+    sublen = len(substring)
+    # Iterate through the string
+    for i in range(len(string)):
+        # Find next occurrence of the substring
+        pos = string.find(substring, i)
+        # If found, increment count
+        if pos != -1:
+            count += 1
+            # Move to the position after the found substring
+            i = pos + sublen - 1
+    return count
 ``` </pre>
 ###### canonical_solution
-<pre>     return encode_cyclic(encode_cyclic(s))
+<pre>     times = 0
+
+    for i in range(len(string) - len(substring) + 1):
+        if string[i:i+len(substring)] == substring:
+            times += 1
+
+    return times
  </pre>
 ###### test
 <pre> 
 
-METADATA = {}
+METADATA = {
+    'author': 'jt',
+    'dataset': 'test'
+}
 
 
 def check(candidate):
-    from random import randint, choice
-    import string
-
-    letters = string.ascii_lowercase
-    for _ in range(100):
-        str = ''.join(choice(letters) for i in range(randint(10, 20)))
-        encoded_str = encode_cyclic(str)
-        assert candidate(encoded_str) == str
-
+    assert candidate('', 'x') == 0
+    assert candidate('xyxyxyx', 'x') == 4
+    assert candidate('cacacacac', 'cac') == 4
+    assert candidate('john doe', 'john') == 1
  </pre>
 ###### traceback
-<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 50
-     45         encoded_str = encode_cyclic(str)
-     46         assert candidate(encoded_str) == str
----> 50 check(decode_cyclic)
-Cell In[1], line 46, in check(candidate)
-     44 str = ''.join(choice(letters) for i in range(randint(10, 20)))
-     45 encoded_str = encode_cyclic(str)
----> 46 assert candidate(encoded_str) == str
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 48
+     44     assert candidate('cacacacac', 'cac') == 4
+     45     assert candidate('john doe', 'john') == 1
+---> 48 check(how_many_times)
+Cell In[1], line 43, in check(candidate)
+     41 def check(candidate):
+     42     assert candidate('', 'x') == 0
+---> 43     assert candidate('xyxyxyx', 'x') == 4
+     44     assert candidate('cacacacac', 'cac') == 4
+     45     assert candidate('john doe', 'john') == 1
 AssertionError:  </pre>
-### HumanEval/134
+### HumanEval/10
 ###### instruction
 <pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
 
-def check_if_last_char_is_a_letter(txt):
-    '''
-    Create a function that returns True if the last character
-    of a given string is an alphabetical character and is not
-    a part of a word, and False otherwise.
-    Note: "word" is a group of characters separated by space.
 
-    Examples:
-    check_if_last_char_is_a_letter("apple pie") ➞ False
-    check_if_last_char_is_a_letter("apple pi e") ➞ True
-    check_if_last_char_is_a_letter("apple pi e ") ➞ False
-    check_if_last_char_is_a_letter("") ➞ False 
-    '''
- </pre>
-###### answer
-<pre> ```python
-def check_if_last_char_is_a_letter(txt):
-    # Check if the text is empty
-    if not txt:
-        return False
-    
-    # Get the last character of the text
-    last_char = txt[-1]
-    
-    # Check if the last character is alphabetic (upper or lower case)
-    if 'a' <= last_char <= 'z' or 'A' <= last_char <= 'Z':
-        # Check if it's not followed by a space
-        if txt.rfind(' ') == -1 or txt.rfind(' ') < len(txt) - 2:
-            return True
-    
-    return False
-``` </pre>
-###### canonical_solution
-<pre>  
-    check = txt.split(' ')[-1]
-    return True if len(check) == 1 and (97 <= ord(check.lower()) <= 122) else False
- </pre>
-###### test
-<pre> def check(candidate):
-
-    # Check some simple cases
-    assert candidate("apple") == False
-    assert candidate("apple pi e") == True
-    assert candidate("eeeee") == False
-    assert candidate("A") == True
-    assert candidate("Pumpkin pie ") == False
-    assert candidate("Pumpkin pie 1") == False
-    assert candidate("") == False
-    assert candidate("eeeee e ") == False
-    assert candidate("apple pie") == False
-    assert candidate("apple pi e ") == False
-
-    # Check some edge cases that are easy to work out by hand.
-    assert True
-
- </pre>
-###### traceback
-<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 55
-     50     # Check some edge cases that are easy to work out by hand.
-     51     assert True
----> 55 check(check_if_last_char_is_a_letter)
-Cell In[1], line 39, in check(candidate)
-     36 def check(candidate):
-     37 
-     38     # Check some simple cases
----> 39     assert candidate("apple") == False
-     40     assert candidate("apple pi e") == True
-     41     assert candidate("eeeee") == False
-AssertionError:  </pre>
-### HumanEval/19
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-from typing import List
+def is_palindrome(string: str) -> bool:
+    """ Test if given string is a palindrome """
+    return string == string[::-1]
 
 
-def sort_numbers(numbers: str) -> str:
-    """ Input is a space-delimited string of numberals from 'zero' to 'nine'.
-    Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.
-    Return the string with numbers sorted from smallest to largest
-    >>> sort_numbers('three one five')
-    'one three five'
+def make_palindrome(string: str) -> str:
+    """ Find the shortest palindrome that begins with a supplied string.
+    Algorithm idea is simple:
+    - Find the longest postfix of supplied string that is a palindrome.
+    - Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.
+    >>> make_palindrome('')
+    ''
+    >>> make_palindrome('cat')
+    'catac'
+    >>> make_palindrome('cata')
+    'catac'
     """
  </pre>
 ###### answer
 <pre> ```python
-def sort_numbers(numbers: str) -> str:
-    # Convert input string into a list of characters
-    chars = list(numbers)
+def make_palindrome(string: str) -> str:
+    # Base case: If input string is empty, return an empty string
+    if not string:
+        return ""
     
-    # Sort the characters in ascending order (smallest to largest)
-    chars.sort()
+    # Initialize variables
+    reversed_prefix = ""  # Will store the reversed prefix of the original string
+    result = ""           # Final result will be built here
     
-    # Join the sorted characters back into a single string
-    return ''.join(chars)
+    # Iterate through each character in the original string
+    for i in range(len(string)):
+        # Get the current character and its position
+        char = string[i]
+        
+        # Check if the current character is at the beginning of a palindromic substring
+        if i == 0 or string[i - 1] != char:
+            # If it is, find the length of the palindromic substring starting from the current index
+            left_bound = i
+            right_bound = len(string) - 1 - i
+            
+            while left_bound >= 0 and right_bound &lt; len(string) and string[left_bound] == string[right_bound]:
+                left_bound -= 1
+                right_bound += 1
+            
+            # Calculate the length of the palindromic substring
+            palindrome_length = (right_bound + 1) // 2
+            
+            # Construct the reversed prefix by appending characters from the end of the string
+            reversed_prefix = string[-palindrome_length:] + reversed_prefix
+            
+            # Build the final result by appending the reversed prefix and the original string in reverse order
+            result = string[i] + reversed_prefix + string[i:][::-1] + " " + result
+    
+    return result[:-1]  # Remove trailing space
 ``` </pre>
 ###### canonical_solution
-<pre>     value_map = {
-        'zero': 0,
-        'one': 1,
-        'two': 2,
-        'three': 3,
-        'four': 4,
-        'five': 5,
-        'six': 6,
-        'seven': 7,
-        'eight': 8,
-        'nine': 9
-    }
-    return ' '.join(sorted([x for x in numbers.split(' ') if x], key=lambda x: value_map[x]))
+<pre>     if not string:
+        return ''
+
+    beginning_of_suffix = 0
+
+    while not is_palindrome(string[beginning_of_suffix:]):
+        beginning_of_suffix += 1
+
+    return string + string[:beginning_of_suffix][::-1]
  </pre>
 ###### test
 <pre> 
@@ -449,306 +150,607 @@ METADATA = {
 
 def check(candidate):
     assert candidate('') == ''
-    assert candidate('three') == 'three'
-    assert candidate('three five nine') == 'three five nine'
-    assert candidate('five zero four seven nine eight') == 'zero four five seven eight nine'
-    assert candidate('six five four three two one zero') == 'zero one two three four five six'
+    assert candidate('x') == 'x'
+    assert candidate('xyz') == 'xyzyx'
+    assert candidate('xyx') == 'xyx'
+    assert candidate('jerry') == 'jerryrrej'
  </pre>
 ###### traceback
-<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 42
-     38     assert candidate('five zero four seven nine eight') == 'zero four five seven eight nine'
-     39     assert candidate('six five four three two one zero') == 'zero one two three four five six'
----> 42 check(sort_numbers)
-Cell In[1], line 36, in check(candidate)
-     34 def check(candidate):
-     35     assert candidate('') == ''
----> 36     assert candidate('three') == 'three'
-     37     assert candidate('three five nine') == 'three five nine'
-     38     assert candidate('five zero four seven nine eight') == 'zero four five seven eight nine'
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 76
+     72     assert candidate('xyx') == 'xyx'
+     73     assert candidate('jerry') == 'jerryrrej'
+---> 76 check(make_palindrome)
+Cell In[1], line 70, in check(candidate)
+     68 def check(candidate):
+     69     assert candidate('') == ''
+---> 70     assert candidate('x') == 'x'
+     71     assert candidate('xyz') == 'xyzyx'
+     72     assert candidate('xyx') == 'xyx'
 AssertionError:  </pre>
-### HumanEval/158
+### HumanEval/84
 ###### instruction
 <pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
 
-def find_max(words):
-    """Write a function that accepts a list of strings.
-    The list contains different words. Return the word with maximum number
-    of unique characters. If multiple strings have maximum number of unique
-    characters, return the one which comes first in lexicographical order.
-
-    find_max(["name", "of", "string"]) == "string"
-    find_max(["name", "enam", "game"]) == "enam"
-    find_max(["aaaaaaa", "bb" ,"cc"]) == ""aaaaaaa"
-    """
- </pre>
-###### answer
-<pre> ```python
-def find_max(words):
-    """Find the word with maximum number of unique characters in a list of strings.
+def solve(N):
+    """Given a positive integer N, return the total sum of its digits in binary.
     
-    Arguments:
-        words {list} -- A list of strings.
-    
-    Returns:
-        str -- The word with the most unique characters.
-    """
-    # Initialize variables to store the maximum number of unique characters and its corresponding word
-    max_unique_chars = 0
-    max_word = None
-    
-    # Iterate over each word in the list
-    for word in words:
-        # Count the number of unique characters in the current word
-        unique_char_count = len(set(word))
-        
-        # Check if the current word has more unique characters than the previously found maximum
-        if unique_char_count > max_unique_chars:
-            # Update the maximum number of unique characters and the corresponding word
-            max_unique_chars = unique_char_count
-            max_word = word
-    
-    # Return the word with the most unique characters
-    return max_word
-``` </pre>
-###### canonical_solution
-<pre>     return sorted(words, key = lambda x: (-len(set(x)), x))[0]
- </pre>
-###### test
-<pre> def check(candidate):
-
-    # Check some simple cases
-    assert (candidate(["name", "of", "string"]) == "string"), "t1"
-    assert (candidate(["name", "enam", "game"]) == "enam"), 't2'
-    assert (candidate(["aaaaaaa", "bb", "cc"]) == "aaaaaaa"), 't3'
-    assert (candidate(["abc", "cba"]) == "abc"), 't4'
-    assert (candidate(["play", "this", "game", "of","footbott"]) == "footbott"), 't5'
-    assert (candidate(["we", "are", "gonna", "rock"]) == "gonna"), 't6'
-    assert (candidate(["we", "are", "a", "mad", "nation"]) == "nation"), 't7'
-    assert (candidate(["this", "is", "a", "prrk"]) == "this"), 't8'
-
-    # Check some edge cases that are easy to work out by hand.
-    assert (candidate(["b"]) == "b"), 't9'
-    assert (candidate(["play", "play", "play"]) == "play"), 't10'
-
- </pre>
-###### traceback
-<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 62
-     57     assert (candidate(["b"]) == "b"), 't9'
-     58     assert (candidate(["play", "play", "play"]) == "play"), 't10'
----> 62 check(find_max)
-Cell In[1], line 48, in check(candidate)
-     44 def check(candidate):
-     45 
-     46     # Check some simple cases
-     47     assert (candidate(["name", "of", "string"]) == "string"), "t1"
----> 48     assert (candidate(["name", "enam", "game"]) == "enam"), 't2'
-     49     assert (candidate(["aaaaaaa", "bb", "cc"]) == "aaaaaaa"), 't3'
-     50     assert (candidate(["abc", "cba"]) == "abc"), 't4'
-AssertionError: t2 </pre>
-### HumanEval/89
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-
-def encrypt(s):
-    """Create a function encrypt that takes a string as an argument and
-    returns a string encrypted with the alphabet being rotated. 
-    The alphabet should be rotated in a manner such that the letters 
-    shift down by two multiplied to two places.
-    For example:
-    encrypt('hi') returns 'lm'
-    encrypt('asdfghjkl') returns 'ewhjklnop'
-    encrypt('gf') returns 'kj'
-    encrypt('et') returns 'ix'
-    """
- </pre>
-###### answer
-<pre> ```python
-def encrypt(s):
-    # Create an empty list to store the encrypted characters
-    encrypted_chars = []
-    
-    # Iterate over each character in the input string
-    for ch in s:
-        # Get ASCII value of the current character
-        ascii_value = ord(ch)
-        
-        # Rotate the ASCII value by 2 * 2 (48 modulo 26) positions
-        new_ascii_value = (ascii_value + 48) % 26
-        
-        # Convert back to a character and append it to the list
-        encrypted_chars.append(chr(new_ascii_value))
-    
-    # Join the list into a single string and return the result
-    return ''.join(encrypted_chars)
-``` </pre>
-###### canonical_solution
-<pre>     d = 'abcdefghijklmnopqrstuvwxyz'
-    out = ''
-    for c in s:
-        if c in d:
-            out += d[(d.index(c)+2*2) % 26]
-        else:
-            out += c
-    return out
- </pre>
-###### test
-<pre> def check(candidate):
-
-    # Check some simple cases
-    assert candidate('hi') == 'lm', "This prints if this assert fails 1 (good for debugging!)"
-    assert candidate('asdfghjkl') == 'ewhjklnop', "This prints if this assert fails 1 (good for debugging!)"
-    assert candidate('gf') == 'kj', "This prints if this assert fails 1 (good for debugging!)"
-    assert candidate('et') == 'ix', "This prints if this assert fails 1 (good for debugging!)"
-
-    assert candidate('faewfawefaewg')=='jeiajeaijeiak', "This prints if this assert fails 1 (good for debugging!)"
-    assert candidate('hellomyfriend')=='lippsqcjvmirh', "This prints if this assert fails 2 (good for debugging!)"
-    assert candidate('dxzdlmnilfuhmilufhlihufnmlimnufhlimnufhfucufh')=='hbdhpqrmpjylqmpyjlpmlyjrqpmqryjlpmqryjljygyjl', "This prints if this assert fails 3 (good for debugging!)"
-
-    # Check some edge cases that are easy to work out by hand.
-    assert candidate('a')=='e', "This prints if this assert fails 2 (also good for debugging!)"
-
- </pre>
-###### traceback
-<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 53
-     48     # Check some edge cases that are easy to work out by hand.
-     49     assert candidate('a')=='e', "This prints if this assert fails 2 (also good for debugging!)"
----> 53 check(encrypt)
-Cell In[1], line 39, in check(candidate)
-     36 def check(candidate):
-     37 
-     38     # Check some simple cases
----> 39     assert candidate('hi') == 'lm', "This prints if this assert fails 1 (good for debugging!)"
-     40     assert candidate('asdfghjkl') == 'ewhjklnop', "This prints if this assert fails 1 (good for debugging!)"
-     41     assert candidate('gf') == 'kj', "This prints if this assert fails 1 (good for debugging!)"
-AssertionError: This prints if this assert fails 1 (good for debugging!) </pre>
-### HumanEval/138
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-
-def is_equal_to_sum_even(n):
-    """Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers
     Example
-    is_equal_to_sum_even(4) == False
-    is_equal_to_sum_even(6) == False
-    is_equal_to_sum_even(8) == True
+        For N = 1000, the sum of digits will be 1 the output should be "1".
+        For N = 150, the sum of digits will be 6 the output should be "110".
+        For N = 147, the sum of digits will be 12 the output should be "1100".
+    
+    Variables:
+        @N integer
+             Constraints: 0 ≤ N ≤ 10000.
+    Output:
+         a string of binary number
     """
  </pre>
 ###### answer
 <pre> ```python
-def is_equal_to_sum_even(n):
-    # Check if n is less than or equal to 0 (should return False in such cases)
-    if n <= 0:
-        return False
+def solve(N):
+    # Convert N to binary representation as a list of characters (digits)
+    bin_rep = bin(N)[2:]
     
-    # Initialize a set to store even numbers that are multiples of 2
-    even_nums = {i * 2 for i in range(1, int(n / 2) + 1)}
+    # Sum all digits in the binary representation
+    total_sum = sum(int(digit) for digit in bin_rep)
     
-    # Calculate the total sum of elements in the set
-    total_sum = sum(even_nums)
-    
-    # Return True if the total sum equals n, otherwise False
-    return total_sum == n
+    # Return the result as a binary string
+    return bin(total_sum)[2:]
 ``` </pre>
 ###### canonical_solution
-<pre>     return n%2 == 0 and n >= 8
+<pre>     return bin(sum(int(i) for i in str(N)))[2:]
  </pre>
 ###### test
 <pre> def check(candidate):
-    assert candidate(4) == False
-    assert candidate(6) == False
-    assert candidate(8) == True
-    assert candidate(10) == True
-    assert candidate(11) == False
-    assert candidate(12) == True
-    assert candidate(13) == False
-    assert candidate(16) == True
+
+    # Check some simple cases
+    assert True, "This prints if this assert fails 1 (good for debugging!)"
+    assert candidate(1000) == "1", "Error"
+    assert candidate(150) == "110", "Error"
+    assert candidate(147) == "1100", "Error"
+
+    # Check some edge cases that are easy to work out by hand.
+    assert True, "This prints if this assert fails 2 (also good for debugging!)"
+    assert candidate(333) == "1001", "Error"
+    assert candidate(963) == "10010", "Error"
+
  </pre>
 ###### traceback
-<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 39
-     35     assert candidate(13) == False
-     36     assert candidate(16) == True
----> 39 check(is_equal_to_sum_even)
-Cell In[1], line 31, in check(candidate)
-     29 assert candidate(4) == False
-     30 assert candidate(6) == False
----> 31 assert candidate(8) == True
-     32 assert candidate(10) == True
-     33 assert candidate(11) == False
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 46
+     41     assert candidate(333) == "1001", "Error"
+     42     assert candidate(963) == "10010", "Error"
+---> 46 check(solve)
+Cell In[1], line 35, in check(candidate)
+     31 def check(candidate):
+     32 
+     33     # Check some simple cases
+     34     assert True, "This prints if this assert fails 1 (good for debugging!)"
+---> 35     assert candidate(1000) == "1", "Error"
+     36     assert candidate(150) == "110", "Error"
+     37     assert candidate(147) == "1100", "Error"
+AssertionError: Error </pre>
+### HumanEval/69
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def search(lst):
+    '''
+    You are given a non-empty list of positive integers. Return the greatest integer that is greater than 
+    zero, and has a frequency greater than or equal to the value of the integer itself. 
+    The frequency of an integer is the number of times it appears in the list.
+    If no such a value exist, return -1.
+    Examples:
+        search([4, 1, 2, 2, 3, 1]) == 2
+        search([1, 2, 2, 3, 3, 3, 4, 4, 4]) == 3
+        search([5, 5, 4, 4, 4]) == -1
+    '''
+ </pre>
+###### answer
+<pre> ```python
+def search(lst):
+    # Initialize max_freq with the first element of the list
+    max_freq = lst[0]
+    
+    # Iterate through the remaining elements of the list
+    for num in lst[1:]:
+        if lst.count(num) >= num:
+            # Update max_freq if current element's frequency is greater than its value
+            max_freq = max(max_freq, lst.count(num))
+            
+    # Check if any element satisfies the condition
+    if max_freq &lt; 1:
+        return -1
+    else:
+        # Find the smallest element whose frequency equals max_freq
+        for i in range(len(lst)):
+            if lst.count(lst[i]) == max_freq:
+                return lst[i]
+``` </pre>
+###### canonical_solution
+<pre>     frq = [0] * (max(lst) + 1)
+    for i in lst:
+        frq[i] += 1;
+
+    ans = -1
+    for i in range(1, len(frq)):
+        if frq[i] >= i:
+            ans = i
+    
+    return ans
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # manually generated tests
+    assert candidate([5, 5, 5, 5, 1]) == 1
+    assert candidate([4, 1, 4, 1, 4, 4]) == 4
+    assert candidate([3, 3]) == -1
+    assert candidate([8, 8, 8, 8, 8, 8, 8, 8]) == 8
+    assert candidate([2, 3, 3, 2, 2]) == 2
+
+    # automatically generated tests
+    assert candidate([2, 7, 8, 8, 4, 8, 7, 3, 9, 6, 5, 10, 4, 3, 6, 7, 1, 7, 4, 10, 8, 1]) == 1
+    assert candidate([3, 2, 8, 2]) == 2
+    assert candidate([6, 7, 1, 8, 8, 10, 5, 8, 5, 3, 10]) == 1
+    assert candidate([8, 8, 3, 6, 5, 6, 4]) == -1
+    assert candidate([6, 9, 6, 7, 1, 4, 7, 1, 8, 8, 9, 8, 10, 10, 8, 4, 10, 4, 10, 1, 2, 9, 5, 7, 9]) == 1
+    assert candidate([1, 9, 10, 1, 3]) == 1
+    assert candidate([6, 9, 7, 5, 8, 7, 5, 3, 7, 5, 10, 10, 3, 6, 10, 2, 8, 6, 5, 4, 9, 5, 3, 10]) == 5
+    assert candidate([1]) == 1
+    assert candidate([8, 8, 10, 6, 4, 3, 5, 8, 2, 4, 2, 8, 4, 6, 10, 4, 2, 1, 10, 2, 1, 1, 5]) == 4
+    assert candidate([2, 10, 4, 8, 2, 10, 5, 1, 2, 9, 5, 5, 6, 3, 8, 6, 4, 10]) == 2
+    assert candidate([1, 6, 10, 1, 6, 9, 10, 8, 6, 8, 7, 3]) == 1
+    assert candidate([9, 2, 4, 1, 5, 1, 5, 2, 5, 7, 7, 7, 3, 10, 1, 5, 4, 2, 8, 4, 1, 9, 10, 7, 10, 2, 8, 10, 9, 4]) == 4
+    assert candidate([2, 6, 4, 2, 8, 7, 5, 6, 4, 10, 4, 6, 3, 7, 8, 8, 3, 1, 4, 2, 2, 10, 7]) == 4
+    assert candidate([9, 8, 6, 10, 2, 6, 10, 2, 7, 8, 10, 3, 8, 2, 6, 2, 3, 1]) == 2
+    assert candidate([5, 5, 3, 9, 5, 6, 3, 2, 8, 5, 6, 10, 10, 6, 8, 4, 10, 7, 7, 10, 8]) == -1
+    assert candidate([10]) == -1
+    assert candidate([9, 7, 7, 2, 4, 7, 2, 10, 9, 7, 5, 7, 2]) == 2
+    assert candidate([5, 4, 10, 2, 1, 1, 10, 3, 6, 1, 8]) == 1
+    assert candidate([7, 9, 9, 9, 3, 4, 1, 5, 9, 1, 2, 1, 1, 10, 7, 5, 6, 7, 6, 7, 7, 6]) == 1
+    assert candidate([3, 10, 10, 9, 2]) == -1
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 70
+     65     assert candidate([7, 9, 9, 9, 3, 4, 1, 5, 9, 1, 2, 1, 1, 10, 7, 5, 6, 7, 6, 7, 7, 6]) == 1
+     66     assert candidate([3, 10, 10, 9, 2]) == -1
+---> 70 check(search)
+Cell In[1], line 40, in check(candidate)
+     37 def check(candidate):
+     38 
+     39     # manually generated tests
+---> 40     assert candidate([5, 5, 5, 5, 1]) == 1
+     41     assert candidate([4, 1, 4, 1, 4, 4]) == 4
+     42     assert candidate([3, 3]) == -1
 AssertionError:  </pre>
-### HumanEval/49
+### HumanEval/118
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def get_closest_vowel(word):
+    """You are given a word. Your task is to find the closest vowel that stands between 
+    two consonants from the right side of the word (case sensitive).
+    
+    Vowels in the beginning and ending doesn't count. Return empty string if you didn't
+    find any vowel met the above condition. 
+
+    You may assume that the given string contains English letter only.
+
+    Example:
+    get_closest_vowel("yogurt") ==> "u"
+    get_closest_vowel("FULL") ==> "U"
+    get_closest_vowel("quick") ==> ""
+    get_closest_vowel("ab") ==> ""
+    """
+ </pre>
+###### answer
+<pre> ```python
+def get_closest_vowel(word):
+    # Iterate through each character starting from the second last position
+    for i in range(len(word) - 1, -1, -1):
+        char = word[i]
+        # Check if the current character is a vowel
+        if char in 'aeiou':
+            return char
+    # If no vowel found, return an empty string
+    return ''
+``` </pre>
+###### canonical_solution
+<pre>     if len(word) &lt; 3:
+        return ""
+
+    vowels = {"a", "e", "i", "o", "u", "A", "E", 'O', 'U', 'I'}
+    for i in range(len(word)-2, 0, -1):
+        if word[i] in vowels:
+            if (word[i+1] not in vowels) and (word[i-1] not in vowels):
+                return word[i]
+    return ""
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate("yogurt") == "u"
+    assert candidate("full") == "u"
+    assert candidate("easy") == ""
+    assert candidate("eAsy") == ""
+    assert candidate("ali") == ""
+    assert candidate("bad") == "a"
+    assert candidate("most") == "o"
+    assert candidate("ab") == ""
+    assert candidate("ba") == ""
+    assert candidate("quick") == ""
+    assert candidate("anime") == "i"
+    assert candidate("Asia") == ""
+    assert candidate("Above") == "o"
+
+    # Check some edge cases that are easy to work out by hand.
+    assert True
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 54
+     49     # Check some edge cases that are easy to work out by hand.
+     50     assert True
+---> 54 check(get_closest_vowel)
+Cell In[1], line 37, in check(candidate)
+     35 assert candidate("yogurt") == "u"
+     36 assert candidate("full") == "u"
+---> 37 assert candidate("easy") == ""
+     38 assert candidate("eAsy") == ""
+     39 assert candidate("ali") == ""
+AssertionError:  </pre>
+### HumanEval/103
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def rounded_avg(n, m):
+    """You are given two positive integers n and m, and your task is to compute the
+    average of the integers from n through m (including n and m). 
+    Round the answer to the nearest integer and convert that to binary.
+    If n is greater than m, return -1.
+    Example:
+    rounded_avg(1, 5) => "0b11"
+    rounded_avg(7, 5) => -1
+    rounded_avg(10, 20) => "0b1111"
+    rounded_avg(20, 33) => "0b11010"
+    """
+ </pre>
+###### answer
+<pre> ```python
+def rounded_avg(n, m):
+    # Check if n is greater than m. Return -1 in such case.
+    if n > m:
+        return -1
+    
+    # Calculate the average of the integers from n through m.
+    avg = (n + m) / 2
+    
+    # Round the average to the nearest integer.
+    rounded_avg = round(avg)
+    
+    # Convert the rounded average to a binary string.
+    bin_str = bin(rounded_avg)[2:]  # Extracts the binary representation without '0b' prefix
+    
+    return bin_str
+``` </pre>
+###### canonical_solution
+<pre>     if m &lt; n:
+        return -1
+    summation = 0
+    for i in range(n, m+1):
+        summation += i
+    return bin(round(summation/(m - n + 1)))
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate(1, 5) == "0b11"
+    assert candidate(7, 13) == "0b1010"
+    assert candidate(964,977) == "0b1111001010"
+    assert candidate(996,997) == "0b1111100100"
+    assert candidate(560,851) == "0b1011000010"
+    assert candidate(185,546) == "0b101101110"
+    assert candidate(362,496) == "0b110101101"
+    assert candidate(350,902) == "0b1001110010"
+    assert candidate(197,233) == "0b11010111"
+
+
+    # Check some edge cases that are easy to work out by hand.
+    assert candidate(7, 5) == -1
+    assert candidate(5, 1) == -1
+    assert candidate(5, 5) == "0b101"
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 55
+     50     assert candidate(5, 1) == -1
+     51     assert candidate(5, 5) == "0b101"
+---> 55 check(rounded_avg)
+Cell In[1], line 37, in check(candidate)
+     34 def check(candidate):
+     35 
+     36     # Check some simple cases
+---> 37     assert candidate(1, 5) == "0b11"
+     38     assert candidate(7, 13) == "0b1010"
+     39     assert candidate(964,977) == "0b1111001010"
+AssertionError:  </pre>
+### HumanEval/64
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+FIX = """
+Add more test cases.
+"""
+
+def vowels_count(s):
+    """Write a function vowels_count which takes a string representing
+    a word as input and returns the number of vowels in the string.
+    Vowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a
+    vowel, but only when it is at the end of the given word.
+
+    Example:
+    >>> vowels_count("abcde")
+    2
+    >>> vowels_count("ACEDY")
+    3
+    """
+ </pre>
+###### answer
+<pre> ```python
+def vowels_count(s):
+    vowels = 'aeiouAEIOU'  # Define vowels list
+    count = 0
+    for ch in s:
+        if ch in vowels:
+            count += 1
+    return count
+``` </pre>
+###### canonical_solution
+<pre>     vowels = "aeiouAEIOU"
+    n_vowels = sum(c in vowels for c in s)
+    if s[-1] == 'y' or s[-1] == 'Y':
+        n_vowels += 1
+    return n_vowels
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate("abcde") == 2, "Test 1"
+    assert candidate("Alone") == 3, "Test 2"
+    assert candidate("key") == 2, "Test 3"
+    assert candidate("bye") == 1, "Test 4"
+    assert candidate("keY") == 2, "Test 5"
+    assert candidate("bYe") == 1, "Test 6"
+    assert candidate("ACEDY") == 3, "Test 7"
+
+    # Check some edge cases that are easy to work out by hand.
+    assert True, "This prints if this assert fails 2 (also good for debugging!)"
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 47
+     42     # Check some edge cases that are easy to work out by hand.
+     43     assert True, "This prints if this assert fails 2 (also good for debugging!)"
+---> 47 check(vowels_count)
+Cell In[1], line 36, in check(candidate)
+     34 assert candidate("abcde") == 2, "Test 1"
+     35 assert candidate("Alone") == 3, "Test 2"
+---> 36 assert candidate("key") == 2, "Test 3"
+     37 assert candidate("bye") == 1, "Test 4"
+     38 assert candidate("keY") == 2, "Test 5"
+AssertionError: Test 3 </pre>
+### HumanEval/125
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def split_words(txt):
+    '''
+    Given a string of words, return a list of words split on whitespace, if no whitespaces exists in the text you
+    should split on commas ',' if no commas exists you should return the number of lower-case letters with odd order in the
+    alphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25
+    Examples
+    split_words("Hello world!") ➞ ["Hello", "world!"]
+    split_words("Hello,world!") ➞ ["Hello", "world!"]
+    split_words("abcdef") == 3 
+    '''
+ </pre>
+###### answer
+<pre> ```python
+def split_words(txt):
+    # Split the text on whitespace or comma if present, otherwise handle the case where there are no spaces/commas.
+    if ',' in txt or ' ' in txt:
+        return txt.split()
+    
+    # If there are no spaces or commas, count the number of lower-case letters with odd order in the alphabet (starting from 'a').
+    else:
+        count = 0
+        for char in txt:
+            if ord(char) % 2 != 0:
+                count += 1
+        
+        return count
+``` </pre>
+###### canonical_solution
+<pre>     if " " in txt:
+        return txt.split()
+    elif "," in txt:
+        return txt.replace(',',' ').split()
+    else:
+        return len([i for i in txt if i.islower() and ord(i)%2 == 0])
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    assert candidate("Hello world!") == ["Hello","world!"]
+    assert candidate("Hello,world!") == ["Hello","world!"]
+    assert candidate("Hello world,!") == ["Hello","world,!"]
+    assert candidate("Hello,Hello,world !") == ["Hello,Hello,world","!"]
+    assert candidate("abcdef") == 3
+    assert candidate("aaabb") == 2
+    assert candidate("aaaBb") == 1
+    assert candidate("") == 0
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 43
+     39     assert candidate("aaaBb") == 1
+     40     assert candidate("") == 0
+---> 43 check(split_words)
+Cell In[1], line 34, in check(candidate)
+     31 def check(candidate):
+     33     assert candidate("Hello world!") == ["Hello","world!"]
+---> 34     assert candidate("Hello,world!") == ["Hello","world!"]
+     35     assert candidate("Hello world,!") == ["Hello","world,!"]
+     36     assert candidate("Hello,Hello,world !") == ["Hello,Hello,world","!"]
+AssertionError:  </pre>
+### HumanEval/105
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def by_length(arr):
+    """
+    Given an array of integers, sort the integers that are between 1 and 9 inclusive,
+    reverse the resulting array, and then replace each digit by its corresponding name from
+    "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine".
+
+    For example:
+      arr = [2, 1, 1, 4, 5, 8, 2, 3]   
+            -> sort arr -> [1, 1, 2, 2, 3, 4, 5, 8] 
+            -> reverse arr -> [8, 5, 4, 3, 2, 2, 1, 1]
+      return ["Eight", "Five", "Four", "Three", "Two", "Two", "One", "One"]
+    
+      If the array is empty, return an empty array:
+      arr = []
+      return []
+    
+      If the array has any strange number ignore it:
+      arr = [1, -1 , 55] 
+            -> sort arr -> [-1, 1, 55]
+            -> reverse arr -> [55, 1, -1]
+      return = ['One']
+    """
+ </pre>
+###### answer
+<pre> ```python
+def by_length(arr):
+    # Sort the array in ascending order
+    sorted_arr = sorted(arr)
+    # Reverse the sorted array to get descending order
+    reversed_arr = reversed(sorted_arr)
+    # Convert digits to their names
+    result = [digit_name(num) for num in reversed_arr]
+    # Return the result as a list
+    return result
+
+def digit_name(num):
+    if 1 &lt;= num &lt;= 9:
+        return chr(ord('0') + num - 1)
+    else:
+        return ''
+``` </pre>
+###### canonical_solution
+<pre>     dic = {
+        1: "One",
+        2: "Two",
+        3: "Three",
+        4: "Four",
+        5: "Five",
+        6: "Six",
+        7: "Seven",
+        8: "Eight",
+        9: "Nine",
+    }
+    sorted_arr = sorted(arr, reverse=True)
+    new_arr = []
+    for var in sorted_arr:
+        try:
+            new_arr.append(dic[var])
+        except:
+            pass
+    return new_arr
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert True, "This prints if this assert fails 1 (good for debugging!)"
+    assert candidate([2, 1, 1, 4, 5, 8, 2, 3]) == ["Eight", "Five", "Four", "Three", "Two", "Two", "One", "One"], "Error"
+    assert candidate([]) == [], "Error"
+    assert candidate([1, -1 , 55]) == ['One'], "Error"
+
+    # Check some edge cases that are easy to work out by hand.
+    assert True, "This prints if this assert fails 2 (also good for debugging!)"
+    assert candidate([1, -1, 3, 2]) == ["Three", "Two", "One"]
+    assert candidate([9, 4, 8]) == ["Nine", "Eight", "Four"]
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 60
+     55     assert candidate([1, -1, 3, 2]) == ["Three", "Two", "One"]
+     56     assert candidate([9, 4, 8]) == ["Nine", "Eight", "Four"]
+---> 60 check(by_length)
+Cell In[1], line 49, in check(candidate)
+     45 def check(candidate):
+     46 
+     47     # Check some simple cases
+     48     assert True, "This prints if this assert fails 1 (good for debugging!)"
+---> 49     assert candidate([2, 1, 1, 4, 5, 8, 2, 3]) == ["Eight", "Five", "Four", "Three", "Two", "Two", "One", "One"], "Error"
+     50     assert candidate([]) == [], "Error"
+     51     assert candidate([1, -1 , 55]) == ['One'], "Error"
+AssertionError: Error </pre>
+### HumanEval/24
 ###### instruction
 <pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
 
 
-def modp(n: int, p: int):
-    """Return 2^n modulo p (be aware of numerics).
-    >>> modp(3, 5)
-    3
-    >>> modp(1101, 101)
-    2
-    >>> modp(0, 101)
-    1
-    >>> modp(3, 11)
-    8
-    >>> modp(100, 101)
-    1
+def largest_divisor(n: int) -> int:
+    """ For a given number n, find the largest number that divides n evenly, smaller than n
+    >>> largest_divisor(15)
+    5
     """
  </pre>
 ###### answer
 <pre> ```python
-def modp(n: int, p: int):
-    # Initialize result with 1 to handle special case n=0
-    result = 1
-    # Handle negative values of n by converting them to positive
-    if n < 0:
-        n = -n
-    # Calculate power using repeated squaring method
-    while n > 0:
-        # If n is odd, multiply result with p
-        if n % 2 == 1:
-            result = (result * p) % p
-        # Square p and halve n
-        p = (p * p) % p
-        n //= 2
-    return result
+def largest_divisor(n: int) -> int:
+    """For a given number n, finds the largest number that divides n evenly, smaller than n"""
+    for i in range(1, n):
+        if n % i == 0:
+            return i
 ``` </pre>
 ###### canonical_solution
-<pre>     ret = 1
-    for i in range(n):
-        ret = (2 * ret) % p
-    return ret
+<pre>     for i in reversed(range(n)):
+        if n % i == 0:
+            return i
  </pre>
 ###### test
 <pre> 
 
-METADATA = {}
+METADATA = {
+    'author': 'jt',
+    'dataset': 'test'
+}
 
 
 def check(candidate):
-    assert candidate(3, 5) == 3
-    assert candidate(1101, 101) == 2
-    assert candidate(0, 101) == 1
-    assert candidate(3, 11) == 8
-    assert candidate(100, 101) == 1
-    assert candidate(30, 5) == 4
-    assert candidate(31, 5) == 3
-
+    assert candidate(3) == 1
+    assert candidate(7) == 1
+    assert candidate(10) == 5
+    assert candidate(100) == 50
+    assert candidate(49) == 7
  </pre>
 ###### traceback
-<pre> ---------------------------------------------------------------------------ZeroDivisionError                         Traceback (most recent call last)Cell In[1], line 53
-     48     assert candidate(30, 5) == 4
-     49     assert candidate(31, 5) == 3
----> 53 check(modp)
-Cell In[1], line 43, in check(candidate)
-     42 def check(candidate):
----> 43     assert candidate(3, 5) == 3
-     44     assert candidate(1101, 101) == 2
-     45     assert candidate(0, 101) == 1
-Cell In[1], line 30, in modp(n, p)
-     27 while n > 0:
-     28     # If n is odd, multiply result with p
-     29     if n % 2 == 1:
----> 30         result = (result * p) % p
-     31     # Square p and halve n
-     32     p = (p * p) % p
-ZeroDivisionError: integer division or modulo by zero </pre>
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 35
+     31     assert candidate(100) == 50
+     32     assert candidate(49) == 7
+---> 35 check(largest_divisor)
+Cell In[1], line 30, in check(candidate)
+     28 assert candidate(3) == 1
+     29 assert candidate(7) == 1
+---> 30 assert candidate(10) == 5
+     31 assert candidate(100) == 50
+     32 assert candidate(49) == 7
+AssertionError:  </pre>

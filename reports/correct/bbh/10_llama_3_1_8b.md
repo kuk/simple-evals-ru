@@ -537,7 +537,7 @@ We solve this question by first translating the source sentence to English and t
 ###### instruction
 <pre> Name geometric shapes from their SVG paths.
 
-Q: This SVG path element <path d="M 31.00,73.00 L 32.00,59.00 L 44.00,50.00 L 49.00,41.00 L 64.00,37.00 L 71.00,55.00 L 64.00,76.00 L 52.00,61.00 L 31.00,73.00"/> draws a
+Q: This SVG path element &lt;path d="M 31.00,73.00 L 32.00,59.00 L 44.00,50.00 L 49.00,41.00 L 64.00,37.00 L 71.00,55.00 L 64.00,76.00 L 52.00,61.00 L 31.00,73.00"/> draws a
 Options:
 (A) circle
 (B) heptagon
@@ -563,7 +563,7 @@ This path can be decomposed into 9 separate commands.
 (9) L 31.00,73.00: Create a line from 52.00,61.00 to 31.00,73.00.
 This SVG path starts at point 31.00,73.00, creates eight consecutive and touching lines, and then returns back its starting point, thereby creating an eight-sided shape. It does not have any curves or arches. "octagon" is the only eight-sided object on the list. So the answer is (F).
 
-Q: This SVG path element <path d="M 14.19,26.04 L 51.43,39.21 L 58.44,36.69 L 56.63,30.17 L 48.53,26.66 L 14.19,26.04"/> draws a
+Q: This SVG path element &lt;path d="M 14.19,26.04 L 51.43,39.21 L 58.44,36.69 L 56.63,30.17 L 48.53,26.66 L 14.19,26.04"/> draws a
 Options:
 (A) circle
 (B) heptagon
@@ -586,7 +586,7 @@ This path can be decomposed into 6 separate commands.
 (6) L 14.19,26.04: Create a line from 48.53,26.66 to 14.19,26.04.
 This SVG path starts at point 14.19,26.04, creates five consecutive and touching lines, and then returns back its starting point, thereby creating a five-sided shape. It does not have any curves or arches. "pentagon" is the only five-sided polygon on the list. So the answer is (G).
 
-Q: This SVG path element <path d="M 41.00,43.00 L 37.00,34.00 L 41.00,33.00 L 45.00,34.00 L 41.00,43.00"/> draws a
+Q: This SVG path element &lt;path d="M 41.00,43.00 L 37.00,34.00 L 41.00,33.00 L 45.00,34.00 L 41.00,43.00"/> draws a
 Options:
 (A) circle
 (B) heptagon
@@ -614,7 +614,7 @@ Length of side C: |C| = sqrt((41.00-45.00)^2 + (33.00-34.00)^2)) = sqrt((-4)^2 +
 Length of side D: |D| = sqrt((45.00-41.00)^2 + (34.00-43.00)^2)) = sqrt((4)^2 + (-9)^2) = sqrt(16 + 81) = sqrt(97).
 Note that |A| = |D| and |B| = |C|. Furthermore, A and D are adjacent and B and C are adjacent. Thus, this polygon has two pairs of equal-length adjacent sides and is "kite". So the answer is (D).
 
-Q: This SVG path element <path d="M 37.64,51.86 L 2.39,68.87 M 2.39,68.87 L 38.04,21.48 M 38.04,21.48 L 37.64,51.86"/> draws a
+Q: This SVG path element &lt;path d="M 37.64,51.86 L 2.39,68.87 M 2.39,68.87 L 38.04,21.48 M 38.04,21.48 L 37.64,51.86"/> draws a
 Options:
 (A) circle
 (B) heptagon

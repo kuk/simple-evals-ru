@@ -103,7 +103,7 @@ def rounded_avg(n, m):
     return bin(avg)[2:]
 ``` </pre>
 ###### canonical_solution
-<pre>     if m < n:
+<pre>     if m &lt; n:
         return -1
     summation = 0
     for i in range(n, m+1):
@@ -253,7 +253,7 @@ def is_sorted(lst):
         count_digit[i]+=1 
     if any(count_digit[i] > 2 for i in lst):
         return False
-    if all(lst[i-1] <= lst[i] for i in range(1, len(lst))):
+    if all(lst[i-1] &lt;= lst[i] for i in range(1, len(lst))):
         return True
     else:
         return False
@@ -477,7 +477,7 @@ def order_by_points(nums):
 ###### canonical_solution
 <pre>     def digits_sum(n):
         neg = 1
-        if n < 0: n, neg = -1 * n, -1 
+        if n &lt; 0: n, neg = -1 * n, -1 
         n = [int(i) for i in str(n)]
         n[0] = n[0] * neg
         return sum(n)
@@ -544,7 +544,7 @@ def compare_one(a, b):
     # Compare the values
     if a > b:
         return a
-    elif a < b:
+    elif a &lt; b:
         return b
     else:
         return None

@@ -11,10 +11,8 @@
 
 ## Результаты
 
-- Яндекс, как бы понимая что Yandexgpt Lite/Pro оставляют желать лучшего, <a href="https://yandex.cloud/ru/docs/foundation-models/concepts/yandexgpt/models">сервят рядом Llama 8b/70b</a>, с англоязычным заданиями эти модели справляются лучше российских LLM.
-- Странновато выглядит Llama 8b на уровне Gigachat Max 🤷.
-- В остальном картина ожидаемая: Lite < Pro < Max, Yandexgpt Lite ~ Gigachat Lite, Yangexgpt Pro ~ Gigachat Pro.
-- Напрягает только ось Х: ~20$ сейчас берут за Openai o1.
+- Яндекс, как бы понимая что Yandexgpt Lite и Pro оставляют желать лучшего, <a href="https://yandex.cloud/ru/docs/foundation-models/concepts/yandexgpt/models">дает доступ к Llama 8b и 70b</a>. С англоязычным заданиями Llama, конечно, справляется лучше российских LLM. Странновато выглядит Llama 8b на между Yandexgpt Pro и Gigachat Max 🤷.
+- Картина ожидаемая: Lite < Pro < Max, Yandexgpt Lite ~ Gigachat Lite, Yangexgpt Pro ~ Gigachat Pro.
 
 <img src="images/cost_score1.svg"/>
 
@@ -39,100 +37,100 @@
 </tr>
 <tr>
 <th> gigachat-lite, 2.00$ </th>
-<td>44.4%</td>
-<td>73.0%</td>
-<td>27.0%</td>
-<td>38.0%</td>
-<td>36.0%</td>
-<td>48.0%</td>
+<td>43.9%</td>
+<td>71.0%</td>
+<td>27.3%</td>
+<td>37.7%</td>
+<td>34.3%</td>
+<td>49.2%</td>
 </tr>
 <tr>
 <th> gigachat-pro, 15.00$ </th>
-<td>56.2%</td>
-<td>78.1%</td>
-<td>42.2%</td>
-<td>47.9%</td>
-<td>48.9%</td>
+<td>55.6%</td>
+<td>78.5%</td>
+<td>42.5%</td>
+<td>45.1%</td>
+<td>48.0%</td>
 <td>64.0%</td>
 </tr>
 <tr>
 <th> gigachat-max, 19.50$ </th>
-<td>72.1%</td>
+<td>71.9%</td>
 <td>93.5%</td>
-<td>56.4%</td>
-<td>75.3%</td>
-<td>59.6%</td>
+<td>55.0%</td>
+<td>72.0%</td>
+<td>63.5%</td>
 <td>75.5%</td>
 </tr>
 <tr>
 <th> yandexgpt-4-lite, 2.00$ </th>
-<td>39.2%</td>
-<td>69.0%</td>
-<td>15.0%</td>
-<td>31.0%</td>
-<td>25.0%</td>
-<td>56.0%</td>
+<td>38.4%</td>
+<td>67.0%</td>
+<td>16.0%</td>
+<td>26.8%</td>
+<td>27.0%</td>
+<td>55.0%</td>
 </tr>
 <tr>
 <th> yandexgpt-4-pro, 12.00$ </th>
-<td>52.8%</td>
-<td>80.0%</td>
-<td>30.0%</td>
-<td>45.0%</td>
-<td>42.0%</td>
-<td>67.0%</td>
+<td>53.4%</td>
+<td>78.5%</td>
+<td>31.0%</td>
+<td>42.7%</td>
+<td>44.0%</td>
+<td>71.0%</td>
 </tr>
 <tr>
 <th> llama-3.1-8b, 0.04$ </th>
-<td>60.7%</td>
-<td>82.5%</td>
+<td>61.2%</td>
+<td>84.5%</td>
 <td>45.5%</td>
-<td>61.6%</td>
-<td>51.0%</td>
-<td>63.0%</td>
+<td>63.4%</td>
+<td>54.0%</td>
+<td>58.5%</td>
 </tr>
 <tr>
 <th> llama-3.1-8b:yandex, 2.00$ </th>
-<td>66.3%</td>
+<td>65.9%</td>
 <td>85.4%</td>
-<td>54.0%</td>
+<td>53.4%</td>
 <td>70.1%</td>
-<td>55.2%</td>
-<td>66.7%</td>
+<td>54.3%</td>
+<td>66.3%</td>
 </tr>
 <tr>
 <th> llama-3.3-70b, 0.21$ </th>
-<td>83.0%</td>
-<td>94.0%</td>
+<td>83.8%</td>
+<td>96.0%</td>
 <td>75.0%</td>
 <td>86.0%</td>
-<td>72.0%</td>
-<td>88.0%</td>
+<td>74.5%</td>
+<td>87.5%</td>
 </tr>
 <tr>
 <th> llama-3.3-70b:yandex, 12.00$ </th>
-<td>83.5%</td>
-<td>95.0%</td>
-<td>76.5%</td>
-<td>85.0%</td>
-<td>73.0%</td>
-<td>88.0%</td>
+<td>83.3%</td>
+<td>96.0%</td>
+<td>75.5%</td>
+<td>84.1%</td>
+<td>74.4%</td>
+<td>86.5%</td>
 </tr>
 <tr>
 <th> qwen-2.5-72b, 0.28$ </th>
-<td>85.3%</td>
-<td>96.0%</td>
 <td>85.0%</td>
-<td>93.0%</td>
-<td>72.7%</td>
-<td>80.0%</td>
+<td>96.5%</td>
+<td>82.0%</td>
+<td>88.4%</td>
+<td>74.5%</td>
+<td>83.5%</td>
 </tr>
 <tr>
-<th> deepseek-v3, 0.67$ </th>
-<td>89.1%</td>
-<td>94.0%</td>
-<td>90.0%</td>
-<td>93.0%</td>
+<th> deepseek-v3, 0.68$ </th>
+<td>87.8%</td>
+<td>96.5%</td>
+<td>83.0%</td>
+<td>90.9%</td>
 <td>79.5%</td>
 <td>89.0%</td>
 </tr>
@@ -155,91 +153,91 @@
 </tr>
 <tr>
 <th> gigachat-lite </th>
-<td> <a href="reports/correct/mgsm/08_gigachat_lite.md"> 73 ✓ </a> / <a href="reports/errors/mgsm/08_gigachat_lite.md"> 27 ✗</a> </td>
-<td> <a href="reports/correct/math/08_gigachat_lite.md"> 27 ✓ </a> / <a href="reports/errors/math/08_gigachat_lite.md"> 73 ✗</a> </td>
-<td> <a href="reports/correct/humaneval/08_gigachat_lite.md"> 38 ✓ </a> / <a href="reports/errors/humaneval/08_gigachat_lite.md"> 62 ✗</a> </td>
-<td> <a href="reports/correct/mmlu/08_gigachat_lite.md"> 36 ✓ </a> / <a href="reports/errors/mmlu/08_gigachat_lite.md"> 64 ✗</a> </td>
-<td> <a href="reports/correct/bbh/08_gigachat_lite.md"> 48 ✓ </a> / <a href="reports/errors/bbh/08_gigachat_lite.md"> 52 ✗</a> </td>
+<td> <a href="reports/correct/mgsm/08_gigachat_lite.md"> 142 ✓ </a> / <a href="reports/errors/mgsm/08_gigachat_lite.md"> 58 ✗</a> </td>
+<td> <a href="reports/correct/math/08_gigachat_lite.md"> 54 ✓ </a> / <a href="reports/errors/math/08_gigachat_lite.md"> 144 ✗</a> </td>
+<td> <a href="reports/correct/humaneval/08_gigachat_lite.md"> 61 ✓ </a> / <a href="reports/errors/humaneval/08_gigachat_lite.md"> 101 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/08_gigachat_lite.md"> 68 ✓ </a> / <a href="reports/errors/mmlu/08_gigachat_lite.md"> 130 ✗</a> </td>
+<td> <a href="reports/correct/bbh/08_gigachat_lite.md"> 98 ✓ </a> / <a href="reports/errors/bbh/08_gigachat_lite.md"> 101 ✗</a> </td>
 </tr>
 <tr>
 <th> gigachat-pro </th>
-<td> <a href="reports/correct/mgsm/12_gigachat_pro.md"> 75 ✓ </a> / <a href="reports/errors/mgsm/12_gigachat_pro.md"> 21 ✗</a> </td>
-<td> <a href="reports/correct/math/12_gigachat_pro.md"> 38 ✓ </a> / <a href="reports/errors/math/12_gigachat_pro.md"> 52 ✗</a> </td>
-<td> <a href="reports/correct/humaneval/12_gigachat_pro.md"> 45 ✓ </a> / <a href="reports/errors/humaneval/12_gigachat_pro.md"> 49 ✗</a> </td>
-<td> <a href="reports/correct/mmlu/12_gigachat_pro.md"> 45 ✓ </a> / <a href="reports/errors/mmlu/12_gigachat_pro.md"> 47 ✗</a> </td>
-<td> <a href="reports/correct/bbh/12_gigachat_pro.md"> 57 ✓ </a> / <a href="reports/errors/bbh/12_gigachat_pro.md"> 32 ✗</a> </td>
+<td> <a href="reports/correct/mgsm/12_gigachat_pro.md"> 157 ✓ </a> / <a href="reports/errors/mgsm/12_gigachat_pro.md"> 43 ✗</a> </td>
+<td> <a href="reports/correct/math/12_gigachat_pro.md"> 85 ✓ </a> / <a href="reports/errors/math/12_gigachat_pro.md"> 115 ✗</a> </td>
+<td> <a href="reports/correct/humaneval/12_gigachat_pro.md"> 74 ✓ </a> / <a href="reports/errors/humaneval/12_gigachat_pro.md"> 90 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/12_gigachat_pro.md"> 96 ✓ </a> / <a href="reports/errors/mmlu/12_gigachat_pro.md"> 104 ✗</a> </td>
+<td> <a href="reports/correct/bbh/12_gigachat_pro.md"> 128 ✓ </a> / <a href="reports/errors/bbh/12_gigachat_pro.md"> 72 ✗</a> </td>
 </tr>
 <tr>
 <th> gigachat-max </th>
-<td> <a href="reports/correct/mgsm/14_gigachat_max.md"> 87 ✓ </a> / <a href="reports/errors/mgsm/14_gigachat_max.md"> 6 ✗</a> </td>
-<td> <a href="reports/correct/math/14_gigachat_max.md"> 53 ✓ </a> / <a href="reports/errors/math/14_gigachat_max.md"> 41 ✗</a> </td>
-<td> <a href="reports/correct/humaneval/14_gigachat_max.md"> 70 ✓ </a> / <a href="reports/errors/humaneval/14_gigachat_max.md"> 23 ✗</a> </td>
-<td> <a href="reports/correct/mmlu/14_gigachat_max.md"> 59 ✓ </a> / <a href="reports/errors/mmlu/14_gigachat_max.md"> 40 ✗</a> </td>
-<td> <a href="reports/correct/bbh/14_gigachat_max.md"> 74 ✓ </a> / <a href="reports/errors/bbh/14_gigachat_max.md"> 24 ✗</a> </td>
+<td> <a href="reports/correct/mgsm/14_gigachat_max.md"> 187 ✓ </a> / <a href="reports/errors/mgsm/14_gigachat_max.md"> 13 ✗</a> </td>
+<td> <a href="reports/correct/math/14_gigachat_max.md"> 110 ✓ </a> / <a href="reports/errors/math/14_gigachat_max.md"> 90 ✗</a> </td>
+<td> <a href="reports/correct/humaneval/14_gigachat_max.md"> 118 ✓ </a> / <a href="reports/errors/humaneval/14_gigachat_max.md"> 46 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/14_gigachat_max.md"> 127 ✓ </a> / <a href="reports/errors/mmlu/14_gigachat_max.md"> 73 ✗</a> </td>
+<td> <a href="reports/correct/bbh/14_gigachat_max.md"> 151 ✓ </a> / <a href="reports/errors/bbh/14_gigachat_max.md"> 49 ✗</a> </td>
 </tr>
 <tr>
 <th> yandexgpt-4-lite </th>
-<td> <a href="reports/correct/mgsm/07_yandexgpt_4_lite.md"> 69 ✓ </a> / <a href="reports/errors/mgsm/07_yandexgpt_4_lite.md"> 31 ✗</a> </td>
-<td> <a href="reports/correct/math/07_yandexgpt_4_lite.md"> 15 ✓ </a> / <a href="reports/errors/math/07_yandexgpt_4_lite.md"> 85 ✗</a> </td>
-<td> <a href="reports/correct/humaneval/07_yandexgpt_4_lite.md"> 31 ✓ </a> / <a href="reports/errors/humaneval/07_yandexgpt_4_lite.md"> 69 ✗</a> </td>
-<td> <a href="reports/correct/mmlu/07_yandexgpt_4_lite.md"> 25 ✓ </a> / <a href="reports/errors/mmlu/07_yandexgpt_4_lite.md"> 75 ✗</a> </td>
-<td> <a href="reports/correct/bbh/07_yandexgpt_4_lite.md"> 56 ✓ </a> / <a href="reports/errors/bbh/07_yandexgpt_4_lite.md"> 44 ✗</a> </td>
+<td> <a href="reports/correct/mgsm/07_yandexgpt_4_lite.md"> 134 ✓ </a> / <a href="reports/errors/mgsm/07_yandexgpt_4_lite.md"> 66 ✗</a> </td>
+<td> <a href="reports/correct/math/07_yandexgpt_4_lite.md"> 32 ✓ </a> / <a href="reports/errors/math/07_yandexgpt_4_lite.md"> 168 ✗</a> </td>
+<td> <a href="reports/correct/humaneval/07_yandexgpt_4_lite.md"> 44 ✓ </a> / <a href="reports/errors/humaneval/07_yandexgpt_4_lite.md"> 120 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/07_yandexgpt_4_lite.md"> 54 ✓ </a> / <a href="reports/errors/mmlu/07_yandexgpt_4_lite.md"> 146 ✗</a> </td>
+<td> <a href="reports/correct/bbh/07_yandexgpt_4_lite.md"> 110 ✓ </a> / <a href="reports/errors/bbh/07_yandexgpt_4_lite.md"> 90 ✗</a> </td>
 </tr>
 <tr>
 <th> yandexgpt-4-pro </th>
-<td> <a href="reports/correct/mgsm/11_yandexgpt_4_pro.md"> 80 ✓ </a> / <a href="reports/errors/mgsm/11_yandexgpt_4_pro.md"> 20 ✗</a> </td>
-<td> <a href="reports/correct/math/11_yandexgpt_4_pro.md"> 30 ✓ </a> / <a href="reports/errors/math/11_yandexgpt_4_pro.md"> 70 ✗</a> </td>
-<td> <a href="reports/correct/humaneval/11_yandexgpt_4_pro.md"> 45 ✓ </a> / <a href="reports/errors/humaneval/11_yandexgpt_4_pro.md"> 55 ✗</a> </td>
-<td> <a href="reports/correct/mmlu/11_yandexgpt_4_pro.md"> 42 ✓ </a> / <a href="reports/errors/mmlu/11_yandexgpt_4_pro.md"> 58 ✗</a> </td>
-<td> <a href="reports/correct/bbh/11_yandexgpt_4_pro.md"> 67 ✓ </a> / <a href="reports/errors/bbh/11_yandexgpt_4_pro.md"> 33 ✗</a> </td>
+<td> <a href="reports/correct/mgsm/11_yandexgpt_4_pro.md"> 157 ✓ </a> / <a href="reports/errors/mgsm/11_yandexgpt_4_pro.md"> 43 ✗</a> </td>
+<td> <a href="reports/correct/math/11_yandexgpt_4_pro.md"> 62 ✓ </a> / <a href="reports/errors/math/11_yandexgpt_4_pro.md"> 138 ✗</a> </td>
+<td> <a href="reports/correct/humaneval/11_yandexgpt_4_pro.md"> 70 ✓ </a> / <a href="reports/errors/humaneval/11_yandexgpt_4_pro.md"> 94 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/11_yandexgpt_4_pro.md"> 88 ✓ </a> / <a href="reports/errors/mmlu/11_yandexgpt_4_pro.md"> 112 ✗</a> </td>
+<td> <a href="reports/correct/bbh/11_yandexgpt_4_pro.md"> 142 ✓ </a> / <a href="reports/errors/bbh/11_yandexgpt_4_pro.md"> 58 ✗</a> </td>
 </tr>
 <tr>
 <th> llama-3.1-8b </th>
-<td> <a href="reports/correct/mgsm/04_llama_3_1_8b.md"> 165 ✓ </a> / <a href="reports/errors/mgsm/04_llama_3_1_8b.md"> 35 ✗</a> </td>
+<td> <a href="reports/correct/mgsm/04_llama_3_1_8b.md"> 169 ✓ </a> / <a href="reports/errors/mgsm/04_llama_3_1_8b.md"> 31 ✗</a> </td>
 <td> <a href="reports/correct/math/04_llama_3_1_8b.md"> 91 ✓ </a> / <a href="reports/errors/math/04_llama_3_1_8b.md"> 109 ✗</a> </td>
-<td> <a href="reports/correct/humaneval/04_llama_3_1_8b.md"> 101 ✓ </a> / <a href="reports/errors/humaneval/04_llama_3_1_8b.md"> 63 ✗</a> </td>
-<td> <a href="reports/correct/mmlu/04_llama_3_1_8b.md"> 102 ✓ </a> / <a href="reports/errors/mmlu/04_llama_3_1_8b.md"> 98 ✗</a> </td>
-<td> <a href="reports/correct/bbh/04_llama_3_1_8b.md"> 126 ✓ </a> / <a href="reports/errors/bbh/04_llama_3_1_8b.md"> 74 ✗</a> </td>
+<td> <a href="reports/correct/humaneval/04_llama_3_1_8b.md"> 104 ✓ </a> / <a href="reports/errors/humaneval/04_llama_3_1_8b.md"> 60 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/04_llama_3_1_8b.md"> 108 ✓ </a> / <a href="reports/errors/mmlu/04_llama_3_1_8b.md"> 92 ✗</a> </td>
+<td> <a href="reports/correct/bbh/04_llama_3_1_8b.md"> 117 ✓ </a> / <a href="reports/errors/bbh/04_llama_3_1_8b.md"> 83 ✗</a> </td>
 </tr>
 <tr>
 <th> llama-3.1-8b:yandex </th>
 <td> <a href="reports/correct/mgsm/10_llama_3_1_8b.md"> 164 ✓ </a> / <a href="reports/errors/mgsm/10_llama_3_1_8b.md"> 28 ✗</a> </td>
-<td> <a href="reports/correct/math/10_llama_3_1_8b.md"> 94 ✓ </a> / <a href="reports/errors/math/10_llama_3_1_8b.md"> 80 ✗</a> </td>
+<td> <a href="reports/correct/math/10_llama_3_1_8b.md"> 95 ✓ </a> / <a href="reports/errors/math/10_llama_3_1_8b.md"> 83 ✗</a> </td>
 <td> <a href="reports/correct/humaneval/10_llama_3_1_8b.md"> 115 ✓ </a> / <a href="reports/errors/humaneval/10_llama_3_1_8b.md"> 49 ✗</a> </td>
-<td> <a href="reports/correct/mmlu/10_llama_3_1_8b.md"> 100 ✓ </a> / <a href="reports/errors/mmlu/10_llama_3_1_8b.md"> 81 ✗</a> </td>
-<td> <a href="reports/correct/bbh/10_llama_3_1_8b.md"> 130 ✓ </a> / <a href="reports/errors/bbh/10_llama_3_1_8b.md"> 65 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/10_llama_3_1_8b.md"> 100 ✓ </a> / <a href="reports/errors/mmlu/10_llama_3_1_8b.md"> 84 ✗</a> </td>
+<td> <a href="reports/correct/bbh/10_llama_3_1_8b.md"> 130 ✓ </a> / <a href="reports/errors/bbh/10_llama_3_1_8b.md"> 66 ✗</a> </td>
 </tr>
 <tr>
 <th> llama-3.3-70b </th>
-<td> <a href="reports/correct/mgsm/05_llama_3_3_70b.md"> 94 ✓ </a> / <a href="reports/errors/mgsm/05_llama_3_3_70b.md"> 6 ✗</a> </td>
-<td> <a href="reports/correct/math/05_llama_3_3_70b.md"> 75 ✓ </a> / <a href="reports/errors/math/05_llama_3_3_70b.md"> 25 ✗</a> </td>
-<td> <a href="reports/correct/humaneval/05_llama_3_3_70b.md"> 86 ✓ </a> / <a href="reports/errors/humaneval/05_llama_3_3_70b.md"> 14 ✗</a> </td>
-<td> <a href="reports/correct/mmlu/05_llama_3_3_70b.md"> 72 ✓ </a> / <a href="reports/errors/mmlu/05_llama_3_3_70b.md"> 28 ✗</a> </td>
-<td> <a href="reports/correct/bbh/05_llama_3_3_70b.md"> 88 ✓ </a> / <a href="reports/errors/bbh/05_llama_3_3_70b.md"> 12 ✗</a> </td>
+<td> <a href="reports/correct/mgsm/05_llama_3_3_70b.md"> 192 ✓ </a> / <a href="reports/errors/mgsm/05_llama_3_3_70b.md"> 8 ✗</a> </td>
+<td> <a href="reports/correct/math/05_llama_3_3_70b.md"> 150 ✓ </a> / <a href="reports/errors/math/05_llama_3_3_70b.md"> 50 ✗</a> </td>
+<td> <a href="reports/correct/humaneval/05_llama_3_3_70b.md"> 141 ✓ </a> / <a href="reports/errors/humaneval/05_llama_3_3_70b.md"> 23 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/05_llama_3_3_70b.md"> 149 ✓ </a> / <a href="reports/errors/mmlu/05_llama_3_3_70b.md"> 51 ✗</a> </td>
+<td> <a href="reports/correct/bbh/05_llama_3_3_70b.md"> 175 ✓ </a> / <a href="reports/errors/bbh/05_llama_3_3_70b.md"> 25 ✗</a> </td>
 </tr>
 <tr>
 <th> llama-3.3-70b:yandex </th>
-<td> <a href="reports/correct/mgsm/13_llama_3_3_70b.md"> 95 ✓ </a> / <a href="reports/errors/mgsm/13_llama_3_3_70b.md"> 5 ✗</a> </td>
-<td> <a href="reports/correct/math/13_llama_3_3_70b.md"> 75 ✓ </a> / <a href="reports/errors/math/13_llama_3_3_70b.md"> 23 ✗</a> </td>
-<td> <a href="reports/correct/humaneval/13_llama_3_3_70b.md"> 85 ✓ </a> / <a href="reports/errors/humaneval/13_llama_3_3_70b.md"> 15 ✗</a> </td>
-<td> <a href="reports/correct/mmlu/13_llama_3_3_70b.md"> 73 ✓ </a> / <a href="reports/errors/mmlu/13_llama_3_3_70b.md"> 27 ✗</a> </td>
-<td> <a href="reports/correct/bbh/13_llama_3_3_70b.md"> 88 ✓ </a> / <a href="reports/errors/bbh/13_llama_3_3_70b.md"> 12 ✗</a> </td>
+<td> <a href="reports/correct/mgsm/13_llama_3_3_70b.md"> 192 ✓ </a> / <a href="reports/errors/mgsm/13_llama_3_3_70b.md"> 8 ✗</a> </td>
+<td> <a href="reports/correct/math/13_llama_3_3_70b.md"> 148 ✓ </a> / <a href="reports/errors/math/13_llama_3_3_70b.md"> 48 ✗</a> </td>
+<td> <a href="reports/correct/humaneval/13_llama_3_3_70b.md"> 138 ✓ </a> / <a href="reports/errors/humaneval/13_llama_3_3_70b.md"> 26 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/13_llama_3_3_70b.md"> 148 ✓ </a> / <a href="reports/errors/mmlu/13_llama_3_3_70b.md"> 51 ✗</a> </td>
+<td> <a href="reports/correct/bbh/13_llama_3_3_70b.md"> 173 ✓ </a> / <a href="reports/errors/bbh/13_llama_3_3_70b.md"> 27 ✗</a> </td>
 </tr>
 <tr>
 <th> qwen-2.5-72b </th>
-<td> <a href="reports/correct/mgsm/15_qwen_2_5_72b.md"> 96 ✓ </a> / <a href="reports/errors/mgsm/15_qwen_2_5_72b.md"> 4 ✗</a> </td>
-<td> <a href="reports/correct/math/15_qwen_2_5_72b.md"> 85 ✓ </a> / <a href="reports/errors/math/15_qwen_2_5_72b.md"> 15 ✗</a> </td>
-<td> <a href="reports/correct/humaneval/15_qwen_2_5_72b.md"> 93 ✓ </a> / <a href="reports/errors/humaneval/15_qwen_2_5_72b.md"> 7 ✗</a> </td>
-<td> <a href="reports/correct/mmlu/15_qwen_2_5_72b.md"> 72 ✓ </a> / <a href="reports/errors/mmlu/15_qwen_2_5_72b.md"> 27 ✗</a> </td>
-<td> <a href="reports/correct/bbh/15_qwen_2_5_72b.md"> 80 ✓ </a> / <a href="reports/errors/bbh/15_qwen_2_5_72b.md"> 20 ✗</a> </td>
+<td> <a href="reports/correct/mgsm/15_qwen_2_5_72b.md"> 193 ✓ </a> / <a href="reports/errors/mgsm/15_qwen_2_5_72b.md"> 7 ✗</a> </td>
+<td> <a href="reports/correct/math/15_qwen_2_5_72b.md"> 164 ✓ </a> / <a href="reports/errors/math/15_qwen_2_5_72b.md"> 36 ✗</a> </td>
+<td> <a href="reports/correct/humaneval/15_qwen_2_5_72b.md"> 145 ✓ </a> / <a href="reports/errors/humaneval/15_qwen_2_5_72b.md"> 19 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/15_qwen_2_5_72b.md"> 149 ✓ </a> / <a href="reports/errors/mmlu/15_qwen_2_5_72b.md"> 51 ✗</a> </td>
+<td> <a href="reports/correct/bbh/15_qwen_2_5_72b.md"> 167 ✓ </a> / <a href="reports/errors/bbh/15_qwen_2_5_72b.md"> 33 ✗</a> </td>
 </tr>
 <tr>
 <th> deepseek-v3 </th>
-<td> <a href="reports/correct/mgsm/16_deepseek_v3.md"> 94 ✓ </a> / <a href="reports/errors/mgsm/16_deepseek_v3.md"> 6 ✗</a> </td>
-<td> <a href="reports/correct/math/16_deepseek_v3.md"> 72 ✓ </a> / <a href="reports/errors/math/16_deepseek_v3.md"> 8 ✗</a> </td>
-<td> <a href="reports/correct/humaneval/16_deepseek_v3.md"> 93 ✓ </a> / <a href="reports/errors/humaneval/16_deepseek_v3.md"> 7 ✗</a> </td>
-<td> <a href="reports/correct/mmlu/16_deepseek_v3.md"> 70 ✓ </a> / <a href="reports/errors/mmlu/16_deepseek_v3.md"> 18 ✗</a> </td>
-<td> <a href="reports/correct/bbh/16_deepseek_v3.md"> 89 ✓ </a> / <a href="reports/errors/bbh/16_deepseek_v3.md"> 11 ✗</a> </td>
+<td> <a href="reports/correct/mgsm/16_deepseek_v3.md"> 193 ✓ </a> / <a href="reports/errors/mgsm/16_deepseek_v3.md"> 7 ✗</a> </td>
+<td> <a href="reports/correct/math/16_deepseek_v3.md"> 151 ✓ </a> / <a href="reports/errors/math/16_deepseek_v3.md"> 31 ✗</a> </td>
+<td> <a href="reports/correct/humaneval/16_deepseek_v3.md"> 149 ✓ </a> / <a href="reports/errors/humaneval/16_deepseek_v3.md"> 15 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/16_deepseek_v3.md"> 155 ✓ </a> / <a href="reports/errors/mmlu/16_deepseek_v3.md"> 40 ✗</a> </td>
+<td> <a href="reports/correct/bbh/16_deepseek_v3.md"> 178 ✓ </a> / <a href="reports/errors/bbh/16_deepseek_v3.md"> 22 ✗</a> </td>
 </tr>
 </table>
 </section>
@@ -263,43 +261,43 @@
 </tr>
 <tr>
 <th> gigachat-lite </th>
-<td> 100 / 0.1$ </td>
-<td> 100 / 0.1$ </td>
-<td> 100 / 0.1$ </td>
-<td> 100 / 0.2$ </td>
-<td> 100 / 0.2$ </td>
+<td> 200 / 0.2$ </td>
+<td> 198 / 0.3$ </td>
+<td> 162 / 0.1$ </td>
+<td> 198 / 0.3$ </td>
+<td> 199 / 0.5$ </td>
 </tr>
 <tr>
 <th> gigachat-pro </th>
-<td> 96 / 0.6$ </td>
-<td> 90 / 0.9$ </td>
-<td> 94 / 0.4$ </td>
-<td> 92 / 1.1$ </td>
-<td> 89 / 1.6$ </td>
+<td> 200 / 1.2$ </td>
+<td> 200 / 2.0$ </td>
+<td> 164 / 0.8$ </td>
+<td> 200 / 2.5$ </td>
+<td> 200 / 3.8$ </td>
 </tr>
 <tr>
 <th> gigachat-max </th>
-<td> 93 / 0.5$ </td>
-<td> 94 / 1.0$ </td>
-<td> 93 / 0.5$ </td>
-<td> 99 / 1.2$ </td>
-<td> 98 / 2.2$ </td>
+<td> 200 / 1.0$ </td>
+<td> 200 / 2.2$ </td>
+<td> 164 / 0.8$ </td>
+<td> 200 / 2.3$ </td>
+<td> 200 / 4.3$ </td>
 </tr>
 <tr>
 <th> yandexgpt-4-lite </th>
-<td> 100 / 0.0$ </td>
-<td> 100 / 0.1$ </td>
-<td> 100 / 0.1$ </td>
-<td> 100 / 0.1$ </td>
-<td> 100 / 0.2$ </td>
+<td> 200 / 0.1$ </td>
+<td> 200 / 0.1$ </td>
+<td> 164 / 0.1$ </td>
+<td> 200 / 0.1$ </td>
+<td> 200 / 0.5$ </td>
 </tr>
 <tr>
 <th> yandexgpt-4-pro </th>
-<td> 100 / 0.3$ </td>
-<td> 100 / 0.5$ </td>
-<td> 100 / 0.4$ </td>
-<td> 100 / 0.4$ </td>
-<td> 100 / 1.4$ </td>
+<td> 200 / 0.6$ </td>
+<td> 200 / 1.1$ </td>
+<td> 164 / 0.6$ </td>
+<td> 200 / 1.0$ </td>
+<td> 200 / 2.8$ </td>
 </tr>
 <tr>
 <th> llama-3.1-8b </th>
@@ -312,42 +310,42 @@
 <tr>
 <th> llama-3.1-8b:yandex </th>
 <td> 192 / 0.1$ </td>
-<td> 174 / 0.2$ </td>
+<td> 178 / 0.2$ </td>
 <td> 164 / 0.1$ </td>
-<td> 181 / 0.2$ </td>
-<td> 195 / 0.4$ </td>
+<td> 184 / 0.2$ </td>
+<td> 196 / 0.4$ </td>
 </tr>
 <tr>
 <th> llama-3.3-70b </th>
-<td> 100 / 0.0$ </td>
-<td> 100 / 0.0$ </td>
-<td> 100 / 0.0$ </td>
-<td> 100 / 0.0$ </td>
-<td> 100 / 0.0$ </td>
+<td> 200 / 0.0$ </td>
+<td> 200 / 0.0$ </td>
+<td> 164 / 0.0$ </td>
+<td> 200 / 0.0$ </td>
+<td> 200 / 0.0$ </td>
 </tr>
 <tr>
 <th> llama-3.3-70b:yandex </th>
-<td> 100 / 0.3$ </td>
-<td> 98 / 0.8$ </td>
-<td> 100 / 0.4$ </td>
-<td> 100 / 0.9$ </td>
-<td> 100 / 1.4$ </td>
+<td> 200 / 0.7$ </td>
+<td> 196 / 1.7$ </td>
+<td> 164 / 0.7$ </td>
+<td> 199 / 1.8$ </td>
+<td> 200 / 2.9$ </td>
 </tr>
 <tr>
 <th> qwen-2.5-72b </th>
-<td> 100 / 0.0$ </td>
-<td> 100 / 0.0$ </td>
-<td> 100 / 0.0$ </td>
-<td> 99 / 0.0$ </td>
-<td> 100 / 0.0$ </td>
+<td> 200 / 0.0$ </td>
+<td> 200 / 0.1$ </td>
+<td> 164 / 0.0$ </td>
+<td> 200 / 0.1$ </td>
+<td> 200 / 0.0$ </td>
 </tr>
 <tr>
 <th> deepseek-v3 </th>
-<td> 100 / 0.0$ </td>
-<td> 80 / 0.0$ </td>
-<td> 100 / 0.0$ </td>
-<td> 88 / 0.0$ </td>
-<td> 100 / 0.1$ </td>
+<td> 200 / 0.0$ </td>
+<td> 182 / 0.1$ </td>
+<td> 164 / 0.0$ </td>
+<td> 195 / 0.1$ </td>
+<td> 200 / 0.1$ </td>
 </tr>
 </table>
 </section>
@@ -428,7 +426,9 @@ head -3 data/benches/bbh.jsonl | jq .
 ```
 uv run scripts/run_benches.py -k 1
 uv run scripts/run_benches.py -k 100 -b{mgsm,math,mmlu,bbh}
-uv run scripts/run_benches.py -k 100 -m 15_qwen_2_5_72b
+uv run scripts/run_benches.py -k 200 -m{07_yandexgpt_4_lite,08_gigachat_lite,10_llama_3_1_8b,11_yandexgpt_4_pro,12_gigachat_pro,13_llama_3_3_70b,14_gigachat_max}
+uv run scripts/run_benches.py -k 200 -m{08_gigachat_lite,12_gigachat_pro,14_gigachat_max}
+uv run scripts/run_benches.py -k 200 -m{04_llama_3_1_8b,05_llama_3_3_70b,15_qwen_2_5_72b,16_deepseek_v3}
 ```
 
 ```
@@ -436,11 +436,12 @@ rm -r reports
 uv run scripts/report_results.py
 find errors -name '*.md' | grep giga | xargs cat | grip -
 
+rm -r reports
+uv run scripts/report_results.py
 uv run scripts/readme_update.py
 
 uv run scripts/plot_scatter_cost_score1.py
 uv run scripts/plot_scatter_cost_score2.py
-uv run scripts/plot_rose.py
 ```
 
 ```

@@ -1,126 +1,142 @@
 # mmlu-pro-1k / yandexgpt-4-lite
-### 2490
+### 1260
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
 
-based upon rewardor punishment or based upon a need to know. Distinguish on a more specific plane between the three kinds ofresponses to social influence.
+A doctor is charged with the murder of his wife. The prosecution alleges that he murdered his wife by giving her a massive injection of succinylcholine while she was asleep. Succinylcholine is a drug used in small quantities by anesthesiologists as a muscle relaxant. The prosecution claims that the fatal dose given to the wife so totally relaxed her lung muscles that she suffocated. During the trial, a toxicologist, who had no previous knowledge of the case, sat in court and heard all of the evidence about the wife's death and autopsy. As part of the doctor's defense, his attorney calls the toxicologist to give his opinion on the cause of the wife's death. May the toxicologist so testify?
 
-A) Conformity, association, and adaptation
-B) Agreement, alliance, and absorption
-C) Compliance, identification, and internalization
-D) Submission, emulation, and inculcation
-E) Adherence, affiliation, and incorporation
-F) Cooperation, imitation, and assimilation
-G) Obedience, integration, and acculturation
-H) Respect, imitation, and socialization
-I) Acquiescence, imitation, and enculturation
-J) Coordination, assimilation, and conformation </pre>
+A) No, because he did not directly examine the wife's body.
+B) No, because the cause of death is an issue to be decided by the jury.
+C) Yes, because an expert may base his opinion on facts made known to him at the trial.
+D) Yes, because he has relevant experience in the field of toxicology.
+E) No, because he has no personal knowledge of the wife's death.
+F) Yes, because he can provide an unbiased perspective.
+G) No, because he did not conduct the autopsy himself.
+H) No, because his testimony might bias the jury.
+I) Yes, because he can identify the data upon which his opinion is based.
+J) Yes, because his professional expertise allows him to form a valid opinion. </pre>
 ###### answer
-<pre> Conformity, agreement, and compliance are all types of responses to social influence.
-Conformity involves changing one's behavior or opinions to match those of others.
-Agreement refers to publicly accepting the opinions or behaviors of others, even if privately you may not agree.
-Compliance involves acting in accordance with a direct request from another person.
+<pre> The toxicologist can provide an opinion based on the facts presented at the trial because an expert may base their opinion on facts made known to them at the trial.
+Answer: C </pre>
+###### pred
+<pre> C </pre>
+###### target
+<pre> C </pre>
+### 6830
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+The natural rate of unemployment
+
+A) includes structural and frictional unemployment
+B) includes only structural and cyclical unemployment but not frictional
+C) only includes cyclical unemployment
+D) includes only cyclical and frictional unemployment but not structural
+E) includes structural frictional and cyclical unemployment
+F) only includes frictional unemployment
+G) includes cyclical and frictional unemployment
+H) includes structural and cyclical unemployment
+I) does not include structural, frictional, or cyclical unemployment
+J) only includes structural unemployment </pre>
+###### answer
+<pre> The natural rate of unemployment includes structural and frictional unemployment (A).
+Answer: A </pre>
+###### pred
+<pre> A </pre>
+###### target
+<pre> A </pre>
+### 2205
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+A 20-month old clings nervously to her mother and does not want to explore a new play environment. She suddenly pushes her mother away and does not engage in any hugs her mother tries to give her. The infant’s facial expression shows anxiety but she looks away from her mother. The mother turns away from the baby as well. This child most likely has which type of attachment to her mother?
+
+A) Secure resistant
+B) Secure
+C) Secure disorganized
+D) Insecure resistant
+E) Insecure independent
+F) Insecure disorganized
+G) Insecure avoidant
+H) Secure avoidant
+I) Insecure dependent </pre>
+###### answer
+<pre> The infant's behavior suggests that she is experiencing some level of anxiety and discomfort in the new play environment, and her avoidance of her mother's attempts at comfort suggests an insecure attachment style.
+
+The correct answer is D) Insecure resistant.
+
+Answer: D </pre>
+###### pred
+<pre> D </pre>
+###### target
+<pre> D </pre>
+### 7824
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+Each story of a building is 14.3 feet tall. If the height of the building is 185.9 feet, how many floors does the building have?
+
+A) 10
+B) 15
+C) 17
+D) 9
+E) 11
+F) 16
+G) 12
+H) 13
+I) 18
+J) 14 </pre>
+###### answer
+<pre> To find the number of floors, we need to divide the height of the building by the height of each story.
+185.9 feet / 14.3 feet = 13 floors.
+Answer: H </pre>
+###### pred
+<pre> H </pre>
+###### target
+<pre> H </pre>
+### 9810
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+A student is experimenting with a simple spring-block oscillator of spring constant k and amplitude A. The block attached to the spring has a mass of m. If the student places a small block of mass m on top of the original block, which of the following is true?
+
+A) The small block is most likely to slide off when the original block is at maximum displacement from the equilibrium position, but will not slide off as long as the coefficient of static friction between the blocks is less than kA/[(M+m)g].
+B) The small block is most likely to slide off when the original block is at the equilibrium position, but will not slide off as long as the coefficient of static friction between the blocks is greater than (M+m)g/(kA).
+C) The small block is most likely to slide off when the original block is at maximum displacement from the equilibrium position, but will not slide off as long as the coefficient of static friction between the blocks is greater than (M+m)g/(kA).
+D) The small block is most likely to slide off when the original block is at the equilibrium position, but will not slide off as long as the coefficient of kinetic friction between the blocks is greater than (M+m)g/(kA).
+E) The small block is most likely to slide off when the original block is at the equilibrium position, but will not slide off as long as the coefficient of static friction between the blocks is greater than kA/[(M+m)g].
+F) The small block is most likely to slide off when the original block is at maximum velocity, but will not slide off as long as the coefficient of static friction between the blocks is greater than kA/[(M+m)g].
+G) The small block is most likely to slide off when the original block is at maximum velocity, but will not slide off as long as the coefficient of static friction between the blocks is less than (M+m)g/(kA).
+H) The small block is most likely to slide off when the original block is at the equilibrium position, but will not slide off as long as the coefficient of static friction between the blocks is greater than (M+m)g/(2kA).
+I) The small block will not slide off regardless of the position of the original block as long as the coefficient of static friction between the blocks is greater than kA/[(M+m)g].
+J) The small block is most likely to slide off when the original block is at maximum displacement from the equilibrium position, but will not slide off as long as the coefficient of static friction between the blocks is greater than kA/[(M+m)g]. </pre>
+###### answer
+<pre> The correct answer is J.
+Answer: J </pre>
+###### pred
+<pre> J </pre>
+###### target
+<pre> J </pre>
+### 10831
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+ Which of the following claims would Leopold clearly accept?
+
+A) The problems associated with how we should use our natural environment ultimately concern how human beings should treat each other.
+B) We should think in terms of "the balance of nature" to properly appreciate the value of the natural environment.
+C) The problems associated with how we should use our natural environment are not merely economic problems.
+D) We should ignore all economic motives in deciding questions about land use. </pre>
+###### answer
+<pre> C) The problems associated with how we should use our natural environment are not merely economic problems.
+
+Leopold, as an environmentalist, would likely agree with the claim that the problems associated with how we should use our natural environment are not merely economic problems. This aligns with his philosophy of land ethics and his emphasis on the interconnectedness of all living things.
 
 Answer: C </pre>
 ###### pred
 <pre> C </pre>
 ###### target
 <pre> C </pre>
-### 395
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
-What is the tax on a house with a market value of $18,400, if theassessed value is at 65% and the tax rate is $4.57 per $100.
-
-A) $580.99
-B) $400.55
-C) $300.25
-D) $450.67
-E) $625.44
-F) $489.30
-G) $735.60
-H) $650.75
-I) $700.90
-J) $546.57 </pre>
-###### answer
-<pre> To find the tax on a house, we need to multiply the assessed value by the tax rate.
-The assessed value is 65% of the market value, so it is $18,400 * 0.65 = $11,960.
-Then, we multiply the assessed value by the tax rate: $11,960 * $4.57 / $100 = $546.57.
-Answer: J </pre>
-###### pred
-<pre> J </pre>
-###### target
-<pre> J </pre>
-### 2762
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
-A group's performance on a(n) __________ task is limited by the performance of the least skilled or knowledgeable member of the group.
-
-A) substitutable
-B) conjunctive
-C) additive
-D) divisible
-E) disjunctive
-F) complementary
-G) sequential
-H) cooperative
-I) synchronized
-J) compensatory </pre>
-###### answer
-<pre> The correct answer is B) conjunctive.
-
-In a conjunctive task, the performance of the group is limited by the performance of the weakest member.
-
-Answer: B </pre>
-###### pred
-<pre> B </pre>
-###### target
-<pre> B </pre>
-### 3629
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
-The Pauli exclusion principle states that
-
-A) no two electrons can occupy separate orbitals
-B) no two protons can have the same four quantum numbers
-C) two electrons can share the same quantum number if they are in different orbitals
-D) no two electrons can have the same four quantum numbers
-E) no two electrons can pair up if there is an empty orbital available
-F) no two electrons with the same spin can occupy an orbital
-G) two electrons can share the same quantum number if they have opposite spins
-H) all electrons in an atom must have the same spin </pre>
-###### answer
-<pre> The Pauli exclusion principle states that no two electrons can have the same four quantum numbers (D).
-Answer: D </pre>
-###### pred
-<pre> D </pre>
-###### target
-<pre> D </pre>
-### 619
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
-_______ working practices refer to working patterns which involve temporal, spatial and task related fluidity.
-
-A) Agile
-B) Transformative
-C) Progressive
-D) Adaptable
-E) Innovative
-F) Contemporary
-G) Modern
-H) Fluid
-I) Flexible
-J) Dynamic </pre>
-###### answer
-<pre> The correct answer is I) Flexible.
-Answer: I </pre>
-###### pred
-<pre> I </pre>
-###### target
-<pre> I </pre>
 ### 9159
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
@@ -163,94 +179,79 @@ Answer: E </pre>
 <pre> E </pre>
 ###### target
 <pre> E </pre>
-### 10831
+### 5275
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
 
- Which of the following claims would Leopold clearly accept?
+Which of the following would NOT be considered a barrier to diffusion of a cultural trait?
 
-A) The problems associated with how we should use our natural environment ultimately concern how human beings should treat each other.
-B) We should think in terms of "the balance of nature" to properly appreciate the value of the natural environment.
-C) The problems associated with how we should use our natural environment are not merely economic problems.
-D) We should ignore all economic motives in deciding questions about land use. </pre>
+A) Mountain ranges
+B) Oceans
+C) Religion
+D) Tolerant complaisant citizens
+E) Distance
+F) Dense forests
+G) Language </pre>
 ###### answer
-<pre> C) The problems associated with how we should use our natural environment are not merely economic problems.
+<pre> D) Tolerant complaisant citizens
 
-Leopold, as an environmentalist, would likely agree with the claim that the problems associated with how we should use our natural environment are not merely economic problems. This aligns with his philosophy of land ethics and his emphasis on the interconnectedness of all living things.
-
-Answer: C </pre>
-###### pred
-<pre> C </pre>
-###### target
-<pre> C </pre>
-### 5728
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
-In recent years social media has had a major impact on the practice of public relations. In which of the following areas has the impact been greatest and experienced most immediately?
-
-A) Retail business
-B) Healthcare
-C) Nonprofits
-D) Politics
-E) Education
-F) Financial services
-G) Real estate
-H) Sports marketing
-I) Tourism and hospitality
-J) Automotive sales </pre>
-###### answer
-<pre> The impact of social media on public relations has been greatest and experienced most immediately in the area of politics.
 Answer: D </pre>
 ###### pred
 <pre> D </pre>
 ###### target
 <pre> D </pre>
-### 10583
+### 5134
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
 
-Which of the following is LEAST likely to indicate a phishing attack?
+What was unique about the NATO intervention in Kosovo?
 
-A) An e-mail from a utility company asks you to enter your date of birth and social security number for verification purposes
-B) An e-mail from a social networking site asks you to click on a link to view a photo or video
-C) An e-mail from your bank asks you to reply with your password to confirm a recent transaction.
-D) An e-mail indicates that you have won a large sum of money and asks you to enter your bank account number so that the money can be transferred to you
-E) An e-mail from a merchant asks that you click on a link to reset your password
-F) An e-mail from your company's IT department asks you to enter your login details to upgrade your system
-G) An e-mail from an online retailer asks for your payment card details to confirm a purchase
-H) An e-mail from your bank asks you to call the number on your card to verify a transaction </pre>
+A) It was the first time the US became involved in the Balkans
+B) It was the first war won by airpower alone
+C) It was the first war where NATO suffered no casualties
+D) It was the first war in which NATO used drones
+E) It was the first time NATO used military force
+F) It was the first war to employ 'smart weapons'
+G) It was the first time NATO was involved in a civil war
+H) It was the first time NATO intervened in a non-member state
+I) It was the first war where NATO used cyber warfare </pre>
 ###### answer
-<pre> The most likely scenario to indicate a phishing attack is when an e-mail asks you to enter personal information or password in response to a request that seems suspicious or urgent.
+<pre> The correct answer is B) It was the first war won by airpower alone.
 
-Therefore, the least likely to indicate a phishing attack would be an e-mail from your bank asking you to call the number on your card to verify a transaction.
-
-Answer: H </pre>
+Answer: B </pre>
 ###### pred
-<pre> H </pre>
+<pre> B </pre>
 ###### target
-<pre> H </pre>
-### 11278
+<pre> B </pre>
+### 9211
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
 
-A slippery-slope pattern of argument is fallacious when...
+The mass of the Earth is 5.97 × 10^24 kg. The Moon, whose center is 3.84 × 10^8 m from the Earth’s center, has mass 7.35 × 10^22 kg. Which of the following is the best estimate of the gravitational force of the Earth on the Moon?
 
-A) There is good reason to think that doing one action will inevitably lead to another undesirable action
-B) It is based on a logical progression
-C) There are more than two possible results
-D) It is based on a series of cause and effect situations
-E) It is grounded in established facts
-F) It is based on a hypothetical situation
-G) There is no good reason to think that doing one action will inevitably lead to another undesirable action
-H) There are only two possible results
-I) There is a significant amount of evidence supporting the pattern
-J) It is hypothetical </pre>
+A) 10^79 N
+B) 10^19 N
+C) 10^99 N
+D) 10^59 N
+E) 10^39 N
+F) 10^89 N
+G) 10^69 N
+H) 10^9 N
+I) 10^29 N
+J) 10^49 N </pre>
 ###### answer
-<pre> The correct answer is G) There is no good reason to think that doing one action will inevitably lead to another undesirable action.
+<pre> To find the gravitational force between two objects, we use the formula $F = G \frac{m_1 m_2}{r^2}$, where $F$ is the gravitational force, $G$ is the gravitational constant ($6.674 \times 10^{-11} \, \text{N} \cdot \text{m}^2 / \text{kg}^2$), $m_1$ and $m_2$ are the masses of the objects, and $r$ is the distance between their centers.
 
-Answer: G </pre>
+In this case, the mass of the Earth ($m_1$) is $5.97 \times 10^{24} \, \text{kg}$, the mass of the Moon ($m_2$) is $7.35 \times 10^{22} \, \text{kg}$, and the distance between their centers ($r$) is $3.84 \times 10^8 \, \text{m}$.
+
+Substituting these values into the formula, we get:
+
+$F = G \frac{5.97 \times 10^{24} \, \text{kg} \cdot 7.35 \times 10^{22} \, \text{kg}}{3.84 \times 10^8 \, \text{m}^2} \approx 2.02 \times 10^{19} \, \text{N}$
+
+Therefore, the best estimate of the gravitational force of the Earth on the Moon is $10^{19} \, \text{N}$.
+
+Answer: B </pre>
 ###### pred
-<pre> G </pre>
+<pre> B </pre>
 ###### target
-<pre> G </pre>
+<pre> B </pre>

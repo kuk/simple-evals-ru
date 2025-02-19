@@ -31,7 +31,7 @@ def has_close_elements(numbers: List[float], threshold: float) -> bool:
     """
     for i in range(len(numbers)):
         for j in range(i + 1, len(numbers)):
-            if abs(numbers[i] - numbers[j]) < threshold:
+            if abs(numbers[i] - numbers[j]) &lt; threshold:
                 return True
     return False
 ``` </pre>
@@ -40,7 +40,7 @@ def has_close_elements(numbers: List[float], threshold: float) -> bool:
         for idx2, elem2 in enumerate(numbers):
             if idx != idx2:
                 distance = abs(elem - elem2)
-                if distance < threshold:
+                if distance &lt; threshold:
                     return True
 
     return False
@@ -91,7 +91,7 @@ def fib(n: int) -> int:
     >>> fib(8)
     21
     """
-    if n <= 1:
+    if n &lt;= 1:
         return n
     else:
         return fib(n-1) + fib(n-2)
@@ -294,7 +294,7 @@ def is_multiply_prime(a):
 <pre> ```python
 def is_multiply_prime(a):
     def is_prime(n):
-        if n < 2:
+        if n &lt; 2:
             return False
         for i in range(2, int(n**0.5) + 1):
             if n % i == 0:
@@ -304,7 +304,7 @@ def is_multiply_prime(a):
     def get_prime_factors(n):
         factors = []
         i = 2
-        while i * i <= n:
+        while i * i &lt;= n:
             if n % i:
                 i += 1
             else:
@@ -356,7 +356,7 @@ def int_to_mini_roman(number):
     """
     Given a positive integer, obtain its roman numeral equivalent as a string,
     and return it in lowercase.
-    Restrictions: 1 <= num <= 1000
+    Restrictions: 1 &lt;= num &lt;= 1000
 
     Examples:
     >>> int_to_mini_roman(19) == 'xix'
@@ -370,7 +370,7 @@ def int_to_mini_roman(number):
     """
     Given a positive integer, obtain its roman numeral equivalent as a string,
     and return it in lowercase.
-    Restrictions: 1 <= num <= 1000
+    Restrictions: 1 &lt;= num &lt;= 1000
 
     Examples:
     >>> int_to_mini_roman(19) == 'xix'
@@ -588,8 +588,8 @@ METADATA = {
 
 
 def check(candidate):
-    assert abs(candidate([1.0, 2.0, 3.0]) - 2.0/3.0) < 1e-6
-    assert abs(candidate([1.0, 2.0, 3.0, 4.0]) - 1.0) < 1e-6
-    assert abs(candidate([1.0, 2.0, 3.0, 4.0, 5.0]) - 6.0/5.0) < 1e-6
+    assert abs(candidate([1.0, 2.0, 3.0]) - 2.0/3.0) &lt; 1e-6
+    assert abs(candidate([1.0, 2.0, 3.0, 4.0]) - 1.0) &lt; 1e-6
+    assert abs(candidate([1.0, 2.0, 3.0, 4.0, 5.0]) - 6.0/5.0) &lt; 1e-6
 
  </pre>

@@ -1,409 +1,20 @@
 # humaneval / gigachat-lite
-### HumanEval/68
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-
-def pluck(arr):
-    """
-    "Given an array representing a branch of a tree that has non-negative integer nodes
-    your task is to pluck one of the nodes and return it.
-    The plucked node should be the node with the smallest even value.
-    If multiple nodes with the same smallest even value are found return the node that has smallest index.
-
-    The plucked node should be returned in a list, [ smalest_value, its index ],
-    If there are no even values or the given array is empty, return [].
-
-    Example 1:
-        Input: [4,2,3]
-        Output: [2, 1]
-        Explanation: 2 has the smallest even value, and 2 has the smallest index.
-
-    Example 2:
-        Input: [1,2,3]
-        Output: [2, 1]
-        Explanation: 2 has the smallest even value, and 2 has the smallest index. 
-
-    Example 3:
-        Input: []
-        Output: []
-    
-    Example 4:
-        Input: [5, 0, 3, 0, 4, 2]
-        Output: [0, 1]
-        Explanation: 0 is the smallest value, but  there are two zeros,
-                     so we will choose the first zero, which has the smallest index.
-
-    Constraints:
-        * 1 <= nodes.length <= 10000
-        * 0 <= node.value
-    """
- </pre>
-###### answer
-<pre> ```python
-def pluck(arr):
-    # Initialize result list to store the smallest even value and its index
-    result = []
-    
-    # Iterate through each element in the input array
-    for i, num in enumerate(arr):
-        # Check if the current number is even (divisible by 2)
-        if num % 2 == 0:
-            # Check if the result list is empty or if the current number is smaller than the smallest even number found so far
-            if not result or num < result[0]:
-                # Update the result list with the smallest even value and its index
-                result = [num, i]
-    
-    # Return the result list containing the smallest even value and its index
-    return result
-``` </pre>
-###### canonical_solution
-<pre>     if(len(arr) == 0): return []
-    evens = list(filter(lambda x: x%2 == 0, arr))
-    if(evens == []): return []
-    return [min(evens), arr.index(min(evens))]
- </pre>
-###### test
-<pre> def check(candidate):
-
-    # Check some simple cases
-    assert True, "This prints if this assert fails 1 (good for debugging!)"
-    assert candidate([4,2,3]) == [2, 1], "Error"
-    assert candidate([1,2,3]) == [2, 1], "Error"
-    assert candidate([]) == [], "Error"
-    assert candidate([5, 0, 3, 0, 4, 2]) == [0, 1], "Error"
-
-    # Check some edge cases that are easy to work out by hand.
-    assert True, "This prints if this assert fails 2 (also good for debugging!)"
-    assert candidate([1, 2, 3, 0, 5, 3]) == [0, 3], "Error"
-    assert candidate([5, 4, 8, 4 ,8]) == [4, 1], "Error"
-    assert candidate([7, 6, 7, 1]) == [6, 1], "Error"
-    assert candidate([7, 9, 7, 1]) == [], "Error"
-
- </pre>
-### HumanEval/121
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-
-def solution(lst):
-    """Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.
-    
-
-    Examples
-    solution([5, 8, 7, 1]) ==> 12
-    solution([3, 3, 3, 3, 3]) ==> 9
-    solution([30, 13, 24, 321]) ==>0
-    """
- </pre>
-###### answer
-<pre> ```python
-def solution(lst):
-    # Initialize an empty list to store results
-    result = []
-    
-    # Iterate through the list starting from index 0
-    for i in range(0, len(lst), 2):
-        # Check if element at current position is odd
-        if lst[i] % 2 != 0:
-            # Append the element to the result list
-            result.append(lst[i])
-            
-    # Return the sum of all elements in the result list
-    return sum(result)
-``` </pre>
-###### canonical_solution
-<pre>     return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])
- </pre>
-###### test
-<pre> def check(candidate):
-
-    # Check some simple cases
-    assert candidate([5, 8, 7, 1])    == 12
-    assert candidate([3, 3, 3, 3, 3]) == 9
-    assert candidate([30, 13, 24, 321]) == 0
-    assert candidate([5, 9]) == 5
-    assert candidate([2, 4, 8]) == 0
-    assert candidate([30, 13, 23, 32]) == 23
-    assert candidate([3, 13, 2, 9]) == 3
-
-    # Check some edge cases that are easy to work out by hand.
-
- </pre>
-### HumanEval/74
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-
-def total_match(lst1, lst2):
-    '''
-    Write a function that accepts two lists of strings and returns the list that has 
-    total number of chars in the all strings of the list less than the other list.
-
-    if the two lists have the same number of chars, return the first list.
-
-    Examples
-    total_match([], []) ➞ []
-    total_match(['hi', 'admin'], ['hI', 'Hi']) ➞ ['hI', 'Hi']
-    total_match(['hi', 'admin'], ['hi', 'hi', 'admin', 'project']) ➞ ['hi', 'admin']
-    total_match(['hi', 'admin'], ['hI', 'hi', 'hi']) ➞ ['hI', 'hi', 'hi']
-    total_match(['4'], ['1', '2', '3', '4', '5']) ➞ ['4']
-    '''
- </pre>
-###### answer
-<pre> ```python
-def total_match(lst1, lst2):
-    # Calculate the total length of characters in each list
-    len1 = sum(len(word) for word in lst1)
-    len2 = sum(len(word) for word in lst2)
-    
-    # Check which list has fewer characters overall
-    if len1 < len2:
-        return lst1
-    elif len1 > len2:
-        return lst2
-    else:
-        # If both lists are equal in length, return the first list
-        return lst1
-``` </pre>
-###### canonical_solution
-<pre>     l1 = 0
-    for st in lst1:
-        l1 += len(st)
-    
-    l2 = 0
-    for st in lst2:
-        l2 += len(st)
-    
-    if l1 <= l2:
-        return lst1
-    else:
-        return lst2
- </pre>
-###### test
-<pre> def check(candidate):
-
-    # Check some simple cases
-    assert True, "This prints if this assert fails 1 (good for debugging!)"
-    assert candidate([], []) == []
-    assert candidate(['hi', 'admin'], ['hi', 'hi']) == ['hi', 'hi']
-    assert candidate(['hi', 'admin'], ['hi', 'hi', 'admin', 'project']) == ['hi', 'admin']
-    assert candidate(['4'], ['1', '2', '3', '4', '5']) == ['4']
-    assert candidate(['hi', 'admin'], ['hI', 'Hi']) == ['hI', 'Hi']
-    assert candidate(['hi', 'admin'], ['hI', 'hi', 'hi']) == ['hI', 'hi', 'hi']
-    assert candidate(['hi', 'admin'], ['hI', 'hi', 'hii']) == ['hi', 'admin']
-
-
-    # Check some edge cases that are easy to work out by hand.
-    assert True, "This prints if this assert fails 2 (also good for debugging!)"
-    assert candidate([], ['this']) == []
-    assert candidate(['this'], []) == []
-
- </pre>
-### HumanEval/53
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-
-
-def add(x: int, y: int):
-    """Add two numbers x and y
-    >>> add(2, 3)
-    5
-    >>> add(5, 7)
-    12
-    """
- </pre>
-###### answer
-<pre> ```python
-def add(x, y):
-    """Add two numbers x and y
-    Args:
-        x (int): first number
-        y (int): second number
-    Returns:
-        int: Sum of x and y
-    Examples:
-        >>> add(2, 3)
-        5
-        >>> add(5, 7)
-        12
-    """
-    return x + y
-``` </pre>
-###### canonical_solution
-<pre>     return x + y
- </pre>
-###### test
-<pre> 
-
-METADATA = {}
-
-
-def check(candidate):
-    import random
-
-    assert candidate(0, 1) == 1
-    assert candidate(1, 0) == 1
-    assert candidate(2, 3) == 5
-    assert candidate(5, 7) == 12
-    assert candidate(7, 5) == 12
-
-    for i in range(100):
-        x, y = random.randint(0, 1000), random.randint(0, 1000)
-        assert candidate(x, y) == x + y
-
- </pre>
-### HumanEval/16
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-
-
-def count_distinct_characters(string: str) -> int:
-    """ Given a string, find out how many distinct characters (regardless of case) does it consist of
-    >>> count_distinct_characters('xyzXYZ')
-    3
-    >>> count_distinct_characters('Jerry')
-    4
-    """
- </pre>
-###### answer
-<pre> ```python
-def count_distinct_characters(string: str) -> int:
-    # Convert the string to lowercase to ignore case sensitivity when counting characters
-    unique_chars = set(string.lower())
-    return len(unique_chars)
-``` </pre>
-###### canonical_solution
-<pre>     return len(set(string.lower()))
- </pre>
-###### test
-<pre> 
-
-METADATA = {
-    'author': 'jt',
-    'dataset': 'test'
-}
-
-
-def check(candidate):
-    assert candidate('') == 0
-    assert candidate('abcde') == 5
-    assert candidate('abcde' + 'cade' + 'CADE') == 5
-    assert candidate('aaaaAAAAaaaa') == 1
-    assert candidate('Jerry jERRY JeRRRY') == 5
- </pre>
-### HumanEval/58
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-
-
-def common(l1: list, l2: list):
-    """Return sorted unique common elements for two lists.
-    >>> common([1, 4, 3, 34, 653, 2, 5], [5, 7, 1, 5, 9, 653, 121])
-    [1, 5, 653]
-    >>> common([5, 3, 2, 8], [3, 2])
-    [2, 3]
-
-    """
- </pre>
-###### answer
-<pre> ```python
-def common(l1, l2):
-    # Find intersection of two lists using set operations
-    inter = set(l1) & set(l2)
-    
-    # Convert back to a list and sort it
-    return sorted(list(inter))
-``` </pre>
-###### canonical_solution
-<pre>     ret = set()
-    for e1 in l1:
-        for e2 in l2:
-            if e1 == e2:
-                ret.add(e1)
-    return sorted(list(ret))
- </pre>
-###### test
-<pre> 
-
-METADATA = {}
-
-
-def check(candidate):
-    assert candidate([1, 4, 3, 34, 653, 2, 5], [5, 7, 1, 5, 9, 653, 121]) == [1, 5, 653]
-    assert candidate([5, 3, 2, 8], [3, 2]) == [2, 3]
-    assert candidate([4, 3, 2, 8], [3, 2, 4]) == [2, 3, 4]
-    assert candidate([4, 3, 2, 8], []) == []
-
- </pre>
-### HumanEval/157
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-
-def right_angle_triangle(a, b, c):
-    '''
-    Given the lengths of the three sides of a triangle. Return True if the three
-    sides form a right-angled triangle, False otherwise.
-    A right-angled triangle is a triangle in which one angle is right angle or 
-    90 degree.
-    Example:
-    right_angle_triangle(3, 4, 5) == True
-    right_angle_triangle(1, 2, 3) == False
-    '''
- </pre>
-###### answer
-<pre> ```python
-def right_angle_triangle(a, b, c):
-    """
-    Given the lengths of the three sides of a triangle. Return True if the three
-    sides form a right-angled triangle, False otherwise.
-    A right-angled triangle is a triangle in which one angle is right angle or 
-    90 degree.
-    Examples:
-    right_angle_triangle(3, 4, 5) == True
-    right_angle_triangle(1, 2, 3) == False
-    """
-    # Check Pythagoras theorem
-    if (a**2 + b**2 == c**2) or (a**2 + c**2 == b**2) or (b**2 + c**2 == a**2):
-        return True
-    else:
-        return False
-``` </pre>
-###### canonical_solution
-<pre>     return a*a == b*b + c*c or b*b == a*a + c*c or c*c == a*a + b*b
- </pre>
-###### test
-<pre> def check(candidate):
-
-    # Check some simple cases
-    assert candidate(3, 4, 5) == True, "This prints if this assert fails 1 (good for debugging!)"
-    assert candidate(1, 2, 3) == False
-    assert candidate(10, 6, 8) == True
-    assert candidate(2, 2, 2) == False
-    assert candidate(7, 24, 25) == True
-    assert candidate(10, 5, 7) == False
-    assert candidate(5, 12, 13) == True
-    assert candidate(15, 8, 17) == True
-    assert candidate(48, 55, 73) == True
-
-    # Check some edge cases that are easy to work out by hand.
-    assert candidate(1, 1, 1) == False, "This prints if this assert fails 2 (also good for debugging!)"
-    assert candidate(2, 2, 10) == False
-
- </pre>
 ### HumanEval/56
 ###### instruction
 <pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
 
 
 def correct_bracketing(brackets: str):
-    """ brackets is a string of "<" and ">".
+    """ brackets is a string of "&lt;" and ">".
     return True if every opening bracket has a corresponding closing bracket.
 
-    >>> correct_bracketing("<")
+    >>> correct_bracketing("&lt;")
     False
-    >>> correct_bracketing("<>")
+    >>> correct_bracketing("&lt;>")
     True
-    >>> correct_bracketing("<<><>>")
+    >>> correct_bracketing("&lt;&lt;>&lt;>>")
     True
-    >>> correct_bracketing("><<>")
+    >>> correct_bracketing(">&lt;&lt;>")
     False
     """
  </pre>
@@ -415,9 +26,9 @@ def correct_bracketing(brackets: str):
     
     # Iterate through each character in the input string
     for ch in brackets:
-        if ch == '<':
+        if ch == '&lt;':
             # If the current character is an opening bracket, push it onto the stack
-            stack.append('<')
+            stack.append('&lt;')
         elif ch == '>':
             # If the current character is a closing bracket, check if the stack is not empty
             if stack:
@@ -433,11 +44,11 @@ def correct_bracketing(brackets: str):
 ###### canonical_solution
 <pre>     depth = 0
     for b in brackets:
-        if b == "<":
+        if b == "&lt;":
             depth += 1
         else:
             depth -= 1
-        if depth < 0:
+        if depth &lt; 0:
             return False
     return depth == 0
  </pre>
@@ -448,61 +59,353 @@ METADATA = {}
 
 
 def check(candidate):
-    assert candidate("<>")
-    assert candidate("<<><>>")
-    assert candidate("<><><<><>><>")
-    assert candidate("<><><<<><><>><>><<><><<>>>")
-    assert not candidate("<<<><>>>>")
-    assert not candidate("><<>")
-    assert not candidate("<")
-    assert not candidate("<<<<")
+    assert candidate("&lt;>")
+    assert candidate("&lt;&lt;>&lt;>>")
+    assert candidate("&lt;>&lt;>&lt;&lt;>&lt;>>&lt;>")
+    assert candidate("&lt;>&lt;>&lt;&lt;&lt;>&lt;>&lt;>>&lt;>>&lt;&lt;>&lt;>&lt;&lt;>>>")
+    assert not candidate("&lt;&lt;&lt;>&lt;>>>>")
+    assert not candidate(">&lt;&lt;>")
+    assert not candidate("&lt;")
+    assert not candidate("&lt;&lt;&lt;&lt;")
     assert not candidate(">")
-    assert not candidate("<<>")
-    assert not candidate("<><><<><>><>><<>")
-    assert not candidate("<><><<><>><>>><>")
+    assert not candidate("&lt;&lt;>")
+    assert not candidate("&lt;>&lt;>&lt;&lt;>&lt;>>&lt;>>&lt;&lt;>")
+    assert not candidate("&lt;>&lt;>&lt;&lt;>&lt;>>&lt;>>>&lt;>")
 
  </pre>
-### HumanEval/162
+### HumanEval/44
 ###### instruction
 <pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
 
-def string_to_md5(text):
-    """
-    Given a string 'text', return its md5 hash equivalent string.
-    If 'text' is an empty string, return None.
 
-    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'
+def change_base(x: int, base: int):
+    """Change numerical base of input number x to base.
+    return string representation after the conversion.
+    base numbers are less than 10.
+    >>> change_base(8, 3)
+    '22'
+    >>> change_base(8, 2)
+    '1000'
+    >>> change_base(7, 2)
+    '111'
     """
  </pre>
 ###### answer
 <pre> ```python
-def string_to_md5(text):
-    import hashlib
+def change_base(x: int, base: int):
+    # Initialize an empty list to store converted digits
+    result = []
     
-    if not text:
-        return None
+    # Loop until there are no more digits left in x
+    while x > 0:
+        # Extract last digit of x and append it to result
+        result.append(str(x % base))
+        
+        # Remove last digit by performing integer division
+        x //= base
     
-    # Convert text to bytes and compute MD5 hash
-    md5_hash = hashlib.md5(text.encode()).hexdigest()
-    
-    return md5_hash
+    # Reverse the list to get the digits in correct order
+    return ''.join(result[::-1])
 ``` </pre>
 ###### canonical_solution
-<pre>     import hashlib
-    return hashlib.md5(text.encode('ascii')).hexdigest() if text else None
+<pre>     ret = ""
+    while x > 0:
+        ret = str(x % base) + ret
+        x //= base
+    return ret
+ </pre>
+###### test
+<pre> 
+
+METADATA = {}
+
+
+def check(candidate):
+    assert candidate(8, 3) == "22"
+    assert candidate(9, 3) == "100"
+    assert candidate(234, 2) == "11101010"
+    assert candidate(16, 2) == "10000"
+    assert candidate(8, 2) == "1000"
+    assert candidate(7, 2) == "111"
+    for x in range(2, 8):
+        assert candidate(x, x + 1) == str(x)
+
+ </pre>
+### HumanEval/45
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+
+def triangle_area(a, h):
+    """Given length of a side and high return area for a triangle.
+    >>> triangle_area(5, 3)
+    7.5
+    """
+ </pre>
+###### answer
+<pre> ```python
+def triangle_area(a, h):
+    """Given length of a side and height return area of a triangle.
+    Args:
+        a (float): Length of one side of the triangle.
+        h (float): Height of the triangle.
+    Returns:
+        float: Area of the triangle.
+    Examples:
+        >>> triangle_area(5, 3)
+        7.5
+    """
+    area = 0.5 * a * h
+    return area
+``` </pre>
+###### canonical_solution
+<pre>     return a * h / 2.0
+ </pre>
+###### test
+<pre> 
+
+METADATA = {}
+
+
+def check(candidate):
+    assert candidate(5, 3) == 7.5
+    assert candidate(2, 2) == 2.0
+    assert candidate(10, 8) == 40.0
+
+ </pre>
+### HumanEval/51
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+
+def remove_vowels(text):
+    """
+    remove_vowels is a function that takes string and returns string without vowels.
+    >>> remove_vowels('')
+    ''
+    >>> remove_vowels("abcdef\nghijklm")
+    'bcdf\nghjklm'
+    >>> remove_vowels('abcdef')
+    'bcdf'
+    >>> remove_vowels('aaaaa')
+    ''
+    >>> remove_vowels('aaBAA')
+    'B'
+    >>> remove_vowels('zbcd')
+    'zbcd'
+    """
+ </pre>
+###### answer
+<pre> ```python
+def remove_vowels(text):
+    vowels = 'aeiouAEIOU'
+    return ''.join([char for char in text if char not in vowels])
+``` </pre>
+###### canonical_solution
+<pre>     return "".join([s for s in text if s.lower() not in ["a", "e", "i", "o", "u"]])
+ </pre>
+###### test
+<pre> 
+
+METADATA = {}
+
+
+def check(candidate):
+    assert candidate('') == ''
+    assert candidate("abcdef\nghijklm") == 'bcdf\nghjklm'
+    assert candidate('fedcba') == 'fdcb'
+    assert candidate('eeeee') == ''
+    assert candidate('acBAA') == 'cB'
+    assert candidate('EcBOO') == 'cB'
+    assert candidate('ybcd') == 'ybcd'
+
+ </pre>
+### HumanEval/155
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def even_odd_count(num):
+    """Given an integer. return a tuple that has the number of even and odd digits respectively.
+
+     Example:
+        even_odd_count(-12) ==> (1, 1)
+        even_odd_count(123) ==> (1, 2)
+    """
+ </pre>
+###### answer
+<pre> ```python
+def even_odd_count(num):
+    even_count = sum(1 for digit in str(abs(num)) if int(digit) % 2 == 0)
+    odd_count = len(str(abs(num))) - even_count
+    return even_count, odd_count
+``` </pre>
+###### canonical_solution
+<pre>     even_count = 0
+    odd_count = 0
+    for i in str(abs(num)):
+        if int(i)%2==0:
+            even_count +=1
+        else:
+            odd_count +=1
+    return (even_count, odd_count)
  </pre>
 ###### test
 <pre> def check(candidate):
 
     # Check some simple cases
-    assert candidate('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'
-    assert candidate('') == None
-    assert candidate('A B C') == '0ef78513b0cb8cef12743f5aeb35f888'
-    assert candidate('password') == '5f4dcc3b5aa765d61d8327deb882cf99'
+    assert candidate(7) == (0, 1)
+    assert candidate(-78) == (1, 1)
+    assert candidate(3452) == (2, 2)
+    assert candidate(346211) == (3, 3)
+    assert candidate(-345821) == (3, 3)
+    assert candidate(-2) == (1, 0)
+    assert candidate(-45347) == (2, 3)
+    assert candidate(0) == (1, 0)
+
 
     # Check some edge cases that are easy to work out by hand.
     assert True
 
+ </pre>
+### HumanEval/122
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def add_elements(arr, k):
+    """
+    Given a non-empty array of integers arr and an integer k, return
+    the sum of the elements with at most two digits from the first k elements of arr.
+
+    Example:
+
+        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4
+        Output: 24 # sum of 21 + 3
+
+    Constraints:
+        1. 1 &lt;= len(arr) &lt;= 100
+        2. 1 &lt;= k &lt;= len(arr)
+    """
+ </pre>
+###### answer
+<pre> ```python
+def add_elements(arr, k):
+    # Initialize result variable to store the sum of elements with at most two digits
+    result = 0
+    
+    # Iterate through the first k elements of the array
+    for i in range(k):
+        # Check if the current element has at most two digits
+        if abs(arr[i]) &lt;= 99:
+            # Add the value of the current element to the result
+            result += arr[i]
+            
+    # Return the final result
+    return result
+``` </pre>
+###### canonical_solution
+<pre>     return sum(elem for elem in arr[:k] if len(str(elem)) &lt;= 2)
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate([1,-2,-3,41,57,76,87,88,99], 3) == -4
+    assert candidate([111,121,3,4000,5,6], 2) == 0
+    assert candidate([11,21,3,90,5,6,7,8,9], 4) == 125
+    assert candidate([111,21,3,4000,5,6,7,8,9], 4) == 24, "This prints if this assert fails 1 (good for debugging!)"
+
+    # Check some edge cases that are easy to work out by hand.
+    assert candidate([1], 1) == 1, "This prints if this assert fails 2 (also good for debugging!)"
+
+ </pre>
+### HumanEval/28
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+from typing import List
+
+
+def concatenate(strings: List[str]) -> str:
+    """ Concatenate list of strings into a single string
+    >>> concatenate([])
+    ''
+    >>> concatenate(['a', 'b', 'c'])
+    'abc'
+    """
+ </pre>
+###### answer
+<pre> ```python
+def concatenate(strings: List[str]) -> str:
+    return ''.join(strings)
+``` </pre>
+###### canonical_solution
+<pre>     return ''.join(strings)
+ </pre>
+###### test
+<pre> 
+
+METADATA = {
+    'author': 'jt',
+    'dataset': 'test'
+}
+
+
+def check(candidate):
+    assert candidate([]) == ''
+    assert candidate(['x', 'y', 'z']) == 'xyz'
+    assert candidate(['x', 'y', 'z', 'w', 'k']) == 'xyzwk'
+ </pre>
+### HumanEval/12
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+from typing import List, Optional
+
+
+def longest(strings: List[str]) -> Optional[str]:
+    """ Out of list of strings, return the longest one. Return the first one in case of multiple
+    strings of the same length. Return None in case the input list is empty.
+    >>> longest([])
+
+    >>> longest(['a', 'b', 'c'])
+    'a'
+    >>> longest(['a', 'bb', 'ccc'])
+    'ccc'
+    """
+ </pre>
+###### answer
+<pre> ```python
+def longest(strings: List[str]) -> Optional[str]:
+    if not strings:  # Check if the list is empty
+        return None
+    
+    longest_string = strings[0]  # Initialize with the first string
+    for string in strings:
+        if len(string) > len(longest_string):  # Compare lengths
+            longest_string = string
+    
+    return longest_string
+``` </pre>
+###### canonical_solution
+<pre>     if not strings:
+        return None
+
+    maxlen = max(len(x) for x in strings)
+    for s in strings:
+        if len(s) == maxlen:
+            return s
+ </pre>
+###### test
+<pre> 
+
+METADATA = {
+    'author': 'jt',
+    'dataset': 'test'
+}
+
+
+def check(candidate):
+    assert candidate([]) == None
+    assert candidate(['x', 'y', 'z']) == 'x'
+    assert candidate(['x', 'yyy', 'zzzz', 'www', 'kkkk', 'abc']) == 'zzzz'
  </pre>
 ### HumanEval/48
 ###### instruction
@@ -551,5 +454,67 @@ def check(candidate):
     assert candidate('xywyx') == True
     assert candidate('xywyz') == False
     assert candidate('xywzx') == False
+
+ </pre>
+### HumanEval/78
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def hex_key(num):
+    """You have been tasked to write a function that receives 
+    a hexadecimal number as a string and counts the number of hexadecimal 
+    digits that are primes (prime number, or a prime, is a natural number 
+    greater than 1 that is not a product of two smaller natural numbers).
+    Hexadecimal digits are 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F.
+    Prime numbers are 2, 3, 5, 7, 11, 13, 17,...
+    So you have to determine a number of the following digits: 2, 3, 5, 7, 
+    B (=decimal 11), D (=decimal 13).
+    Note: you may assume the input is always correct or empty string, 
+    and symbols A,B,C,D,E,F are always uppercase.
+    Examples:
+    For num = "AB" the output should be 1.
+    For num = "1077E" the output should be 2.
+    For num = "ABED1A33" the output should be 4.
+    For num = "123456789ABCDEF0" the output should be 6.
+    For num = "2020" the output should be 2.
+    """
+ </pre>
+###### answer
+<pre> ```python
+def hex_key(num):
+    # Initialize count of prime hex digits
+    count = 0
+    
+    # Iterate over each character in the hexadecimal number
+    for ch in num:
+        # Check if the current character is one of the prime hex digits
+        if ch in {'2', '3', '5', '7', 'B', 'D'}:
+            # Increment the count if it is a prime digit
+            count += 1
+            
+    return count
+``` </pre>
+###### canonical_solution
+<pre>     primes = ('2', '3', '5', '7', 'B', 'D')
+    total = 0
+    for i in range(0, len(num)):
+        if num[i] in primes:
+            total += 1
+    return total
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate("AB") == 1, "First test error: " + str(candidate("AB"))      
+    assert candidate("1077E") == 2, "Second test error: " + str(candidate("1077E"))  
+    assert candidate("ABED1A33") == 4, "Third test error: " + str(candidate("ABED1A33"))      
+    assert candidate("2020") == 2, "Fourth test error: " + str(candidate("2020"))  
+    assert candidate("123456789ABCDEF0") == 6, "Fifth test error: " + str(candidate("123456789ABCDEF0"))      
+    assert candidate("112233445566778899AABBCCDDEEFF00") == 12, "Sixth test error: " + str(candidate("112233445566778899AABBCCDDEEFF00"))  
+
+
+    # Check some edge cases that are easy to work out by hand.
+    assert candidate([]) == 0
 
  </pre>

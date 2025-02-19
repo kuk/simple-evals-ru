@@ -1,166 +1,26 @@
 # mmlu-pro-1k / yandexgpt-4-pro
-### 6696
+### 3095
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
 
-Which of the following statements about the global ageing population is correct?
+What is the difference between a kinesis and a taxis?
 
-
-A) In older age groups men outnumber women.
-B) The rate of increase in the median age of populations is slower in developing countries than wealthy countries.
-C) The global aging population is decreasing due to advancements in healthcare.
-D) By 2050, the majority of the world's population will be under the age of 40.
-E) Men have a lower mortality rate than women, over the life course.
-F) The rate of increase in the median age of populations is greater in developing countries than wealthy countries.
-G) In older age groups, the number of men and women is equal. </pre>
+A) A kinesis is a type of behavior in which an animal moves toward light, a taxis is when an animal moves away from light.
+B) A kinesis is a directed form of orientation and a taxis is an undirected form of orientation.
+C) A kinesis is a change in the speed of movement in response to a stimulus, whereas a taxis is a movement that occurs regardless of any external stimuli.
+D) A kinesis and a taxis are both types of plant growth.
+E) A kinesis is a movement that occurs in plants when they are exposed to wind, and a taxis is the movement of plants in response to soil moisture.
+F) A kinesis refers to movements that occur during the night, and a taxis refers to movements that occur during the day.
+G) A kinesis is a form of orientation in which the animal does not necessarily direct its body toward the stimulus, it is an undirected type of orientation. A taxis is a type of orientation in which the animal directs its body toward or away from the stimulus.
+H) A kinesis is an involuntary, rapid response to a stimulus, whereas a taxis is a slow, deliberate movement toward a food source.
+I) A kinesis is a movement toward or away from a chemical stimulus, while a taxis is a movement toward or away from a temperature change. </pre>
 ###### answer
-<pre> F) The rate of increase in the median age of populations is greater in developing countries than wealthy countries.
-Answer: F </pre>
+<pre> Answer: G
+'Answer: $G$' </pre>
 ###### pred
-<pre> F </pre>
+<pre> G </pre>
 ###### target
-<pre> F </pre>
-### 5728
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
-In recent years social media has had a major impact on the practice of public relations. In which of the following areas has the impact been greatest and experienced most immediately?
-
-A) Retail business
-B) Healthcare
-C) Nonprofits
-D) Politics
-E) Education
-F) Financial services
-G) Real estate
-H) Sports marketing
-I) Tourism and hospitality
-J) Automotive sales </pre>
-###### answer
-<pre> D
-Answer: $D$ </pre>
-###### pred
-<pre> D </pre>
-###### target
-<pre> D </pre>
-### 2490
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
-based upon rewardor punishment or based upon a need to know. Distinguish on a more specific plane between the three kinds ofresponses to social influence.
-
-A) Conformity, association, and adaptation
-B) Agreement, alliance, and absorption
-C) Compliance, identification, and internalization
-D) Submission, emulation, and inculcation
-E) Adherence, affiliation, and incorporation
-F) Cooperation, imitation, and assimilation
-G) Obedience, integration, and acculturation
-H) Respect, imitation, and socialization
-I) Acquiescence, imitation, and enculturation
-J) Coordination, assimilation, and conformation </pre>
-###### answer
-<pre> C)
-Compliance, identification, and internalization are based upon reward or punishment, while people respond to social influence because of a need to know.
-
-Answer: $C$ </pre>
-###### pred
-<pre> C </pre>
-###### target
-<pre> C </pre>
-### 6166
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
-Primary motor cortex activity results in
-
-A) relaxation of ipsilateral limb musculature.
-B) contraction of ipsilateral limb musculature.
-C) bilateral contraction of antigravity limb muscles.
-D) contraction of all body muscles.
-E) no effect on the limb musculature.
-F) contraction of contralateral limb musculature.
-G) unilateral contraction of limb musculature.
-H) bilateral contraction of limb musculature.
-I) bilateral relaxation of antigravity limb muscles.
-J) relaxation of contralateral limb musculature. </pre>
-###### answer
-<pre> B) contraction of contralateral limb musculature.
-Answer: F </pre>
-###### pred
-<pre> F </pre>
-###### target
-<pre> F </pre>
-### 11179
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
-Augustine identifies evil with:
-
-A) a test from God.
-B) God's punishment for sin.
-C) human nature.
-D) the influence of the devil.
-E) a unique force, opposed to goodness.
-F) the presence of sin.
-G) ignorance.
-H) the absence of good.
-I) physical matter.
-J) pain. </pre>
-###### answer
-<pre> Evil is associated with the absence of good in Augustine's philosophy.
-Answer: H </pre>
-###### pred
-<pre> H </pre>
-###### target
-<pre> H </pre>
-### 10984
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
- Which of the given formulas of PL is the best symbolization of the following sentence?
-If Beth rides her bike, she gets to work earlier.
-
-A) W ∨ B
-B) B ⊃ W
-C) B ∨ W
-D) ¬B ⊃ W
-E) W ⊃ B
-F) ¬W ⊃ B
-G) B ≡ ¬W
-H) B ≡ W
-I) B & W
-J) Both A and B </pre>
-###### answer
-<pre> B) B ⊃ W
-Answer: B </pre>
-###### pred
-<pre> B </pre>
-###### target
-<pre> B </pre>
-### 2762
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
-A group's performance on a(n) __________ task is limited by the performance of the least skilled or knowledgeable member of the group.
-
-A) substitutable
-B) conjunctive
-C) additive
-D) divisible
-E) disjunctive
-F) complementary
-G) sequential
-H) cooperative
-I) synchronized
-J) compensatory </pre>
-###### answer
-<pre> B) conjunctive
-Answer: B </pre>
-###### pred
-<pre> B </pre>
-###### target
-<pre> B </pre>
+<pre> G </pre>
 ### 4307
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
@@ -191,47 +51,196 @@ Answer: D </pre>
 <pre> D </pre>
 ###### target
 <pre> D </pre>
-### 4598
+### 2570
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
 
-Which of the following substances has an asymmetrical molecular structure?
+___________ is a communication disorder that is characterized by difficulties in regulating the rate, rhythm, pitch, and loudness of speech.
 
-A) CO
-B) CO2
-C) CH4
-D) BF3
-E) PCl5
-F) SF4
-G) SO3
-H) CCl4 </pre>
+A) Dysphagia
+B) Aphasia
+C) Dysphonia
+D) Dyspraxia
+E) Dyslexia
+F) Dysarthria
+G) Apraxia
+H) Dysprosody
+I) Paraphasia
+J) Adynamia </pre>
 ###### answer
-<pre> F) SF4 has an asymmetrical molecular structure because it has four different groups attached to the central sulfur atom, making it a polar molecule.
-Answer: F </pre>
+<pre> Answer: H </pre>
 ###### pred
-<pre> F </pre>
+<pre> H </pre>
 ###### target
-<pre> F </pre>
-### 11262
+<pre> H </pre>
+### 11045
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
 
- What does SCNT stand for, as used in the discussion on cloning?
+ Which of the following potentially morally relevant differences between Fred's behavior and the behavior of the consumers of factory-raised meat does Norcross not discuss?
 
-A) somatic cellular nuclear transmission
-B) somatic cell nuclear transfer
-C) none of the above
-D) specialized cell nuclear transfer
-E) skin cell nuclear transition
-F) somatic cell nucleotide transition
-G) skin cell nuclear transfer
-H) stem cell nuclear transmission
-I) stem cell nuclear transformation
-J) synthetic cell nuclear transfer </pre>
+A) Fred's behavior involves the suffering of puppies, whereas the behavior of meat-eaters "merely" involves the suffering of chickens, pigs, cows, calves, sheep, and the like.
+B) The suffering of the puppies is necessary for gustatory pleasure, whereas the suffering of animals on factory farms is simply a by-product of the conditions dictated by economic considerations.
+C) Fred could prevent the suffering of the puppies, whereas meat-eaters can't prevent the suffering of the animals they consume.
+D) none of the above </pre>
 ###### answer
-<pre> B) somatic cell nuclear transfer
-Answer: B </pre>
+<pre> D) none of the above
+Answer: D </pre>
 ###### pred
-<pre> B </pre>
+<pre> D </pre>
 ###### target
-<pre> B </pre>
+<pre> D </pre>
+### 3300
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+One group of compounds that may become quite important in birth control is the prostaglandins. What are the advantages of prostaglandins in birth control?
+
+A) Prostaglandins are used to enhance mood and have no effect on birth control.
+B) Prostaglandins increase fertility by promoting ovulation.
+C) Prostaglandins are able to prevent pregnancy by altering the DNA of the sperm and egg.
+D) Prostaglandins are known to mediate hormonal action
+E) Prostaglandins are non-hormonal, reducing the risk of hormonal side effects.
+F) Prostaglandins can be taken orally once a month, providing long-term birth control.
+G) Prostaglandins are cyclic, oxygenated, 20-carbon fatty acids
+H) Prostaglandins induce strong contractions in the uterus, prevent the fertilized ovum from being implanted, and can be introduced directly into the uterus, making them potentially safer contraceptives than oral chemical agents.
+I) Prostaglandins improve skin condition and are used as a beauty supplement.
+J) Prostaglandins are efficient in treating nasal congestion </pre>
+###### answer
+<pre> Answer: H </pre>
+###### pred
+<pre> H </pre>
+###### target
+<pre> H </pre>
+### 5728
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+In recent years social media has had a major impact on the practice of public relations. In which of the following areas has the impact been greatest and experienced most immediately?
+
+A) Retail business
+B) Healthcare
+C) Nonprofits
+D) Politics
+E) Education
+F) Financial services
+G) Real estate
+H) Sports marketing
+I) Tourism and hospitality
+J) Automotive sales </pre>
+###### answer
+<pre> D
+Answer: $D$ </pre>
+###### pred
+<pre> D </pre>
+###### target
+<pre> D </pre>
+### 5645
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+The tendency for migration to decrease with distance is called
+
+A) push factors.
+B) geographic isolation.
+C) migration diffusion.
+D) spatial distribution.
+E) distance decay.
+F) demographic transition.
+G) pull factors.
+H) gravity model.
+I) migration selectivity.
+J) friction of distance. </pre>
+###### answer
+<pre> Answer: E </pre>
+###### pred
+<pre> E </pre>
+###### target
+<pre> E </pre>
+### 7677
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+Is an increase in national income equivalent to an increase in employment?
+
+A) An increase in national income has no effect on employment.
+B) An increase in national income leads to an increase in employment when it is driven by technology advancements.
+C) Yes, every increase in national income always results in an increase of employment.
+D) An increase in national income results in an increase in employment only in the manufacturing sector.
+E) No, every increase in national income does not necessarily result in an increase of employment.
+F) An increase in national income always results in a decrease in employment.
+G) An increase in national income is only related to employment in the service sector.
+H) An increase in national income will result in increased employment if it is accompanied by equivalent productivity growth.
+I) An increase in national income correlates with employment rates, but other factors such as labor market policies are more influential.
+J) An increase in national income results in an increase in employment only when it exceeds inflation. </pre>
+###### answer
+<pre> E) No, every increase in national income does not necessarily result in an increase of employment.
+Answer: $E$ </pre>
+###### pred
+<pre> E </pre>
+###### target
+<pre> E </pre>
+### 2951
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+In Japan, the frequency of the R-governed multiple drug-resistant strain ofShigella, which causes dysentery, rose from 0.2 percent in 1953 to 58 percent in 1965. Also, 84 percent of the E. coli and 90 percent of Proteus collected from affected hospital patients showed similar resistance. How could such an increase happen?
+
+A) The bacteria developed immunity to antibiotics
+B) The bacteria were genetically modified
+C) Transfer of resistance genes from non-pathogenic to pathogenic bacteria through horizontal gene transfer
+D) A decline in vaccination rates leading to increased bacterial spread
+E) Over-prescription of antibiotics in livestock agriculture leading to cross-species transfer of resistance
+F) Natural selection favored bacteria that were inherently resistant to antibiotics
+G) The bacteria mutated rapidly
+H) Increased use of antibacterial soaps and disinfectants in hospitals
+I) Introduction of new antibiotics that were less effective against resistant strains
+J) Indiscriminate use of antibiotics selected for drug-resistant bacteria which can then pass their resistance to potentially harmful strains. </pre>
+###### answer
+<pre> C, J, F, and J are the most plausible explanations for the increase in drug-resistant strains.
+
+C) Transfer of resistance genes from non-pathogenic to pathogenic bacteria through horizontal gene transfer — this mechanism allows for rapid spread of antibiotic resistance among bacteria.
+J) Indiscriminate use of antibiotics selected for drug-resistant bacteria which can then pass their resistance to potentially harmful strains — overuse of antibiotics promotes the selection and spread of resistant bacteria.
+F) Natural selection favored bacteria that were inherently resistant to antibiotics — antibiotic pressure leads to the survival and proliferation of naturally resistant bacterial strains.
+
+The other options are less likely to explain the observed increase:
+A) The bacteria developed immunity to antibiotics — bacteria do not develop immunity in the same way as humans or other complex organisms.
+B) The bacteria were genetically modified — while genetic modification is possible, it is not the primary explanation for this scenario.
+D) A decline in vaccination rates leading to increased bacterial spread — vaccination does not play a role in controlling bacterial infections.
+E) Over-prescription of antibiotics in livestock agriculture leading to cross-species transfer of resistance — while important, this factor alone does not fully explain the rise in resistance within human pathogens.
+G) The bacteria mutated rapidly — mutations alone cannot account for such a rapid increase in resistance.
+H) Increased use of antibacterial soaps and disinfectants in hospitals — these products do not directly select for antibiotic resistance.
+I) Introduction of new antibiotics that were less effective against resistant strains — if anything, the introduction of new antibiotics would likely have been in response to increasing resistance, not a cause of it.
+
+Answer: J </pre>
+###### pred
+<pre> J </pre>
+###### target
+<pre> J </pre>
+### 7824
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+Each story of a building is 14.3 feet tall. If the height of the building is 185.9 feet, how many floors does the building have?
+
+A) 10
+B) 15
+C) 17
+D) 9
+E) 11
+F) 16
+G) 12
+H) 13
+I) 18
+J) 14 </pre>
+###### answer
+<pre> To find the number of floors, we need to divide the total height of the building by the height of each story.
+The height of the building is 185.9 feet, and each story is 14.3 feet tall.
+So, the number of stories can be found by dividing 185.9 by 14.3:
+$\frac{185.9}{14.3}$ = 13
+Therefore, the building has 13 floors.
+Answer: H </pre>
+###### pred
+<pre> H </pre>
+###### target
+<pre> H </pre>

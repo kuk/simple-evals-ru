@@ -1,431 +1,4 @@
 # bbh-1k / yandexgpt-4-pro
-### penguins_in_a_table/19
-###### instruction
-<pre> Answer questions about a table of penguins and their attributes.
-
-Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  We now add a penguin to the table:
-James, 12, 90, 12
-How many penguins are less than 8 years old?
-Options:
-(A) 1
-(B) 2
-(C) 3
-(D) 4
-(E) 5
-A: Let's think step by step.
-This question focuses on age. We know the following: Louis is 7 years old, Bernard is 5 years old, Vincent is 9 years old, and Gwen is 8 years old.
-Now, we add James to this table: James is 12 years old.
-The penguins that are less than 8 years old are Louis and Bernard.
-There are 2 penguins less than 8 years old. So the answer is (B).
-
-Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  Which is the youngest penguin?
-Options:
-(A) Louis
-(B) Bernard
-(C) Vincent
-(D) Gwen
-(E) James
-A: Let's think step by step.
-This question focuses on age. We know the following: Louis is 7 years old, Bernard is 5 years old, Vincent is 9 years old, and Gwen is 8 years old.
-According to the table, Bernard (5) is the youngest amongst them.
-The youngest penguin is Bernard. So the answer is (B).
-
-Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  What is the name of the second penguin sorted by alphabetic order?
-Options:
-(A) Louis
-(B) Bernard
-(C) Vincent
-(D) Gwen
-(E) James
-A: Let's think step by step.
-This question focuses on the name. We know the following: The names of the penguin in the table are Louis, Bernard, Vincent, and Gwen.
-When we sort their names alphabetically, we get Bernard, Gwen, Louis, Vincent.
-The name of the second penguin sorted by alphabetical order is Gwen.
-The name of the second penguin sorted by alphabetic order is Gwen. So the answer is (D).
-
-Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  We then delete the penguin named Bernard from the table.
-Which is the younest penguin?
-Options:
-(A) Louis
-(B) Bernard
-(C) Vincent
-(D) Gwen
-(E) James </pre>
-###### answer
-<pre> A: Let's think step by step.
-This question focuses on age. We know the following: Louis is 7 years old, Vincent is 9 years old, and Gwen is 8 years old.
-Without Bernard in the table, the youngest penguin is Louis (7).
-The younest penguin is Louis. So the answer is (A). </pre>
-###### pred
-<pre> (A) </pre>
-###### target
-<pre> (A) </pre>
-### hyperbaton/102
-###### instruction
-<pre> Order adjectives correctly in English sentences.
-
-Q: Which sentence has the correct adjective order:
-Options:
-(A) rubber terrible ship
-(B) terrible rubber ship
-A: Let's think step by step.
-When there is more than one adjective before a noun, the adjectives need to respect the following order before a noun: "[1. opinion] [2. size] [3. age] [4. shape] [5. color] [6. origin] [7. material] [8. purpose] noun".
-Option (A): "rubber terrible ship". (1) rubber" falls into the material category. (2) "terrible" falls into the opinion category. Option (A) has the following adjective order: [7. material] [1. opinion] (or, in numeric terms, 7 1). Because 7 < 1 is not correct, (A) does not have the correct ordering.
-Option (B): "terrible rubber ship". Option (B) has the following adjective order: [1. opinion] [7. material] (or, in numeric terms, 1 7). Because 1 < 7 is correct, (B) has the correct ordering. So the answer is (B).
-
-Q: Which sentence has the correct adjective order:
-Options:
-(A) repulsive small Brazilian exercise ship
-(B) Brazilian repulsive exercise small ship
-A: Let's think step by step.
-When there is more than one adjective before a noun, the adjectives need to respect the following order before a noun: "[1. opinion] [2. size] [3. age] [4. shape] [5. color] [6. origin] [7. material] [8. purpose] noun".
-Option (A): "repulsive small Brazilian exercise ship". (1) "repulsive" falls into the opinion category. (2) "small" falls into the size category. (3) "Brazilian" falls into the origin category. (4) "exercise" falls into the purpose category. Option (A) has the following adjective order: [1. opinion] [2. size] [6. origin] [8. purpose] (or, in numeric terms, 1 2 6 8). Because 1 < 2 < 6 < 8 is correct, (A) has the correct ordering.
-Option (B): "Brazilian repulsive exercise small ship". Option (B) has the following adjective order: [6. origin] [1. opinion] [8. purpose] [2. size] (or, in numeric terms, 6 1 8 2). Because 6 < 1 < 8 < 2 is not correct, (B) does not have the correct ordering. So the answer is (A).
-
-Q: Which sentence has the correct adjective order:
-Options:
-(A) blue gold wonderful square shoe
-(B) wonderful square blue gold shoe
-A: Let's think step by step.
-When there is more than one adjective before a noun, the adjectives need to respect the following order before a noun: "[1. opinion] [2. size] [3. age] [4. shape] [5. color] [6. origin] [7. material] [8. purpose] noun".
-Option (A): "blue gold wonderful square shoe". (1) "blue" falls into the color category. (2) "gold" falls into the material category. (3) "wonderful" falls into the opinion category. (4) "square" falls into the shape category. The adjective order that Option (A) has is [5. color] [7. material] [1. opinion] [4. shape] (or, in numeric terms, 5 7 1 4). Because 5 < 7 < 1 < 4 is not correct, (A) does not have the correct ordering.
-Option (B): "wonderful square blue gold shoe". Option (B) has the following adjective order: [1. opinion] [4. shape] [5. color] [7. material] (or, in numeric terms, 1 4 5 7 ). Because 1 < 4 < 5 < 7 is correct, (B) has the correct ordering. So the answer is (B).
-
-Q: Which sentence has the correct adjective order:
-Options:
-(A) lovely purple Pakistani rectangular new typing sweater
-(B) lovely new rectangular purple Pakistani typing sweater </pre>
-###### answer
-<pre> Let's think step by step.
-When there is more than one adjective before a noun, the adjectives need to respect the following order before a noun: "[1. opinion] [2. size] [3. age] [4. shape] [5. color] [6. origin] [7. material] [8. purpose] noun".
-Option (A): "lovely purple Pakistani rectangular new typing sweater". (1) "lovely" falls into the opinion category. (2) "purple" falls into the color category. (3) "Pakistani" falls into the origin category. (4) "rectangular" falls into the shape category. (5) "new" falls into the age category. (6) "typing" falls into the purpose category. The adjective order that Option (A) has is [1. opinion] [5. color] [6. origin] [4. shape] [3. age] [8. purpose] (or, in numeric terms, 1 5 6 4 3 8). Because 1 < 5 < 6 < 4 < 3 < 8 is not correct, (A) does not have the correct ordering.
-Option (B): "lovely new rectangular purple Pakistani typing sweater". Option (B) has the following adjective order: [1. opinion] [3. age] [4. shape] [5. color] [6. origin] [8. purpose] (or, in numeric terms, 1 3 4 5 6 8 ). Because 1 < 3 < 4 < 5 < 6 < 8 is correct, (B) has the correct ordering. So the answer is (B). </pre>
-###### pred
-<pre> (B) </pre>
-###### target
-<pre> (B) </pre>
-### logical_deduction_three_objects/188
-###### instruction
-<pre> A logical deduction task which requires deducing the order of a sequence of objects.
-
-Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were three golfers: Amy, Eli, and Eve. Eve finished above Amy. Eli finished below Amy.
-Options:
-(A) Amy finished last
-(B) Eli finished last
-(C) Eve finished last
-A: Let's think step by step.
-(1) Eve finished above Amy: "(above) ? Eve ? Amy ? (below)".
-(2) Eli finished below Amy: "(above) ? Amy ? Eli ? (below)".
-(3) Combining (1) and (2) we get the following ordering: "(above) Eve Amy Eli (below)".
-According to this ordering, the person who finished last (the one at the bottom of this list) is Eli.
-Eli finished last. So the answer is (B).
-
-Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are three books: a white book, a green book, and an orange book. The green book is to the right of the white book. The orange book is the rightmost.
-Options:
-(A) The white book is the leftmost
-(B) The green book is the leftmost
-(C) The orange book is the leftmost
-A: Let's think step by step.
-(1) The green book is to the right of the white book: "(left) ? white ? green ? (right)".
-(2) The orange book is the rightmost: "(left) ? white ? green orange (right)".
-(3) Combining (1) and (2) we get the following ordering: "(left) white green orange (right)".
-According to this ordering, the leftmost book is the white book.
-The white book is the leftmost. So the answer is (A).
-
-Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are three books: a red book, a gray book, and a white book. The white book is to the left of the gray book. The red book is the second from the left.
-Options:
-(A) The red book is the leftmost
-(B) The gray book is the leftmost
-(C) The white book is the leftmost
-A: Let's think step by step.
-(1) The white book is to the left of the gray book: "(left) ? white ? gray ? (right)".
-(2) The red book is the second from the left: "(left) ? white red gray ? (right)".
-(3) Combining (1) and (2) we get the following ordering: "(left) white red gray (right)".
-According to this ordering, the leftmost book is the white book.
-The white book is the leftmost. So the answer is (C).
-
-Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a branch, there are three birds: a robin, an owl, and a hawk. The robin is to the right of the hawk. The owl is the leftmost.
-Options:
-(A) The robin is the second from the left
-(B) The owl is the second from the left
-(C) The hawk is the second from the left </pre>
-###### answer
-<pre> A: Let's think step by step.
-(1) The owl is the leftmost: "(left) ? owl ? (right)".
-(2) The robin is to the right of the hawk: "(left) owl ? hawk ? robin (right)".
-(3) Combining (1) and (2) we get the following ordering: "(left) owl hawk robin (right)".
-According to this ordering, the second from the left is the hawk.
-The hawk is the second from the left. So the answer is (C). </pre>
-###### pred
-<pre> (C) </pre>
-###### target
-<pre> (C) </pre>
-### reasoning_about_colored_objects/91
-###### instruction
-<pre> Answer extremely simple questions about the colors of objects on a surface.
-
-Q: On the nightstand, there is a red pencil, a purple mug, a burgundy keychain, a fuchsia teddy bear, a black plate, and a blue stress ball. What color is the stress ball?
-Options:
-(A) red
-(B) orange
-(C) yellow
-(D) green
-(E) blue
-(F) brown
-(G) magenta
-(H) fuchsia
-(I) mauve
-(J) teal
-(K) turquoise
-(L) burgundy
-(M) silver
-(N) gold
-(O) black
-(P) grey
-(Q) purple
-(R) pink
-A: Let's think step by step.
-According to this question, the color of the stress ball is blue. So the answer is (E).
-
-Q: On the table, you see a bunch of objects arranged in a row: a purple paperclip, a pink stress ball, a brown keychain, a green scrunchiephone charger, a mauve fidget spinner, and a burgundy pen. What is the color of the object directly to the right of the stress ball?
-Options:
-(A) red
-(B) orange
-(C) yellow
-(D) green
-(E) blue
-(F) brown
-(G) magenta
-(H) fuchsia
-(I) mauve
-(J) teal
-(K) turquoise
-(L) burgundy
-(M) silver
-(N) gold
-(O) black
-(P) grey
-(Q) purple
-(R) pink
-A: Let's think step by step.
-According to this question, the objects are arranged in a row, from left to right, as follows: (1) a purple paperclip, (2) a pink stress ball, (3) a brown keychain, (4) a green scrunchiephone charger, (5) a mauve fidget spinner, (6) a burgundy pen.
-The stress ball is the second object on the list, namely (2). The object that is to the right of the stress ball corresponds to (3), which is a brown keychain.
-The color of the keychain is brown. So the answer is (F).
-
-Q: On the nightstand, you see the following items arranged in a row: a teal plate, a burgundy keychain, a yellow scrunchiephone charger, an orange mug, a pink notebook, and a grey cup. How many non-orange items do you see to the left of the teal item?
-Options:
-(A) zero
-(B) one
-(C) two
-(D) three
-(E) four
-(F) five
-(G) six
-A: Let's think step by step.
-According to this question, the objects are arranged in a row, from left to right, as follows: (1) a teal plate, (2) a burgundy keychain, (3) a yellow scrunchiephone charger, (4) an orange mug, (5) a pink notebook, (6) a grey cup.
-The teal plate is the first item, namely (1). There is no item to the left of the teal item.
-The number of non-orange items to the left of the teal item is zero. So the answer is (A).
-
-Q: On the table, I see three teal bracelets and two grey dog leashes. If I remove all the dog leashes from the table, how many teal items remain on it?
-Options:
-(A) zero
-(B) one
-(C) two
-(D) three
-(E) four
-(F) five
-(G) six
-(H) seven
-(I) eight
-(J) nine
-(K) ten
-(L) eleven
-(M) twelve
-(N) thirteen
-(O) fourteen
-(P) fifteen
-(Q) sixteen </pre>
-###### answer
-<pre> Let's think step by step.
-According to this question, there are three teal bracelets and two grey dog leashes on the table. If I remove all the dog leashes from the table, the number of teal items remains the same — three. So the answer is (D). </pre>
-###### pred
-<pre> (D) </pre>
-###### target
-<pre> (D) </pre>
-### tracking_shuffled_objects_three_objects/229
-###### instruction
-<pre> A task requiring determining the final positions of a set of objects given their initial positions and a description of a sequence of swaps.
-
-Q: Alice, Bob, and Claire are playing a game. At the start of the game, they are each holding a ball: Alice has a yellow ball, Bob has a blue ball, and Claire has a pink ball.
-As the game progresses, pairs of players trade balls. First, Claire and Alice swap balls. Then, Alice and Bob swap balls. Finally, Claire and Bob swap balls. At the end of the game, Bob has the
-Options:
-(A) yellow ball
-(B) blue ball
-(C) pink ball
-A: Let's think step by step.
-(0) At the start: Alice: yellow, Bob: blue, Claire: pink.
-(1) Claire and Alice swap balls: Alice: pink, Bob: blue, Claire: yellow.
-(2)  Alice and Bob swap balls: Alice: blue, Bob: pink, Claire: yellow.
-(3) Claire and Bob swap balls: Alice: blue, Bob: yellow, Claire: pink.
-At the end of the game, Bob has the yellow ball. So the answer is (A).
-
-Q: Alice, Bob, and Claire are playing a game. At the start of the game, they are each holding a ball: Alice has a white ball, Bob has a purple ball, and Claire has a pink ball.
-As the game progresses, pairs of players trade balls. First, Bob and Alice swap balls. Then, Bob and Claire swap balls. Finally, Bob and Alice swap balls. At the end of the game, Alice has the
-Options:
-(A) white ball
-(B) purple ball
-(C) pink ball
-A: Let's think step by step.
-(0) At the start: Alice: white, Bob: purple, Claire: pink.
-(1) Bob and Alice swap balls: Alice: purple, Bob: white, Claire: pink.
-(2) Bob and Claire swap balls: Alice: purple, Bob: pink, Claire: white.
-(3) Bob and Alice swap balls: Alice: pink, Bob: purple, Claire: white.
-At the end of the game, Alice has the pink ball. So the answer is (C).
-
-Q: Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Lola, Bob is dancing with Rodrigo, and Claire is dancing with Patrick.
-Throughout the song, the dancers often trade partners. First, Alice and Bob switch partners. Then, Claire and Bob switch partners. Finally, Bob and Alice switch partners. At the end of the dance, Alice is dancing with
-Options:
-(A) Lola
-(B) Rodrigo
-(C) Patrick
-A: Let's think step by step.
-(0) At the start: Alice: Lola, Bob: Rodrigo, Claire: Patrick.
-(1) Alice and Bob switch partners: Alice: Rodrigo, Bob: Lola, Claire: Patrick.
-(2) Claire and Bob switch partners: Alice: Rodrigo, Bob: Patrick, Claire: Lola.
-(3) Bob and Alice switch partners: Alice: Patrick, Bob: Rodrigo, Claire: Lola.
-At the end of the dance, Alice is dancing with Patrick. So the answer is (C).
-
-Q: Alice, Bob, and Claire are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a red present, Bob has a blue present, and Claire has a yellow present.
-As the event progresses, pairs of people swap gifts. First, Alice and Claire swap their gifts. Then, Bob and Claire swap their gifts. Finally, Claire and Alice swap their gifts. At the end of the event, Claire has the
-Options:
-(A) red present
-(B) blue present
-(C) yellow present </pre>
-###### answer
-<pre> A: Let's think step by step.
-(0) At the start: Alice: red, Bob: blue, Claire: yellow.
-(1) Alice and Claire swap gifts: Alice: yellow, Bob: blue, Claire: red.
-(2) Bob and Claire swap gifts: Alice: yellow, Bob: red, Claire: blue.
-(3) Claire and Alice swap gifts: Alice: blue, Bob: red, Claire: yellow.
-At the end of the event, Claire has the yellow present. So the answer is (C). </pre>
-###### pred
-<pre> (C) </pre>
-###### target
-<pre> (C) </pre>
-### logical_deduction_five_objects/217
-###### instruction
-<pre> A logical deduction task which requires deducing the order of a sequence of objects.
-
-Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were three golfers: Amy, Eli, and Eve. Eve finished above Amy. Eli finished below Amy.
-Options:
-(A) Amy finished last
-(B) Eli finished last
-(C) Eve finished last
-A: Let's think step by step.
-(1) Eve finished above Amy: "(above) ? Eve ? Amy ? (below)".
-(2) Eli finished below Amy: "(above) ? Amy ? Eli ? (below)".
-(3) Combining (1) and (2) we get the following ordering: "(above) Eve Amy Eli (below)".
-According to this ordering, the person who finished last (the one at the bottom of this list) is Eli.
-Eli finished last. So the answer is (B).
-
-Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are three books: a white book, a green book, and an orange book. The green book is to the right of the white book. The orange book is the rightmost.
-Options:
-(A) The white book is the leftmost
-(B) The green book is the leftmost
-(C) The orange book is the leftmost
-A: Let's think step by step.
-(1) The green book is to the right of the white book: "(left) ? white ? green ? (right)".
-(2) The orange book is the rightmost: "(left) ? white ? green orange (right)".
-(3) Combining (1) and (2) we get the following ordering: "(left) white green orange (right)".
-According to this ordering, the leftmost book is the white book.
-The white book is the leftmost. So the answer is (A).
-
-Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are three books: a red book, a gray book, and a white book. The white book is to the left of the gray book. The red book is the second from the left.
-Options:
-(A) The red book is the leftmost
-(B) The gray book is the leftmost
-(C) The white book is the leftmost
-A: Let's think step by step.
-(1) The white book is to the left of the gray book: "(left) ? white ? gray ? (right)".
-(2) The red book is the second from the left: "(left) ? white red gray ? (right)".
-(3) Combining (1) and (2) we get the following ordering: "(left) white red gray (right)".
-According to this ordering, the leftmost book is the white book.
-The white book is the leftmost. So the answer is (C).
-
-Q: The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: mangoes, kiwis, plums, pears, and watermelons. The kiwis are less expensive than the plums. The pears are the third-most expensive. The kiwis are the second-cheapest. The watermelons are the most expensive.
-Options:
-(A) The mangoes are the second-most expensive
-(B) The kiwis are the second-most expensive
-(C) The plums are the second-most expensive
-(D) The pears are the second-most expensive
-(E) The watermelons are the second-most expensive </pre>
-###### answer
-<pre> A: Let's think step by step.
-(1) The kiwis are less expensive than the plums: "plums ? kiwi ? (less)".
-(2) The pears are the third-most expensive: "(least) ? watermelon ? plum ? pear ? (more) ? kiwi".
-(3) The kiwis are the second-cheapest: "(least) ? watermelon ? plum pear kiwi (more)".
-(4) The watermelons are the most expensive: "(least) watermelon (more) plums pear kiwi".
-Combining (2), (3), and (4), we get the following ordering: "(least) watermelon plums pear kiwi (more)". According to this ordering, the second-most expensive fruits are plums. So the answer is (C). </pre>
-###### pred
-<pre> (C) </pre>
-###### target
-<pre> (C) </pre>
-### logical_deduction_three_objects/243
-###### instruction
-<pre> A logical deduction task which requires deducing the order of a sequence of objects.
-
-Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were three golfers: Amy, Eli, and Eve. Eve finished above Amy. Eli finished below Amy.
-Options:
-(A) Amy finished last
-(B) Eli finished last
-(C) Eve finished last
-A: Let's think step by step.
-(1) Eve finished above Amy: "(above) ? Eve ? Amy ? (below)".
-(2) Eli finished below Amy: "(above) ? Amy ? Eli ? (below)".
-(3) Combining (1) and (2) we get the following ordering: "(above) Eve Amy Eli (below)".
-According to this ordering, the person who finished last (the one at the bottom of this list) is Eli.
-Eli finished last. So the answer is (B).
-
-Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are three books: a white book, a green book, and an orange book. The green book is to the right of the white book. The orange book is the rightmost.
-Options:
-(A) The white book is the leftmost
-(B) The green book is the leftmost
-(C) The orange book is the leftmost
-A: Let's think step by step.
-(1) The green book is to the right of the white book: "(left) ? white ? green ? (right)".
-(2) The orange book is the rightmost: "(left) ? white ? green orange (right)".
-(3) Combining (1) and (2) we get the following ordering: "(left) white green orange (right)".
-According to this ordering, the leftmost book is the white book.
-The white book is the leftmost. So the answer is (A).
-
-Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are three books: a red book, a gray book, and a white book. The white book is to the left of the gray book. The red book is the second from the left.
-Options:
-(A) The red book is the leftmost
-(B) The gray book is the leftmost
-(C) The white book is the leftmost
-A: Let's think step by step.
-(1) The white book is to the left of the gray book: "(left) ? white ? gray ? (right)".
-(2) The red book is the second from the left: "(left) ? white red gray ? (right)".
-(3) Combining (1) and (2) we get the following ordering: "(left) white red gray (right)".
-According to this ordering, the leftmost book is the white book.
-The white book is the leftmost. So the answer is (C).
-
-Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are three books: a red book, a gray book, and a white book. The white book is to the left of the gray book. The red book is the second from the left.
-Options:
-(A) The red book is the rightmost
-(B) The gray book is the rightmost
-(C) The white book is the rightmost </pre>
-###### answer
-<pre> A: Let's think step by step.
-(1) The white book is to the left of the gray book: "(left) ? white ? gray ? (right)".
-(2) The red book is the second from the left: "(left) white red ? gray (right)".
-(3) Combining (1) and (2) we get the following ordering: "(left) white red gray (right)".
-According to this ordering, the rightmost book is the gray one.
-So the answer is (B). </pre>
-###### pred
-<pre> (B) </pre>
-###### target
-<pre> (B) </pre>
 ### disambiguation_qa/100
 ###### instruction
 <pre> Clarify the meaning of sentences with ambiguous pronouns.
@@ -481,67 +54,253 @@ Now, consider X: «X greets Y because X was in a good mood.» It is also reasona
 <pre> (C) </pre>
 ###### target
 <pre> (C) </pre>
-### tracking_shuffled_objects_three_objects/64
+### penguins_in_a_table/18
 ###### instruction
-<pre> A task requiring determining the final positions of a set of objects given their initial positions and a description of a sequence of swaps.
+<pre> Answer questions about a table of penguins and their attributes.
 
-Q: Alice, Bob, and Claire are playing a game. At the start of the game, they are each holding a ball: Alice has a yellow ball, Bob has a blue ball, and Claire has a pink ball.
-As the game progresses, pairs of players trade balls. First, Claire and Alice swap balls. Then, Alice and Bob swap balls. Finally, Claire and Bob swap balls. At the end of the game, Bob has the
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  We now add a penguin to the table:
+James, 12, 90, 12
+How many penguins are less than 8 years old?
 Options:
-(A) yellow ball
-(B) blue ball
-(C) pink ball
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
 A: Let's think step by step.
-(0) At the start: Alice: yellow, Bob: blue, Claire: pink.
-(1) Claire and Alice swap balls: Alice: pink, Bob: blue, Claire: yellow.
-(2)  Alice and Bob swap balls: Alice: blue, Bob: pink, Claire: yellow.
-(3) Claire and Bob swap balls: Alice: blue, Bob: yellow, Claire: pink.
-At the end of the game, Bob has the yellow ball. So the answer is (A).
+This question focuses on age. We know the following: Louis is 7 years old, Bernard is 5 years old, Vincent is 9 years old, and Gwen is 8 years old.
+Now, we add James to this table: James is 12 years old.
+The penguins that are less than 8 years old are Louis and Bernard.
+There are 2 penguins less than 8 years old. So the answer is (B).
 
-Q: Alice, Bob, and Claire are playing a game. At the start of the game, they are each holding a ball: Alice has a white ball, Bob has a purple ball, and Claire has a pink ball.
-As the game progresses, pairs of players trade balls. First, Bob and Alice swap balls. Then, Bob and Claire swap balls. Finally, Bob and Alice swap balls. At the end of the game, Alice has the
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  Which is the youngest penguin?
 Options:
-(A) white ball
-(B) purple ball
-(C) pink ball
+(A) Louis
+(B) Bernard
+(C) Vincent
+(D) Gwen
+(E) James
 A: Let's think step by step.
-(0) At the start: Alice: white, Bob: purple, Claire: pink.
-(1) Bob and Alice swap balls: Alice: purple, Bob: white, Claire: pink.
-(2) Bob and Claire swap balls: Alice: purple, Bob: pink, Claire: white.
-(3) Bob and Alice swap balls: Alice: pink, Bob: purple, Claire: white.
-At the end of the game, Alice has the pink ball. So the answer is (C).
+This question focuses on age. We know the following: Louis is 7 years old, Bernard is 5 years old, Vincent is 9 years old, and Gwen is 8 years old.
+According to the table, Bernard (5) is the youngest amongst them.
+The youngest penguin is Bernard. So the answer is (B).
 
-Q: Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Lola, Bob is dancing with Rodrigo, and Claire is dancing with Patrick.
-Throughout the song, the dancers often trade partners. First, Alice and Bob switch partners. Then, Claire and Bob switch partners. Finally, Bob and Alice switch partners. At the end of the dance, Alice is dancing with
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  What is the name of the second penguin sorted by alphabetic order?
 Options:
-(A) Lola
-(B) Rodrigo
-(C) Patrick
+(A) Louis
+(B) Bernard
+(C) Vincent
+(D) Gwen
+(E) James
 A: Let's think step by step.
-(0) At the start: Alice: Lola, Bob: Rodrigo, Claire: Patrick.
-(1) Alice and Bob switch partners: Alice: Rodrigo, Bob: Lola, Claire: Patrick.
-(2) Claire and Bob switch partners: Alice: Rodrigo, Bob: Patrick, Claire: Lola.
-(3) Bob and Alice switch partners: Alice: Patrick, Bob: Rodrigo, Claire: Lola.
-At the end of the dance, Alice is dancing with Patrick. So the answer is (C).
+This question focuses on the name. We know the following: The names of the penguin in the table are Louis, Bernard, Vincent, and Gwen.
+When we sort their names alphabetically, we get Bernard, Gwen, Louis, Vincent.
+The name of the second penguin sorted by alphabetical order is Gwen.
+The name of the second penguin sorted by alphabetic order is Gwen. So the answer is (D).
 
-Q: Alice, Bob, and Claire are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing left winger, Bob is playing fullback, and Claire is playing right winger.
-As the game progresses, pairs of players occasionally swap positions. First, Alice and Claire trade positions. Then, Alice and Bob trade positions. Finally, Claire and Alice trade positions. At the end of the match, Claire is playing
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  We now add a penguin to the table:
+James, 12, 90, 12
+What is the average height of the penguins?
 Options:
-(A) left winger
-(B) fullback
-(C) right winger </pre>
+(A) 60
+(B) 65
+(C) 70
+(D) 75
+(E) 80 </pre>
 ###### answer
 <pre> A: Let's think step by step.
-(0) At the start: Alice: left winger, Bob: fullback, Claire: right winger.
-(1) Alice and Claire trade positions: Alice: right winger, Bob: fullback, Claire: left winger.
-(2) Alice and Bob trade positions: Alice: fullback, Bob: right winger, Claire: left winger.
-(3) Claire and Alice trade positions: Alice: left winger, Bob: right winger, Claire: fullback.
-At the end of the match, Claire is playing fullback. So the answer is (B). </pre>
+We have the following heights in the table: Louis is 50 cm, Bernard is 80 cm, Vincent is 60 cm, and Gwen is 70 cm.
+Now we add James to the table with a height of 90 cm.
+To find the average height, we need to sum up all the heights and divide by the number of penguins.
+The total height is 50 + 80 + 60 + 70 + 90 = 350 cm.
+There are 5 penguins in total (including James).
+So, the average height is 350 / 5 = 70 cm. So the answer is (C). </pre>
 ###### pred
-<pre> (B) </pre>
+<pre> (C) </pre>
 ###### target
-<pre> (B) </pre>
-### sports_understanding/139
+<pre> (C) </pre>
+### movie_recommendation/212
+###### instruction
+<pre> Recommend movies similar to the given list of movies.
+
+Q: Find a movie similar to Star Wars Episode IV - A New Hope, Indiana Jones and the Last Crusade, Star Wars Episode V - The Empire Strikes Back, The Big Lebowski:
+Options:
+(A) Tetsuo
+(B) the Ironman
+(C) The Princess Bride
+(D) The Barkley Marathons The Race That Eats Its Young
+(E) Bug
+A: Let's think step by step.
+- Star Wars Episode IV - A New Hope (action, adventure, fantasy; 1977)
+- Indiana Jones and the Last Crusade (action, adventure; 1989)
+- Star Wars Episode V - The Empire Strikes Back (action, adventure, fantasy; 1980)
+- The Big Lebowski (action, drama, comedy; 1998)
+These are all famous classic American movies produced before 2000. Amongst all the options, the only movie similar to these ones seems to be The Princess Bride (1987). So the answer is (C).
+
+Q: Find a movie similar to Twister, The Silence of the Lambs, Independence Day, Braveheart:
+Options:
+(A) They Shoot Horses
+(B) Don't They
+(C) Forrest Gump
+(D) The Salton Sea
+(E) Extreme Days
+A: Let's think step by step.
+- Twister (action, adventure, thriller; 1996)
+- The Silence of the Lambs (crime, drama, thriller; 1991)
+- Independence Day (action, science-fiction, drama; 1996)
+- Braveheart (biography, drama, epic; 1995)
+These are all famous Hollywood movies produced around the 1990s. Amongst all the options, the only movie similar to these ones seems to be Forrest Gump (comedy, drama, romance; 1994). So the answer is (C).
+
+Q: Find a movie similar to Minority Report, Total Recall, Inside Out, Forrest Gump:
+Options:
+(A) Phenomena
+(B) Lilting
+(C) Catwoman
+(D) Edge of Tomorrow
+A: Let's think step by step.
+- Minority Report (action, crime, mystery; 2002)
+- Total Recall (action, adventure, science-fiction; 2012)
+- Inside Out (animation, family, comedy; 2015)
+- Forrest Gump (comedy, drama, romance; 1994)
+These are all famous movies produced in the past few decades.Amongst all the options, the only movie similar to these ones seems to be Edge of Tomorrow (action, adventure, crime, mystery; 2014), as it is also a science-fiction movie and features Tom Cruise. So the answer is (D).
+
+Q: Find a movie similar to The Fugitive, Dances with Wolves, Forrest Gump, The Shawshank Redemption:
+Options:
+(A) A Special Day
+(B) David Cross Making America Great Again
+(C) Happy Go Lovely
+(D) Pulp Fiction </pre>
+###### answer
+<pre> Let's think step by step.
+- The Fugitive (action, thriller; 1993)
+- Dances with Wolves (adventure, drama; 1990)
+- Forrest Gump (comedy, drama, romance; 1994)
+- The Shawshank Redemption (drama; 1994).
+These are all famous American movies produced around the 1990s. Amongst all the options, none of them seem to be similar to these ones. However, if we look at the genre and time period, «Pulp Fiction» (crime, drama; 1994) is the only option that could potentially fit. So the answer is (D). </pre>
+###### pred
+<pre> (D) </pre>
+###### target
+<pre> (D) </pre>
+### logical_deduction_five_objects/111
+###### instruction
+<pre> A logical deduction task which requires deducing the order of a sequence of objects.
+
+Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were three golfers: Amy, Eli, and Eve. Eve finished above Amy. Eli finished below Amy.
+Options:
+(A) Amy finished last
+(B) Eli finished last
+(C) Eve finished last
+A: Let's think step by step.
+(1) Eve finished above Amy: "(above) ? Eve ? Amy ? (below)".
+(2) Eli finished below Amy: "(above) ? Amy ? Eli ? (below)".
+(3) Combining (1) and (2) we get the following ordering: "(above) Eve Amy Eli (below)".
+According to this ordering, the person who finished last (the one at the bottom of this list) is Eli.
+Eli finished last. So the answer is (B).
+
+Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are three books: a white book, a green book, and an orange book. The green book is to the right of the white book. The orange book is the rightmost.
+Options:
+(A) The white book is the leftmost
+(B) The green book is the leftmost
+(C) The orange book is the leftmost
+A: Let's think step by step.
+(1) The green book is to the right of the white book: "(left) ? white ? green ? (right)".
+(2) The orange book is the rightmost: "(left) ? white ? green orange (right)".
+(3) Combining (1) and (2) we get the following ordering: "(left) white green orange (right)".
+According to this ordering, the leftmost book is the white book.
+The white book is the leftmost. So the answer is (A).
+
+Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are three books: a red book, a gray book, and a white book. The white book is to the left of the gray book. The red book is the second from the left.
+Options:
+(A) The red book is the leftmost
+(B) The gray book is the leftmost
+(C) The white book is the leftmost
+A: Let's think step by step.
+(1) The white book is to the left of the gray book: "(left) ? white ? gray ? (right)".
+(2) The red book is the second from the left: "(left) ? white red gray ? (right)".
+(3) Combining (1) and (2) we get the following ordering: "(left) white red gray (right)".
+According to this ordering, the leftmost book is the white book.
+The white book is the leftmost. So the answer is (C).
+
+Q: The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. In an antique car show, there are five vehicles: a minivan, a hatchback, a bus, a convertible, and a motorcyle. The hatchback is newer than the convertible. The bus is newer than the hatchback. The bus is older than the motorcyle. The minivan is the newest.
+Options:
+(A) The minivan is the third-newest
+(B) The hatchback is the third-newest
+(C) The bus is the third-newest
+(D) The convertible is the third-newest
+(E) The motorcyle is the third-newest </pre>
+###### answer
+<pre> A: Let's think step by step.
+(1) The hatchback is newer than the convertible: "(oldest) ? convertible ? hatchback (newer)".
+(2) The bus is newer than the hatchback: "(oldest) convertible ? hatchback ? bus (newer)".
+(3) The bus is older than the motorcyle: "(oldest) convertible ? hatchback bus ? motorcycle (newer)".
+(4) The minivan is the newest: "(oldest) convertible hatchback bus motorcycle ? minivan (newest)".
+Combining (1), (2), and (3), we get the following ordering: "(oldest) convertible hatchback bus motorcycle minivan (newest)". According to this ordering, the third-newest vehicle is the bus.
+The bus is the third-newest. So the answer is (C). </pre>
+###### pred
+<pre> (C) </pre>
+###### target
+<pre> (C) </pre>
+### logical_deduction_seven_objects/207
+###### instruction
+<pre> A logical deduction task which requires deducing the order of a sequence of objects.
+
+Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were three golfers: Amy, Eli, and Eve. Eve finished above Amy. Eli finished below Amy.
+Options:
+(A) Amy finished last
+(B) Eli finished last
+(C) Eve finished last
+A: Let's think step by step.
+(1) Eve finished above Amy: "(above) ? Eve ? Amy ? (below)".
+(2) Eli finished below Amy: "(above) ? Amy ? Eli ? (below)".
+(3) Combining (1) and (2) we get the following ordering: "(above) Eve Amy Eli (below)".
+According to this ordering, the person who finished last (the one at the bottom of this list) is Eli.
+Eli finished last. So the answer is (B).
+
+Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are three books: a white book, a green book, and an orange book. The green book is to the right of the white book. The orange book is the rightmost.
+Options:
+(A) The white book is the leftmost
+(B) The green book is the leftmost
+(C) The orange book is the leftmost
+A: Let's think step by step.
+(1) The green book is to the right of the white book: "(left) ? white ? green ? (right)".
+(2) The orange book is the rightmost: "(left) ? white ? green orange (right)".
+(3) Combining (1) and (2) we get the following ordering: "(left) white green orange (right)".
+According to this ordering, the leftmost book is the white book.
+The white book is the leftmost. So the answer is (A).
+
+Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are three books: a red book, a gray book, and a white book. The white book is to the left of the gray book. The red book is the second from the left.
+Options:
+(A) The red book is the leftmost
+(B) The gray book is the leftmost
+(C) The white book is the leftmost
+A: Let's think step by step.
+(1) The white book is to the left of the gray book: "(left) ? white ? gray ? (right)".
+(2) The red book is the second from the left: "(left) ? white red gray ? (right)".
+(3) Combining (1) and (2) we get the following ordering: "(left) white red gray (right)".
+According to this ordering, the leftmost book is the white book.
+The white book is the leftmost. So the answer is (C).
+
+Q: The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells seven fruits: plums, kiwis, cantaloupes, pears, watermelons, apples, and loquats. The watermelons are more expensive than the cantaloupes. The apples are less expensive than the cantaloupes. The watermelons are the second-most expensive. The loquats are less expensive than the kiwis. The apples are more expensive than the loquats. The loquats are the third-cheapest. The plums are the cheapest.
+Options:
+(A) The plums are the cheapest
+(B) The kiwis are the cheapest
+(C) The cantaloupes are the cheapest
+(D) The pears are the cheapest
+(E) The watermelons are the cheapest
+(F) The apples are the cheapest
+(G) The loquats are the cheapest </pre>
+###### answer
+<pre> Let's think step by step.
+(1) The watermelons are more expensive than the cantaloupes: "(cheapest) ? (second-most expensive) watermelons cantaloupes ? (third-cheapest)".
+(2) The apples are less expensive than the cantaloupes: "(cheapest) plums ? (third-cheapest) loquats ? (second-most expensive) watermelons (more expensive) cantaloupes (less expensive) apples".
+(3) Combining (1) and (2), we get the following ordering: "(cheapest) plums (less expensive) loquats (third-cheapest)  ? (cheapest) apples (less expensive) cantaloupes (second-most expensive) watermelons".
+According to this ordering, the cheapest fruit is the plum.
+The plums are the cheapest. So the answer is (A). </pre>
+###### pred
+<pre> (A) </pre>
+###### target
+<pre> (A) </pre>
+### sports_understanding/34
 ###### instruction
 <pre> Determine whether an artificially constructed sentence relating to sports is plausible or not.
 
@@ -554,10 +313,247 @@ A: Let's think step by step. Santi Cazorla is a soccer player. Touchdown is part
 Q: Is the following sentence plausible? "DeMar DeRozan was called for the goal tend."
 A: Let's think step by step. DeMar DeRozan is an American basketball player. Goal tending is part of basketball. So the answer is yes.
 
-Q: Is the following sentence plausible? "Ketel Marte got into the endzone." </pre>
+Q: Is the following sentence plausible? "Tom Wilson scored a penalty kick." </pre>
 ###### answer
-<pre> Let's think step by step. Ketel Marte is a baseball player. The endzone is part of American football. So the answer is no. </pre>
+<pre> Let's think step by step. Tom Wilson is a hockey and ice hockey player. A penalty kick is part of association football (soccer). So the answer is no. </pre>
 ###### pred
 <pre> no </pre>
 ###### target
 <pre> no </pre>
+### object_counting/117
+###### instruction
+<pre> Questions that involve enumerating objects and asking the model to count them.
+
+Q: I have a blackberry, a clarinet, a nectarine, a plum, a strawberry, a banana, a flute, an orange, and a violin. How many fruits do I have?
+A: Let's think step by step.
+We first identify the fruits on the list and include their quantity in parentheses:
+- blackberry (1)
+- nectarine (1)
+- plum (1)
+- strawberry (1)
+- banana (1)
+- orange (1)
+Now, let's add the numbers in parentheses: 1 + 1 + 1 + 1 + 1 + 1 = 6. So the answer is 6.
+
+Q: I have an orange, a raspberry, two peaches, a blackberry, an apple, a grape, a nectarine, and three plums. How many fruits do I have?
+A: Let's think step by step.
+We first identify the fruits on the list and include their quantity in parentheses:
+- orange (1)
+- raspberry (1)
+- peaches (2)
+- blackberry (1)
+- apple (1)
+- grape (1)
+- nectarine (1)
+- plums (3)
+Now, let's add the numbers in parentheses: 1 + 1 + 2 + 1 + 1 + 1 + 1 + 3 = 11. So the answer is 11.
+
+Q: I have a lettuce head, a head of broccoli, an onion, a stalk of celery, two carrots, a garlic, and a yam. How many vegetables do I have?
+A: Let's think step by step.
+We first identify the vegetables on the list and include their quantity in parentheses:
+- lettuce (1)
+- broccoli (1)
+- onion (1)
+- celery (1)
+- carrots (2)
+- garlic (1)
+- yam (1)
+Now, let's add the numbers in parentheses: 1 + 1 + 1 + 1 + 2 + 1 + 1 = 8. So the answer is 8.
+
+Q: I have two cows, a fish, a chicken, a snake, and two mice. How many animals do I have? </pre>
+###### answer
+<pre> Let's think step by step.
+We first identify the animals on the list and include their quantity in parentheses:
+- cows (2)
+- fish (1)
+- chicken (1)
+- snake (1)
+- mice (2)
+Now, let's add the numbers in parentheses: 2 + 1 + 1 + 1 + 2 = 7. So the answer is 7. </pre>
+###### pred
+<pre> 7 </pre>
+###### target
+<pre> 7 </pre>
+### penguins_in_a_table/115
+###### instruction
+<pre> Answer questions about a table of penguins and their attributes.
+
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  We now add a penguin to the table:
+James, 12, 90, 12
+How many penguins are less than 8 years old?
+Options:
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+A: Let's think step by step.
+This question focuses on age. We know the following: Louis is 7 years old, Bernard is 5 years old, Vincent is 9 years old, and Gwen is 8 years old.
+Now, we add James to this table: James is 12 years old.
+The penguins that are less than 8 years old are Louis and Bernard.
+There are 2 penguins less than 8 years old. So the answer is (B).
+
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  Which is the youngest penguin?
+Options:
+(A) Louis
+(B) Bernard
+(C) Vincent
+(D) Gwen
+(E) James
+A: Let's think step by step.
+This question focuses on age. We know the following: Louis is 7 years old, Bernard is 5 years old, Vincent is 9 years old, and Gwen is 8 years old.
+According to the table, Bernard (5) is the youngest amongst them.
+The youngest penguin is Bernard. So the answer is (B).
+
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  What is the name of the second penguin sorted by alphabetic order?
+Options:
+(A) Louis
+(B) Bernard
+(C) Vincent
+(D) Gwen
+(E) James
+A: Let's think step by step.
+This question focuses on the name. We know the following: The names of the penguin in the table are Louis, Bernard, Vincent, and Gwen.
+When we sort their names alphabetically, we get Bernard, Gwen, Louis, Vincent.
+The name of the second penguin sorted by alphabetical order is Gwen.
+The name of the second penguin sorted by alphabetic order is Gwen. So the answer is (D).
+
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  What is the name of the second penguin?
+Options:
+(A) Louis
+(B) Bernard
+(C) Vincent
+(D) Gwen
+(E) James </pre>
+###### answer
+<pre> A: Let's think step by step.
+This question focuses on the name. We know the following: The names of the penguin in the table are Louis, Bernard, Vincent, and Gwen.
+The second penguin listed is Bernard. So the answer is (B). </pre>
+###### pred
+<pre> (B) </pre>
+###### target
+<pre> (B) </pre>
+### penguins_in_a_table/132
+###### instruction
+<pre> Answer questions about a table of penguins and their attributes.
+
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  We now add a penguin to the table:
+James, 12, 90, 12
+How many penguins are less than 8 years old?
+Options:
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+A: Let's think step by step.
+This question focuses on age. We know the following: Louis is 7 years old, Bernard is 5 years old, Vincent is 9 years old, and Gwen is 8 years old.
+Now, we add James to this table: James is 12 years old.
+The penguins that are less than 8 years old are Louis and Bernard.
+There are 2 penguins less than 8 years old. So the answer is (B).
+
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  Which is the youngest penguin?
+Options:
+(A) Louis
+(B) Bernard
+(C) Vincent
+(D) Gwen
+(E) James
+A: Let's think step by step.
+This question focuses on age. We know the following: Louis is 7 years old, Bernard is 5 years old, Vincent is 9 years old, and Gwen is 8 years old.
+According to the table, Bernard (5) is the youngest amongst them.
+The youngest penguin is Bernard. So the answer is (B).
+
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  What is the name of the second penguin sorted by alphabetic order?
+Options:
+(A) Louis
+(B) Bernard
+(C) Vincent
+(D) Gwen
+(E) James
+A: Let's think step by step.
+This question focuses on the name. We know the following: The names of the penguin in the table are Louis, Bernard, Vincent, and Gwen.
+When we sort their names alphabetically, we get Bernard, Gwen, Louis, Vincent.
+The name of the second penguin sorted by alphabetical order is Gwen.
+The name of the second penguin sorted by alphabetic order is Gwen. So the answer is (D).
+
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  We now add a penguin to the table:
+James, 12, 90, 12
+And here is a similar table, but listing giraffes:
+name, age, height (cm), weight (kg)
+Jody, 5, 430, 620
+Gladys, 10, 420, 590
+Marian, 2, 310, 410
+Donna, 9, 440, 650
+What is the cumulated age of the giraffes?
+Options:
+(A) 26
+(B) 29
+(C) 41
+(D) 55
+(E) 67 </pre>
+###### answer
+<pre> Let's think step by step.
+We need to calculate the cumulated age of the giraffes. The ages of the giraffes are: Jody is 5 years old, Gladys is 10 years old, Marian is 2 years old, and Donna is 9 years old.
+To find the cumulated age, we add up all the ages: 5 + 10 + 2 + 9 = 26.
+The cumulated age of the giraffes is 26 years. So the answer is (A). </pre>
+###### pred
+<pre> (A) </pre>
+###### target
+<pre> (A) </pre>
+### logical_deduction_three_objects/134
+###### instruction
+<pre> A logical deduction task which requires deducing the order of a sequence of objects.
+
+Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were three golfers: Amy, Eli, and Eve. Eve finished above Amy. Eli finished below Amy.
+Options:
+(A) Amy finished last
+(B) Eli finished last
+(C) Eve finished last
+A: Let's think step by step.
+(1) Eve finished above Amy: "(above) ? Eve ? Amy ? (below)".
+(2) Eli finished below Amy: "(above) ? Amy ? Eli ? (below)".
+(3) Combining (1) and (2) we get the following ordering: "(above) Eve Amy Eli (below)".
+According to this ordering, the person who finished last (the one at the bottom of this list) is Eli.
+Eli finished last. So the answer is (B).
+
+Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are three books: a white book, a green book, and an orange book. The green book is to the right of the white book. The orange book is the rightmost.
+Options:
+(A) The white book is the leftmost
+(B) The green book is the leftmost
+(C) The orange book is the leftmost
+A: Let's think step by step.
+(1) The green book is to the right of the white book: "(left) ? white ? green ? (right)".
+(2) The orange book is the rightmost: "(left) ? white ? green orange (right)".
+(3) Combining (1) and (2) we get the following ordering: "(left) white green orange (right)".
+According to this ordering, the leftmost book is the white book.
+The white book is the leftmost. So the answer is (A).
+
+Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are three books: a red book, a gray book, and a white book. The white book is to the left of the gray book. The red book is the second from the left.
+Options:
+(A) The red book is the leftmost
+(B) The gray book is the leftmost
+(C) The white book is the leftmost
+A: Let's think step by step.
+(1) The white book is to the left of the gray book: "(left) ? white ? gray ? (right)".
+(2) The red book is the second from the left: "(left) ? white red gray ? (right)".
+(3) Combining (1) and (2) we get the following ordering: "(left) white red gray (right)".
+According to this ordering, the leftmost book is the white book.
+The white book is the leftmost. So the answer is (C).
+
+Q: The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells three fruits: loquats, mangoes, and apples. The mangoes are more expensive than the apples. The loquats are more expensive than the mangoes.
+Options:
+(A) The loquats are the cheapest
+(B) The mangoes are the cheapest
+(C) The apples are the cheapest </pre>
+###### answer
+<pre> A: Let's think step by step.
+(1) The mangoes are more expensive than the apples: "(cheap) ? apples ? mangoes (expensive)".
+(2) The loquats are more expensive than the mangoes: "(cheap) ? mangoes ? loquats (expensive)".
+(3) Combining (1) and (2) we get the following ordering: "(cheap) apples &lt; mangoes &lt; loquats (expensive)".
+According to this ordering, the cheapest fruit is the apple.
+So the answer is (C). </pre>
+###### pred
+<pre> (C) </pre>
+###### target
+<pre> (C) </pre>

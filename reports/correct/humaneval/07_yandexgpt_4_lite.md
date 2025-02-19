@@ -1,192 +1,37 @@
 # humaneval / yandexgpt-4-lite
-### HumanEval/68
+### HumanEval/8
 ###### instruction
 <pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+from typing import List, Tuple
 
-def pluck(arr):
-    """
-    "Given an array representing a branch of a tree that has non-negative integer nodes
-    your task is to pluck one of the nodes and return it.
-    The plucked node should be the node with the smallest even value.
-    If multiple nodes with the same smallest even value are found return the node that has smallest index.
 
-    The plucked node should be returned in a list, [ smalest_value, its index ],
-    If there are no even values or the given array is empty, return [].
-
-    Example 1:
-        Input: [4,2,3]
-        Output: [2, 1]
-        Explanation: 2 has the smallest even value, and 2 has the smallest index.
-
-    Example 2:
-        Input: [1,2,3]
-        Output: [2, 1]
-        Explanation: 2 has the smallest even value, and 2 has the smallest index. 
-
-    Example 3:
-        Input: []
-        Output: []
-    
-    Example 4:
-        Input: [5, 0, 3, 0, 4, 2]
-        Output: [0, 1]
-        Explanation: 0 is the smallest value, but  there are two zeros,
-                     so we will choose the first zero, which has the smallest index.
-
-    Constraints:
-        * 1 <= nodes.length <= 10000
-        * 0 <= node.value
+def sum_product(numbers: List[int]) -> Tuple[int, int]:
+    """ For a given list of integers, return a tuple consisting of a sum and a product of all the integers in a list.
+    Empty sum should be equal to 0 and empty product should be equal to 1.
+    >>> sum_product([])
+    (0, 1)
+    >>> sum_product([1, 2, 3, 4])
+    (10, 24)
     """
  </pre>
 ###### answer
 <pre> ```
-def pluck(arr):
-    smallest_even_value = float('inf')
-    smallest_index = -1
-    for i, value in enumerate(arr):
-        if value % 2 == 0 and value < smallest_even_value:
-            smallest_even_value = value
-            smallest_index = i
-    if smallest_index == -1:
-        return []
-    return [smallest_even_value, smallest_index]
+def sum_product(numbers: List[int]) -> Tuple[int, int]:
+    sum_ = 0
+    product = 1
+    for num in numbers:
+        sum_ += num
+        product *= num
+    return (sum_, product)
 ``` </pre>
 ###### canonical_solution
-<pre>     if(len(arr) == 0): return []
-    evens = list(filter(lambda x: x%2 == 0, arr))
-    if(evens == []): return []
-    return [min(evens), arr.index(min(evens))]
- </pre>
-###### test
-<pre> def check(candidate):
+<pre>     sum_value = 0
+    prod_value = 1
 
-    # Check some simple cases
-    assert True, "This prints if this assert fails 1 (good for debugging!)"
-    assert candidate([4,2,3]) == [2, 1], "Error"
-    assert candidate([1,2,3]) == [2, 1], "Error"
-    assert candidate([]) == [], "Error"
-    assert candidate([5, 0, 3, 0, 4, 2]) == [0, 1], "Error"
-
-    # Check some edge cases that are easy to work out by hand.
-    assert True, "This prints if this assert fails 2 (also good for debugging!)"
-    assert candidate([1, 2, 3, 0, 5, 3]) == [0, 3], "Error"
-    assert candidate([5, 4, 8, 4 ,8]) == [4, 1], "Error"
-    assert candidate([7, 6, 7, 1]) == [6, 1], "Error"
-    assert candidate([7, 9, 7, 1]) == [], "Error"
-
- </pre>
-### HumanEval/49
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-
-
-def modp(n: int, p: int):
-    """Return 2^n modulo p (be aware of numerics).
-    >>> modp(3, 5)
-    3
-    >>> modp(1101, 101)
-    2
-    >>> modp(0, 101)
-    1
-    >>> modp(3, 11)
-    8
-    >>> modp(100, 101)
-    1
-    """
- </pre>
-###### answer
-<pre> ```
-def modp(n: int, p: int):
-    result = pow(2, n, p)
-    return result
-``` </pre>
-###### canonical_solution
-<pre>     ret = 1
-    for i in range(n):
-        ret = (2 * ret) % p
-    return ret
- </pre>
-###### test
-<pre> 
-
-METADATA = {}
-
-
-def check(candidate):
-    assert candidate(3, 5) == 3
-    assert candidate(1101, 101) == 2
-    assert candidate(0, 101) == 1
-    assert candidate(3, 11) == 8
-    assert candidate(100, 101) == 1
-    assert candidate(30, 5) == 4
-    assert candidate(31, 5) == 3
-
- </pre>
-### HumanEval/60
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-
-
-def sum_to_n(n: int):
-    """sum_to_n is a function that sums numbers from 1 to n.
-    >>> sum_to_n(30)
-    465
-    >>> sum_to_n(100)
-    5050
-    >>> sum_to_n(5)
-    15
-    >>> sum_to_n(10)
-    55
-    >>> sum_to_n(1)
-    1
-    """
- </pre>
-###### answer
-<pre> ```
-def sum_to_n(n):
-    return sum(range(1, n + 1))
-``` </pre>
-###### canonical_solution
-<pre>     return sum(range(n + 1))
- </pre>
-###### test
-<pre> 
-
-METADATA = {}
-
-
-def check(candidate):
-    assert candidate(1) == 1
-    assert candidate(6) == 21
-    assert candidate(11) == 66
-    assert candidate(30) == 465
-    assert candidate(100) == 5050
-
- </pre>
-### HumanEval/13
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-
-
-def greatest_common_divisor(a: int, b: int) -> int:
-    """ Return a greatest common divisor of two integers a and b
-    >>> greatest_common_divisor(3, 5)
-    1
-    >>> greatest_common_divisor(25, 15)
-    5
-    """
- </pre>
-###### answer
-<pre> ```
-def greatest_common_divisor(a, b):
-    while b != 0:
-        a, b = b, a % b
-    return a
-``` </pre>
-###### canonical_solution
-<pre>     while b:
-        a, b = b, a % b
-    return a
+    for n in numbers:
+        sum_value += n
+        prod_value *= n
+    return sum_value, prod_value
  </pre>
 ###### test
 <pre> 
@@ -198,51 +43,87 @@ METADATA = {
 
 
 def check(candidate):
-    assert candidate(3, 7) == 1
-    assert candidate(10, 15) == 5
-    assert candidate(49, 14) == 7
-    assert candidate(144, 60) == 12
+    assert candidate([]) == (0, 1)
+    assert candidate([1, 1, 1]) == (3, 1)
+    assert candidate([100, 0]) == (100, 0)
+    assert candidate([3, 5, 7]) == (3 + 5 + 7, 3 * 5 * 7)
+    assert candidate([10]) == (10, 10)
  </pre>
-### HumanEval/53
+### HumanEval/121
 ###### instruction
 <pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
 
+def solution(lst):
+    """Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.
+    
 
-def add(x: int, y: int):
-    """Add two numbers x and y
-    >>> add(2, 3)
-    5
-    >>> add(5, 7)
-    12
+    Examples
+    solution([5, 8, 7, 1]) ==> 12
+    solution([3, 3, 3, 3, 3]) ==> 9
+    solution([30, 13, 24, 321]) ==>0
     """
  </pre>
 ###### answer
 <pre> ```
-def add(x, y):
-    return x + y
+def solution(lst):
+    result = 0
+    for i in range(len(lst)):
+        if i % 2 == 0 and lst[i] % 2 == 1:
+            result += lst[i]
+    return result
 ``` </pre>
 ###### canonical_solution
-<pre>     return x + y
+<pre>     return sum([x for idx, x in enumerate(lst) if idx%2==0 and x%2==1])
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate([5, 8, 7, 1])    == 12
+    assert candidate([3, 3, 3, 3, 3]) == 9
+    assert candidate([30, 13, 24, 321]) == 0
+    assert candidate([5, 9]) == 5
+    assert candidate([2, 4, 8]) == 0
+    assert candidate([30, 13, 23, 32]) == 23
+    assert candidate([3, 13, 2, 9]) == 3
+
+    # Check some edge cases that are easy to work out by hand.
+
+ </pre>
+### HumanEval/23
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+
+def strlen(string: str) -> int:
+    """ Return length of given string
+    >>> strlen('')
+    0
+    >>> strlen('abc')
+    3
+    """
+ </pre>
+###### answer
+<pre> ```
+def strlen(string: str) -> int:
+    return len(string)
+``` </pre>
+###### canonical_solution
+<pre>     return len(string)
  </pre>
 ###### test
 <pre> 
 
-METADATA = {}
+METADATA = {
+    'author': 'jt',
+    'dataset': 'test'
+}
 
 
 def check(candidate):
-    import random
-
-    assert candidate(0, 1) == 1
-    assert candidate(1, 0) == 1
-    assert candidate(2, 3) == 5
-    assert candidate(5, 7) == 12
-    assert candidate(7, 5) == 12
-
-    for i in range(100):
-        x, y = random.randint(0, 1000), random.randint(0, 1000)
-        assert candidate(x, y) == x + y
-
+    assert candidate('') == 0
+    assert candidate('x') == 1
+    assert candidate('asdasnakj') == 9
  </pre>
 ### HumanEval/54
 ###### instruction
@@ -290,22 +171,81 @@ def check(candidate):
     assert candidate('aabb', 'aaccc') == False
 
  </pre>
-### HumanEval/61
+### HumanEval/40
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+
+def triples_sum_to_zero(l: list):
+    """
+    triples_sum_to_zero takes a list of integers as an input.
+    it returns True if there are three distinct elements in the list that
+    sum to zero, and False otherwise.
+
+    >>> triples_sum_to_zero([1, 3, 5, 0])
+    False
+    >>> triples_sum_to_zero([1, 3, -2, 1])
+    True
+    >>> triples_sum_to_zero([1, 2, 3, 7])
+    False
+    >>> triples_sum_to_zero([2, 4, -5, 3, 9, 7])
+    True
+    >>> triples_sum_to_zero([1])
+    False
+    """
+ </pre>
+###### answer
+<pre> ```
+def triples_sum_to_zero(l: list) -> bool:
+    for i in range(len(l) - 2):
+        for j in range(i + 1, len(l) - 1):
+            for k in range(j + 1, len(l)):
+                if l[i] + l[j] + l[k] == 0:
+                    return True
+    return False
+``` </pre>
+###### canonical_solution
+<pre>     for i in range(len(l)):
+        for j in range(i + 1, len(l)):
+            for k in range(j + 1, len(l)):
+                if l[i] + l[j] + l[k] == 0:
+                    return True
+    return False
+ </pre>
+###### test
+<pre> 
+
+METADATA = {}
+
+
+def check(candidate):
+    assert candidate([1, 3, 5, 0]) == False
+    assert candidate([1, 3, 5, -1]) == False
+    assert candidate([1, 3, -2, 1]) == True
+    assert candidate([1, 2, 3, 7]) == False
+    assert candidate([1, 2, 5, 7]) == False
+    assert candidate([2, 4, -5, 3, 9, 7]) == True
+    assert candidate([1]) == False
+    assert candidate([1, 3, 5, -100]) == False
+    assert candidate([100, 3, 5, -100]) == False
+
+ </pre>
+### HumanEval/56
 ###### instruction
 <pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
 
 
 def correct_bracketing(brackets: str):
-    """ brackets is a string of "(" and ")".
+    """ brackets is a string of "&lt;" and ">".
     return True if every opening bracket has a corresponding closing bracket.
 
-    >>> correct_bracketing("(")
+    >>> correct_bracketing("&lt;")
     False
-    >>> correct_bracketing("()")
+    >>> correct_bracketing("&lt;>")
     True
-    >>> correct_bracketing("(()())")
+    >>> correct_bracketing("&lt;&lt;>&lt;>>")
     True
-    >>> correct_bracketing(")(()")
+    >>> correct_bracketing(">&lt;&lt;>")
     False
     """
  </pre>
@@ -314,22 +254,22 @@ def correct_bracketing(brackets: str):
 def correct_bracketing(brackets: str):
     count = 0
     for bracket in brackets:
-        if bracket == "(":
+        if bracket == "&lt;":
             count += 1
-        elif bracket == ")":
+        elif bracket == ">":
             count -= 1
-        if count < 0:
+        if count &lt; 0:
             return False
     return count == 0
 ``` </pre>
 ###### canonical_solution
 <pre>     depth = 0
     for b in brackets:
-        if b == "(":
+        if b == "&lt;":
             depth += 1
         else:
             depth -= 1
-        if depth < 0:
+        if depth &lt; 0:
             return False
     return depth == 0
  </pre>
@@ -340,114 +280,19 @@ METADATA = {}
 
 
 def check(candidate):
-    assert candidate("()")
-    assert candidate("(()())")
-    assert candidate("()()(()())()")
-    assert candidate("()()((()()())())(()()(()))")
-    assert not candidate("((()())))")
-    assert not candidate(")(()")
-    assert not candidate("(")
-    assert not candidate("((((")
-    assert not candidate(")")
-    assert not candidate("(()")
-    assert not candidate("()()(()())())(()")
-    assert not candidate("()()(()())()))()")
+    assert candidate("&lt;>")
+    assert candidate("&lt;&lt;>&lt;>>")
+    assert candidate("&lt;>&lt;>&lt;&lt;>&lt;>>&lt;>")
+    assert candidate("&lt;>&lt;>&lt;&lt;&lt;>&lt;>&lt;>>&lt;>>&lt;&lt;>&lt;>&lt;&lt;>>>")
+    assert not candidate("&lt;&lt;&lt;>&lt;>>>>")
+    assert not candidate(">&lt;&lt;>")
+    assert not candidate("&lt;")
+    assert not candidate("&lt;&lt;&lt;&lt;")
+    assert not candidate(">")
+    assert not candidate("&lt;&lt;>")
+    assert not candidate("&lt;>&lt;>&lt;&lt;>&lt;>>&lt;>>&lt;&lt;>")
+    assert not candidate("&lt;>&lt;>&lt;&lt;>&lt;>>&lt;>>>&lt;>")
 
- </pre>
-### HumanEval/12
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-from typing import List, Optional
-
-
-def longest(strings: List[str]) -> Optional[str]:
-    """ Out of list of strings, return the longest one. Return the first one in case of multiple
-    strings of the same length. Return None in case the input list is empty.
-    >>> longest([])
-
-    >>> longest(['a', 'b', 'c'])
-    'a'
-    >>> longest(['a', 'bb', 'ccc'])
-    'ccc'
-    """
- </pre>
-###### answer
-<pre> ```
-def longest(strings: List[str]) -> Optional[str]:
-    if not strings:
-        return None
-    longest_string = strings[0]
-    for string in strings:
-        if len(string) > len(longest_string):
-            longest_string = string
-    return longest_string
-``` </pre>
-###### canonical_solution
-<pre>     if not strings:
-        return None
-
-    maxlen = max(len(x) for x in strings)
-    for s in strings:
-        if len(s) == maxlen:
-            return s
- </pre>
-###### test
-<pre> 
-
-METADATA = {
-    'author': 'jt',
-    'dataset': 'test'
-}
-
-
-def check(candidate):
-    assert candidate([]) == None
-    assert candidate(['x', 'y', 'z']) == 'x'
-    assert candidate(['x', 'yyy', 'zzzz', 'www', 'kkkk', 'abc']) == 'zzzz'
- </pre>
-### HumanEval/112
-###### instruction
-<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
-
-def reverse_delete(s,c):
-    """Task
-    We are given two strings s and c, you have to deleted all the characters in s that are equal to any character in c
-    then check if the result string is palindrome.
-    A string is called palindrome if it reads the same backward as forward.
-    You should return a tuple containing the result string and True/False for the check.
-    Example
-    For s = "abcde", c = "ae", the result should be ('bcd',False)
-    For s = "abcdef", c = "b"  the result should be ('acdef',False)
-    For s = "abcdedcba", c = "ab", the result should be ('cdedc',True)
-    """
- </pre>
-###### answer
-<pre> ```
-def reverse_delete(s, c):
-    result = ''
-    for char in s:
-        if char not in c:
-            result += char
-    reversed_string = result[::-1]
-    is_palindrome = result == reversed_string
-    return (result, is_palindrome)
-``` </pre>
-###### canonical_solution
-<pre>     s = ''.join([char for char in s if char not in c])
-    return (s,s[::-1] == s)
- </pre>
-###### test
-<pre> def check(candidate):
-
-    assert candidate("abcde","ae") == ('bcd',False)
-    assert candidate("abcdef", "b") == ('acdef',False)
-    assert candidate("abcdedcba","ab") == ('cdedc',True)
-    assert candidate("dwik","w") == ('dik',False)
-    assert candidate("a","a") == ('',True)
-    assert candidate("abcdedcba","") == ('abcdedcba',True)
-    assert candidate("abcdedcba","v") == ('abcdedcba',True)
-    assert candidate("vabba","v") == ('abba',True)
-    assert candidate("mamma", "mia") == ("", True)
  </pre>
 ### HumanEval/4
 ###### instruction
@@ -486,8 +331,145 @@ METADATA = {
 
 
 def check(candidate):
-    assert abs(candidate([1.0, 2.0, 3.0]) - 2.0/3.0) < 1e-6
-    assert abs(candidate([1.0, 2.0, 3.0, 4.0]) - 1.0) < 1e-6
-    assert abs(candidate([1.0, 2.0, 3.0, 4.0, 5.0]) - 6.0/5.0) < 1e-6
+    assert abs(candidate([1.0, 2.0, 3.0]) - 2.0/3.0) &lt; 1e-6
+    assert abs(candidate([1.0, 2.0, 3.0, 4.0]) - 1.0) &lt; 1e-6
+    assert abs(candidate([1.0, 2.0, 3.0, 4.0, 5.0]) - 6.0/5.0) &lt; 1e-6
 
+ </pre>
+### HumanEval/61
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+
+def correct_bracketing(brackets: str):
+    """ brackets is a string of "(" and ")".
+    return True if every opening bracket has a corresponding closing bracket.
+
+    >>> correct_bracketing("(")
+    False
+    >>> correct_bracketing("()")
+    True
+    >>> correct_bracketing("(()())")
+    True
+    >>> correct_bracketing(")(()")
+    False
+    """
+ </pre>
+###### answer
+<pre> ```
+def correct_bracketing(brackets: str):
+    count = 0
+    for bracket in brackets:
+        if bracket == "(":
+            count += 1
+        elif bracket == ")":
+            count -= 1
+        if count &lt; 0:
+            return False
+    return count == 0
+``` </pre>
+###### canonical_solution
+<pre>     depth = 0
+    for b in brackets:
+        if b == "(":
+            depth += 1
+        else:
+            depth -= 1
+        if depth &lt; 0:
+            return False
+    return depth == 0
+ </pre>
+###### test
+<pre> 
+
+METADATA = {}
+
+
+def check(candidate):
+    assert candidate("()")
+    assert candidate("(()())")
+    assert candidate("()()(()())()")
+    assert candidate("()()((()()())())(()()(()))")
+    assert not candidate("((()())))")
+    assert not candidate(")(()")
+    assert not candidate("(")
+    assert not candidate("((((")
+    assert not candidate(")")
+    assert not candidate("(()")
+    assert not candidate("()()(()())())(()")
+    assert not candidate("()()(()())()))()")
+
+ </pre>
+### HumanEval/7
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+from typing import List
+
+
+def filter_by_substring(strings: List[str], substring: str) -> List[str]:
+    """ Filter an input list of strings only for ones that contain given substring
+    >>> filter_by_substring([], 'a')
+    []
+    >>> filter_by_substring(['abc', 'bacd', 'cde', 'array'], 'a')
+    ['abc', 'bacd', 'array']
+    """
+ </pre>
+###### answer
+<pre> ```
+def filter_by_substring(strings: List[str], substring: str) -> List[str]:
+    return [string for string in strings if substring in string]
+``` </pre>
+###### canonical_solution
+<pre>     return [x for x in strings if substring in x]
+ </pre>
+###### test
+<pre> 
+
+METADATA = {
+    'author': 'jt',
+    'dataset': 'test'
+}
+
+
+def check(candidate):
+    assert candidate([], 'john') == []
+    assert candidate(['xxx', 'asd', 'xxy', 'john doe', 'xxxAAA', 'xxx'], 'xxx') == ['xxx', 'xxxAAA', 'xxx']
+    assert candidate(['xxx', 'asd', 'aaaxxy', 'john doe', 'xxxAAA', 'xxx'], 'xx') == ['xxx', 'aaaxxy', 'xxxAAA', 'xxx']
+    assert candidate(['grunt', 'trumpet', 'prune', 'gruesome'], 'run') == ['grunt', 'prune']
+ </pre>
+### HumanEval/22
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+from typing import List, Any
+
+
+def filter_integers(values: List[Any]) -> List[int]:
+    """ Filter given list of any python values only for integers
+    >>> filter_integers(['a', 3.14, 5])
+    [5]
+    >>> filter_integers([1, 2, 3, 'abc', {}, []])
+    [1, 2, 3]
+    """
+ </pre>
+###### answer
+<pre> ```
+def filter_integers(values: List[Any]) -> List[int]:
+    return list(filter(lambda x: isinstance(x, int), values))
+``` </pre>
+###### canonical_solution
+<pre>     return [x for x in values if isinstance(x, int)]
+ </pre>
+###### test
+<pre> 
+
+METADATA = {
+    'author': 'jt',
+    'dataset': 'test'
+}
+
+
+def check(candidate):
+    assert candidate([]) == []
+    assert candidate([4, {}, [], 23.2, 9, 'adasd']) == [4, 9]
+    assert candidate([3, 'c', 3, 3, 'a', 'b']) == [3, 3, 3]
  </pre>

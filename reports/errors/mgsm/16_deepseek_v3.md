@@ -1,4 +1,30 @@
 # mgsm-en / deepseek-v3
+### 89
+###### instruction
+<pre> Solve this math problem. Give the reasoning steps before giving the final answer on the last line by itself in the format of "Answer:". Do not add anything other than the integer answer after "Answer:".
+
+Christina is planning a birthday party and needs .75 gift bags per invited guest, because 1/4 of attendees don't show up. She invited 16 friends. Gift bags are $2 each. How much will she spend? </pre>
+###### answer
+<pre> To determine how much Christina will spend on gift bags, follow these steps:
+
+1. **Calculate the number of expected attendees:**
+   - Christina invited 16 friends.
+   - Since 1/4 of the attendees don't show up, 3/4 of the invited friends will attend.
+   - Number of attendees = \( 16 \times \frac{3}{4} = 12 \).
+
+2. **Calculate the number of gift bags needed:**
+   - Christina needs 0.75 gift bags per attendee.
+   - Total gift bags = \( 12 \times 0.75 = 9 \).
+
+3. **Calculate the total cost:**
+   - Each gift bag costs $2.
+   - Total cost = \( 9 \times 2 = 18 \).
+
+Answer: 18 </pre>
+###### pred
+<pre> 18 </pre>
+###### target
+<pre> 24 </pre>
 ### 234
 ###### instruction
 <pre> Solve this math problem. Give the reasoning steps before giving the final answer on the last line by itself in the format of "Answer:". Do not add anything other than the integer answer after "Answer:".

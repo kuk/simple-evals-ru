@@ -110,11 +110,11 @@ def print_scores_table(_, bench_model_res_items):
 
         cost = stats["cost"] / stats["tokens"] * 1_000_000
         print("<th>", f"{model.name}, {cost:.2f}$", "</th>")
-        print(f'<td>{stats["avg_score"] * 100:.1f}%</td>')
+        print(f'<td>{stats["avg_score"] * 100:.1f}±{stats["avg_std"] * 100:.1f}%</td>')
 
         for bench in BENCHES:
             stats = bench_model_stats[bench.id, model.id]
-            print(f'<td>{stats["score"] * 100:.1f}%</td>')
+            print(f'<td>{stats["score"] * 100:.1f}±{stats["std"] * 100:.1f}%</td>')
 
         print("</tr>")
     print("</table>")

@@ -441,10 +441,3 @@ PROJ=~/proj/simple-evals-ru
 uv run ruff check $(find $PROJ/simple $PROJ/scripts $PROJ/tests -name '*.py')
 uv run pytest -s $PROJ/tests/*.py
 ```
-
-## Аппендикс J
-
-<img src="images/j/quadrant.png">
-<img src="images/j/sberid.png">
-<img src="images/j/negotovi.png">
-<img src="images/j/token.png">

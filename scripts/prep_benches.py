@@ -139,11 +139,12 @@ def prep_mmlu():
     random.seed(0)
     random.shuffle(row_items)
 
+    letters = "ABCDEFGHIJ"
     bad_index_count = 0
     cat_counts = Counter()
     task_items = []
     for item in row_items:
-        if "ABCDEFGHIJ".find(item["answer"]) != item["answer_index"]:
+        if letters.find(item["answer"]) != item["answer_index"]:
             bad_index_count += 1
             continue
 
@@ -152,15 +153,24 @@ def prep_mmlu():
             continue
         cat_counts[cat] += 1
 
-        assert len(item["options"]) <= len("ABCDEFGHIJ"), len(item["options"])
-        options = dict(zip("ABCDEFGHIJ", item["options"]))
+        options = item["options"].tolist()
+        assert len(options) <= len(letters), len(options)
+        assert len(options) == len(set(options)), options
+        
+        answer_option = options[item["answer_index"]]
+
+        random.seed(0)
+        random.shuffle(options)
+
+        answer_index = options.index(answer_option)
+        options = dict(zip(letters, options))
+        answer = letters[answer_index]
 
         task_items.append({
-            "id": item["question_id"],
-            "cat": cat,
+            "id": f'{item["category"]}/{item["question_id"]}',
             "question": item["question"],
             "options": options,
-            "target": item["answer"]
+            "target": answer
         })
 
     assert bad_index_count == 1, bad_index_count

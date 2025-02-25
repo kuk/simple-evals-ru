@@ -645,3 +645,745 @@ Then, the final equation is A - B = 16 - 10 = 6. So the answer is 6. </pre>
 <pre> 6 </pre>
 ###### target
 <pre> 20 </pre>
+### snarks/22
+###### instruction
+<pre> Determine which of two sentences is sarcastic.
+
+According to Cambridge University Dictionary, sarcasm is "the use of remarks that clearly mean the opposite of what they say, made in order to hurt someone's feelings or to criticize something in a humorous way." Sarcastic sentences often contain satirical or ironic utterances, hyperboles, ambivalent or witty remarks.
+
+Q: Which statement is sarcastic?
+Options:
+(A) Yes, because having interests and actively researching them is a huge waste
+(B) Yes, because having interests and actively researching them is a huge deal
+A: Let's think step by step.
+If we look at (A), it says that having interests and actively researching them is a huge waste, implying that it is a useless effort. However, we know that having interests and actively researching them is typically not a waste but rather is beneficial to the individual. The presence of such a juxtaposition in (A) suggests that it contains a taste of irony and sarcasm.
+If we look at (B), it says that having interests and actively researching them is a huge deal, implying that it is an important and consequential effort. This is arguably a neutral and correct statement.
+Above the above, the sarcastic option is (A). So the answer is (A).
+
+Q: Which statement is sarcastic?
+Options:
+(A) No one is going to disagree with you on this. Avoiding ad hominem attacks really help your case
+(B) No one is going to disagree with you on this. Ad hominem attacks really help your case
+A: Let's think step by step.
+If we look at (A), it says that avoiding ad hominem attacks really help your case, implying that ad hominem attacks are adverse and injurious. Because ad hominem attacks are adressed at a person rather than an idea, it is indeed true that avoiding them is often useful and helpful; so, (A) is a neutral (valid and agreeable) statement.
+If we look at (B), it says that ad hominem attacks really help your case, implying that ad hominem attacks are a positive thing. However, we stated previously that ad hominem attacks are often not useful or constructive. The speaker in this sentence therefore seems to mean the opposite of what they are saying; so, there appears to have a taste of irony and sarcasm in (B).
+Above the above, the sarcastic option is (B). So the answer is (B).
+
+Q: Which statement is sarcastic?
+Options:
+(A) Consistency in the league's punishments? What do you think this is supposed to be, politics?
+(B) Consistency in the league's punishments? What do you think this is supposed to be, moral?
+A: Let's think step by step.
+If we look at (A), it likens the consistency in the league's punishments with that in politics. Because politics or political affairs are often not considered to be consistent or dependable, this sentence appears to be satirical.
+If we look at (B), it likens the consistency in the league's punishments with that in morality. Discussing the consistency of the league's punishments in the context of morality, ethics, or law makes sense and does not appear to make a satirical point about anything.
+Above the above, the sarcastic option is (A). So the answer is (A).
+
+Q: Which statement is sarcastic?
+Options:
+(A) You mean Knuth up arrow notation isn't unfamiliar for you?
+(B) You mean Knuth up arrow notation isn't normal for you? </pre>
+###### answer
+<pre> Let's analyze each option:
+
+1. **Q: Which statement is sarcastic?**
+Options:
+(A) Yes, because having interests and actively researching them is a huge waste
+(B) Yes, because having interests and actively researching them is a huge deal
+
+The sarcastic option is (A). This is because the statement says that having interests and actively researching them is a huge waste, which is the opposite of what is typically true. It's a hyperbolic and ironic statement meant to convey the opposite of its literal meaning.
+
+2. **Q: Which statement is sarcastic?**
+Options:
+(A) No one is going to disagree with you on this. Avoiding ad hominem attacks really help your case
+(B) No one is going to disagree with you on this. Ad hominem attacks really help your case
+
+The sarcastic option is (B). This is because the statement says that ad hominem attacks really help your case, which is the opposite of what is typically true. Ad hominem attacks are generally considered to be unhelpful and counterproductive.
+
+3. **Q: Which statement is sarcastic?**
+Options:
+(A) Consistency in the league's punishments? What do you think this is supposed to be, politics?
+(B) Consistency in the league's punishments? What do you think this is supposed to be, moral?
+
+The sarcastic option is (A). This is because the statement likens the consistency in the league's punishments to that in politics, which is often seen as inconsistent and unreliable. This is a satirical comparison meant to convey the opposite of its literal meaning.
+
+4. **Q: Which statement is sarcastic?**
+Options:
+(A) You mean Knuth up arrow notation isn't unfamiliar for you?
+(B) You mean Knuth up arrow notation isn't normal for you?
+
+The sarcastic option is (B). This is because the statement says that Knuth up arrow notation isn't normal for you, which is likely meant to be ironic. Knuth up arrow notation is a complex and specialized mathematical notation, so it's unlikely to be "normal" for most people. The statement is probably meant to convey that the person is familiar with the notation, but is being sarcastically downplayed. </pre>
+###### pred
+<pre> ? </pre>
+###### target
+<pre> (B) </pre>
+### snarks/10
+###### instruction
+<pre> Determine which of two sentences is sarcastic.
+
+According to Cambridge University Dictionary, sarcasm is "the use of remarks that clearly mean the opposite of what they say, made in order to hurt someone's feelings or to criticize something in a humorous way." Sarcastic sentences often contain satirical or ironic utterances, hyperboles, ambivalent or witty remarks.
+
+Q: Which statement is sarcastic?
+Options:
+(A) Yes, because having interests and actively researching them is a huge waste
+(B) Yes, because having interests and actively researching them is a huge deal
+A: Let's think step by step.
+If we look at (A), it says that having interests and actively researching them is a huge waste, implying that it is a useless effort. However, we know that having interests and actively researching them is typically not a waste but rather is beneficial to the individual. The presence of such a juxtaposition in (A) suggests that it contains a taste of irony and sarcasm.
+If we look at (B), it says that having interests and actively researching them is a huge deal, implying that it is an important and consequential effort. This is arguably a neutral and correct statement.
+Above the above, the sarcastic option is (A). So the answer is (A).
+
+Q: Which statement is sarcastic?
+Options:
+(A) No one is going to disagree with you on this. Avoiding ad hominem attacks really help your case
+(B) No one is going to disagree with you on this. Ad hominem attacks really help your case
+A: Let's think step by step.
+If we look at (A), it says that avoiding ad hominem attacks really help your case, implying that ad hominem attacks are adverse and injurious. Because ad hominem attacks are adressed at a person rather than an idea, it is indeed true that avoiding them is often useful and helpful; so, (A) is a neutral (valid and agreeable) statement.
+If we look at (B), it says that ad hominem attacks really help your case, implying that ad hominem attacks are a positive thing. However, we stated previously that ad hominem attacks are often not useful or constructive. The speaker in this sentence therefore seems to mean the opposite of what they are saying; so, there appears to have a taste of irony and sarcasm in (B).
+Above the above, the sarcastic option is (B). So the answer is (B).
+
+Q: Which statement is sarcastic?
+Options:
+(A) Consistency in the league's punishments? What do you think this is supposed to be, politics?
+(B) Consistency in the league's punishments? What do you think this is supposed to be, moral?
+A: Let's think step by step.
+If we look at (A), it likens the consistency in the league's punishments with that in politics. Because politics or political affairs are often not considered to be consistent or dependable, this sentence appears to be satirical.
+If we look at (B), it likens the consistency in the league's punishments with that in morality. Discussing the consistency of the league's punishments in the context of morality, ethics, or law makes sense and does not appear to make a satirical point about anything.
+Above the above, the sarcastic option is (A). So the answer is (A).
+
+Q: Which statement is sarcastic?
+Options:
+(A) Working at a restaurant has made me an amazing chef
+(B) Working at a McDonald's has made me an amazing chef </pre>
+###### answer
+<pre> Let's analyze each option to determine which one is sarcastic.
+
+**Option 1:**
+(A) Yes, because having interests and actively researching them is a huge waste
+(B) Yes, because having interests and actively researching them is a huge deal
+
+The sarcastic option is (A). This is because the statement says that having interests and actively researching them is a huge waste, which is the opposite of what is typically true. Having interests and actively researching them is usually beneficial and not a waste.
+
+**Option 2:**
+(A) No one is going to disagree with you on this. Avoiding ad hominem attacks really help your case
+(B) No one is going to disagree with you on this. Ad hominem attacks really help your case
+
+The sarcastic option is (B). This is because the statement says that ad hominem attacks really help your case, which is the opposite of what is typically true. Ad hominem attacks are usually not helpful and can be counterproductive.
+
+**Option 3:**
+(A) Consistency in the league's punishments? What do you think this is supposed to be, politics?
+(B) Consistency in the league's punishments? What do you think this is supposed to be, moral?
+
+The sarcastic option is (A). This is because the statement likens the consistency in the league's punishments to politics, which is often associated with inconsistency and unpredictability. This is a satirical comparison.
+
+**Option 4:**
+(A) Working at a restaurant has made me an amazing chef
+(B) Working at a McDonald's has made me an amazing chef
+
+The sarcastic option is (B). This is because the statement says that working at a McDonald's, a fast-food chain known for its standardized and limited menu, has made someone an amazing chef. This is likely an exaggeration and a joke, implying that working at a McDonald's is not a path to culinary greatness. </pre>
+###### pred
+<pre> ? </pre>
+###### target
+<pre> (B) </pre>
+### formal_fallacies/172
+###### instruction
+<pre> Distinguish deductively valid arguments from formal fallacies.
+
+Q: "It is not always easy to see who is related to whom -- and in which ways. The following argument pertains to this question: To begin with, Lesley is a close friend of Fernando. Moreover, being a close friend of Fernando or a schoolmate of Lowell is sufficient for being a great-grandfather of Leroy. It follows that Lesley is a great-grandfather of Leroy."
+Is the argument, given the explicitly stated premises, deductively valid or invalid?
+Options:
+- valid
+- invalid
+A: Let's think step by step.
+(1) Lesley is a close friend of Fernando: Lesley = friend(Fernando).
+(2) Being a close friend of Fernando or a schoolmate of Lowell is sufficient for being a great-grandfather of Leroy: If X = friend(Fernando) OR SCHOOLMATE(Lowell), then X = great-grandfather(Leroy).
+Hypothesis: Does it follow that Lesley is a great-grandfather of Leroy: Lesley = great-grandfather(Leroy)?
+Let’s see whether the Hypothesis can be deduced from the arguments (1) and (2) by logical reasoning?
+By (1), we have Lesley = friend(Fernando). By (2), we have if Lesley = friend(Fernando), then Lesley = great-grandfather(Leroy).
+So, it is true that Lesley is a great-grandfather of Leroy. So the answer is valid.
+
+Q: "It is not always easy to see who is related to whom -- and in which ways. The following argument pertains to this question: Whoever is not a great-grandfather of Clyde is a stepbrother of Brian. Being an ancestor of Dana is sufficient for not being a great-grandfather of Clyde. We may conclude: Everyone who is an ancestor of Dana is a stepbrother of Brian, too."
+Is the argument, given the explicitly stated premises, deductively valid or invalid?
+Options:
+- valid
+- invalid
+A: Let's think step by step.
+(1) Whoever is not a great-grandfather of Clyde is a stepbrother of Brian: If X = NOT (great-grandfather(Clyde)), then X = stepbrother(Brian).
+(2): Being an ancestor of Dana is sufficient for not being a great-grandfather of Clyde: If X = ancestor(Dana), X = NOT (great-grandfather(Clyde)).
+Hypothesis: Does it follow that everyone who is an ancestor of Dana is a stepbrother of Brian, too: If X = ancestor(Dana), then X = stepbrother(Brian)?
+Let’s see whether the Hypothesis can be deduced from the arguments (1) and (2) by logical reasoning?
+By (2), we have if X = ancestor(Dana), X = NOT (great-grandfather(Clyde)).
+Furthermore, by (1), we have if X = NOT (great-grandfather(Clyde)), then X = stepbrother(Brian).
+By the transitive relation rule in first-order logic, we then have: if X = ancestor(Dana), then X = stepbrother(Brian).
+So, it is true that everyone who is an ancestor of Dana is a stepbrother of Brian. So the answer is valid.
+
+Q: "It is not always easy to grasp who is consuming which products. The following argument pertains to this question: Every infrequent user of Paul Mitchell shampoo is either a rare consumer of Nioxin shampoo or a loyal buyer of Caress soap, or both. No regular consumer of Lush soap is a rare consumer of Nioxin shampoo and, in the same time, a loyal buyer of Caress soap. It follows that whoever is an infrequent user of Paul Mitchell shampoo is not a regular consumer of Lush soap."
+Is the argument, given the explicitly stated premises, deductively valid or invalid?
+Options:
+- valid
+- invalid
+A: Let's think step by step.
+(1) Every infrequent user of Paul Mitchell shampoo is either a rare consumer of Nioxin shampoo or a loyal buyer of Caress soap, or both: If X = infrequent-user(Paul Mitchell), then X = rare-consumer(Nioxin) OR X = loyal-buyer(Caress).
+(2): No regular consumer of Lush soap is a rare consumer of Nioxin shampoo and a loyal buyer of Caress soap at the same time. If X = regular-consumer(Lush), then X = NOT (rare-consumer(Nioxin) AND loyal-buyer(Caress)).
+Hypothesis: Does it follow that whoever is an infrequent user of Paul Mitchell shampoo is not a regular consumer of Lush soap: If X = infrequent-user(Paul Mitchell), then X = NOT (regular-consumer(Lush))?
+Let’s see whether the Hypothesis can be deduced from the arguments (1) and (2) by logical reasoning?
+By (1), we have if X = infrequent-user(Paul Mitchell), then X = rare-consumer(Nioxin) OR X = loyal-buyer(Caress). We need to consider both cases separately:
+The case X = rare-consumer(Nioxin) does not appear in (2).
+The case X = loyal-buyer(Caress) does not appear in (2), either.
+So, from (1) and (2), we cannot necessarily deduce the Hypothesis. So the answer is invalid.
+
+Q: "Is Fred a cousin of Robert? Is Joe related to Bob? In large families, it is sometimes difficult to keep track of all one's relatives. The following argument seeks to clarify some such relations: First of all, whoever is not a half-brother of Steven is a great-grandfather of Craig. Next, there is somebody who is a great-grandfather of Craig and, in addition, not an ancestor of Jordon or not a stepbrother of Gustavo. It follows that not every half-brother of Steven is both an ancestor of Jordon and a stepbrother of Gustavo."
+Is the argument, given the explicitly stated premises, deductively valid or invalid?
+Options:
+- valid 
+- invalid </pre>
+###### answer
+<pre> Let's think step by step.
+
+(1) Whoever is not a half-brother of Steven is a great-grandfather of Craig: If X = NOT (half-brother(Steven)), then X = great-grandfather(Craig).
+(2) There is somebody who is a great-grandfather of Craig and, in addition, not an ancestor of Jordon or not a stepbrother of Gustavo: There exists X such that X = great-grandfather(Craig) AND (X = NOT (ancestor(Jordon)) OR X = NOT (stepbrother(Gustavo))).
+Hypothesis: Does it follow that not every half-brother of Steven is both an ancestor of Jordon and a stepbrother of Gustavo: NOT (every X: X = half-brother(Steven) -> X = ancestor(Jordon) AND X = stepbrother(Gustavo))?
+Let’s see whether the Hypothesis can be deduced from the arguments (1) and (2) by logical reasoning?
+By (1), we have if X = NOT (half-brother(Steven)), then X = great-grandfather(Craig).
+By (2), we have there exists X such that X = great-grandfather(Craig) AND (X = NOT (ancestor(Jordon)) OR X = NOT (stepbrother(Gustavo))).
+Let's call this X. Then, we have X = great-grandfather(Craig) AND (X = NOT (ancestor(Jordon)) OR X = NOT (stepbrother(Gustavo))).
+By the definition of "and," we have X = great-grandfather(Craig) AND X = NOT (ancestor(Jordon)) OR X = NOT (stepbrother(Gustavo)).
+By the definition of "or," we have X = great-grandfather(Craig) AND (X = NOT (ancestor(Jordon)) OR X = NOT (stepbrother(Gustavo))).
+By (1), we have if X = great-grandfather(Craig), then X = half-brother(Steven).
+So, we have X = half-brother(Steven) AND (X = NOT (ancestor(Jordon)) OR X = NOT (stepbrother(Gustavo))).
+By the definition of "and," we have X = half-brother(Steven) AND X = NOT (ancestor(Jordon)) OR X = NOT (stepbrother(Gustavo)).
+By the definition of "or," we have X = half-brother(Steven) AND (X = NOT (ancestor(Jordon)) OR X = NOT (stepbrother(Gustavo))).
+By the transitive relation rule in first-order logic, we then have: if X = half-brother(Steven), then X = NOT (ancestor(Jordon)) OR X = NOT (stepbrother(Gustavo)).
+So, it is true that not every half-brother of Steven is both an ancestor of Jordon and a stepbrother of Gustavo. So the answer is valid. </pre>
+###### pred
+<pre> valid </pre>
+###### target
+<pre> invalid </pre>
+### date_understanding/150
+###### instruction
+<pre> Infer the date from context.
+
+Q: Today is Christmas Eve of 1937. What is the date 10 days ago in MM/DD/YYYY?
+Options:
+(A) 12/14/2026
+(B) 12/14/1950
+(C) 12/14/2007
+(D) 12/14/1937
+(E) 07/14/1938
+(F) 12/14/1988
+A: Let's think step by step.
+If today is Christmas Eve of 1937, then today's date is December 24, 1937. 10 days before today is December 14, 1937, that is 12/14/1937. So the answer is (D).
+
+Q: Tomorrow is 11/12/2019. What is the date one year ago from today in MM/DD/YYYY?
+Options:
+(A) 09/04/2018
+(B) 11/11/2018
+(C) 08/25/2018
+(D) 11/02/2018
+(E) 11/04/2018
+A: Let's think step by step.
+If tomorrow is 11/12/2019, then today is 11/11/2019. The date one year ago from today is 11/11/2018. So the answer is (B).
+
+Q: Jane and John married on Jan 2, 1958. It is their 5-year anniversary today. What is the date tomorrow in MM/DD/YYYY?
+Options:
+(A) 01/11/1961
+(B) 01/03/1963
+(C) 01/18/1961
+(D) 10/14/1960
+(E) 01/03/1982
+(F) 12/03/1960
+A: Let's think step by step.
+If Jane and John married on Jan 2, 1958, then and if it is their 5-year anniversary today, then today's date is Jan 2, 1963. The date tomorrow is Jan 3, 1963, that is 01/03/1963. So the answer is (B).
+
+Q: Jane thinks today is 6/18/2019, but John thinks today is 6/19/2019. John is correct. What is the date one year ago from today in MM/DD/YYYY?
+Options:
+(A) 06/19/2018
+(B) 05/22/2018
+(C) 06/19/1934
+(D) 06/19/1956
+(E) 06/24/2018
+(F) 06/18/2018 </pre>
+###### answer
+<pre> Let's analyze the context of each question to infer the date.
+
+1. The first question states that today is Christmas Eve of 1937. This implies that the date is December 24, 1937.
+
+2. The second question states that tomorrow is November 12, 2019. This implies that the date is November 11, 2019.
+
+3. The third question states that Jane and John married on January 2, 1958, and it is their 5-year anniversary today. This implies that the date is January 2, 1963.
+
+4. The fourth question states that Jane thinks today is June 18, 2019, but John thinks today is June 19, 2019, and John is correct. This implies that the date is June 19, 2019.
+
+So, the dates inferred from the context are:
+
+* December 24, 1937
+* November 11, 2019
+* January 2, 1963
+* June 19, 2019 </pre>
+###### pred
+<pre> ? </pre>
+###### target
+<pre> (A) </pre>
+### penguins_in_a_table/27
+###### instruction
+<pre> Answer questions about a table of penguins and their attributes.
+
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  We now add a penguin to the table:
+James, 12, 90, 12
+How many penguins are less than 8 years old?
+Options:
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+A: Let's think step by step.
+This question focuses on age. We know the following: Louis is 7 years old, Bernard is 5 years old, Vincent is 9 years old, and Gwen is 8 years old.
+Now, we add James to this table: James is 12 years old.
+The penguins that are less than 8 years old are Louis and Bernard.
+There are 2 penguins less than 8 years old. So the answer is (B).
+
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  Which is the youngest penguin?
+Options:
+(A) Louis
+(B) Bernard
+(C) Vincent
+(D) Gwen
+(E) James
+A: Let's think step by step.
+This question focuses on age. We know the following: Louis is 7 years old, Bernard is 5 years old, Vincent is 9 years old, and Gwen is 8 years old.
+According to the table, Bernard (5) is the youngest amongst them.
+The youngest penguin is Bernard. So the answer is (B).
+
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  What is the name of the second penguin sorted by alphabetic order?
+Options:
+(A) Louis
+(B) Bernard
+(C) Vincent
+(D) Gwen
+(E) James
+A: Let's think step by step.
+This question focuses on the name. We know the following: The names of the penguin in the table are Louis, Bernard, Vincent, and Gwen.
+When we sort their names alphabetically, we get Bernard, Gwen, Louis, Vincent.
+The name of the second penguin sorted by alphabetical order is Gwen.
+The name of the second penguin sorted by alphabetic order is Gwen. So the answer is (D).
+
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  We then delete the penguin named Bernard from the table.
+How many penguins are more than 5 years old and weight more than 12 kg?
+Options:
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5 </pre>
+###### answer
+<pre> Let's think step by step.
+
+We know the following: Louis is 7 years old and weighs 11 kg, Vincent is 9 years old and weighs 11 kg, Gwen is 8 years old and weighs 15 kg.
+
+We delete the penguin named Bernard from the table.
+
+The penguins that are more than 5 years old are Louis, Vincent, and Gwen.
+
+The penguins that weigh more than 12 kg are Louis, Vincent, and Gwen.
+
+The penguins that are both more than 5 years old and weigh more than 12 kg are Louis, Vincent, and Gwen.
+
+There are 3 penguins that are more than 5 years old and weigh more than 12 kg. So the answer is (C). </pre>
+###### pred
+<pre> (C) </pre>
+###### target
+<pre> (A) </pre>
+### formal_fallacies/158
+###### instruction
+<pre> Distinguish deductively valid arguments from formal fallacies.
+
+Q: "It is not always easy to see who is related to whom -- and in which ways. The following argument pertains to this question: To begin with, Lesley is a close friend of Fernando. Moreover, being a close friend of Fernando or a schoolmate of Lowell is sufficient for being a great-grandfather of Leroy. It follows that Lesley is a great-grandfather of Leroy."
+Is the argument, given the explicitly stated premises, deductively valid or invalid?
+Options:
+- valid
+- invalid
+A: Let's think step by step.
+(1) Lesley is a close friend of Fernando: Lesley = friend(Fernando).
+(2) Being a close friend of Fernando or a schoolmate of Lowell is sufficient for being a great-grandfather of Leroy: If X = friend(Fernando) OR SCHOOLMATE(Lowell), then X = great-grandfather(Leroy).
+Hypothesis: Does it follow that Lesley is a great-grandfather of Leroy: Lesley = great-grandfather(Leroy)?
+Let’s see whether the Hypothesis can be deduced from the arguments (1) and (2) by logical reasoning?
+By (1), we have Lesley = friend(Fernando). By (2), we have if Lesley = friend(Fernando), then Lesley = great-grandfather(Leroy).
+So, it is true that Lesley is a great-grandfather of Leroy. So the answer is valid.
+
+Q: "It is not always easy to see who is related to whom -- and in which ways. The following argument pertains to this question: Whoever is not a great-grandfather of Clyde is a stepbrother of Brian. Being an ancestor of Dana is sufficient for not being a great-grandfather of Clyde. We may conclude: Everyone who is an ancestor of Dana is a stepbrother of Brian, too."
+Is the argument, given the explicitly stated premises, deductively valid or invalid?
+Options:
+- valid
+- invalid
+A: Let's think step by step.
+(1) Whoever is not a great-grandfather of Clyde is a stepbrother of Brian: If X = NOT (great-grandfather(Clyde)), then X = stepbrother(Brian).
+(2): Being an ancestor of Dana is sufficient for not being a great-grandfather of Clyde: If X = ancestor(Dana), X = NOT (great-grandfather(Clyde)).
+Hypothesis: Does it follow that everyone who is an ancestor of Dana is a stepbrother of Brian, too: If X = ancestor(Dana), then X = stepbrother(Brian)?
+Let’s see whether the Hypothesis can be deduced from the arguments (1) and (2) by logical reasoning?
+By (2), we have if X = ancestor(Dana), X = NOT (great-grandfather(Clyde)).
+Furthermore, by (1), we have if X = NOT (great-grandfather(Clyde)), then X = stepbrother(Brian).
+By the transitive relation rule in first-order logic, we then have: if X = ancestor(Dana), then X = stepbrother(Brian).
+So, it is true that everyone who is an ancestor of Dana is a stepbrother of Brian. So the answer is valid.
+
+Q: "It is not always easy to grasp who is consuming which products. The following argument pertains to this question: Every infrequent user of Paul Mitchell shampoo is either a rare consumer of Nioxin shampoo or a loyal buyer of Caress soap, or both. No regular consumer of Lush soap is a rare consumer of Nioxin shampoo and, in the same time, a loyal buyer of Caress soap. It follows that whoever is an infrequent user of Paul Mitchell shampoo is not a regular consumer of Lush soap."
+Is the argument, given the explicitly stated premises, deductively valid or invalid?
+Options:
+- valid
+- invalid
+A: Let's think step by step.
+(1) Every infrequent user of Paul Mitchell shampoo is either a rare consumer of Nioxin shampoo or a loyal buyer of Caress soap, or both: If X = infrequent-user(Paul Mitchell), then X = rare-consumer(Nioxin) OR X = loyal-buyer(Caress).
+(2): No regular consumer of Lush soap is a rare consumer of Nioxin shampoo and a loyal buyer of Caress soap at the same time. If X = regular-consumer(Lush), then X = NOT (rare-consumer(Nioxin) AND loyal-buyer(Caress)).
+Hypothesis: Does it follow that whoever is an infrequent user of Paul Mitchell shampoo is not a regular consumer of Lush soap: If X = infrequent-user(Paul Mitchell), then X = NOT (regular-consumer(Lush))?
+Let’s see whether the Hypothesis can be deduced from the arguments (1) and (2) by logical reasoning?
+By (1), we have if X = infrequent-user(Paul Mitchell), then X = rare-consumer(Nioxin) OR X = loyal-buyer(Caress). We need to consider both cases separately:
+The case X = rare-consumer(Nioxin) does not appear in (2).
+The case X = loyal-buyer(Caress) does not appear in (2), either.
+So, from (1) and (2), we cannot necessarily deduce the Hypothesis. So the answer is invalid.
+
+Q: "Here comes a perfectly valid argument: To begin with, every close friend of Francine is a cousin of Samantha or an ancestor of Janice or a close friend of Shanika. Moreover, every close friend of Francine is a cousin of Samantha. Finally, being a close friend of Shanika is necessary for being a close friend of Francine. We may conclude: Being an ancestor of Janice is necessary for being a close friend of Francine."
+Is the argument, given the explicitly stated premises, deductively valid or invalid?
+Options:
+- valid 
+- invalid </pre>
+###### answer
+<pre> Let's think step by step.
+
+(1) Every close friend of Francine is a cousin of Samantha or an ancestor of Janice or a close friend of Shanika: If X = close-friend(Francine), then X = cousin(Samantha) OR X = ancestor(Janice) OR X = close-friend(Shanika).
+(2) Every close friend of Francine is a cousin of Samantha: If X = close-friend(Francine), then X = cousin(Samantha).
+(3) Being a close friend of Shanika is necessary for being a close friend of Francine: If X = close-friend(Shanika), then X = close-friend(Francine).
+
+Hypothesis: Does it follow that being an ancestor of Janice is necessary for being a close friend of Francine: If X = ancestor(Janice), then X = close-friend(Francine)?
+
+Let’s see whether the Hypothesis can be deduced from the arguments (1), (2), and (3) by logical reasoning?
+
+By (2), we have if X = close-friend(Francine), then X = cousin(Samantha). By (1), we have if X = close-friend(Francine), then X = cousin(Samantha) OR X = ancestor(Janice) OR X = close-friend(Shanika). By the transitive relation rule in first-order logic, we then have: if X = close-friend(Francine), then X = ancestor(Janice) OR X = close-friend(Shanika).
+
+By (3), we have if X = close-friend(Shanika), then X = close-friend(Francine). By the transitive relation rule in first-order logic, we then have: if X = close-friend(Francine), then X = close-friend(Shanika).
+
+By the transitive relation rule in first-order logic, we then have: if X = close-friend(Francine), then X = ancestor(Janice) OR X = close-friend(Shanika) OR X = close-friend(Francine).
+
+By the transitive relation rule in first-order logic, we then have: if X = close-friend(Francine), then X = ancestor(Janice).
+
+So, it is true that being an ancestor of Janice is necessary for being a close friend of Francine. So the answer is valid. </pre>
+###### pred
+<pre> valid </pre>
+###### target
+<pre> invalid </pre>
+### geometric_shapes/152
+###### instruction
+<pre> Name geometric shapes from their SVG paths.
+
+Q: This SVG path element &lt;path d="M 31.00,73.00 L 32.00,59.00 L 44.00,50.00 L 49.00,41.00 L 64.00,37.00 L 71.00,55.00 L 64.00,76.00 L 52.00,61.00 L 31.00,73.00"/> draws a
+Options:
+(A) circle
+(B) heptagon
+(C) hexagon
+(D) kite
+(E) line
+(F) octagon
+(G) pentagon
+(H) rectangle
+(I) sector
+(J) triangle
+A: Let's think step by step.
+This SVG path element contains "M" and "L" commands. M takes two parameters (x,y) and moves the current point to the coordinates (x,y). L takes two parameters (x,y) and draws a line from the previous coordinate to the new coordinate (x,y).
+This path can be decomposed into 9 separate commands.
+(1) M 31.00,73.00: Move the current point to 31.00,73.00.
+(2) L 32.00,59.00: Create a line from 31.00,73.00 to 32.00,59.00.
+(3) L 44.00,50.00: Create a line from 32.00,59.00 to 44.00,50.00.
+(4) L 49.00,41.00: Create a line from 44.00,50.00 to 49.00,41.00.
+(5) L 64.00,37.00: Create a line from 49.00,41.00 to 64.00,37.00.
+(6) L 71.00,55.00: Create a line from 64.00,37.00 to 71.00,55.00.
+(7) L 64.00,76.00: Create a line from 71.00,55.00 to 64.00,76.00.
+(8) L 52.00,61.00: Create a line from 64.00,76.00 to 52.00,61.00.
+(9) L 31.00,73.00: Create a line from 52.00,61.00 to 31.00,73.00.
+This SVG path starts at point 31.00,73.00, creates eight consecutive and touching lines, and then returns back its starting point, thereby creating an eight-sided shape. It does not have any curves or arches. "octagon" is the only eight-sided object on the list. So the answer is (F).
+
+Q: This SVG path element &lt;path d="M 14.19,26.04 L 51.43,39.21 L 58.44,36.69 L 56.63,30.17 L 48.53,26.66 L 14.19,26.04"/> draws a
+Options:
+(A) circle
+(B) heptagon
+(C) hexagon
+(D) kite
+(E) line
+(F) octagon
+(G) pentagon
+(H) rectangle
+(I) sector
+(J) triangle
+A: Let's think step by step.
+This SVG path element contains "M" and "L" commands. M takes two parameters (x,y) and moves the current point to the coordinates (x,y). L takes two parameters (x,y) and draws a line from the previous coordinate to the new coordinate (x,y).
+This path can be decomposed into 6 separate commands.
+(1) M 14.19,26.04: Move the current point to 14.19,26.04.
+(2) L 51.43,39.21: Create a line from 14.19,26.04 to 51.43,39.21.
+(3) L 58.44,36.69: Create a line from 51.43,39.21 to 58.44,36.69.
+(4) L 56.63,30.17: Create a line from 58.44,36.69 to 56.63,30.17.
+(5) L 48.53,26.66: Create a line from 56.63,30.17 to 48.53,26.66.
+(6) L 14.19,26.04: Create a line from 48.53,26.66 to 14.19,26.04.
+This SVG path starts at point 14.19,26.04, creates five consecutive and touching lines, and then returns back its starting point, thereby creating a five-sided shape. It does not have any curves or arches. "pentagon" is the only five-sided polygon on the list. So the answer is (G).
+
+Q: This SVG path element &lt;path d="M 41.00,43.00 L 37.00,34.00 L 41.00,33.00 L 45.00,34.00 L 41.00,43.00"/> draws a
+Options:
+(A) circle
+(B) heptagon
+(C) hexagon
+(D) kite
+(E) line
+(F) octagon
+(G) pentagon
+(H) rectangle
+(I) sector
+(J) triangle
+A: Let's think step by step.
+This SVG path element contains "M" and "L" commands. M takes two parameters (x,y) and moves the current point to the coordinates (x,y). L takes two parameters (x,y) and draws a line from the previous coordinate to the new coordinate (x,y).
+This path can be decomposed into 5 separate commands.
+(1) M 41.00,43.00: Move the current point to 41.00,43.00.
+(2) L 37.00,34.00: Create a line from 41.00,43.00 to 37.00,34.00.
+(3) L 41.00,33.00: Create a line from 37.00,34.00 to 41.00,33.00.
+(4) L 45.00,34.00: Create a line from 41.00,33.00 to 45.00,34.00.
+(5) L 41.00,43.00: Create a line from 45.00,34.00 to 41.00,43.00.
+This SVG path starts at point 41.00,43.00, creates four consecutive and touching lines, and then returns back its starting point, thereby creating a four-sided shape. "kite" and "rectangle" are the only two four-sided polygons on the list. So, we need to determine which one is the correct answer.
+A kite has two pairs of equal-length adjacent sides, whereas a rectangle has two pairs of equal-length alternate (opposite) sides. Now, let's check whether the two adjacent sides of this shape are equal.
+Length of side A: |A| = sqrt((41.00-37.00)^2 + (43.00-34.00)^2) = sqrt((4)^2 + (9)^2) = sqrt(16 + 81) = sqrt(97).
+Length of side B: |B| = sqrt((37.00-41.00)^2 + (34.00-33.00)^2)) = sqrt((4)^2 + (1)^2) = sqrt(16 + 1) = sqrt(17).
+Length of side C: |C| = sqrt((41.00-45.00)^2 + (33.00-34.00)^2)) = sqrt((-4)^2 + (-1)^2) = sqrt(16 + 1) = sqrt(17).
+Length of side D: |D| = sqrt((45.00-41.00)^2 + (34.00-43.00)^2)) = sqrt((4)^2 + (-9)^2) = sqrt(16 + 81) = sqrt(97).
+Note that |A| = |D| and |B| = |C|. Furthermore, A and D are adjacent and B and C are adjacent. Thus, this polygon has two pairs of equal-length adjacent sides and is "kite". So the answer is (D).
+
+Q: This SVG path element &lt;path d="M 64.00,63.00 L 44.00,63.00 L 44.00,50.00 L 64.00,50.00 L 64.00,37.00 L 83.00,57.00 L 64.00,76.00 L 64.00,63.00"/> draws a
+Options:
+(A) circle
+(B) heptagon
+(C) hexagon
+(D) kite
+(E) line
+(F) octagon
+(G) pentagon
+(H) rectangle
+(I) sector
+(J) triangle </pre>
+###### answer
+<pre> This SVG path element contains "M" and "L" commands. M takes two parameters (x,y) and moves the current point to the coordinates (x,y). L takes two parameters (x,y) and draws a line from the previous coordinate to the new coordinate (x,y).
+This path can be decomposed into 8 separate commands.
+(1) M 64.00,63.00: Move the current point to 64.00,63.00.
+(2) L 44.00,63.00: Create a line from 64.00,63.00 to 44.00,63.00.
+(3) L 44.00,50.00: Create a line from 44.00,63.00 to 44.00,50.00.
+(4) L 64.00,50.00: Create a line from 44.00,50.00 to 64.00,50.00.
+(5) L 64.00,37.00: Create a line from 64.00,50.00 to 64.00,37.00.
+(6) L 83.00,57.00: Create a line from 64.00,37.00 to 83.00,57.00.
+(7) L 64.00,76.00: Create a line from 83.00,57.00 to 64.00,76.00.
+(8) L 64.00,63.00: Create a line from 64.00,76.00 to 64.00,63.00.
+This SVG path starts at point 64.00,63.00, creates seven consecutive and touching lines, and then returns back its starting point, thereby creating an eight-sided shape. It does not have any curves or arches. "octagon" is the only eight-sided object on the list. So the answer is (F). </pre>
+###### pred
+<pre> (F) </pre>
+###### target
+<pre> (B) </pre>
+### penguins_in_a_table/91
+###### instruction
+<pre> Answer questions about a table of penguins and their attributes.
+
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  We now add a penguin to the table:
+James, 12, 90, 12
+How many penguins are less than 8 years old?
+Options:
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+A: Let's think step by step.
+This question focuses on age. We know the following: Louis is 7 years old, Bernard is 5 years old, Vincent is 9 years old, and Gwen is 8 years old.
+Now, we add James to this table: James is 12 years old.
+The penguins that are less than 8 years old are Louis and Bernard.
+There are 2 penguins less than 8 years old. So the answer is (B).
+
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  Which is the youngest penguin?
+Options:
+(A) Louis
+(B) Bernard
+(C) Vincent
+(D) Gwen
+(E) James
+A: Let's think step by step.
+This question focuses on age. We know the following: Louis is 7 years old, Bernard is 5 years old, Vincent is 9 years old, and Gwen is 8 years old.
+According to the table, Bernard (5) is the youngest amongst them.
+The youngest penguin is Bernard. So the answer is (B).
+
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  What is the name of the second penguin sorted by alphabetic order?
+Options:
+(A) Louis
+(B) Bernard
+(C) Vincent
+(D) Gwen
+(E) James
+A: Let's think step by step.
+This question focuses on the name. We know the following: The names of the penguin in the table are Louis, Bernard, Vincent, and Gwen.
+When we sort their names alphabetically, we get Bernard, Gwen, Louis, Vincent.
+The name of the second penguin sorted by alphabetical order is Gwen.
+The name of the second penguin sorted by alphabetic order is Gwen. So the answer is (D).
+
+Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  We now add a penguin to the table:
+James, 12, 90, 12
+How many penguins are less than 10 years old?
+Options:
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5 </pre>
+###### answer
+<pre> Let's think step by step.
+
+This question focuses on age. We know the following: Louis is 7 years old, Bernard is 5 years old, Vincent is 9 years old, and Gwen is 8 years old.
+Now, we add James to this table: James is 12 years old.
+
+The penguins that are less than 10 years old are Bernard (5), Louis (7), and Gwen (8).
+There are 3 penguins less than 10 years old. So the answer is (C). </pre>
+###### pred
+<pre> (C) </pre>
+###### target
+<pre> (D) </pre>
+### navigate/126
+###### instruction
+<pre> Given a series of navigation instructions, determine whether one would end up back at the starting point.
+
+Q: If you follow these instructions, do you return to the starting point? Turn left. Turn around. Turn left. Take 7 steps. Take 2 steps. Take 4 steps. Take 8 steps.
+Options:
+- Yes
+- No
+A: Let's think step by step.
+We start at the origin (0, 0), facing the positive y-axis.
+(1) Turn left: (0, 0), facing the negative x-axis.
+(2) Turn around: (0, 0), facing the positive x-axis.
+(3) Turn left: (0, 0), facing the positive y-axis.
+(4) Take 7 steps: (0, 7), facing the positive y-axis.
+(5) Take 2 steps: (0, 9), facing the positive y-axis.
+(6) Take 4 steps: (0, 13), facing the positive y-axis.
+(7) Take 8 steps: (0, 21), facing the positive y-axis.
+Since (0, 21) is not (0, 0), we are not where we started. So the answer is No.
+
+Q: If you follow these instructions, do you return to the starting point? Turn around. Take 1 step. Take 6 steps. Turn around. Take 6 steps. Take 9 steps. Take 1 step.
+Options:
+- Yes
+- No
+A: Let's think step by step.
+We start at the origin (0, 0), facing the positive y-axis.
+(1) Turn around: (0, 0), facing the negative y-axis.
+(2) Take 1 step: (0, -1), facing the negative y-axis.
+(3) Take 6 steps: (0, -7), facing the negative y-axis.
+(4) Turn around: (0, -7), facing the positive y-axis.
+(5) Take 6 steps: (0, -1), facing the positive y-axis.
+(6) Take 9 steps: (0, 8), facing the positive y-axis.
+(7) Take 1 step: (0, 9), facing the positive y-axis.
+Since (0, 9) is not (0, 0), we are not where we started. So the answer is No.
+
+Q: If you follow these instructions, do you return to the starting point? Always face forward. Take 2 steps right. Take 9 steps left. Take 7 steps right.
+Options:
+- Yes
+- No
+A: Let's think step by step.
+We start at the origin (0, 0), facing the positive y-axis.
+(1) Always face forward: (0, 0), facing the positive y-axis.
+(2) Take 2 steps right: (0, 2), facing the positive y-axis.
+(3) Take 9 steps left: (0, -7), facing the positive y-axis.
+(4) Take 7 steps right: (0, 7), facing the positive y-axis.
+Since (0, 0) is (0, 0), we are indeed where we started. So the answer is Yes.
+
+Q: If you follow these instructions, do you return to the starting point? Always face forward. Take 6 steps backward. Take 8 steps left. Take 3 steps right. Take 7 steps forward. Take 3 steps right. Take 9 steps right. Take 1 step backward. Take 7 steps left.
+Options:
+- Yes
+- No </pre>
+###### answer
+<pre> Let's think step by step.
+
+We start at the origin (0, 0), facing the positive y-axis.
+
+(1) Always face forward: (0, 0), facing the positive y-axis.
+(2) Take 6 steps backward: (0, -6), facing the positive y-axis.
+(3) Take 8 steps left: (-8, -6), facing the positive y-axis.
+(4) Take 3 steps right: (-5, -6), facing the positive y-axis.
+(5) Take 7 steps forward: (2, -6), facing the positive y-axis.
+(6) Take 3 steps right: (5, -6), facing the positive y-axis.
+(7) Take 9 steps right: (14, -6), facing the positive y-axis.
+(8) Take 1 step backward: (14, -7), facing the positive y-axis.
+(9) Take 7 steps left: (7, -7), facing the positive y-axis.
+
+Since (7, -7) is not (0, 0), we are not where we started. So the answer is No. </pre>
+###### pred
+<pre> No </pre>
+###### target
+<pre> Yes </pre>
+### date_understanding/33
+###### instruction
+<pre> Infer the date from context.
+
+Q: Today is Christmas Eve of 1937. What is the date 10 days ago in MM/DD/YYYY?
+Options:
+(A) 12/14/2026
+(B) 12/14/1950
+(C) 12/14/2007
+(D) 12/14/1937
+(E) 07/14/1938
+(F) 12/14/1988
+A: Let's think step by step.
+If today is Christmas Eve of 1937, then today's date is December 24, 1937. 10 days before today is December 14, 1937, that is 12/14/1937. So the answer is (D).
+
+Q: Tomorrow is 11/12/2019. What is the date one year ago from today in MM/DD/YYYY?
+Options:
+(A) 09/04/2018
+(B) 11/11/2018
+(C) 08/25/2018
+(D) 11/02/2018
+(E) 11/04/2018
+A: Let's think step by step.
+If tomorrow is 11/12/2019, then today is 11/11/2019. The date one year ago from today is 11/11/2018. So the answer is (B).
+
+Q: Jane and John married on Jan 2, 1958. It is their 5-year anniversary today. What is the date tomorrow in MM/DD/YYYY?
+Options:
+(A) 01/11/1961
+(B) 01/03/1963
+(C) 01/18/1961
+(D) 10/14/1960
+(E) 01/03/1982
+(F) 12/03/1960
+A: Let's think step by step.
+If Jane and John married on Jan 2, 1958, then and if it is their 5-year anniversary today, then today's date is Jan 2, 1963. The date tomorrow is Jan 3, 1963, that is 01/03/1963. So the answer is (B).
+
+Q: Today is the second day of the third month of 1966. What is the date one week ago from today in MM/DD/YYYY?
+Options:
+(A) 02/26/1966
+(B) 01/13/1966
+(C) 02/02/1966
+(D) 10/23/1966
+(E) 02/23/1968
+(F) 02/23/1966 </pre>
+###### answer
+<pre> Let's analyze the context of each question to infer the date.
+
+1. The first question states that today is Christmas Eve of 1937. This implies that the date is December 24, 1937.
+
+2. The second question states that tomorrow is November 12, 2019. This implies that the date is November 11, 2019.
+
+3. The third question states that Jane and John married on January 2, 1958, and it is their 5-year anniversary today. This implies that the date is January 2, 1963.
+
+4. The fourth question states that today is the second day of the third month of 1966. This implies that the date is March 2, 1966.
+
+Now, let's analyze the options for each question to find the correct date 10 days ago in the first question, one year ago in the second question, tomorrow in the third question, and one week ago in the fourth question.
+
+1. The correct date 10 days ago from December 24, 1937, is December 14, 1937.
+
+2. The correct date one year ago from November 11, 2019, is November 11, 2018.
+
+3. The correct date tomorrow from January 2, 1963, is January 3, 1963.
+
+4. The correct date one week ago from March 2, 1966, is February 23, 1966.
+
+Therefore, the correct answers are:
+
+1. (D) 12/14/1937
+2. (B) 11/11/2018
+3. (B) 01/03/1963
+4. (F) 02/23/1966 </pre>
+###### pred
+<pre> ? </pre>
+###### target
+<pre> (F) </pre>

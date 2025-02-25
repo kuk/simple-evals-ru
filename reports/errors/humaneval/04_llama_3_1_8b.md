@@ -859,3 +859,862 @@ Cell In[1], line 43, in tri(n)
 ---> 43         sequence.append(sequence[i - 2] + sequence[i - 3] + sequence[i - 1])
      44 return sequence
 IndexError: list index out of range </pre>
+### HumanEval/102
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def choose_num(x, y):
+    """This function takes two positive numbers x and y and returns the
+    biggest even integer number that is in the range [x, y] inclusive. If 
+    there's no such number, then the function should return -1.
+
+    For example:
+    choose_num(12, 15) = 14
+    choose_num(13, 12) = -1
+    """
+ </pre>
+###### answer
+<pre> ```python
+def choose_num(x, y):
+    """This function takes two positive numbers x and y and returns the
+    biggest even integer number that is in the range [x, y] inclusive. If 
+    there's no such number, then the function should return -1.
+
+    For example:
+    choose_num(12, 15) = 14
+    choose_num(13, 12) = -1
+    """
+    # Check if both x and y are positive integers
+    if not (isinstance(x, int) and isinstance(y, int) and x > 0 and y > 0):
+        raise ValueError("Both x and y must be positive integers")
+
+    # Find the biggest even number in the range [x, y]
+    biggest_even = max(i for i in range(x, y+1) if i % 2 == 0)
+
+    # If no even number is found, return -1
+    return biggest_even if biggest_even!= 0 else -1
+``` </pre>
+###### canonical_solution
+<pre>     if x > y:
+        return -1
+    if y % 2 == 0:
+        return y
+    if x == y:
+        return -1
+    return y - 1
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate(12, 15) == 14
+    assert candidate(13, 12) == -1
+    assert candidate(33, 12354) == 12354
+    assert candidate(5234, 5233) == -1
+    assert candidate(6, 29) == 28
+    assert candidate(27, 10) == -1
+
+    # Check some edge cases that are easy to work out by hand.
+    assert candidate(7, 7) == -1
+    assert candidate(546, 546) == 546
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)Cell In[1], line 51
+     46     assert candidate(7, 7) == -1
+     47     assert candidate(546, 546) == 546
+---> 51 check(choose_num)
+Cell In[1], line 39, in check(candidate)
+     35 def check(candidate):
+     36 
+     37     # Check some simple cases
+     38     assert candidate(12, 15) == 14
+---> 39     assert candidate(13, 12) == -1
+     40     assert candidate(33, 12354) == 12354
+     41     assert candidate(5234, 5233) == -1
+Cell In[1], line 29, in choose_num(x, y)
+     26     raise ValueError("Both x and y must be positive integers")
+     28 # Find the biggest even number in the range [x, y]
+---> 29 biggest_even = max(i for i in range(x, y+1) if i % 2 == 0)
+     31 # If no even number is found, return -1
+     32 return biggest_even if biggest_even!= 0 else -1
+ValueError: max() arg is an empty sequence </pre>
+### HumanEval/142
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+
+
+def sum_squares(lst):
+    """"
+    This function will take a list of integers. For all entries in the list, the function shall square the integer entry if its index is a 
+    multiple of 3 and will cube the integer entry if its index is a multiple of 4 and not a multiple of 3. The function will not 
+    change the entries in the list whose indexes are not a multiple of 3 or 4. The function shall then return the sum of all entries. 
+    
+    Examples:
+    For lst = [1,2,3] the output should be 6
+    For lst = []  the output should be 0
+    For lst = [-1,-5,2,-1,-5]  the output should be -126
+    """
+ </pre>
+###### answer
+<pre> ```python
+def sum_squares(lst):
+    result = 0
+    for i, num in enumerate(lst):
+        if i % 3 == 0 and i % 4 != 0:
+            result += num ** 2
+        elif i % 4 == 0:
+            result += num ** 3
+    return result
+``` </pre>
+###### canonical_solution
+<pre>     result =[]
+    for i in range(len(lst)):
+        if i %3 == 0:
+            result.append(lst[i]**2)
+        elif i % 4 == 0 and i%3 != 0:
+            result.append(lst[i]**3)
+        else:
+            result.append(lst[i])
+    return sum(result)
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    
+    assert candidate([1,2,3]) == 6
+    assert candidate([1,4,9]) == 14
+    assert candidate([]) == 0
+    assert candidate([1,1,1,1,1,1,1,1,1]) == 9
+    assert candidate([-1,-1,-1,-1,-1,-1,-1,-1,-1]) == -3
+    assert candidate([0]) == 0
+    assert candidate([-1,-5,2,-1,-5]) == -126
+    assert candidate([-56,-99,1,0,-2]) == 3030
+    assert candidate([-1,0,0,0,0,0,0,0,-1]) == 0
+    assert candidate([-16, -9, -2, 36, 36, 26, -20, 25, -40, 20, -4, 12, -26, 35, 37]) == -14196
+    assert candidate([-1, -3, 17, -1, -15, 13, -1, 14, -14, -12, -5, 14, -14, 6, 13, 11, 16, 16, 4, 10]) == -1448
+    
+    
+    # Don't remove this line:
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 49
+     43     assert candidate([-1, -3, 17, -1, -15, 13, -1, 14, -14, -12, -5, 14, -14, 6, 13, 11, 16, 16, 4, 10]) == -1448
+     46     # Don't remove this line:
+---> 49 check(sum_squares)
+Cell In[1], line 33, in check(candidate)
+     29 def check(candidate):
+     30 
+     31     # Check some simple cases
+---> 33     assert candidate([1,2,3]) == 6
+     34     assert candidate([1,4,9]) == 14
+     35     assert candidate([]) == 0
+AssertionError:  </pre>
+### HumanEval/129
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def minPath(grid, k):
+    """
+    Given a grid with N rows and N columns (N >= 2) and a positive integer k, 
+    each cell of the grid contains a value. Every integer in the range [1, N * N]
+    inclusive appears exactly once on the cells of the grid.
+
+    You have to find the minimum path of length k in the grid. You can start
+    from any cell, and in each step you can move to any of the neighbor cells,
+    in other words, you can go to cells which share an edge with you current
+    cell.
+    Please note that a path of length k means visiting exactly k cells (not
+    necessarily distinct).
+    You CANNOT go off the grid.
+    A path A (of length k) is considered less than a path B (of length k) if
+    after making the ordered lists of the values on the cells that A and B go
+    through (let's call them lst_A and lst_B), lst_A is lexicographically less
+    than lst_B, in other words, there exist an integer index i (1 &lt;= i &lt;= k)
+    such that lst_A[i] &lt; lst_B[i] and for any j (1 &lt;= j &lt; i) we have
+    lst_A[j] = lst_B[j].
+    It is guaranteed that the answer is unique.
+    Return an ordered list of the values on the cells that the minimum path go through.
+
+    Examples:
+
+        Input: grid = [ [1,2,3], [4,5,6], [7,8,9]], k = 3
+        Output: [1, 2, 1]
+
+        Input: grid = [ [5,9,3], [4,1,6], [7,8,2]], k = 1
+        Output: [1]
+    """
+ </pre>
+###### answer
+<pre> ```python
+from collections import deque
+
+def minPath(grid, k):
+    """
+    Given a grid with N rows and N columns (N >= 2) and a positive integer k, 
+    each cell of the grid contains a value. Every integer in the range [1, N * N]
+    inclusive appears exactly once on the cells of the grid.
+
+    You have to find the minimum path of length k in the grid. You can start
+    from any cell, and in each step you can move to any of the neighbor cells,
+    in other words, you can go to cells which share an edge with you current
+    cell.
+    Please note that a path of length k means visiting exactly k cells (not
+    necessarily distinct).
+    You CANNOT go off the grid.
+    A path A (of length k) is considered less than a path B (of length k) if
+    after making the ordered lists of the values on the cells that A and B go
+    through (let's call them lst_A and lst_B), lst_A is lexicographically less
+    than lst_B, in other words, there exist an integer index i (1 &lt;= i &lt;= k)
+    such that lst_A[i] &lt; lst_B[i] and for any j (1 &lt;= j &lt; i) we have
+    lst_A[j] = lst_B[j].
+    It is guaranteed that the answer is unique.
+    Return an ordered list of the values on the cells that the minimum path go through.
+
+    Examples:
+
+        Input: grid = [ [1,2,3], [4,5,6], [7,8,9]], k = 3
+        Output: [1, 2, 1]
+
+        Input: grid = [ [5,9,3], [4,1,6], [7,8,2]], k = 1
+        Output: [1]
+    """
+    rows, cols = len(grid), len(grid[0])
+    directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+    queue = deque([(i, j, [grid[i][j]], 1) for i in range(rows) for j in range(cols)])
+    visited = set([(i, j, tuple(grid[i][j]), 1) for i in range(rows) for j in range(cols)])
+
+    while queue:
+        x, y, path, length = queue.popleft()
+        if length == k:
+            return path
+        for dx, dy in directions:
+            nx, ny = x + dx, y + dy
+            if 0 &lt;= nx &lt; rows and 0 &lt;= ny &lt; cols and (nx, ny, tuple(path + [grid[nx][ny]]), length + 1) not in visited:
+                queue.append((nx, ny, path + [grid[nx][ny]], length + 1))
+                visited.add((nx, ny, tuple(path + [grid[nx][ny]]), length + 1))
+    return []
+``` </pre>
+###### canonical_solution
+<pre>     n = len(grid)
+    val = n * n + 1
+    for i in range(n):
+        for j in range(n):
+            if grid[i][j] == 1:
+                temp = []
+                if i != 0:
+                    temp.append(grid[i - 1][j])
+
+                if j != 0:
+                    temp.append(grid[i][j - 1])
+
+                if i != n - 1:
+                    temp.append(grid[i + 1][j])
+
+                if j != n - 1:
+                    temp.append(grid[i][j + 1])
+
+                val = min(temp)
+
+    ans = []
+    for i in range(k):
+        if i % 2 == 0:
+            ans.append(1)
+        else:
+            ans.append(val)
+    return ans
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    print
+    assert candidate([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 3) == [1, 2, 1]
+    assert candidate([[5, 9, 3], [4, 1, 6], [7, 8, 2]], 1) == [1]
+    assert candidate([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]], 4) == [1, 2, 1, 2]
+    assert candidate([[6, 4, 13, 10], [5, 7, 12, 1], [3, 16, 11, 15], [8, 14, 9, 2]], 7) == [1, 10, 1, 10, 1, 10, 1]
+    assert candidate([[8, 14, 9, 2], [6, 4, 13, 15], [5, 7, 1, 12], [3, 10, 11, 16]], 5) == [1, 7, 1, 7, 1]
+    assert candidate([[11, 8, 7, 2], [5, 16, 14, 4], [9, 3, 15, 6], [12, 13, 10, 1]], 9) == [1, 6, 1, 6, 1, 6, 1, 6, 1]
+    assert candidate([[12, 13, 10, 1], [9, 3, 15, 6], [5, 16, 14, 4], [11, 8, 7, 2]], 12) == [1, 6, 1, 6, 1, 6, 1, 6, 1, 6, 1, 6]
+    assert candidate([[2, 7, 4], [3, 1, 5], [6, 8, 9]], 8) == [1, 3, 1, 3, 1, 3, 1, 3]
+    assert candidate([[6, 1, 5], [3, 8, 9], [2, 7, 4]], 8) == [1, 5, 1, 5, 1, 5, 1, 5]
+
+    # Check some edge cases that are easy to work out by hand.
+    assert candidate([[1, 2], [3, 4]], 10) == [1, 2, 1, 2, 1, 2, 1, 2, 1, 2]
+    assert candidate([[1, 3], [3, 2]], 10) == [1, 3, 1, 3, 1, 3, 1, 3, 1, 3]
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)Cell In[1], line 105
+    100     assert candidate([[1, 2], [3, 4]], 10) == [1, 2, 1, 2, 1, 2, 1, 2, 1, 2]
+    101     assert candidate([[1, 3], [3, 2]], 10) == [1, 3, 1, 3, 1, 3, 1, 3, 1, 3]
+--> 105 check(minPath)
+Cell In[1], line 89, in check(candidate)
+     85 def check(candidate):
+     86 
+     87     # Check some simple cases
+     88     print
+---> 89     assert candidate([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 3) == [1, 2, 1]
+     90     assert candidate([[5, 9, 3], [4, 1, 6], [7, 8, 2]], 1) == [1]
+     91     assert candidate([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]], 4) == [1, 2, 1, 2]
+Cell In[1], line 71, in minPath(grid, k)
+     69 directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+     70 queue = deque([(i, j, [grid[i][j]], 1) for i in range(rows) for j in range(cols)])
+---> 71 visited = set([(i, j, tuple(grid[i][j]), 1) for i in range(rows) for j in range(cols)])
+     73 while queue:
+     74     x, y, path, length = queue.popleft()
+Cell In[1], line 71, in &lt;listcomp>(.0)
+     69 directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+     70 queue = deque([(i, j, [grid[i][j]], 1) for i in range(rows) for j in range(cols)])
+---> 71 visited = set([(i, j, tuple(grid[i][j]), 1) for i in range(rows) for j in range(cols)])
+     73 while queue:
+     74     x, y, path, length = queue.popleft()
+TypeError: 'int' object is not iterable </pre>
+### HumanEval/120
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def maximum(arr, k):
+    """
+    Given an array arr of integers and a positive integer k, return a sorted list 
+    of length k with the maximum k numbers in arr.
+
+    Example 1:
+
+        Input: arr = [-3, -4, 5], k = 3
+        Output: [-4, -3, 5]
+
+    Example 2:
+
+        Input: arr = [4, -4, 4], k = 2
+        Output: [4, 4]
+
+    Example 3:
+
+        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1
+        Output: [2]
+
+    Note:
+        1. The length of the array will be in the range of [1, 1000].
+        2. The elements in the array will be in the range of [-1000, 1000].
+        3. 0 &lt;= k &lt;= len(arr)
+    """
+ </pre>
+###### answer
+<pre> def maximum(arr, k):
+    """
+    Given an array arr of integers and a positive integer k, return a sorted list 
+    of length k with the maximum k numbers in arr.
+    """
+    return sorted(arr, reverse=True)[:k] </pre>
+###### canonical_solution
+<pre>     if k == 0:
+        return []
+    arr.sort()
+    ans = arr[-k:]
+    return ans
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate([-3, -4, 5], 3) == [-4, -3, 5]
+    assert candidate([4, -4, 4], 2) == [4, 4]
+    assert candidate([-3, 2, 1, 2, -1, -2, 1], 1) == [2]
+    assert candidate([123, -123, 20, 0 , 1, 2, -3], 3) == [2, 20, 123]
+    assert candidate([-123, 20, 0 , 1, 2, -3], 4) == [0, 1, 2, 20]
+    assert candidate([5, 15, 0, 3, -13, -8, 0], 7) == [-13, -8, 0, 0, 3, 5, 15]
+    assert candidate([-1, 0, 2, 5, 3, -10], 2) == [3, 5]
+    assert candidate([1, 0, 5, -7], 1) == [5]
+    assert candidate([4, -4], 2) == [-4, 4]
+    assert candidate([-10, 10], 2) == [-10, 10]
+
+    # Check some edge cases that are easy to work out by hand.
+    assert candidate([1, 2, 3, -23, 243, -400, 0], 0) == []
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 56
+     51     # Check some edge cases that are easy to work out by hand.
+     52     assert candidate([1, 2, 3, -23, 243, -400, 0], 0) == []
+---> 56 check(maximum)
+Cell In[1], line 40, in check(candidate)
+     37 def check(candidate):
+     38 
+     39     # Check some simple cases
+---> 40     assert candidate([-3, -4, 5], 3) == [-4, -3, 5]
+     41     assert candidate([4, -4, 4], 2) == [4, 4]
+     42     assert candidate([-3, 2, 1, 2, -1, -2, 1], 1) == [2]
+AssertionError:  </pre>
+### HumanEval/113
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def odd_count(lst):
+    """Given a list of strings, where each string consists of only digits, return a list.
+    Each element i of the output should be "the number of odd elements in the
+    string i of the input." where all the i's should be replaced by the number
+    of odd digits in the i'th string of the input.
+
+    >>> odd_count(['1234567'])
+    ["the number of odd elements 4n the str4ng 4 of the 4nput."]
+    >>> odd_count(['3',"11111111"])
+    ["the number of odd elements 1n the str1ng 1 of the 1nput.",
+     "the number of odd elements 8n the str8ng 8 of the 8nput."]
+    """
+ </pre>
+###### answer
+<pre> ```python
+def odd_count(lst):
+    """
+    Given a list of strings, where each string consists of only digits, return a list.
+    Each element i of the output should be "the number of odd elements in the
+    string i of the input." where all the i's should be replaced by the number
+    of odd digits in the i'th string of the input.
+
+    Args:
+        lst (list): A list of strings, where each string consists of only digits.
+
+    Returns:
+        list: A list of strings, where each string is the number of odd elements
+              in the corresponding string of the input list.
+    """
+    return [f"the number of odd elements {sum(int(digit) % 2 for digit in string)}n the str{string[0]}ng {len(string)} of the {sum(int(digit) % 2 for digit in string)}nput." for string in lst]
+``` </pre>
+###### canonical_solution
+<pre>     res = []
+    for arr in lst:
+        n = sum(int(d)%2==1 for d in arr)
+        res.append("the number of odd elements " + str(n) + "n the str"+ str(n) +"ng "+ str(n) +" of the "+ str(n) +"nput.")
+    return res
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate(['1234567']) == ["the number of odd elements 4n the str4ng 4 of the 4nput."], "Test 1"
+    assert candidate(['3',"11111111"]) == ["the number of odd elements 1n the str1ng 1 of the 1nput.", "the number of odd elements 8n the str8ng 8 of the 8nput."], "Test 2"
+    assert candidate(['271', '137', '314']) == [
+        'the number of odd elements 2n the str2ng 2 of the 2nput.',
+        'the number of odd elements 3n the str3ng 3 of the 3nput.',
+        'the number of odd elements 2n the str2ng 2 of the 2nput.'
+    ]
+
+    # Check some edge cases that are easy to work out by hand.
+    assert True, "This prints if this assert fails 2 (also good for debugging!)"
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 51
+     46     # Check some edge cases that are easy to work out by hand.
+     47     assert True, "This prints if this assert fails 2 (also good for debugging!)"
+---> 51 check(odd_count)
+Cell In[1], line 38, in check(candidate)
+     35 def check(candidate):
+     36 
+     37     # Check some simple cases
+---> 38     assert candidate(['1234567']) == ["the number of odd elements 4n the str4ng 4 of the 4nput."], "Test 1"
+     39     assert candidate(['3',"11111111"]) == ["the number of odd elements 1n the str1ng 1 of the 1nput.", "the number of odd elements 8n the str8ng 8 of the 8nput."], "Test 2"
+     40     assert candidate(['271', '137', '314']) == [
+     41         'the number of odd elements 2n the str2ng 2 of the 2nput.',
+     42         'the number of odd elements 3n the str3ng 3 of the 3nput.',
+     43         'the number of odd elements 2n the str2ng 2 of the 2nput.'
+     44     ]
+AssertionError: Test 1 </pre>
+### HumanEval/135
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def can_arrange(arr):
+    """Create a function which returns the largest index of an element which
+    is not greater than or equal to the element immediately preceding it. If
+    no such element exists then return -1. The given array will not contain
+    duplicate values.
+
+    Examples:
+    can_arrange([1,2,4,3,5]) = 3
+    can_arrange([1,2,3]) = -1
+    """
+ </pre>
+###### answer
+<pre> ```python
+def can_arrange(arr):
+    """
+    Create a function which returns the largest index of an element which
+    is not greater than or equal to the element immediately preceding it.
+    If no such element exists then return -1. The given array will not contain
+    duplicate values.
+
+    Examples:
+    can_arrange([1,2,4,3,5]) = 3
+    can_arrange([1,2,3]) = -1
+    """
+    for i in range(1, len(arr)):
+        if arr[i] &lt; arr[i-1]:
+            return i - 1
+    return -1
+``` </pre>
+###### canonical_solution
+<pre>     ind=-1
+    i=1
+    while i&lt;len(arr):
+      if arr[i]&lt;arr[i-1]:
+        ind=i
+      i+=1
+    return ind
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate([1,2,4,3,5])==3
+    assert candidate([1,2,4,5])==-1
+    assert candidate([1,4,2,5,6,7,8,9,10])==2
+    assert candidate([4,8,5,7,3])==4
+
+    # Check some edge cases that are easy to work out by hand.
+    assert candidate([])==-1
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 46
+     41     # Check some edge cases that are easy to work out by hand.
+     42     assert candidate([])==-1
+---> 46 check(can_arrange)
+Cell In[1], line 36, in check(candidate)
+     33 def check(candidate):
+     34 
+     35     # Check some simple cases
+---> 36     assert candidate([1,2,4,3,5])==3
+     37     assert candidate([1,2,4,5])==-1
+     38     assert candidate([1,4,2,5,6,7,8,9,10])==2
+AssertionError:  </pre>
+### HumanEval/126
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def is_sorted(lst):
+    '''
+    Given a list of numbers, return whether or not they are sorted
+    in ascending order. If list has more than 1 duplicate of the same
+    number, return False. Assume no negative numbers and only integers.
+
+    Examples
+    is_sorted([5]) ➞ True
+    is_sorted([1, 2, 3, 4, 5]) ➞ True
+    is_sorted([1, 3, 2, 4, 5]) ➞ False
+    is_sorted([1, 2, 3, 4, 5, 6]) ➞ True
+    is_sorted([1, 2, 3, 4, 5, 6, 7]) ➞ True
+    is_sorted([1, 3, 2, 4, 5, 6, 7]) ➞ False
+    is_sorted([1, 2, 2, 3, 3, 4]) ➞ True
+    is_sorted([1, 2, 2, 2, 3, 4]) ➞ False
+    '''
+ </pre>
+###### answer
+<pre> ```python
+def is_sorted(lst):
+    '''
+    Given a list of numbers, return whether or not they are sorted
+    in ascending order. If list has more than 1 duplicate of the same
+    number, return False. Assume no negative numbers and only integers.
+
+    Examples
+    is_sorted([5]) ➞ True
+    is_sorted([1, 2, 3, 4, 5]) ➞ True
+    is_sorted([1, 3, 2, 4, 5]) ➞ False
+    is_sorted([1, 2, 3, 4, 5, 6]) ➞ True
+    is_sorted([1, 2, 3, 4, 5, 6, 7]) ➞ True
+    is_sorted([1, 3, 2, 4, 5, 6, 7]) ➞ False
+    is_sorted([1, 2, 2, 3, 3, 4]) ➞ True
+    is_sorted([1, 2, 2, 2, 3, 4]) ➞ False
+    '''
+    return len(lst) == len(set(lst)) and all(lst[i] &lt;= lst[i+1] for i in range(len(lst)-1))
+``` </pre>
+###### canonical_solution
+<pre>     count_digit = dict([(i, 0) for i in lst])
+    for i in lst:
+        count_digit[i]+=1 
+    if any(count_digit[i] > 2 for i in lst):
+        return False
+    if all(lst[i-1] &lt;= lst[i] for i in range(1, len(lst))):
+        return True
+    else:
+        return False
+    
+    
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate([5]) == True
+    assert candidate([1, 2, 3, 4, 5]) == True
+    assert candidate([1, 3, 2, 4, 5]) == False
+    assert candidate([1, 2, 3, 4, 5, 6]) == True
+    assert candidate([1, 2, 3, 4, 5, 6, 7]) == True
+    assert candidate([1, 3, 2, 4, 5, 6, 7]) == False, "This prints if this assert fails 1 (good for debugging!)"
+    assert candidate([]) == True, "This prints if this assert fails 2 (good for debugging!)"
+    assert candidate([1]) == True, "This prints if this assert fails 3 (good for debugging!)"
+    assert candidate([3, 2, 1]) == False, "This prints if this assert fails 4 (good for debugging!)"
+    
+    # Check some edge cases that are easy to work out by hand.
+    assert candidate([1, 2, 2, 2, 3, 4]) == False, "This prints if this assert fails 5 (good for debugging!)"
+    assert candidate([1, 2, 3, 3, 3, 4]) == False, "This prints if this assert fails 6 (good for debugging!)"
+    assert candidate([1, 2, 2, 3, 3, 4]) == True, "This prints if this assert fails 7 (good for debugging!)"
+    assert candidate([1, 2, 3, 4]) == True, "This prints if this assert fails 8 (good for debugging!)"
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 62
+     57     assert candidate([1, 2, 2, 3, 3, 4]) == True, "This prints if this assert fails 7 (good for debugging!)"
+     58     assert candidate([1, 2, 3, 4]) == True, "This prints if this assert fails 8 (good for debugging!)"
+---> 62 check(is_sorted)
+Cell In[1], line 57, in check(candidate)
+     55 assert candidate([1, 2, 2, 2, 3, 4]) == False, "This prints if this assert fails 5 (good for debugging!)"
+     56 assert candidate([1, 2, 3, 3, 3, 4]) == False, "This prints if this assert fails 6 (good for debugging!)"
+---> 57 assert candidate([1, 2, 2, 3, 3, 4]) == True, "This prints if this assert fails 7 (good for debugging!)"
+     58 assert candidate([1, 2, 3, 4]) == True, "This prints if this assert fails 8 (good for debugging!)"
+AssertionError: This prints if this assert fails 7 (good for debugging!) </pre>
+### HumanEval/84
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def solve(N):
+    """Given a positive integer N, return the total sum of its digits in binary.
+    
+    Example
+        For N = 1000, the sum of digits will be 1 the output should be "1".
+        For N = 150, the sum of digits will be 6 the output should be "110".
+        For N = 147, the sum of digits will be 12 the output should be "1100".
+    
+    Variables:
+        @N integer
+             Constraints: 0 ≤ N ≤ 10000.
+    Output:
+         a string of binary number
+    """
+ </pre>
+###### answer
+<pre> ```python
+def solve(N):
+    """
+    Given a positive integer N, return the total sum of its digits in binary.
+    
+    Example
+        For N = 1000, the sum of digits will be 1 the output should be "1".
+        For N = 150, the sum of digits will be 6 the output should be "110".
+        For N = 147, the sum of digits will be 12 the output should be "1100".
+    
+    Variables:
+        @N integer
+             Constraints: 0 ≤ N ≤ 10000.
+    Output:
+         a string of binary number
+    """
+    # Convert the number to binary and remove the '0b' prefix
+    binary = bin(N)[2:]
+    
+    # Calculate the sum of the digits in the binary string
+    digit_sum = sum(int(digit) for digit in binary)
+    
+    # Convert the sum to binary and remove the '0b' prefix
+    binary_sum = bin(digit_sum)[2:]
+    
+    return binary_sum
+``` </pre>
+###### canonical_solution
+<pre>     return bin(sum(int(i) for i in str(N)))[2:]
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert True, "This prints if this assert fails 1 (good for debugging!)"
+    assert candidate(1000) == "1", "Error"
+    assert candidate(150) == "110", "Error"
+    assert candidate(147) == "1100", "Error"
+
+    # Check some edge cases that are easy to work out by hand.
+    assert True, "This prints if this assert fails 2 (also good for debugging!)"
+    assert candidate(333) == "1001", "Error"
+    assert candidate(963) == "10010", "Error"
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 62
+     57     assert candidate(333) == "1001", "Error"
+     58     assert candidate(963) == "10010", "Error"
+---> 62 check(solve)
+Cell In[1], line 51, in check(candidate)
+     47 def check(candidate):
+     48 
+     49     # Check some simple cases
+     50     assert True, "This prints if this assert fails 1 (good for debugging!)"
+---> 51     assert candidate(1000) == "1", "Error"
+     52     assert candidate(150) == "110", "Error"
+     53     assert candidate(147) == "1100", "Error"
+AssertionError: Error </pre>
+### HumanEval/77
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def iscube(a):
+    '''
+    Write a function that takes an integer a and returns True 
+    if this ingeger is a cube of some integer number.
+    Note: you may assume the input is always valid.
+    Examples:
+    iscube(1) ==> True
+    iscube(2) ==> False
+    iscube(-1) ==> True
+    iscube(64) ==> True
+    iscube(0) ==> True
+    iscube(180) ==> False
+    '''
+ </pre>
+###### answer
+<pre> ```python
+import math
+
+def iscube(a):
+    '''
+    Write a function that takes an integer a and returns True 
+    if this ingeger is a cube of some integer number.
+    Note: you may assume the input is always valid.
+    Examples:
+    iscube(1) ==> True
+    iscube(2) ==> False
+    iscube(-1) ==> True
+    iscube(64) ==> True
+    iscube(0) ==> True
+    iscube(180) ==> False
+    '''
+    return round(a ** (1. / 3)) ** 3 == a
+``` </pre>
+###### canonical_solution
+<pre>     a = abs(a)
+    return int(round(a ** (1. / 3))) ** 3 == a
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate(1) == True, "First test error: " + str(candidate(1))
+    assert candidate(2) == False, "Second test error: " + str(candidate(2))
+    assert candidate(-1) == True, "Third test error: " + str(candidate(-1))
+    assert candidate(64) == True, "Fourth test error: " + str(candidate(64))
+    assert candidate(180) == False, "Fifth test error: " + str(candidate(180))
+    assert candidate(1000) == True, "Sixth test error: " + str(candidate(1000))
+
+
+    # Check some edge cases that are easy to work out by hand.
+    assert candidate(0) == True, "1st edge test error: " + str(candidate(0))
+    assert candidate(1729) == False, "2nd edge test error: " + str(candidate(1728))
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)Cell In[1], line 54
+     49     assert candidate(0) == True, "1st edge test error: " + str(candidate(0))
+     50     assert candidate(1729) == False, "2nd edge test error: " + str(candidate(1728))
+---> 54 check(iscube)
+Cell In[1], line 42, in check(candidate)
+     40 assert candidate(1) == True, "First test error: " + str(candidate(1))
+     41 assert candidate(2) == False, "Second test error: " + str(candidate(2))
+---> 42 assert candidate(-1) == True, "Third test error: " + str(candidate(-1))
+     43 assert candidate(64) == True, "Fourth test error: " + str(candidate(64))
+     44 assert candidate(180) == False, "Fifth test error: " + str(candidate(180))
+Cell In[1], line 34, in iscube(a)
+     21 def iscube(a):
+     22     '''
+     23     Write a function that takes an integer a and returns True 
+     24     if this ingeger is a cube of some integer number.
+   (...)
+     32     iscube(180) ==> False
+     33     '''
+---> 34     return round(a ** (1. / 3)) ** 3 == a
+TypeError: type complex doesn't define __round__ method </pre>
+### HumanEval/137
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def compare_one(a, b):
+    """
+    Create a function that takes integers, floats, or strings representing
+    real numbers, and returns the larger variable in its given variable type.
+    Return None if the values are equal.
+    Note: If a real number is represented as a string, the floating point might be . or ,
+
+    compare_one(1, 2.5) ➞ 2.5
+    compare_one(1, "2,3") ➞ "2,3"
+    compare_one("5,1", "6") ➞ "6"
+    compare_one("1", 1) ➞ None
+    """
+ </pre>
+###### answer
+<pre> def compare_one(a, b):
+    """
+    Create a function that takes integers, floats, or strings representing
+    real numbers, and returns the larger variable in its given variable type.
+    Return None if the values are equal.
+    Note: If a real number is represented as a string, the floating point might be . or ,
+    """
+    
+    # Convert strings to floats, and integers to floats
+    a = float(a)
+    b = float(b)
+    
+    # If a and b are equal, return None
+    if a == b:
+        return None
+    
+    # If a is greater than b, return a
+    elif a > b:
+        return a
+    
+    # If b is greater than a, return b
+    else:
+        return b </pre>
+###### canonical_solution
+<pre>     temp_a, temp_b = a, b
+    if isinstance(temp_a, str): temp_a = temp_a.replace(',','.')
+    if isinstance(temp_b, str): temp_b = temp_b.replace(',','.')
+    if float(temp_a) == float(temp_b): return None
+    return a if float(temp_a) > float(temp_b) else b 
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate(1, 2) == 2
+    assert candidate(1, 2.5) == 2.5
+    assert candidate(2, 3) == 3
+    assert candidate(5, 6) == 6
+    assert candidate(1, "2,3") == "2,3"
+    assert candidate("5,1", "6") == "6"
+    assert candidate("1", "2") == "2"
+    assert candidate("1", 1) == None
+
+    # Check some edge cases that are easy to work out by hand.
+    assert True
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)Cell In[1], line 58
+     53     # Check some edge cases that are easy to work out by hand.
+     54     assert True
+---> 58 check(compare_one)
+Cell In[1], line 48, in check(candidate)
+     46 assert candidate(2, 3) == 3
+     47 assert candidate(5, 6) == 6
+---> 48 assert candidate(1, "2,3") == "2,3"
+     49 assert candidate("5,1", "6") == "6"
+     50 assert candidate("1", "2") == "2"
+Cell In[1], line 27, in compare_one(a, b)
+     25 # Convert strings to floats, and integers to floats
+     26 a = float(a)
+---> 27 b = float(b)
+     29 # If a and b are equal, return None
+     30 if a == b:
+ValueError: could not convert string to float: '2,3' </pre>

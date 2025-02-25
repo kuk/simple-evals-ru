@@ -754,3 +754,805 @@ Cell In[1], line 30, in check(candidate)
      31 assert candidate(100) == 50
      32 assert candidate(49) == 7
 AssertionError:  </pre>
+### HumanEval/130
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def tri(n):
+    """Everyone knows Fibonacci sequence, it was studied deeply by mathematicians in 
+    the last couple centuries. However, what people don't know is Tribonacci sequence.
+    Tribonacci sequence is defined by the recurrence:
+    tri(1) = 3
+    tri(n) = 1 + n / 2, if n is even.
+    tri(n) =  tri(n - 1) + tri(n - 2) + tri(n + 1), if n is odd.
+    For example:
+    tri(2) = 1 + (2 / 2) = 2
+    tri(4) = 3
+    tri(3) = tri(2) + tri(1) + tri(4)
+           = 2 + 3 + 3 = 8 
+    You are given a non-negative integer number n, you have to a return a list of the 
+    first n + 1 numbers of the Tribonacci sequence.
+    Examples:
+    tri(3) = [1, 3, 2, 8]
+    """
+ </pre>
+###### answer
+<pre> ```python
+def tri(n):
+    # Initialize an empty list to store the first n+1 Tribonacci numbers
+    trib_sequence = []
+    
+    # Base case: If n is zero, append 1 to the list
+    if n == 0:
+        trib_sequence.append(1)
+    
+    # Recursively calculate the first n+1 Tribonacci numbers
+    else:
+        # Append the initial value of 3
+        trib_sequence.append(3)
+        
+        # Initialize variables for the previous two terms
+        prev1, prev2 = 3, 1
+        
+        # Iterate over the remaining values of n
+        for i in range(1, n):
+            current = prev1 + prev2 + i % 2
+            
+            # Update the previous two terms for the next iteration
+            prev2 = prev1
+            prev1 = current
+            
+            # Append the calculated term to the list
+            trib_sequence.append(current)
+    
+    # Return the final list containing the first n+1 Tribonacci numbers
+    return trib_sequence
+``` </pre>
+###### canonical_solution
+<pre>     if n == 0:
+        return [1]
+    my_tri = [1, 3]
+    for i in range(2, n + 1):
+        if i % 2 == 0:
+            my_tri.append(i / 2 + 1)
+        else:
+            my_tri.append(my_tri[i - 1] + my_tri[i - 2] + (i + 3) / 2)
+    return my_tri
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    
+    assert candidate(3) == [1, 3, 2.0, 8.0]
+    assert candidate(4) == [1, 3, 2.0, 8.0, 3.0]
+    assert candidate(5) == [1, 3, 2.0, 8.0, 3.0, 15.0]
+    assert candidate(6) == [1, 3, 2.0, 8.0, 3.0, 15.0, 4.0]
+    assert candidate(7) == [1, 3, 2.0, 8.0, 3.0, 15.0, 4.0, 24.0]
+    assert candidate(8) == [1, 3, 2.0, 8.0, 3.0, 15.0, 4.0, 24.0, 5.0]
+    assert candidate(9) == [1, 3, 2.0, 8.0, 3.0, 15.0, 4.0, 24.0, 5.0, 35.0]
+    assert candidate(20) == [1, 3, 2.0, 8.0, 3.0, 15.0, 4.0, 24.0, 5.0, 35.0, 6.0, 48.0, 7.0, 63.0, 8.0, 80.0, 9.0, 99.0, 10.0, 120.0, 11.0]
+
+    # Check some edge cases that are easy to work out by hand.
+    assert candidate(0) == [1]
+    assert candidate(1) == [1, 3]
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 72
+     68     assert candidate(0) == [1]
+     69     assert candidate(1) == [1, 3]
+---> 72 check(tri)
+Cell In[1], line 58, in check(candidate)
+     54 def check(candidate):
+     55 
+     56     # Check some simple cases
+---> 58     assert candidate(3) == [1, 3, 2.0, 8.0]
+     59     assert candidate(4) == [1, 3, 2.0, 8.0, 3.0]
+     60     assert candidate(5) == [1, 3, 2.0, 8.0, 3.0, 15.0]
+AssertionError:  </pre>
+### HumanEval/142
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+
+
+def sum_squares(lst):
+    """"
+    This function will take a list of integers. For all entries in the list, the function shall square the integer entry if its index is a 
+    multiple of 3 and will cube the integer entry if its index is a multiple of 4 and not a multiple of 3. The function will not 
+    change the entries in the list whose indexes are not a multiple of 3 or 4. The function shall then return the sum of all entries. 
+    
+    Examples:
+    For lst = [1,2,3] the output should be 6
+    For lst = []  the output should be 0
+    For lst = [-1,-5,2,-1,-5]  the output should be -126
+    """
+ </pre>
+###### answer
+<pre> ```python
+def sum_squares(lst):
+    # Initialize sum to zero
+    total = 0
+    # Iterate over each element in the list
+    for i, num in enumerate(lst):
+        # Calculate the power based on the modulo conditions
+        pow_num = num ** (2 + (i % 4 &lt; 3))
+        # Add the calculated value to the total
+        total += pow_num
+    # Return the final sum
+    return total
+``` </pre>
+###### canonical_solution
+<pre>     result =[]
+    for i in range(len(lst)):
+        if i %3 == 0:
+            result.append(lst[i]**2)
+        elif i % 4 == 0 and i%3 != 0:
+            result.append(lst[i]**3)
+        else:
+            result.append(lst[i])
+    return sum(result)
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    
+    assert candidate([1,2,3]) == 6
+    assert candidate([1,4,9]) == 14
+    assert candidate([]) == 0
+    assert candidate([1,1,1,1,1,1,1,1,1]) == 9
+    assert candidate([-1,-1,-1,-1,-1,-1,-1,-1,-1]) == -3
+    assert candidate([0]) == 0
+    assert candidate([-1,-5,2,-1,-5]) == -126
+    assert candidate([-56,-99,1,0,-2]) == 3030
+    assert candidate([-1,0,0,0,0,0,0,0,-1]) == 0
+    assert candidate([-16, -9, -2, 36, 36, 26, -20, 25, -40, 20, -4, 12, -26, 35, 37]) == -14196
+    assert candidate([-1, -3, 17, -1, -15, 13, -1, 14, -14, -12, -5, 14, -14, 6, 13, 11, 16, 16, 4, 10]) == -1448
+    
+    
+    # Don't remove this line:
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 52
+     46     assert candidate([-1, -3, 17, -1, -15, 13, -1, 14, -14, -12, -5, 14, -14, 6, 13, 11, 16, 16, 4, 10]) == -1448
+     49     # Don't remove this line:
+---> 52 check(sum_squares)
+Cell In[1], line 36, in check(candidate)
+     32 def check(candidate):
+     33 
+     34     # Check some simple cases
+---> 36     assert candidate([1,2,3]) == 6
+     37     assert candidate([1,4,9]) == 14
+     38     assert candidate([]) == 0
+AssertionError:  </pre>
+### HumanEval/126
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def is_sorted(lst):
+    '''
+    Given a list of numbers, return whether or not they are sorted
+    in ascending order. If list has more than 1 duplicate of the same
+    number, return False. Assume no negative numbers and only integers.
+
+    Examples
+    is_sorted([5]) ➞ True
+    is_sorted([1, 2, 3, 4, 5]) ➞ True
+    is_sorted([1, 3, 2, 4, 5]) ➞ False
+    is_sorted([1, 2, 3, 4, 5, 6]) ➞ True
+    is_sorted([1, 2, 3, 4, 5, 6, 7]) ➞ True
+    is_sorted([1, 3, 2, 4, 5, 6, 7]) ➞ False
+    is_sorted([1, 2, 2, 3, 3, 4]) ➞ True
+    is_sorted([1, 2, 2, 2, 3, 4]) ➞ False
+    '''
+ </pre>
+###### answer
+<pre> ```python
+def is_sorted(lst):
+    # Check if list contains any negative numbers.
+    if any(num &lt; 0 for num in lst):
+        return False
+    
+    # Check if there are duplicates in the list.
+    if len(set(lst)) != len(lst):
+        return False
+    
+    # Check if the list is already sorted.
+    for i in range(len(lst) - 1):
+        if lst[i] > lst[i + 1]:
+            return False
+    
+    return True
+``` </pre>
+###### canonical_solution
+<pre>     count_digit = dict([(i, 0) for i in lst])
+    for i in lst:
+        count_digit[i]+=1 
+    if any(count_digit[i] > 2 for i in lst):
+        return False
+    if all(lst[i-1] &lt;= lst[i] for i in range(1, len(lst))):
+        return True
+    else:
+        return False
+    
+    
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate([5]) == True
+    assert candidate([1, 2, 3, 4, 5]) == True
+    assert candidate([1, 3, 2, 4, 5]) == False
+    assert candidate([1, 2, 3, 4, 5, 6]) == True
+    assert candidate([1, 2, 3, 4, 5, 6, 7]) == True
+    assert candidate([1, 3, 2, 4, 5, 6, 7]) == False, "This prints if this assert fails 1 (good for debugging!)"
+    assert candidate([]) == True, "This prints if this assert fails 2 (good for debugging!)"
+    assert candidate([1]) == True, "This prints if this assert fails 3 (good for debugging!)"
+    assert candidate([3, 2, 1]) == False, "This prints if this assert fails 4 (good for debugging!)"
+    
+    # Check some edge cases that are easy to work out by hand.
+    assert candidate([1, 2, 2, 2, 3, 4]) == False, "This prints if this assert fails 5 (good for debugging!)"
+    assert candidate([1, 2, 3, 3, 3, 4]) == False, "This prints if this assert fails 6 (good for debugging!)"
+    assert candidate([1, 2, 2, 3, 3, 4]) == True, "This prints if this assert fails 7 (good for debugging!)"
+    assert candidate([1, 2, 3, 4]) == True, "This prints if this assert fails 8 (good for debugging!)"
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 60
+     55     assert candidate([1, 2, 2, 3, 3, 4]) == True, "This prints if this assert fails 7 (good for debugging!)"
+     56     assert candidate([1, 2, 3, 4]) == True, "This prints if this assert fails 8 (good for debugging!)"
+---> 60 check(is_sorted)
+Cell In[1], line 55, in check(candidate)
+     53 assert candidate([1, 2, 2, 2, 3, 4]) == False, "This prints if this assert fails 5 (good for debugging!)"
+     54 assert candidate([1, 2, 3, 3, 3, 4]) == False, "This prints if this assert fails 6 (good for debugging!)"
+---> 55 assert candidate([1, 2, 2, 3, 3, 4]) == True, "This prints if this assert fails 7 (good for debugging!)"
+     56 assert candidate([1, 2, 3, 4]) == True, "This prints if this assert fails 8 (good for debugging!)"
+AssertionError: This prints if this assert fails 7 (good for debugging!) </pre>
+### HumanEval/100
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def make_a_pile(n):
+    """
+    Given a positive integer n, you have to make a pile of n levels of stones.
+    The first level has n stones.
+    The number of stones in the next level is:
+        - the next odd number if n is odd.
+        - the next even number if n is even.
+    Return the number of stones in each level in a list, where element at index
+    i represents the number of stones in the level (i+1).
+
+    Examples:
+    >>> make_a_pile(3)
+    [3, 5, 7]
+    """
+ </pre>
+###### answer
+<pre> ```python
+def make_a_pile(n):
+    result = []
+    current_level = n
+    
+    while current_level > 0:
+        # Add the current level to the result list
+        result.append(current_level)
+        
+        # Adjust the next level based on whether n is even or odd
+        if current_level % 2 == 0:
+            current_level -= 1
+        else:
+            current_level += 1
+            
+    return result
+``` </pre>
+###### canonical_solution
+<pre>     return [n + 2*i for i in range(n)]
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate(3) == [3, 5, 7], "Test 3"
+    assert candidate(4) == [4,6,8,10], "Test 4"
+    assert candidate(5) == [5, 7, 9, 11, 13]
+    assert candidate(6) == [6, 8, 10, 12, 14, 16]
+    assert candidate(8) == [8, 10, 12, 14, 16, 18, 20, 22]
+
+    # Check some edge cases that are easy to work out by hand.
+    assert True, "This prints if this assert fails 2 (also good for debugging!)"
+
+ </pre>
+###### traceback
+<pre> Timed out </pre>
+### HumanEval/117
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def select_words(s, n):
+    """Given a string s and a natural number n, you have been tasked to implement 
+    a function that returns a list of all words from string s that contain exactly 
+    n consonants, in order these words appear in the string s.
+    If the string s is empty then the function should return an empty list.
+    Note: you may assume the input string contains only letters and spaces.
+    Examples:
+    select_words("Mary had a little lamb", 4) ==> ["little"]
+    select_words("Mary had a little lamb", 3) ==> ["Mary", "lamb"]
+    select_words("simple white space", 2) ==> []
+    select_words("Hello world", 4) ==> ["world"]
+    select_words("Uncle sam", 3) ==> ["Uncle"]
+    """
+ </pre>
+###### answer
+<pre> ```python
+def select_words(s, n):
+    # Initialize an empty list to store words with exactly n consonants
+    result = []
+    
+    # Split the string into individual words using whitespace as delimiter
+    words = s.split()
+    
+    # Iterate over each word in the list of words
+    for word in words:
+        # Check if the word contains exactly n consonants
+        if word.count('a') + word.count('e') + word.count('i') + word.count('o') + word.count('u') == len(word) - n:
+            # Append the word to the result list if it meets the criteria
+            result.append(word)
+            
+    # Return the list of words containing exactly n consonants
+    return result
+``` </pre>
+###### canonical_solution
+<pre>     result = []
+    for word in s.split():
+        n_consonants = 0
+        for i in range(0, len(word)):
+            if word[i].lower() not in ["a","e","i","o","u"]:
+                n_consonants += 1 
+        if n_consonants == n:
+            result.append(word)
+    return result
+
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate("Mary had a little lamb", 4) == ["little"], "First test error: " + str(candidate("Mary had a little lamb", 4))      
+    assert candidate("Mary had a little lamb", 3) == ["Mary", "lamb"], "Second test error: " + str(candidate("Mary had a little lamb", 3))  
+    assert candidate("simple white space", 2) == [], "Third test error: " + str(candidate("simple white space", 2))      
+    assert candidate("Hello world", 4) == ["world"], "Fourth test error: " + str(candidate("Hello world", 4))  
+    assert candidate("Uncle sam", 3) == ["Uncle"], "Fifth test error: " + str(candidate("Uncle sam", 3))
+
+
+    # Check some edge cases that are easy to work out by hand.
+    assert candidate("", 4) == [], "1st edge test error: " + str(candidate("", 4))
+    assert candidate("a b c d e f", 1) == ["b", "c", "d", "f"], "2nd edge test error: " + str(candidate("a b c d e f", 1))
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 53
+     48     assert candidate("", 4) == [], "1st edge test error: " + str(candidate("", 4))
+     49     assert candidate("a b c d e f", 1) == ["b", "c", "d", "f"], "2nd edge test error: " + str(candidate("a b c d e f", 1))
+---> 53 check(select_words)
+Cell In[1], line 44, in check(candidate)
+     42 assert candidate("simple white space", 2) == [], "Third test error: " + str(candidate("simple white space", 2))      
+     43 assert candidate("Hello world", 4) == ["world"], "Fourth test error: " + str(candidate("Hello world", 4))  
+---> 44 assert candidate("Uncle sam", 3) == ["Uncle"], "Fifth test error: " + str(candidate("Uncle sam", 3))
+     47 # Check some edge cases that are easy to work out by hand.
+     48 assert candidate("", 4) == [], "1st edge test error: " + str(candidate("", 4))
+AssertionError: Fifth test error: [] </pre>
+### HumanEval/127
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def intersection(interval1, interval2):
+    """You are given two intervals,
+    where each interval is a pair of integers. For example, interval = (start, end) = (1, 2).
+    The given intervals are closed which means that the interval (start, end)
+    includes both start and end.
+    For each given interval, it is assumed that its start is less or equal its end.
+    Your task is to determine whether the length of intersection of these two 
+    intervals is a prime number.
+    Example, the intersection of the intervals (1, 3), (2, 4) is (2, 3)
+    which its length is 1, which not a prime number.
+    If the length of the intersection is a prime number, return "YES",
+    otherwise, return "NO".
+    If the two intervals don't intersect, return "NO".
+
+
+    [input/output] samples:
+    intersection((1, 2), (2, 3)) ==> "NO"
+    intersection((-1, 1), (0, 4)) ==> "NO"
+    intersection((-3, -1), (-5, 5)) ==> "YES"
+    """
+ </pre>
+###### answer
+<pre> ```python
+def intersection(interval1, interval2):
+    # Ensure intervals are sorted
+    interval1 = sorted(interval1)
+    interval2 = sorted(interval2)
+    
+    # Find the intersection range
+    start = max(interval1[0], interval2[0])
+    end = min(interval1[1], interval2[1])
+    
+    if start &lt;= end:
+        # Calculate the length of the intersection
+        intersection_length = end - start + 1
+        
+        # Check if the intersection length is a prime number
+        if intersection_length > 1 and is_prime(intersection_length):
+            return "YES"
+    
+    return "NO"
+``` </pre>
+###### canonical_solution
+<pre>     def is_prime(num):
+        if num == 1 or num == 0:
+            return False
+        if num == 2:
+            return True
+        for i in range(2, num):
+            if num%i == 0:
+                return False
+        return True
+
+    l = max(interval1[0], interval2[0])
+    r = min(interval1[1], interval2[1])
+    length = r - l
+    if length > 0 and is_prime(length):
+        return "YES"
+    return "NO"
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate((1, 2), (2, 3)) == "NO"
+    assert candidate((-1, 1), (0, 4)) == "NO"
+    assert candidate((-3, -1), (-5, 5)) == "YES"
+    assert candidate((-2, 2), (-4, 0)) == "YES"
+
+    # Check some edge cases that are easy to work out by hand.
+    assert candidate((-11, 2), (-1, -1)) == "NO"
+    assert candidate((1, 2), (3, 5)) == "NO"
+    assert candidate((1, 2), (1, 2)) == "NO"
+    assert candidate((-2, -2), (-3, -2)) == "NO"
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)Cell In[1], line 62
+     57     assert candidate((1, 2), (1, 2)) == "NO"
+     58     assert candidate((-2, -2), (-3, -2)) == "NO"
+---> 62 check(intersection)
+Cell In[1], line 50, in check(candidate)
+     46 def check(candidate):
+     47 
+     48     # Check some simple cases
+     49     assert candidate((1, 2), (2, 3)) == "NO"
+---> 50     assert candidate((-1, 1), (0, 4)) == "NO"
+     51     assert candidate((-3, -1), (-5, 5)) == "YES"
+     52     assert candidate((-2, 2), (-4, 0)) == "YES"
+Cell In[1], line 40, in intersection(interval1, interval2)
+     37     intersection_length = end - start + 1
+     39     # Check if the intersection length is a prime number
+---> 40     if intersection_length > 1 and is_prime(intersection_length):
+     41         return "YES"
+     43 return "NO"
+NameError: name 'is_prime' is not defined </pre>
+### HumanEval/77
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def iscube(a):
+    '''
+    Write a function that takes an integer a and returns True 
+    if this ingeger is a cube of some integer number.
+    Note: you may assume the input is always valid.
+    Examples:
+    iscube(1) ==> True
+    iscube(2) ==> False
+    iscube(-1) ==> True
+    iscube(64) ==> True
+    iscube(0) ==> True
+    iscube(180) ==> False
+    '''
+ </pre>
+###### answer
+<pre> ```python
+def iscube(a):
+    # Check if the number is positive
+    if a > 0:
+        # Calculate the cube root
+        cube_root = (a ** (1/3))
+        # Check if the cube root is an integer
+        return cube_root.is_integer()
+    else:
+        # Return False if the number is negative
+        return False
+``` </pre>
+###### canonical_solution
+<pre>     a = abs(a)
+    return int(round(a ** (1. / 3))) ** 3 == a
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate(1) == True, "First test error: " + str(candidate(1))
+    assert candidate(2) == False, "Second test error: " + str(candidate(2))
+    assert candidate(-1) == True, "Third test error: " + str(candidate(-1))
+    assert candidate(64) == True, "Fourth test error: " + str(candidate(64))
+    assert candidate(180) == False, "Fifth test error: " + str(candidate(180))
+    assert candidate(1000) == True, "Sixth test error: " + str(candidate(1000))
+
+
+    # Check some edge cases that are easy to work out by hand.
+    assert candidate(0) == True, "1st edge test error: " + str(candidate(0))
+    assert candidate(1729) == False, "2nd edge test error: " + str(candidate(1728))
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 48
+     43     assert candidate(0) == True, "1st edge test error: " + str(candidate(0))
+     44     assert candidate(1729) == False, "2nd edge test error: " + str(candidate(1728))
+---> 48 check(iscube)
+Cell In[1], line 36, in check(candidate)
+     34 assert candidate(1) == True, "First test error: " + str(candidate(1))
+     35 assert candidate(2) == False, "Second test error: " + str(candidate(2))
+---> 36 assert candidate(-1) == True, "Third test error: " + str(candidate(-1))
+     37 assert candidate(64) == True, "Fourth test error: " + str(candidate(64))
+     38 assert candidate(180) == False, "Fifth test error: " + str(candidate(180))
+AssertionError: Third test error: False </pre>
+### HumanEval/137
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def compare_one(a, b):
+    """
+    Create a function that takes integers, floats, or strings representing
+    real numbers, and returns the larger variable in its given variable type.
+    Return None if the values are equal.
+    Note: If a real number is represented as a string, the floating point might be . or ,
+
+    compare_one(1, 2.5) ➞ 2.5
+    compare_one(1, "2,3") ➞ "2,3"
+    compare_one("5,1", "6") ➞ "6"
+    compare_one("1", 1) ➞ None
+    """
+ </pre>
+###### answer
+<pre> ```python
+def compare_one(a, b):
+    # Convert both inputs to float if they are numeric strings
+    if isinstance(a, str) and isinstance(b, str):
+        a = float(a.replace(",", "."))
+        b = float(b.replace(",", "."))
+    
+    # Compare the two variables
+    if a > b:
+        return a
+    elif b > a:
+        return b
+    else:
+        return None
+``` </pre>
+###### canonical_solution
+<pre>     temp_a, temp_b = a, b
+    if isinstance(temp_a, str): temp_a = temp_a.replace(',','.')
+    if isinstance(temp_b, str): temp_b = temp_b.replace(',','.')
+    if float(temp_a) == float(temp_b): return None
+    return a if float(temp_a) > float(temp_b) else b 
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate(1, 2) == 2
+    assert candidate(1, 2.5) == 2.5
+    assert candidate(2, 3) == 3
+    assert candidate(5, 6) == 6
+    assert candidate(1, "2,3") == "2,3"
+    assert candidate("5,1", "6") == "6"
+    assert candidate("1", "2") == "2"
+    assert candidate("1", 1) == None
+
+    # Check some edge cases that are easy to work out by hand.
+    assert True
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)Cell In[1], line 50
+     45     # Check some edge cases that are easy to work out by hand.
+     46     assert True
+---> 50 check(compare_one)
+Cell In[1], line 40, in check(candidate)
+     38 assert candidate(2, 3) == 3
+     39 assert candidate(5, 6) == 6
+---> 40 assert candidate(1, "2,3") == "2,3"
+     41 assert candidate("5,1", "6") == "6"
+     42 assert candidate("1", "2") == "2"
+Cell In[1], line 25, in compare_one(a, b)
+     22     b = float(b.replace(",", "."))
+     24 # Compare the two variables
+---> 25 if a > b:
+     26     return a
+     27 elif b > a:
+TypeError: '>' not supported between instances of 'int' and 'str' </pre>
+### HumanEval/149
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def sorted_list_sum(lst):
+    """Write a function that accepts a list of strings as a parameter,
+    deletes the strings that have odd lengths from it,
+    and returns the resulted list with a sorted order,
+    The list is always a list of strings and never an array of numbers,
+    and it may contain duplicates.
+    The order of the list should be ascending by length of each word, and you
+    should return the list sorted by that rule.
+    If two words have the same length, sort the list alphabetically.
+    The function should return a list of strings in sorted order.
+    You may assume that all words will have the same length.
+    For example:
+    assert list_sort(["aa", "a", "aaa"]) => ["aa"]
+    assert list_sort(["ab", "a", "aaa", "cd"]) => ["ab", "cd"]
+    """
+ </pre>
+###### answer
+<pre> ```python
+def sorted_list_sum(lst):
+    # Remove strings with odd lengths from the input list
+    lst = [word for word in lst if len(word) % 2 == 0]
+    
+    # Sort the list based on the length of each word (ascending), then alphabetical order (if needed)
+    return sorted(lst, key=lambda x: (-len(x), x))
+``` </pre>
+###### canonical_solution
+<pre>     lst.sort()
+    new_lst = []
+    for i in lst:
+        if len(i)%2 == 0:
+            new_lst.append(i)
+    return sorted(new_lst, key=len)
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate(["aa", "a", "aaa"]) == ["aa"]
+    assert candidate(["school", "AI", "asdf", "b"]) == ["AI", "asdf", "school"]
+    assert candidate(["d", "b", "c", "a"]) == []
+    assert candidate(["d", "dcba", "abcd", "a"]) == ["abcd", "dcba"]
+
+    # Check some edge cases that are easy to work out by hand.
+    assert candidate(["AI", "ai", "au"]) == ["AI", "ai", "au"]
+    assert candidate(["a", "b", "b", "c", "c", "a"]) == []
+    assert candidate(['aaaa', 'bbbb', 'dd', 'cc']) == ["cc", "dd", "aaaa", "bbbb"]
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 44
+     39     assert candidate(["a", "b", "b", "c", "c", "a"]) == []
+     40     assert candidate(['aaaa', 'bbbb', 'dd', 'cc']) == ["cc", "dd", "aaaa", "bbbb"]
+---> 44 check(sorted_list_sum)
+Cell In[1], line 33, in check(candidate)
+     29 def check(candidate):
+     30 
+     31     # Check some simple cases
+     32     assert candidate(["aa", "a", "aaa"]) == ["aa"]
+---> 33     assert candidate(["school", "AI", "asdf", "b"]) == ["AI", "asdf", "school"]
+     34     assert candidate(["d", "b", "c", "a"]) == []
+     35     assert candidate(["d", "dcba", "abcd", "a"]) == ["abcd", "dcba"]
+AssertionError:  </pre>
+### HumanEval/141
+###### instruction
+<pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.
+
+def file_name_check(file_name):
+    """Create a function which takes a string representing a file's name, and returns
+    'Yes' if the the file's name is valid, and returns 'No' otherwise.
+    A file's name is considered to be valid if and only if all the following conditions 
+    are met:
+    - There should not be more than three digits ('0'-'9') in the file's name.
+    - The file's name contains exactly one dot '.'
+    - The substring before the dot should not be empty, and it starts with a letter from 
+    the latin alphapet ('a'-'z' and 'A'-'Z').
+    - The substring after the dot should be one of these: ['txt', 'exe', 'dll']
+    Examples:
+    file_name_check("example.txt") # => 'Yes'
+    file_name_check("1example.dll") # => 'No' (the name should start with a latin alphapet letter)
+    """
+ </pre>
+###### answer
+<pre> ```python
+def file_name_check(file_name):
+    # Check if there are more than three digits in the filename
+    if any(char.isdigit() for char in file_name) and len([char for char in file_name if char.isdigit()]) > 3:
+        return "No"
+    
+    # Check if there is at least one dot in the filename
+    if "." not in file_name:
+        return "No"
+    
+    # Split the filename into two parts by the first dot
+    parts = file_name.split(".", 1)
+    
+    # Check if the part before the dot is empty or does not start with a Latin alphabet character
+    if not parts[0] or not parts[0].isalpha():
+        return "No"
+    
+    # Check if the extension is valid
+    ext = parts[-1]
+    if ext not in ["txt", "exe", "dll"]:
+        return "No"
+    
+    return "Yes"
+``` </pre>
+###### canonical_solution
+<pre>     suf = ['txt', 'exe', 'dll']
+    lst = file_name.split(sep='.')
+    if len(lst) != 2:
+        return 'No'
+    if not lst[1] in suf:
+        return 'No'
+    if len(lst[0]) == 0:
+        return 'No'
+    if not lst[0][0].isalpha():
+        return 'No'
+    t = len([x for x in lst[0] if x.isdigit()])
+    if t > 3:
+        return 'No'
+    return 'Yes'
+ </pre>
+###### test
+<pre> def check(candidate):
+
+    # Check some simple cases
+    assert candidate("example.txt") == 'Yes'
+    assert candidate("1example.dll") == 'No'
+    assert candidate('s1sdf3.asd') == 'No'
+    assert candidate('K.dll') == 'Yes'
+    assert candidate('MY16FILE3.exe') == 'Yes'
+    assert candidate('His12FILE94.exe') == 'No'
+    assert candidate('_Y.txt') == 'No'
+    assert candidate('?aREYA.exe') == 'No'
+    assert candidate('/this_is_valid.dll') == 'No'
+    assert candidate('this_is_valid.wow') == 'No'
+    assert candidate('this_is_valid.txt') == 'Yes'
+    assert candidate('this_is_valid.txtexe') == 'No'
+    assert candidate('#this2_i4s_5valid.ten') == 'No'
+    assert candidate('@this1_is6_valid.exe') == 'No'
+    assert candidate('this_is_12valid.6exe4.txt') == 'No'
+    assert candidate('all.exe.txt') == 'No'
+    assert candidate('I563_No.exe') == 'Yes'
+    assert candidate('Is3youfault.txt') == 'Yes'
+    assert candidate('no_one#knows.dll') == 'Yes'
+    assert candidate('1I563_Yes3.exe') == 'No'
+    assert candidate('I563_Yes3.txtt') == 'No'
+    assert candidate('final..txt') == 'No'
+    assert candidate('final132') == 'No'
+    assert candidate('_f4indsartal132.') == 'No'
+    
+        
+
+    # Check some edge cases that are easy to work out by hand.
+    assert candidate('.txt') == 'No'
+    assert candidate('s.') == 'No'
+
+ </pre>
+###### traceback
+<pre> ---------------------------------------------------------------------------AssertionError                            Traceback (most recent call last)Cell In[1], line 80
+     75     assert candidate('.txt') == 'No'
+     76     assert candidate('s.') == 'No'
+---> 80 check(file_name_check)
+Cell In[1], line 51, in check(candidate)
+     49 assert candidate('s1sdf3.asd') == 'No'
+     50 assert candidate('K.dll') == 'Yes'
+---> 51 assert candidate('MY16FILE3.exe') == 'Yes'
+     52 assert candidate('His12FILE94.exe') == 'No'
+     53 assert candidate('_Y.txt') == 'No'
+AssertionError:  </pre>

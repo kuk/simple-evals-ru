@@ -288,3 +288,96 @@ Answer: 16 </pre>
 <pre> 16 </pre>
 ###### target
 <pre> 23 </pre>
+### 177
+###### instruction
+<pre> Solve this math problem. Give the reasoning steps before giving the final answer on the last line by itself in the format of "Answer:". Do not add anything other than the integer answer after "Answer:".
+
+Zaid spends 1/4 of his salary on rent, 1/3 on car fuel and donates half of the remaining amount to his favorite charity. He gives his daughter 200$ to use for her weekly expenses and 700$ to his wife to budget for groceries and other household goods. If Zaid earns 6000$ per month, how much money will he still have after all these expenses and donations? </pre>
+###### answer
+<pre> First, let's calculate the total amount spent on rent:
+- Rent = 1/4 * 6000 = 1500
+
+Next, we calculate the amount spent on car fuel:
+- Car Fuel = 1/3 * 6000 = 2000
+
+Now, we find out the remaining amount after spending on rent and car fuel:
+- Remaining Amount = 6000 - 1500 - 2000 = 2500
+
+Half of the remaining amount is donated to a charity:
+- Donation = 1/2 * 2500 = 1250
+
+The total amount given to his daughter and wife:
+- Total Given = 200 + 700 = 900
+
+Finally, we subtract all the expenses from the initial salary:
+- Final Amount = 6000 - 1500 - 2000 - 1250 - 900 = 1350
+
+Answer: 1350 </pre>
+###### pred
+<pre> 1350 </pre>
+###### target
+<pre> 350 </pre>
+### 119
+###### instruction
+<pre> Solve this math problem. Give the reasoning steps before giving the final answer on the last line by itself in the format of "Answer:". Do not add anything other than the integer answer after "Answer:".
+
+Adrien's total salary was 30 percent higher than Lylah's. Four years later, his salary had increased, and he was earning 40% more than what he was making four years ago. If Adrien's and Lylah's salary increased simultaneously, and Adrien earned $40000 four years ago, calculate the total salary the two were receiving four years later? </pre>
+###### answer
+<pre> 1. Determine Adrien's initial salary:
+   - Given that Adrien earned $40000 four years ago.
+   
+2. Calculate Lylah's initial salary:
+   - Adrien's salary is 30% higher than Lylah's.
+   - Let Lylah's initial salary be $L$.
+   - Therefore, $40000 = L + 0.3L$
+   - Solving for $L$, we get $40000 = 1.3L$
+   - Thus, $L = \frac{40000}{1.3} \approx 30769.23$
+
+3. Calculate Adrien's current salary:
+   - His salary has increased by 40%.
+   - New salary = $40000 + 0.4 \times 40000 = 56000$
+
+4. Calculate Lylah's new salary:
+   - Since their salaries increase simultaneously, assume a uniform percentage increase.
+   - Let's say both salaries increased by the same percentage as Adrien's (for simplicity).
+   - New salary = $30769.23 + 0.4 \times 30769.23 \approx 43026.09$
+
+5. Add their new salaries to find the total:
+   - Total salary = $56000 + 43026.09 = 99026.09$
+
+Answer: 99027 </pre>
+###### pred
+<pre> 99027 </pre>
+###### target
+<pre> 95200 </pre>
+### 43
+###### instruction
+<pre> Solve this math problem. Give the reasoning steps before giving the final answer on the last line by itself in the format of "Answer:". Do not add anything other than the integer answer after "Answer:".
+
+According to its nutritional info, a bag of chips has 250 calories per serving. If a 300g bag has 5 servings, how many grams can you eat if your daily calorie target is 2000 and you have already consumed 1800 calories? </pre>
+###### answer
+<pre> 1. Determine the total number of calories in the entire bag:
+   - Each serving has 250 calories.
+   - There are 5 servings in the bag.
+   - Total calories = 250 * 5 = 1250 calories.
+
+2. Calculate the remaining calories needed to reach the daily target:
+   - Daily target is 2000 calories.
+   - Calories already consumed are 1800.
+   - Remaining calories = 2000 - 1800 = 200 calories.
+
+3. Find out how much of one serving (in grams) corresponds to 200 calories:
+   - One serving is 50 grams (since 300g / 5 servings = 60g/serving).
+   - Therefore, for 200 calories, we need to find the corresponding weight:
+     - 200 / 250 = 0.8 servings.
+   - Convert 0.8 servings into grams:
+     - 0.8 * 50 g = 40 grams.
+
+4. Conclusion:
+   - You can eat 40 grams of chips from the bag without exceeding your daily calorie target.
+
+Answer: 40 </pre>
+###### pred
+<pre> 40 </pre>
+###### target
+<pre> 48 </pre>

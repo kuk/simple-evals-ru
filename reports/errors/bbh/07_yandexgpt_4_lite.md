@@ -741,3 +741,638 @@ At the end of the event, Claire has the orange ball. So the answer is (C). </pre
 <pre> (C) </pre>
 ###### target
 <pre> (A) </pre>
+### dyck_languages/119
+###### instruction
+<pre> Correctly close a Dyck-n word.
+
+Q: Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: [ { [
+A: Let's think step by step.
+We should process each input one by one and keep track of the stack configuration.
+0: empty stack
+1: [ ; stack: [
+2: { ; stack: [ {
+3: [ ; stack: [ { [
+Now, we have reached the end. The final stack is "[ { [".
+We will need to pop out "[", "{", "[" one by one in that order.
+So, we need "]", "}", "]". So the answer is ] } ].
+
+Q: Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: &lt; > ( ( [ [ ( { } ) [ &lt; > ] ]
+A: Let's think step by step.
+We should process each input one by one and keep track of the stack configuration.
+0: empty stack
+1: &lt; ; stack: &lt;
+2: > ; stack: empty
+3: ( ; stack: (
+4: ( ; stack: ( (
+5: [ ; stack: ( ( [
+6: [ ; stack: ( ( [ [
+7: ( ; stack: ( ( [ [ (
+8: { ; stack: ( ( [ [ ( {
+9: } ; stack: ( ( [ [ (
+10: ) ; stack: ( ( [ [
+11: [ ; stack: ( ( [ [ [
+12: &lt; ; stack: ( ( [ [ [ &lt;
+13: > ; stack: ( ( [ [ [
+14: ] ; stack: ( ( [ [
+15: ] ; stack: ( ( [
+Now, we have reached the end. The final stack is "( ( [".
+We will need to pop out "[", "(", "(" one by one in that order.
+So, we need "]", ")", ")". So the answer is ] ) ).
+
+Q: Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: &lt; [ &lt; [ { &lt; [ ] &lt; { } > > } ] > { { ( ) } { &lt; [ &lt; > ] > }
+A: Let's think step by step.
+We should process each input one by one and keep track of the stack configuration.
+0: empty stack
+1: &lt; ; stack: &lt;
+2: [ ; stack: &lt; [
+3: &lt; ; stack: &lt; [ &lt;
+4: [ ; stack: &lt; [ &lt; [
+5: { ; stack: &lt; [ &lt; [ {
+6: &lt; ; stack: &lt; [ &lt; [ { &lt;
+7: [ ; stack: &lt; [ &lt; [ { &lt; [
+8: ] ; stack: &lt; [ &lt; [ { &lt;
+9: &lt; ; stack: &lt; [ &lt; [ { &lt; &lt;
+10: { ; stack: &lt; [ &lt; [ { &lt; &lt; {
+11: } ; stack: &lt; [ &lt; [ { &lt; &lt;
+12: > ; stack: &lt; [ &lt; [ { &lt;
+13: > ; stack: &lt; [ &lt; [ {
+14: } ; stack: &lt; [ &lt; [
+15: ] ; stack: &lt; [ &lt;
+16: > ; stack: &lt; [
+17: { ; stack: &lt; [ {
+18: { ; stack: &lt; [ { {
+19: ( ; stack: &lt; [ { { (
+20: ) ; stack: &lt; [ { {
+21: } ; stack: &lt; [ {
+22: { ; stack: &lt; [ { {
+23: &lt; ; stack: &lt; [ { { &lt;
+24: [ ; stack: &lt; [ { { &lt; [
+25: &lt; ; stack: &lt; [ { { &lt; [ &lt;
+26: > ; stack: &lt; [ { { &lt; [
+27: ] ; stack: &lt; [ { { &lt;
+28: > ; stack: &lt; [ { {
+29: } ; stack: &lt; [ {
+Now, we have reached the end. The final stack is "&lt; [ {".
+We will need to pop out "{", "[", "&lt;" one by one in that order.
+So, we need "}", "]", ">". So the answer is } ] >.
+
+Q: Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: &lt; ( { [ { } ] } [ ] [ ] ) </pre>
+###### answer
+<pre> Let's think step by step.
+We should process each input one by one and keep track of the stack configuration.
+0: empty stack
+1: &lt; ; stack: &lt;
+2: ( ; stack: &lt; (
+3: { ; stack: &lt; ( {
+4: [ ; stack: &lt; ( { [
+5: { ; stack: &lt; ( { [ {
+6: } ; stack: &lt; ( { [ { }
+7: ] ; stack: &lt; ( { [ { } ]
+8: [ ; stack: &lt; ( { [ { } ] [
+9: [ ; stack: &lt; ( { [ { } ] [ [
+10: ) ; stack: &lt; ( { [ { } ] [ [ )
+11: [ ; stack: &lt; ( { [ { } ] [
+Now, we have reached the end. The final stack is "&lt; ( { [ { } ]".
+We will need to pop out "}", "[", "(" one by one in that order.
+So, we need "]", "]", ">". So the answer is ] ] >. </pre>
+###### pred
+<pre> ] ] > </pre>
+###### target
+<pre> > </pre>
+### object_counting/125
+###### instruction
+<pre> Questions that involve enumerating objects and asking the model to count them.
+
+Q: I have a blackberry, a clarinet, a nectarine, a plum, a strawberry, a banana, a flute, an orange, and a violin. How many fruits do I have?
+A: Let's think step by step.
+We first identify the fruits on the list and include their quantity in parentheses:
+- blackberry (1)
+- nectarine (1)
+- plum (1)
+- strawberry (1)
+- banana (1)
+- orange (1)
+Now, let's add the numbers in parentheses: 1 + 1 + 1 + 1 + 1 + 1 = 6. So the answer is 6.
+
+Q: I have an orange, a raspberry, two peaches, a blackberry, an apple, a grape, a nectarine, and three plums. How many fruits do I have?
+A: Let's think step by step.
+We first identify the fruits on the list and include their quantity in parentheses:
+- orange (1)
+- raspberry (1)
+- peaches (2)
+- blackberry (1)
+- apple (1)
+- grape (1)
+- nectarine (1)
+- plums (3)
+Now, let's add the numbers in parentheses: 1 + 1 + 2 + 1 + 1 + 1 + 1 + 3 = 11. So the answer is 11.
+
+Q: I have a lettuce head, a head of broccoli, an onion, a stalk of celery, two carrots, a garlic, and a yam. How many vegetables do I have?
+A: Let's think step by step.
+We first identify the vegetables on the list and include their quantity in parentheses:
+- lettuce (1)
+- broccoli (1)
+- onion (1)
+- celery (1)
+- carrots (2)
+- garlic (1)
+- yam (1)
+Now, let's add the numbers in parentheses: 1 + 1 + 1 + 1 + 2 + 1 + 1 = 8. So the answer is 8.
+
+Q: I have a chicken, a snail, three dogs, a snake, and a goat. How many animals do I have? </pre>
+###### answer
+<pre> Let's think step by step.
+We first identify the animals on the list and include their quantity in parentheses:
+- chicken (1)
+- snail (1)
+- dogs (3)
+- snake (1)
+- goat (1)
+Now, let's add the numbers in parentheses: 1 + 1 + 3 + 1 + 1 = 6. So the answer is 6. </pre>
+###### pred
+<pre> 6 </pre>
+###### target
+<pre> 7 </pre>
+### date_understanding/33
+###### instruction
+<pre> Infer the date from context.
+
+Q: Today is Christmas Eve of 1937. What is the date 10 days ago in MM/DD/YYYY?
+Options:
+(A) 12/14/2026
+(B) 12/14/1950
+(C) 12/14/2007
+(D) 12/14/1937
+(E) 07/14/1938
+(F) 12/14/1988
+A: Let's think step by step.
+If today is Christmas Eve of 1937, then today's date is December 24, 1937. 10 days before today is December 14, 1937, that is 12/14/1937. So the answer is (D).
+
+Q: Tomorrow is 11/12/2019. What is the date one year ago from today in MM/DD/YYYY?
+Options:
+(A) 09/04/2018
+(B) 11/11/2018
+(C) 08/25/2018
+(D) 11/02/2018
+(E) 11/04/2018
+A: Let's think step by step.
+If tomorrow is 11/12/2019, then today is 11/11/2019. The date one year ago from today is 11/11/2018. So the answer is (B).
+
+Q: Jane and John married on Jan 2, 1958. It is their 5-year anniversary today. What is the date tomorrow in MM/DD/YYYY?
+Options:
+(A) 01/11/1961
+(B) 01/03/1963
+(C) 01/18/1961
+(D) 10/14/1960
+(E) 01/03/1982
+(F) 12/03/1960
+A: Let's think step by step.
+If Jane and John married on Jan 2, 1958, then and if it is their 5-year anniversary today, then today's date is Jan 2, 1963. The date tomorrow is Jan 3, 1963, that is 01/03/1963. So the answer is (B).
+
+Q: Today is the second day of the third month of 1966. What is the date one week ago from today in MM/DD/YYYY?
+Options:
+(A) 02/26/1966
+(B) 01/13/1966
+(C) 02/02/1966
+(D) 10/23/1966
+(E) 02/23/1968
+(F) 02/23/1966 </pre>
+###### answer
+<pre> Let's think step by step.
+If today is the second day of the third month of 1966, then today's date is March 2, 1966. One week ago from today is February 26, 1966, that is 02/26/1966. So the answer is (A). </pre>
+###### pred
+<pre> (A) </pre>
+###### target
+<pre> (F) </pre>
+### multistep_arithmetic_two/206
+###### instruction
+<pre> Solve multi-step arithmetic problems.
+
+Q: ((-5 + 9 * -4 - 0) * (4 + -7 + 0 * -5)) =
+A: Let's think step by step.
+Let’s recall that the order of operations in mathematics is as follows: (1) Parentheses, (2) exponents, (3) multiplication and division (from left to right), (4) addition and multiplication (from left to right). So, remember to always compute the expressions inside parentheses or brackets first.
+This equation can be written as "A * B", where A = (-5 + 9 * -4 - 0) and B = (4 + -7 + 0 * -5).
+Let's calculate A = (-5 + 9 * -4 - 0) = (-5 + (9 * -4) - 0) = (-5 + (-36) - 0) = (-5 + -36 - 0) = -5 - 36 = -41.
+Let's calculate B = (4 + -7 + 0 * -5) = (4 + -7 + (0 * -5)) = (4 + -7 + 0) = (4 + -7) = (4 - 7) = -3.
+Then, the final equation is A * B = -41 * -3 = (-61) * (-3) = 123. So the answer is 123.
+
+Q: ((-9 * 7 * 7 * -9) + (4 * -9 - 8 - -4)) =
+A: Let's think step by step.
+Let’s recall that the order of operations in mathematics is as follows: (1) Parentheses, (2) exponents, (3) multiplication and division (from left to right), (4) addition and multiplication (from left to right). So, remember to always compute the expressions inside parentheses or brackets first.
+This equation can be written as "A + B", where A = (-9 * 7 * 7 * -9) and B = (4 * -9 - 8 - -4).
+Let's calculate A = (-9 * 7 * 7 * -9) = ((-9 * 7) * (7 * -9))  = ((-63) * (-63)) = 3969.
+Let's calculate B = (4 * -9 - 8 - (-4)) = ((4 * -9) - 8 - (-4)) = ((-36) - 8 - (-4)) = ((-36 - 8) - (-4)) = (-44 - (-4)) = -40.
+Then, the final equation is A + B = 3969 + -40 = 3969 - 40 = 3929. So the answer is 3929.
+
+Q: ((-3 + 5 * 8 * -4) - (9 - 8 * -7 + -9)) =
+A: Let's think step by step.
+Let’s recall that the order of operations in mathematics is as follows: (1) Parentheses, (2) exponents, (3) multiplication and division (from left to right), (4) addition and multiplication (from left to right). So, remember to always compute the expressions inside parentheses or brackets first.
+This equation can be written as "A - B", where A = (-3 + 5 * 8 * -4) and B = (9 - 8 * -7 + -9).
+Let's calculate A = (-3 + 5 * 8 * -4) = (-3 + (5 * 8) * -4) = (-3 + (40) * -4) = (-3 + (40 * -4)) = (-3 + -160) = -163.
+Let's calculate B = (9 - 8 * -7 + -9) = (9 - (8 * -7) + -9) = (9 - (-56) + -9) = ((9 - (-56)) + -9) = ((65) + -9)= (65 - 9) = 56.
+Then, the final equation is A - B = -163 - 56 = -219. So the answer is -219.
+
+Q: ((1 * 0 - -5 - 3) + (9 * 6 + -4 - 0)) = </pre>
+###### answer
+<pre> Let’s think step by step.
+Let’s recall that the order of operations in mathematics is as follows: (1) Parentheses, (2) exponents, (3) multiplication and division (from left to right), (4) addition and multiplication (from left to right). So, remember to always compute the expressions inside parentheses or brackets first.
+This equation can be written as «A + B», where A = (1 * 0 - -5 - 3) and B = (9 * 6 + -4 - 0).
+Let’s calculate A = (1 * 0 - -5 - 3) = (0 - -5 - 3) = (-5 + 3) = -2.
+Let’s calculate B = (9 * 6 + -4 - 0) = ((9 * 6) + (-4) - 0) = (54 + (-4) - 0) = 54 - 4 = 50.
+Then, the final equation is A + B = -2 + 50 = 48. So the answer is 48. </pre>
+###### pred
+<pre> 48 </pre>
+###### target
+<pre> 52 </pre>
+### disambiguation_qa/183
+###### instruction
+<pre> Clarify the meaning of sentences with ambiguous pronouns.
+
+Q: In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.
+Sentence: The chief told the counselor that they took the day off.
+Options:
+(A) The chief took the day off
+(B) The counselor took the day off
+(C) Ambiguous
+A: Let's think step by step.
+Here we need to determine who the pronoun "they" might be referring to. There are two possible referents for "they", namely the chief and the counselor. The verb "told" might be able to help us determine which one is more likely (if either). Let X be the chief and Y the counselor. The sentence is then of the form "X told Y that (X or Y) did something."
+Let's consider Y first: "X told Y that Y did something." This case does not make much sense, as Y would already have the information that Y did something, because it is information about themself.
+Now, consider X: "X told Y that X did something." This makes sense, because X would be sharing some information about themself that Y might not have known before.
+Because in this context, X is the chief and Y is the counselor, the answer should be the chief. So the answer is (A).
+
+Q: In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.
+Sentence: The manager sent a message to the secretary, but he didn't reply yet.
+Options:
+(A) The secretary didn't reply yet
+(B) The manager didn't reply yet
+(C) Ambiguous
+A: Let's think step by step.
+Here we need to determine who the pronoun "he" might be referring to. There are two possible referents for "he", namely the manager and the secretary. The verbs "sent" and "reply" might be able to help us determine which one is more likely (if either). Let X be the manager and Y the secretary. The sentence is then of the form "X sent a message to Y, but (X or Y) didn't reply yet."
+Let's consider Y first: "X sent a message to Y, but Y didn't reply yet." This case makes sense, because of the implicit causality of the sentence. Y was the receiver of the message, but Y didn't get back to X yet.
+Now, consider X: "X sent a message to Y, but X didn't reply yet." This case doesn't make sense, because X was the initial sender of the message, so it is now Y's turn to write back to X.
+Because in this context, X is the manager and Y is the secretary, the answer should be the secretary. So the answer is (A).
+
+Q: In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.
+Sentence: Bailey will plan to meet the director at his office
+Options:
+(A) It will be Bailey's office
+(B) It will be the director's office
+(C) Ambiguous
+A: Let's think step by step.
+Here we need to determine who the pronoun "his" might be referring to. There are two possible referents for "his", namely Bailey's and the director's. The verb phrase "plan to meet" might be able to help us determine which one is more likely (if either). Let X be Bailey and Y the director. The sentence is then of the form "X will plan to meet Y at (X or Y)'s office."
+Let's consider Y first: "X will plan to meet Y at Y's office." This case makes sense, because X might want to meet up with Y at Y's office.
+Now, consider X: "X will plan to meet Y at X's office." This case also makes sense, because X might want to meet up with Y at X's own office.
+Because both X and Y are possible at the same time, we conclude that the antecedent of the pronoun is ambiguous. So the answer is (C).
+
+Q: In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.
+Sentence: Bailey will plan to meet the director at her office
+Options:
+(A) It will be Bailey's office
+(B) It will be the director's office
+(C) Ambiguous </pre>
+###### answer
+<pre> Let's think step by step.
+Here we need to determine who the pronoun «her» might be referring to. There are two possible referents for «her», namely Bailey's and the director's. The verb phrase «plan to meet» might be able to help us determine which one is more likely (if either). Let X be Bailey and Y the director. The sentence is then of the form «X will plan to meet Y at (X or Y)'s office».
+Let's consider Y first: «X will plan to meet Y at Y's office». This case makes sense, because X might want to meet up with Y at Y's office.
+Now, consider X: «X will plan to meet Y at X's office». This case doesn't make sense, because it implies that Bailey will be planning to meet the director at her own office, which doesn't fit the context of the sentence.
+Because only Y's option makes sense in this context, we conclude that the antecedent of the pronoun is the director's office. So the answer is (B). </pre>
+###### pred
+<pre> (B) </pre>
+###### target
+<pre> (C) </pre>
+### snarks/22
+###### instruction
+<pre> Determine which of two sentences is sarcastic.
+
+According to Cambridge University Dictionary, sarcasm is "the use of remarks that clearly mean the opposite of what they say, made in order to hurt someone's feelings or to criticize something in a humorous way." Sarcastic sentences often contain satirical or ironic utterances, hyperboles, ambivalent or witty remarks.
+
+Q: Which statement is sarcastic?
+Options:
+(A) Yes, because having interests and actively researching them is a huge waste
+(B) Yes, because having interests and actively researching them is a huge deal
+A: Let's think step by step.
+If we look at (A), it says that having interests and actively researching them is a huge waste, implying that it is a useless effort. However, we know that having interests and actively researching them is typically not a waste but rather is beneficial to the individual. The presence of such a juxtaposition in (A) suggests that it contains a taste of irony and sarcasm.
+If we look at (B), it says that having interests and actively researching them is a huge deal, implying that it is an important and consequential effort. This is arguably a neutral and correct statement.
+Above the above, the sarcastic option is (A). So the answer is (A).
+
+Q: Which statement is sarcastic?
+Options:
+(A) No one is going to disagree with you on this. Avoiding ad hominem attacks really help your case
+(B) No one is going to disagree with you on this. Ad hominem attacks really help your case
+A: Let's think step by step.
+If we look at (A), it says that avoiding ad hominem attacks really help your case, implying that ad hominem attacks are adverse and injurious. Because ad hominem attacks are adressed at a person rather than an idea, it is indeed true that avoiding them is often useful and helpful; so, (A) is a neutral (valid and agreeable) statement.
+If we look at (B), it says that ad hominem attacks really help your case, implying that ad hominem attacks are a positive thing. However, we stated previously that ad hominem attacks are often not useful or constructive. The speaker in this sentence therefore seems to mean the opposite of what they are saying; so, there appears to have a taste of irony and sarcasm in (B).
+Above the above, the sarcastic option is (B). So the answer is (B).
+
+Q: Which statement is sarcastic?
+Options:
+(A) Consistency in the league's punishments? What do you think this is supposed to be, politics?
+(B) Consistency in the league's punishments? What do you think this is supposed to be, moral?
+A: Let's think step by step.
+If we look at (A), it likens the consistency in the league's punishments with that in politics. Because politics or political affairs are often not considered to be consistent or dependable, this sentence appears to be satirical.
+If we look at (B), it likens the consistency in the league's punishments with that in morality. Discussing the consistency of the league's punishments in the context of morality, ethics, or law makes sense and does not appear to make a satirical point about anything.
+Above the above, the sarcastic option is (A). So the answer is (A).
+
+Q: Which statement is sarcastic?
+Options:
+(A) You mean Knuth up arrow notation isn't unfamiliar for you?
+(B) You mean Knuth up arrow notation isn't normal for you? </pre>
+###### answer
+<pre> Let’s think step by step.
+If we look at (A), it implies that Knuth up arrow notation is so well-known that it should be considered unfamiliar. This seems contradictory and suggests irony or sarcasm.
+If we look at (B), it implies that Knuth up arrow notation is not the norm, which is a reasonable statement without any hint of sarcasm.
+Above the above, the sarcastic option is (A). So the answer is (A). </pre>
+###### pred
+<pre> (A) </pre>
+###### target
+<pre> (B) </pre>
+### multistep_arithmetic_two/75
+###### instruction
+<pre> Solve multi-step arithmetic problems.
+
+Q: ((-5 + 9 * -4 - 0) * (4 + -7 + 0 * -5)) =
+A: Let's think step by step.
+Let’s recall that the order of operations in mathematics is as follows: (1) Parentheses, (2) exponents, (3) multiplication and division (from left to right), (4) addition and multiplication (from left to right). So, remember to always compute the expressions inside parentheses or brackets first.
+This equation can be written as "A * B", where A = (-5 + 9 * -4 - 0) and B = (4 + -7 + 0 * -5).
+Let's calculate A = (-5 + 9 * -4 - 0) = (-5 + (9 * -4) - 0) = (-5 + (-36) - 0) = (-5 + -36 - 0) = -5 - 36 = -41.
+Let's calculate B = (4 + -7 + 0 * -5) = (4 + -7 + (0 * -5)) = (4 + -7 + 0) = (4 + -7) = (4 - 7) = -3.
+Then, the final equation is A * B = -41 * -3 = (-61) * (-3) = 123. So the answer is 123.
+
+Q: ((-9 * 7 * 7 * -9) + (4 * -9 - 8 - -4)) =
+A: Let's think step by step.
+Let’s recall that the order of operations in mathematics is as follows: (1) Parentheses, (2) exponents, (3) multiplication and division (from left to right), (4) addition and multiplication (from left to right). So, remember to always compute the expressions inside parentheses or brackets first.
+This equation can be written as "A + B", where A = (-9 * 7 * 7 * -9) and B = (4 * -9 - 8 - -4).
+Let's calculate A = (-9 * 7 * 7 * -9) = ((-9 * 7) * (7 * -9))  = ((-63) * (-63)) = 3969.
+Let's calculate B = (4 * -9 - 8 - (-4)) = ((4 * -9) - 8 - (-4)) = ((-36) - 8 - (-4)) = ((-36 - 8) - (-4)) = (-44 - (-4)) = -40.
+Then, the final equation is A + B = 3969 + -40 = 3969 - 40 = 3929. So the answer is 3929.
+
+Q: ((-3 + 5 * 8 * -4) - (9 - 8 * -7 + -9)) =
+A: Let's think step by step.
+Let’s recall that the order of operations in mathematics is as follows: (1) Parentheses, (2) exponents, (3) multiplication and division (from left to right), (4) addition and multiplication (from left to right). So, remember to always compute the expressions inside parentheses or brackets first.
+This equation can be written as "A - B", where A = (-3 + 5 * 8 * -4) and B = (9 - 8 * -7 + -9).
+Let's calculate A = (-3 + 5 * 8 * -4) = (-3 + (5 * 8) * -4) = (-3 + (40) * -4) = (-3 + (40 * -4)) = (-3 + -160) = -163.
+Let's calculate B = (9 - 8 * -7 + -9) = (9 - (8 * -7) + -9) = (9 - (-56) + -9) = ((9 - (-56)) + -9) = ((65) + -9)= (65 - 9) = 56.
+Then, the final equation is A - B = -163 - 56 = -219. So the answer is -219.
+
+Q: ((-8 * 4 + 7 - 5) + (9 + -6 + -2 * 5)) = </pre>
+###### answer
+<pre> Let’s think step by step.
+Let’s recall that the order of operations in mathematics is as follows: (1) Parentheses, (2) exponents, (3) multiplication and division (from left to right), (4) addition and multiplication (from left to right). So, remember to always compute the expressions inside parentheses or brackets first.
+This equation can be written as «A + B», where A = (-8 * 4 + 7 - 5) and B = (9 + -6 + -2 * 5).
+Let’s calculate A = (-8 * 4 + 7 - 5) = (-32 + 7 - 5) = -20.
+Let’s calculate B = (9 + -6 + -2 * 5) = (9 - 6 + (-2 * 5)) = (9 - 6 - 10) = 3.
+Then, the final equation is A + B = -20 + 3 = -17. So the answer is -17. </pre>
+###### pred
+<pre> -17 </pre>
+###### target
+<pre> -37 </pre>
+### reasoning_about_colored_objects/94
+###### instruction
+<pre> Answer extremely simple questions about the colors of objects on a surface.
+
+Q: On the nightstand, there is a red pencil, a purple mug, a burgundy keychain, a fuchsia teddy bear, a black plate, and a blue stress ball. What color is the stress ball?
+Options:
+(A) red
+(B) orange
+(C) yellow
+(D) green
+(E) blue
+(F) brown
+(G) magenta
+(H) fuchsia
+(I) mauve
+(J) teal
+(K) turquoise
+(L) burgundy
+(M) silver
+(N) gold
+(O) black
+(P) grey
+(Q) purple
+(R) pink
+A: Let's think step by step.
+According to this question, the color of the stress ball is blue. So the answer is (E).
+
+Q: On the table, you see a bunch of objects arranged in a row: a purple paperclip, a pink stress ball, a brown keychain, a green scrunchiephone charger, a mauve fidget spinner, and a burgundy pen. What is the color of the object directly to the right of the stress ball?
+Options:
+(A) red
+(B) orange
+(C) yellow
+(D) green
+(E) blue
+(F) brown
+(G) magenta
+(H) fuchsia
+(I) mauve
+(J) teal
+(K) turquoise
+(L) burgundy
+(M) silver
+(N) gold
+(O) black
+(P) grey
+(Q) purple
+(R) pink
+A: Let's think step by step.
+According to this question, the objects are arranged in a row, from left to right, as follows: (1) a purple paperclip, (2) a pink stress ball, (3) a brown keychain, (4) a green scrunchiephone charger, (5) a mauve fidget spinner, (6) a burgundy pen.
+The stress ball is the second object on the list, namely (2). The object that is to the right of the stress ball corresponds to (3), which is a brown keychain.
+The color of the keychain is brown. So the answer is (F).
+
+Q: On the nightstand, you see the following items arranged in a row: a teal plate, a burgundy keychain, a yellow scrunchiephone charger, an orange mug, a pink notebook, and a grey cup. How many non-orange items do you see to the left of the teal item?
+Options:
+(A) zero
+(B) one
+(C) two
+(D) three
+(E) four
+(F) five
+(G) six
+A: Let's think step by step.
+According to this question, the objects are arranged in a row, from left to right, as follows: (1) a teal plate, (2) a burgundy keychain, (3) a yellow scrunchiephone charger, (4) an orange mug, (5) a pink notebook, (6) a grey cup.
+The teal plate is the first item, namely (1). There is no item to the left of the teal item.
+The number of non-orange items to the left of the teal item is zero. So the answer is (A).
+
+Q: On the desk, there are three grey dog leashes, two grey notebooks, two gold dog leashes, one gold notebook, three grey pencils, two grey booklets, one gold booklet, and three gold pencils. If I remove all the dog leashes from the desk, how many gold objects remain on it?
+Options:
+(A) zero
+(B) one
+(C) two
+(D) three
+(E) four
+(F) five
+(G) six
+(H) seven
+(I) eight
+(J) nine
+(K) ten
+(L) eleven
+(M) twelve
+(N) thirteen
+(O) fourteen
+(P) fifteen
+(Q) sixteen </pre>
+###### answer
+<pre> Let's think step by step.
+According to this question, there are three grey dog leashes and three gold dog leashes on the desk. After removing all the dog leashes, there will be zero dog leashes remaining.
+There are two gold dog leashes and one gold notebook on the desk initially. So the number of gold objects remaining on the desk after removing the dog leashes is two (gold dog leashes) + one (gold notebook) = three.
+The answer is (D). </pre>
+###### pred
+<pre> (D) </pre>
+###### target
+<pre> (F) </pre>
+### dyck_languages/204
+###### instruction
+<pre> Correctly close a Dyck-n word.
+
+Q: Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: [ { [
+A: Let's think step by step.
+We should process each input one by one and keep track of the stack configuration.
+0: empty stack
+1: [ ; stack: [
+2: { ; stack: [ {
+3: [ ; stack: [ { [
+Now, we have reached the end. The final stack is "[ { [".
+We will need to pop out "[", "{", "[" one by one in that order.
+So, we need "]", "}", "]". So the answer is ] } ].
+
+Q: Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: &lt; > ( ( [ [ ( { } ) [ &lt; > ] ]
+A: Let's think step by step.
+We should process each input one by one and keep track of the stack configuration.
+0: empty stack
+1: &lt; ; stack: &lt;
+2: > ; stack: empty
+3: ( ; stack: (
+4: ( ; stack: ( (
+5: [ ; stack: ( ( [
+6: [ ; stack: ( ( [ [
+7: ( ; stack: ( ( [ [ (
+8: { ; stack: ( ( [ [ ( {
+9: } ; stack: ( ( [ [ (
+10: ) ; stack: ( ( [ [
+11: [ ; stack: ( ( [ [ [
+12: &lt; ; stack: ( ( [ [ [ &lt;
+13: > ; stack: ( ( [ [ [
+14: ] ; stack: ( ( [ [
+15: ] ; stack: ( ( [
+Now, we have reached the end. The final stack is "( ( [".
+We will need to pop out "[", "(", "(" one by one in that order.
+So, we need "]", ")", ")". So the answer is ] ) ).
+
+Q: Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: &lt; [ &lt; [ { &lt; [ ] &lt; { } > > } ] > { { ( ) } { &lt; [ &lt; > ] > }
+A: Let's think step by step.
+We should process each input one by one and keep track of the stack configuration.
+0: empty stack
+1: &lt; ; stack: &lt;
+2: [ ; stack: &lt; [
+3: &lt; ; stack: &lt; [ &lt;
+4: [ ; stack: &lt; [ &lt; [
+5: { ; stack: &lt; [ &lt; [ {
+6: &lt; ; stack: &lt; [ &lt; [ { &lt;
+7: [ ; stack: &lt; [ &lt; [ { &lt; [
+8: ] ; stack: &lt; [ &lt; [ { &lt;
+9: &lt; ; stack: &lt; [ &lt; [ { &lt; &lt;
+10: { ; stack: &lt; [ &lt; [ { &lt; &lt; {
+11: } ; stack: &lt; [ &lt; [ { &lt; &lt;
+12: > ; stack: &lt; [ &lt; [ { &lt;
+13: > ; stack: &lt; [ &lt; [ {
+14: } ; stack: &lt; [ &lt; [
+15: ] ; stack: &lt; [ &lt;
+16: > ; stack: &lt; [
+17: { ; stack: &lt; [ {
+18: { ; stack: &lt; [ { {
+19: ( ; stack: &lt; [ { { (
+20: ) ; stack: &lt; [ { {
+21: } ; stack: &lt; [ {
+22: { ; stack: &lt; [ { {
+23: &lt; ; stack: &lt; [ { { &lt;
+24: [ ; stack: &lt; [ { { &lt; [
+25: &lt; ; stack: &lt; [ { { &lt; [ &lt;
+26: > ; stack: &lt; [ { { &lt; [
+27: ] ; stack: &lt; [ { { &lt;
+28: > ; stack: &lt; [ { {
+29: } ; stack: &lt; [ {
+Now, we have reached the end. The final stack is "&lt; [ {".
+We will need to pop out "{", "[", "&lt;" one by one in that order.
+So, we need "}", "]", ">". So the answer is } ] >.
+
+Q: Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: ( ) [ ( [ &lt; { { ( { } ) } } > </pre>
+###### answer
+<pre> Let's think step by step.
+We should process each input one by one and keep track of the stack configuration.
+0: empty stack
+1: ( ; stack: (
+2: ) ; stack: ( )
+3: [ ; stack: ( ) [
+4: ( ; stack: ( ) [ (
+5: [ ; stack: ( ) [ ( [
+6: &lt; ; stack: ( ) [ ( [ &lt;
+7: { ; stack: ( ) [ ( [ &lt; {
+8: { ; stack: ( ) [ ( [ &lt; { {
+9: ( ; stack: ( ) [ ( [ &lt; { { (
+10: ) ; stack: ( ) [ ( [ &lt; {
+11: } ; stack: ( ) [ ( [
+Now, we have reached the end. The final stack is "( ) [".
+We will need to pop out "[", "(" one by one in that order.
+So, we need "]". So the answer is ] . </pre>
+###### pred
+<pre> ] </pre>
+###### target
+<pre> ] ) ] </pre>
+### object_counting/239
+###### instruction
+<pre> Questions that involve enumerating objects and asking the model to count them.
+
+Q: I have a blackberry, a clarinet, a nectarine, a plum, a strawberry, a banana, a flute, an orange, and a violin. How many fruits do I have?
+A: Let's think step by step.
+We first identify the fruits on the list and include their quantity in parentheses:
+- blackberry (1)
+- nectarine (1)
+- plum (1)
+- strawberry (1)
+- banana (1)
+- orange (1)
+Now, let's add the numbers in parentheses: 1 + 1 + 1 + 1 + 1 + 1 = 6. So the answer is 6.
+
+Q: I have an orange, a raspberry, two peaches, a blackberry, an apple, a grape, a nectarine, and three plums. How many fruits do I have?
+A: Let's think step by step.
+We first identify the fruits on the list and include their quantity in parentheses:
+- orange (1)
+- raspberry (1)
+- peaches (2)
+- blackberry (1)
+- apple (1)
+- grape (1)
+- nectarine (1)
+- plums (3)
+Now, let's add the numbers in parentheses: 1 + 1 + 2 + 1 + 1 + 1 + 1 + 3 = 11. So the answer is 11.
+
+Q: I have a lettuce head, a head of broccoli, an onion, a stalk of celery, two carrots, a garlic, and a yam. How many vegetables do I have?
+A: Let's think step by step.
+We first identify the vegetables on the list and include their quantity in parentheses:
+- lettuce (1)
+- broccoli (1)
+- onion (1)
+- celery (1)
+- carrots (2)
+- garlic (1)
+- yam (1)
+Now, let's add the numbers in parentheses: 1 + 1 + 1 + 1 + 2 + 1 + 1 = 8. So the answer is 8.
+
+Q: I have a yam, a garlic, a lettuce head, a potato, a lamp, a carrot, two heads of broccoli, a stalk of celery, an onion, and three cabbages. How many vegetables do I have? </pre>
+###### answer
+<pre> Let's think step by step.
+We first identify the vegetables on the list and include their quantity in parentheses:
+- yam (1)
+- garlic (1)
+- lettuce (1)
+- potato (1)
+- carrot (1)
+- broccoli (2)
+- celery (1)
+- onion (1)
+- cabbage (3)
+Now, let's add the numbers in parentheses: 1 + 1 + 1 + 1 + 1 + 2 + 1 + 1 + 3 = 11. So the answer is 11. </pre>
+###### pred
+<pre> 11 </pre>
+###### target
+<pre> 12 </pre>

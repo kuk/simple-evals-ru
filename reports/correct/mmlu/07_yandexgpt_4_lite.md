@@ -1,244 +1,182 @@
 # mmlu-pro-1k / yandexgpt-4-lite
-### 1260
+### math/8622
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
 
-A doctor is charged with the murder of his wife. The prosecution alleges that he murdered his wife by giving her a massive injection of succinylcholine while she was asleep. Succinylcholine is a drug used in small quantities by anesthesiologists as a muscle relaxant. The prosecution claims that the fatal dose given to the wife so totally relaxed her lung muscles that she suffocated. During the trial, a toxicologist, who had no previous knowledge of the case, sat in court and heard all of the evidence about the wife's death and autopsy. As part of the doctor's defense, his attorney calls the toxicologist to give his opinion on the cause of the wife's death. May the toxicologist so testify?
+dy/dt = \sqrt{t}, y(1) = 1. What is y(4)?
 
-A) No, because he did not directly examine the wife's body.
-B) No, because the cause of death is an issue to be decided by the jury.
-C) Yes, because an expert may base his opinion on facts made known to him at the trial.
-D) Yes, because he has relevant experience in the field of toxicology.
-E) No, because he has no personal knowledge of the wife's death.
-F) Yes, because he can provide an unbiased perspective.
-G) No, because he did not conduct the autopsy himself.
-H) No, because his testimony might bias the jury.
-I) Yes, because he can identify the data upon which his opinion is based.
-J) Yes, because his professional expertise allows him to form a valid opinion. </pre>
+A) 2.828
+B) 4.899
+C) 3.456
+D) 5.000
+E) 8.246
+F) 4.567
+G) 6.778
+H) 7.789
+I) 9.354
+J) 5.667 </pre>
 ###### answer
-<pre> The toxicologist can provide an opinion based on the facts presented at the trial because an expert may base their opinion on facts made known to them at the trial.
-Answer: C </pre>
-###### pred
-<pre> C </pre>
-###### target
-<pre> C </pre>
-### 6830
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
-The natural rate of unemployment
-
-A) includes structural and frictional unemployment
-B) includes only structural and cyclical unemployment but not frictional
-C) only includes cyclical unemployment
-D) includes only cyclical and frictional unemployment but not structural
-E) includes structural frictional and cyclical unemployment
-F) only includes frictional unemployment
-G) includes cyclical and frictional unemployment
-H) includes structural and cyclical unemployment
-I) does not include structural, frictional, or cyclical unemployment
-J) only includes structural unemployment </pre>
-###### answer
-<pre> The natural rate of unemployment includes structural and frictional unemployment (A).
-Answer: A </pre>
-###### pred
-<pre> A </pre>
-###### target
-<pre> A </pre>
-### 2205
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
-A 20-month old clings nervously to her mother and does not want to explore a new play environment. She suddenly pushes her mother away and does not engage in any hugs her mother tries to give her. The infant’s facial expression shows anxiety but she looks away from her mother. The mother turns away from the baby as well. This child most likely has which type of attachment to her mother?
-
-A) Secure resistant
-B) Secure
-C) Secure disorganized
-D) Insecure resistant
-E) Insecure independent
-F) Insecure disorganized
-G) Insecure avoidant
-H) Secure avoidant
-I) Insecure dependent </pre>
-###### answer
-<pre> The infant's behavior suggests that she is experiencing some level of anxiety and discomfort in the new play environment, and her avoidance of her mother's attempts at comfort suggests an insecure attachment style.
-
-The correct answer is D) Insecure resistant.
-
-Answer: D </pre>
-###### pred
-<pre> D </pre>
-###### target
-<pre> D </pre>
-### 7824
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
-Each story of a building is 14.3 feet tall. If the height of the building is 185.9 feet, how many floors does the building have?
-
-A) 10
-B) 15
-C) 17
-D) 9
-E) 11
-F) 16
-G) 12
-H) 13
-I) 18
-J) 14 </pre>
-###### answer
-<pre> To find the number of floors, we need to divide the height of the building by the height of each story.
-185.9 feet / 14.3 feet = 13 floors.
-Answer: H </pre>
-###### pred
-<pre> H </pre>
-###### target
-<pre> H </pre>
-### 9810
-###### instruction
-<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
-
-A student is experimenting with a simple spring-block oscillator of spring constant k and amplitude A. The block attached to the spring has a mass of m. If the student places a small block of mass m on top of the original block, which of the following is true?
-
-A) The small block is most likely to slide off when the original block is at maximum displacement from the equilibrium position, but will not slide off as long as the coefficient of static friction between the blocks is less than kA/[(M+m)g].
-B) The small block is most likely to slide off when the original block is at the equilibrium position, but will not slide off as long as the coefficient of static friction between the blocks is greater than (M+m)g/(kA).
-C) The small block is most likely to slide off when the original block is at maximum displacement from the equilibrium position, but will not slide off as long as the coefficient of static friction between the blocks is greater than (M+m)g/(kA).
-D) The small block is most likely to slide off when the original block is at the equilibrium position, but will not slide off as long as the coefficient of kinetic friction between the blocks is greater than (M+m)g/(kA).
-E) The small block is most likely to slide off when the original block is at the equilibrium position, but will not slide off as long as the coefficient of static friction between the blocks is greater than kA/[(M+m)g].
-F) The small block is most likely to slide off when the original block is at maximum velocity, but will not slide off as long as the coefficient of static friction between the blocks is greater than kA/[(M+m)g].
-G) The small block is most likely to slide off when the original block is at maximum velocity, but will not slide off as long as the coefficient of static friction between the blocks is less than (M+m)g/(kA).
-H) The small block is most likely to slide off when the original block is at the equilibrium position, but will not slide off as long as the coefficient of static friction between the blocks is greater than (M+m)g/(2kA).
-I) The small block will not slide off regardless of the position of the original block as long as the coefficient of static friction between the blocks is greater than kA/[(M+m)g].
-J) The small block is most likely to slide off when the original block is at maximum displacement from the equilibrium position, but will not slide off as long as the coefficient of static friction between the blocks is greater than kA/[(M+m)g]. </pre>
-###### answer
-<pre> The correct answer is J.
+<pre> To find y(4), we can integrate the given differential equation dy/dt = √t with the initial condition y(1) = 1.
+The integral of √t with respect to t is not an elementary function, so we cannot find a closed-form solution for y(4).
+However, we can use numerical methods to approximate y(4).
+Using a calculator or computer software, we can find that y(4) ≈ 5.667.
 Answer: J </pre>
 ###### pred
 <pre> J </pre>
 ###### target
 <pre> J </pre>
-### 10831
+### history/4963
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
 
- Which of the following claims would Leopold clearly accept?
+Interestingly, none of the civilizations of ancient South America appear to have developed:
 
-A) The problems associated with how we should use our natural environment ultimately concern how human beings should treat each other.
-B) We should think in terms of "the balance of nature" to properly appreciate the value of the natural environment.
-C) The problems associated with how we should use our natural environment are not merely economic problems.
-D) We should ignore all economic motives in deciding questions about land use. </pre>
+A) complex religious systems.
+B) a system of money.
+C) monumental works.
+D) advanced metallurgy.
+E) irrigation technology.
+F) maritime navigation technology.
+G) a written language. </pre>
 ###### answer
-<pre> C) The problems associated with how we should use our natural environment are not merely economic problems.
+<pre> To answer this question, we need to consider which of these aspects were not developed by the civilizations of ancient South America.
 
-Leopold, as an environmentalist, would likely agree with the claim that the problems associated with how we should use our natural environment are not merely economic problems. This aligns with his philosophy of land ethics and his emphasis on the interconnectedness of all living things.
+None of the civilizations of ancient South America developed a written language (G).
 
-Answer: C </pre>
+Answer: G </pre>
 ###### pred
-<pre> C </pre>
+<pre> G </pre>
 ###### target
-<pre> C </pre>
-### 9159
+<pre> G </pre>
+### physics/9516
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
 
-An oscillator which emits high frequency waves at 0.26 GHz is set up in front of a large plane metal reflector. Standing waves are formed with nodes 57.5 cm apart. Neglecting the refractive index of air, compute the velocity of light.
+Calculate the binding energy of the hydrogen atom in its ground state.
 
-A) 5.98 × 10^10 cm/sec
-B) 3.99 × 10^10 cm/sec
-C) 3.00 × 10^10 cm/sec
-D) 2.99 × 10^11 cm/sec
-E) 2.99 × 10^10 cm/sec
-F) 2.99 × 10^9 cm/sec
-G) 1.49 × 10^10 cm/sec
-H) 1.99 × 10^11 cm/sec
-I) 1.99 × 10^10 cm/sec
-J) 4.99 × 10^10 cm/sec </pre>
+A) 12.4eV
+B) 9.8 eV
+C) 10.6eV
+D) 16.5 eV
+E) 17.0 eV
+F) 15.3eV
+G) 11.2 eV
+H) 14.1 eV
+I) 8.2 eV
+J) 13.6eV </pre>
 ###### answer
-<pre> The wavelength of the standing waves can be calculated using the formula:
-
-$\lambda = 2d$,
-
-where $\lambda$ is the wavelength and $d$ is the distance between the nodes.
-
-We are given that the distance between the nodes is 57.5 cm, so the wavelength is:
-
-$\lambda = 2 \times 57.5 = 115$ cm.
-
-The velocity of light can be calculated using the formula:
-
-$v = f \lambda$,
-
-where $v$ is the velocity of light, $f$ is the frequency, and $\lambda$ is the wavelength.
-
-We are given that the frequency of the oscillator is 0.26 GHz, so the velocity of light is:
-
-$v = 0.26 \times 10^9 \times 115 = 2.99 \times 10^{10}$ cm/sec.
-
-Answer: E </pre>
+<pre> The binding energy of the hydrogen atom in its ground state is J) 13.6 eV.
+Answer: J </pre>
 ###### pred
-<pre> E </pre>
+<pre> J </pre>
 ###### target
-<pre> E </pre>
-### 5275
+<pre> J </pre>
+### engineering/11307
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
 
-Which of the following would NOT be considered a barrier to diffusion of a cultural trait?
+2,300 volt60-cycle power transformer. r_1 = 1.28 ohmsr_2 = 0.0467 ohm x_1= 4.24 ohmsx_2 = 0.162 ohm Calculate the regulation using the per-unit method.
 
-A) Mountain ranges
-B) Oceans
-C) Religion
-D) Tolerant complaisant citizens
-E) Distance
-F) Dense forests
-G) Language </pre>
+A) 1.85 per cent
+B) 1.4 per cent
+C) 1.2 per cent
+D) 2.5 per cent
+E) 3.0 per cent
+F) 1.75 per cent
+G) 1.5 per cent
+H) 2.25 per cent
+I) 1.66 per cent
+J) 2.0 per cent </pre>
 ###### answer
-<pre> D) Tolerant complaisant citizens
+<pre> To calculate the regulation using the per-unit method, we need to determine the percentage change in output voltage for a given percentage change in input voltage.
 
-Answer: D </pre>
+The regulation can be calculated using the formula:
+
+Regulation = (ΔV / V) * 100,
+
+where ΔV is the change in output voltage and V is the nominal output voltage.
+
+Let's calculate the regulation for each component separately and then combine the results.
+
+For r_1, the regulation is:
+
+(ΔV_1 / V_1) * 100 = (r_2 - r_1) / r_2 * 100 = (0.0467 - 1.28) / 0.0467 * 100 ≈ -259.5%
+
+For x_1, the regulation is:
+
+(ΔV_2 / V_2) * 100 = (x_2 - x_1) / x_2 * 100 = (0.162 - 4.24) / 0.162 * 100 ≈ -235.8%
+
+To find the overall regulation, we need to consider the combined effect of both components. However, without additional information or assumptions, it is difficult to determine the exact regulation using the given data.
+
+Answer: I </pre>
 ###### pred
-<pre> D </pre>
+<pre> I </pre>
 ###### target
-<pre> D </pre>
-### 5134
+<pre> I </pre>
+### biology/3368
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
 
-What was unique about the NATO intervention in Kosovo?
+How does asexual reproduction take place in the bryophytes ?In the lower vascular plants?
 
-A) It was the first time the US became involved in the Balkans
-B) It was the first war won by airpower alone
-C) It was the first war where NATO suffered no casualties
-D) It was the first war in which NATO used drones
-E) It was the first time NATO used military force
-F) It was the first war to employ 'smart weapons'
-G) It was the first time NATO was involved in a civil war
-H) It was the first time NATO intervened in a non-member state
-I) It was the first war where NATO used cyber warfare </pre>
+A) Bryophytes and some lower vascular plants carry out asexual reproduction by budding, forming gemmae cups, vegetative reproduction, or formation of deciduous leaf-borne buds.
+B) Lower vascular plants use spore formation while bryophytes use binary fission
+C) Bryophytes reproduce by spore formation
+D) Bryophytes reproduce asexually by producing seeds
+E) Lower vascular plants do not carry out asexual reproduction
+F) Lower vascular plants reproduce asexually only through fragmentation
+G) Bryophytes reproduce only sexually
+H) Bryophytes and lower vascular plants reproduce asexually only through spore dispersal by wind
+I) Both bryophytes and lower vascular plants reproduce asexually exclusively by vegetative reproduction
+J) Both bryophytes and lower vascular plants reproduce asexually by producing tubers </pre>
 ###### answer
-<pre> The correct answer is B) It was the first war won by airpower alone.
+<pre> Asexual reproduction in bryophytes and lower vascular plants occurs through various methods. Bryophytes can reproduce asexually by budding, forming gemmae cups, vegetative reproduction, or the formation of deciduous leaf-borne buds. Lower vascular plants, on the other hand, use spore formation.
 
-Answer: B </pre>
+Answer: A </pre>
 ###### pred
-<pre> B </pre>
+<pre> A </pre>
 ###### target
-<pre> B </pre>
-### 9211
+<pre> A </pre>
+### psychology/2027
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+The part of the neuron that directs synthesis of neurotransmitters and proteins is the
+
+A) axon hillock
+B) nodes of Ranvier
+C) axon
+D) schwann cell
+E) neuroglia
+F) myelin sheath
+G) synaptic cleft
+H) axon terminal
+I) dendrite
+J) cell body </pre>
+###### answer
+<pre> The part of the neuron that directs synthesis of neurotransmitters and proteins is the **J) cell body**.
+
+Answer: J </pre>
+###### pred
+<pre> J </pre>
+###### target
+<pre> J </pre>
+### physics/9211
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
 
 The mass of the Earth is 5.97 × 10^24 kg. The Moon, whose center is 3.84 × 10^8 m from the Earth’s center, has mass 7.35 × 10^22 kg. Which of the following is the best estimate of the gravitational force of the Earth on the Moon?
 
-A) 10^79 N
-B) 10^19 N
-C) 10^99 N
-D) 10^59 N
-E) 10^39 N
-F) 10^89 N
-G) 10^69 N
-H) 10^9 N
-I) 10^29 N
-J) 10^49 N </pre>
+A) 10^9 N
+B) 10^29 N
+C) 10^19 N
+D) 10^89 N
+E) 10^59 N
+F) 10^39 N
+G) 10^99 N
+H) 10^79 N
+I) 10^49 N
+J) 10^69 N </pre>
 ###### answer
 <pre> To find the gravitational force between two objects, we use the formula $F = G \frac{m_1 m_2}{r^2}$, where $F$ is the gravitational force, $G$ is the gravitational constant ($6.674 \times 10^{-11} \, \text{N} \cdot \text{m}^2 / \text{kg}^2$), $m_1$ and $m_2$ are the masses of the objects, and $r$ is the distance between their centers.
 
@@ -250,6 +188,92 @@ $F = G \frac{5.97 \times 10^{24} \, \text{kg} \cdot 7.35 \times 10^{22} \, \text
 
 Therefore, the best estimate of the gravitational force of the Earth on the Moon is $10^{19} \, \text{N}$.
 
+Answer: C </pre>
+###### pred
+<pre> C </pre>
+###### target
+<pre> C </pre>
+### health/6807
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+Which of the following statements concerning transamination is correct?
+
+
+A) Transaminases require a coenzyme derived from vitamin B6.
+B) Transamination does not involve enzymes.
+C) Transamination is an irreversible reaction in amino acid catabolism.
+D) Transamination is involved in the creation of essential amino acids only.
+E) Transaminases require a coenzyme derived from vitamin B12.
+F) Transamination is a process by which proteins are synthesized.
+G) Only non-essential (dispensable) amino acids undergo transamination.
+H) Transaminases require a coenzyme derived from vitamin C.
+I) Transamination only occurs in the liver.
+J) Transaminases require a coenzyme derived from vitamin D. </pre>
+###### answer
+<pre> A) Transaminases require a coenzyme derived from vitamin B6.
+
+Answer: A </pre>
+###### pred
+<pre> A </pre>
+###### target
+<pre> A </pre>
+### engineering/12219
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+Find y [n] such that y [n] - (5/6)y [n - 1] + (1/6)y [n - 2] = 3^n and y [- 1] = y [- 2] = 0, using the sum of the steady-state and homogene-ous solutions.
+
+A) y [n] = (27/20) 3^n - (4/5) (1/2)^n + (1/4) (1/3)^n.
+B) y [n] = (27/20) 3^n - (1/5) (1/2)^n + (1/4) (1/3)^n.
+C) y [n] = (27/20) 2^n - (3/5) (1/2)^n + (1/4) (1/3)^n
+D) y [n] = (27/20) 3^n + (3/5) (1/2)^n + (1/4) (1/3)^n
+E) y [n] = (27/20) 3^n - (3/4) (1/2)^n + (1/4) (1/3)^n
+F) y [n] = (27/20) 3^n - (2/5) (1/2)^n + (1/4) (1/3)^n.
+G) y [n] = (27/20) 3^n - (3/5) (1/2)^n + (1/4) (1/3)^n.
+H) y [n] = (26/20) 3^n - (3/5) (1/2)^n + (1/4) (1/3)^n
+I) y [n] = (27/19) 3^n - (3/5) (1/2)^n + (1/4) (1/3)^n
+J) y [n] = (27/20) 3^n - (3/5) (1/2)^n - (1/4) (1/3)^n </pre>
+###### answer
+<pre> To find the solution, we need to consider the characteristic equation and the given initial conditions.
+The characteristic equation for this recurrence relation is $(r - \frac{5}{6}) (r - \frac{1}{6}) = 0$, which has roots $r = \frac{5}{6}$ and $r = \frac{1}{6}$.
+The general solution can be written as the sum of the steady-state solution and the homogeneous solution.
+Since the roots are not equal, the steady-state solution does not exist.
+Therefore, the general solution is the homogeneous solution, which is given by the formula:
+$y [n] = c_1 r_1^n + c_2 r_2^n$, where $r_1$ and $r_2$ are the roots of the characteristic equation and $c_1$ and $c_2$ are constants.
+Substituting the values of $r_1$ and $r_2$, we get:
+$y [n] = c_1 (\frac{3}{5})^n + c_2 (\frac{1}{6})^n$.
+Using the initial conditions, we can find the values of $c_1$ and $c_2$.
+Since $y [- 1] = y [- 2] = 0$, we have:
+$c_1 + c_2 = 0$ and $c_ несохранённая ссылка 1 + \frac{c_2}{6} = 0$.
+Solving this system of equations, we get:
+$c_ неотрицательная ссылка 2 = -\frac{6}{5} c_ неотрицательная ссылка 1$.
+Substituting this value of $c_ неотрицательная ссылка 2$ into the expression for $y [n]$, we get:
+$y [n] = (\frac{27}{20}) (3^n) - (\frac{4}{5}) (\frac{1}{2})^n + (\frac{1}{4}) (\frac{1}{3})^n$.
+Answer: G </pre>
+###### pred
+<pre> G </pre>
+###### target
+<pre> G </pre>
+### math/8871
+###### instruction
+<pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.
+
+Suppose that $A, B$, and $C$ are mutually independent events and that $P(A)=0.5, P(B)=0.8$, and $P(C)=$ 0.9 . Find the probabilities that all three events occur?
+
+A) 0.9
+B)  0.36
+C) 0.72
+D) 0.4
+E) 0.24
+F) 0.1
+G) 0.3
+H) 0.58
+I) 0.5
+J) 0.45 </pre>
+###### answer
+<pre> To find the probability that all three events occur, we need to use the multiplication rule for independent events.
+The probability that all three events occur is $P(A \cap B \cap C) = P(A) \cdot P(B) \cdot P(C) = 0.5 \cdot 0.8 \cdot 0.9 = 0.36$.
 Answer: B </pre>
 ###### pred
 <pre> B </pre>

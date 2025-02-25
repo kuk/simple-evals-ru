@@ -33,6 +33,8 @@ if __name__ == "__main__":
                         res_items.append(json.loads(line))
 
             stats = {
+                "model_name": model.name,
+                "bench_name": bench.name,
                 "tokens": 0,
                 "cost": 0,
                 "score": None,

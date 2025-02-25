@@ -117,7 +117,7 @@ if __name__ == "__main__":
                         cap = 10
                     elif section == "errors":
                         section_items.sort(key=lambda _: _["finished_at"], reverse=True)
-                        cat = 20
+                        cap = 20
 
                     for res_item in section_items[:cap]:
                         task_item = id_task_items[res_item["id"]]

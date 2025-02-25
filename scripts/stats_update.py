@@ -89,6 +89,7 @@ if __name__ == "__main__":
             cost = RUNPOD_COSTS[model.id]
 
         model_stats[model.id] = {
+            "name": model.name,
             "tokens": tokens,
             "cost": cost,
             "avg_score": np.mean(scores),

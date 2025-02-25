@@ -7,11 +7,9 @@ from pathlib import Path
 from contextlib import contextmanager
 from collections import Counter
 
-import numpy as np
-
 from simple.registry import (
     MODELS,
-    BENCHES
+    BENCHES,
 )
 
 
@@ -37,63 +35,7 @@ def load_jsonl(path):
     return items
 
 
-def print_scores_table(_, bench_model_res_items):
-    bench_model_stats = {}
-    for bench in BENCHES:
-        for model in MODELS:
-            stats = {
-                "tokens": 0,
-                "cost": 0,
-                "score": None,
-                "std": None
-            }
-            results = []
-            for res_item in bench_model_res_items[bench.id, model.id]:
-
-                for key in ["total_tokens", "totalTokens"]:
-                    if key in res_item["usage"]:
-                        stats["tokens"] += res_item["usage"][key]
-                        break
-                else:
-                    raise ValueError(res_item["usage"])
-
-                stats["cost"] += res_item["model_cost"]
-                results.append(res_item["is_correct"])
-
-            if model.currency == "rub":
-                stats["cost"] /= 100
-
-            results = np.array(results)
-            bs_means = []
-            for _ in range(100):
-                sample = np.random.choice(results, size=len(results), replace=True)
-                bs_means.append(sample.mean())
-
-            score = np.mean(results)
-            std1 = score - np.percentile(bs_means, 5)
-            std2 = np.percentile(bs_means, 95) - score
-            assert std1 >= 0, std1
-            assert std2 >= 0, std2
-            stats["score"] = score
-            stats["std"] = (std1 + std2) / 2
-            bench_model_stats[bench.id, model.id] = stats
-
-    model_stats = {}
-    for model in MODELS:
-        tokens, cost = 0, 0
-        scores, stds = [], []
-        for bench in BENCHES:
-            stats = bench_model_stats[bench.id, model.id]
-            tokens += stats["tokens"]
-            cost += stats["cost"]
-            scores.append(stats["score"])
-            stds.append(stats["std"])
-        model_stats[model.id] = {
-            "tokens": tokens,
-            "cost": cost,
-            "avg_score": np.mean(scores),
-            "avg_std": np.sqrt(np.mean([_**2 for _ in stds]))
-        }
+def print_scores_table(stats_data, _, __):
 
     print("<table>")
     print("<tr>")
@@ -104,23 +46,26 @@ def print_scores_table(_, bench_model_res_items):
     print("</tr>")
 
     for model in MODELS:
-        stats = model_stats[model.id]
+        stats = stats_data["model_stats"][model.id]
 
         print("<tr>")
 
-        cost = stats["cost"] / stats["tokens"] * 1_000_000
+        cost = stats["cost"]
+        if stats["tokens"]:
+            cost = cost / stats["tokens"] * 1_000_000
+
         print("<th>", f"{model.name}, {cost:.2f}$", "</th>")
         print(f'<td>{stats["avg_score"] * 100:.1f}±{stats["avg_std"] * 100:.1f}%</td>')
 
         for bench in BENCHES:
-            stats = bench_model_stats[bench.id, model.id]
+            stats = stats_data["bench_model_stats"][bench.id][model.id]
             print(f'<td>{stats["score"] * 100:.1f}±{stats["std"] * 100:.1f}%</td>')
 
         print("</tr>")
     print("</table>")
 
 
-def print_results_table(bench_task_items, bench_model_res_items):
+def print_results_table(stats_data, bench_task_items, bench_model_res_items):
     print("<table>")
     print("<tr>")
     print("<th></th>")
@@ -153,7 +98,7 @@ def print_results_table(bench_task_items, bench_model_res_items):
     print("</table>")
 
 
-def print_cov_table(bench_task_items, bench_model_res_items):
+def print_cov_table(stats_data, bench_task_items, bench_model_res_items):
     print("<table>")
     print("<tr>")
     print("<th></th>")
@@ -173,6 +118,9 @@ def print_cov_table(bench_task_items, bench_model_res_items):
 
             if model.currency == "rub":
                 cost /= 100
+
+            if model.client == "runpod":
+                cost = 0
 
             print("<td>", f"{cov} / {cost:.1f}$", "</td>")
         print("</tr>")
@@ -203,6 +151,10 @@ if __name__ == "__main__":
                 res_items = load_jsonl(path)
             bench_model_res_items[bench.id, model.id] = res_items
 
+    path = PROJ_DIR / "data" / "stats.json"
+    with path.open() as file:
+        stats_data = json.load(file)
+
     path = PROJ_DIR / "README.md"
     text = path.read_text()
 
@@ -213,7 +165,7 @@ if __name__ == "__main__":
     ]:
         file = io.StringIO()
         with print_to(file):
-            print_func(bench_task_items, bench_model_res_items)
+            print_func(stats_data, bench_task_items, bench_model_res_items)
 
         assert section_name in text, section_name
         text = replace_section(text, section_name, file.getvalue())

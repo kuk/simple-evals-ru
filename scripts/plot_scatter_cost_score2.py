@@ -24,6 +24,10 @@ GROUP_COLORS = {
     "openrouter": "tab:orange",
 }
 
+path = PROJ_DIR / "data" / "stats.json"
+with path.open() as file:
+    data = json.load(file)
+
 
 xs, ys, colors, labels = [], [], [], []
 model_xys = {}
@@ -38,39 +42,17 @@ for model_id in [
 
         "07_yandexgpt_4_lite", "08_gigachat_lite",
         "11_yandexgpt_4_pro", "12_gigachat_pro", "14_gigachat_max",
+
+        "17_yandexgpt_5_pro",
+        "20_t_pro",
 ]:
     model = ID_MODELS[model_id]
 
-    tokens, cost = 0, 0
-    scores = []
-    for bench in BENCHES:
-        results = []
-
-        path = PROJ_DIR / "data" / "results" / bench.id / f"{model_id}.jsonl"
-        with path.open() as file:
-            for line in file:
-                item = json.loads(line)
-
-                results.append(item["is_correct"])
-
-                for key in ["total_tokens", "totalTokens"]:
-                    if key in item["usage"]:
-                        tokens += item["usage"][key]
-                        break
-                else:
-                    raise ValueError(item["usage"])
-
-                cost += item["model_cost"]
-        score = np.mean(results)
-        scores.append(score)
-
-    if model.currency == "rub":
-        cost /= 100
-
-    x = cost / tokens * 1_000_000
+    stats = data["model_stats"][model_id]
+    x = stats["cost"] / stats["tokens"] * 1_000_000
     xs.append(x)
 
-    y = np.mean(scores)
+    y = stats["avg_score"]
     ys.append(y)
 
     group = "other"

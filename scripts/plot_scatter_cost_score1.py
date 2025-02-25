@@ -22,70 +22,44 @@ PROJ_DIR = CUR_DIR.parent
 
 GROUP_COLORS = {
     "yandexgpt": "tab:blue",
-    "llama": "tab:blue",
+    "t_pro": "tab:purple",
     "gigachat": "tab:orange",
 }
+
+
+path = PROJ_DIR / "data" / "stats.json"
+with path.open() as file:
+    data = json.load(file)
 
 
 xs, ys, yerrs, colors, labels = [], [], [], [], []
 for model_id in [
         "07_yandexgpt_4_lite", "08_gigachat_lite",
-        "10_llama_3_1_8b",
+        # "10_llama_3_1_8b",
 
         "11_yandexgpt_4_pro", "12_gigachat_pro",
-        "13_llama_3_3_70b", "14_gigachat_max",
+        # "13_llama_3_3_70b",
+        "14_gigachat_max",
+
+        "17_yandexgpt_5_pro",
+
+        # "18_cotype_nano",
+        # "19_t_lite",
+        "20_t_pro",
 ]:
     model = ID_MODELS[model_id]
 
-    tokens, cost = 0, 0
-    scores, stds = [], []
-    for bench in BENCHES:
-        results = []
-
-        path = PROJ_DIR / "data" / "results" / bench.id / f"{model_id}.jsonl"
-        with path.open() as file:
-            for line in file:
-                item = json.loads(line)
-
-                results.append(item["is_correct"])
-
-                for key in ["total_tokens", "totalTokens"]:
-                    if key in item["usage"]:
-                        tokens += item["usage"][key]
-                        break
-                else:
-                    raise ValueError(item["usage"])
-
-                cost += item["model_cost"]
-
-        results = np.array(results)
-        bs_means = []
-        for _ in range(100):
-            sample = np.random.choice(results, size=len(results), replace=True)
-            bs_means.append(sample.mean())
-
-        score = np.mean(results)
-        std1 = score - np.percentile(bs_means, 5)
-        std2 = np.percentile(bs_means, 95) - score
-        assert std1 >= 0, std1
-        assert std2 >= 0, std2
-        std = (std1 + std2) / 2
-        scores.append(score)
-        stds.append(std)
-
-    if model.currency == "rub":
-        cost /= 100
-
-    x = cost / tokens * 1_000_000
+    stats = data["model_stats"][model_id]
+    x = stats["cost"] / stats["tokens"] * 1_000_000
     xs.append(x)
 
-    y = np.mean(scores)
-    std = np.sqrt(np.mean([_**2 for _ in stds]))
+    y = stats["avg_score"]
+    std = stats["avg_std"]
 
     ys.append(y)
     yerrs.append(std)
 
-    match = re.search(r"(yandexgpt|gigachat|llama)", model_id)
+    match = re.search(r"(yandexgpt|gigachat|t_pro)", model_id)
     assert match, model_id
     group = match.group(1)
     color = GROUP_COLORS[group]
@@ -115,12 +89,12 @@ ax.set_xticklabels([f"{_:0.1f}$" for _ in values])
 ax.set_xlabel("cost per 1m input + output tokens")
 
 ax.set_ylim(0.2, 1)
-values = sorted({round(_, 2) for _ in ys} | {0.2, 1})
+values = np.arange(0.2, 1.1, 0.2)
 ax.set_yticks(values)
 ax.set_yticklabels([f"{_:0.2f}" for _ in values])
 ax.set_ylabel(f"avg score on {len(BENCHES)} benches: math-500, humaneval, ..")
 
-ax.set_title("yandexgpt vs gigachat")
+ax.set_title("ru")
 
 path = PROJ_DIR / "images" / "cost_score1.svg"
 print('Write "%s"' % path)

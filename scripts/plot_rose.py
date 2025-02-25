@@ -82,9 +82,14 @@ plot(ax1, "lite", [
     "08_gigachat_lite",
 ])
 plot(ax2, "pro", [
-    "13_llama_3_3_70b",
-    "11_yandexgpt_4_pro",
-    "12_gigachat_pro", "14_gigachat_max",
+    # "13_llama_3_3_70b",
+    # "11_yandexgpt_4_pro",
+    # "12_gigachat_pro",
+    "14_gigachat_max",
+
+    
+    "17_yandexgpt_5_pro",
+    "20_t_pro",
 ])
 
 # "04_llama_3_1_8b",

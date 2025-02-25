@@ -33,8 +33,9 @@ class YandexgptClient:
         self.semaphore = asyncio.Semaphore(10)
 
     @retrying
-    async def completion(self, model, messages, temperature=0, max_tokens=16000):
+    async def completion(self, model, messages, temperature=0, max_tokens=8000):
         # https://yandex.cloud/ru/docs/foundation-models/text-generation/api-ref/TextGeneration/completion
+
         async with self.semaphore:
             response = await self.session.post(
                 "https://llm.api.cloud.yandex.net/foundationModels/v1/completion",

@@ -1,4 +1,5 @@
 
+import os
 from dataclasses import dataclass
 
 
@@ -13,7 +14,9 @@ BENCHES = [
     Bench(
         id="mgsm",
         name="mgsm-en",
-        reqs=[]
+        reqs=[
+            "openrouter",
+        ]
     ),
     Bench(
         id="math",
@@ -94,7 +97,7 @@ class Model:
     name: str
     client: str
     client_model: str
-    client_kwargs: dict = None
+    client_endpoint_id: str = None
     currency: str = "usd"
 
 
@@ -142,7 +145,36 @@ MODELS = [
         client_model="yandexgpt/latest",
         currency="rub",
     ),
+    Model(
+        id="17_yandexgpt_5_pro",
+        name="yandexgpt-5-pro",
+        client="yandexgpt",
+        client_model="yandexgpt/rc",
+        currency="rub",
+    ),
 
+    # Model(
+    #     id="18_cotype_nano",
+    #     name="cotype-nano",
+    #     client="runpod",
+    #     client_model="MTSAIR/Cotype-Nano",
+    #     client_endpoint_id=os.getenv("RUNPOD_ENDPOINT1")
+    # ),
+
+    # Model(
+    #     id="19_t_lite",
+    #     name="t-lite",
+    #     client="runpod",
+    #     client_model="t-tech/T-lite-it-1.0",
+    #     client_endpoint_id=os.getenv("RUNPOD_ENDPOINT2")
+    # ),
+    Model(
+        id="20_t_pro",
+        name="t-pro",
+        client="runpod",
+        client_model="t-tech/T-pro-it-1.0",
+        client_endpoint_id=os.getenv("RUNPOD_ENDPOINT3")
+    ),
 
     # Model(
     #     id="01_gemini_flash_1_5",

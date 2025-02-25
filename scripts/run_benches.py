@@ -14,6 +14,7 @@ from simple import registry
 from simple.clients.openrouter import OpenrouterClient
 from simple.clients.yandexgpt import YandexgptClient
 from simple.clients.gigachat import GigachatClient
+from simple.clients.runpod import RunpodClient
 from simple.clients.e2b import E2BClient
 
 from simple.benches.bbh import bbh_worker
@@ -137,6 +138,11 @@ def init_context(context, bench_ids, model_ids):
             assert secret, f'Empty env var GIGACHAT_SECRET, req by "{model_id}"'
             context["gigachat"] = GigachatClient(secret)
 
+        elif model.client == "runpod":
+            api_key = os.getenv("RUNPOD_API_KEY")
+            assert api_key, f'Empty env var RUNPOD_API_KEY, req by "{model_id}""'
+            context["runpod"] = RunpodClient(api_key)
+
         else:
             raise ValueError(model.client)
 
@@ -163,7 +169,7 @@ async def update_context(context):
 
 
 async def close_context(context):
-    for key in ["openrouter", "yandexgpt", "gigachat", "e2b"]:
+    for key in ["openrouter", "yandexgpt", "gigachat", "e2b", "runpod"]:
         if key in context:
             await context[key].session.close()
 
@@ -221,16 +227,22 @@ async def main(args):
                         continue
 
                     model = ID_MODELS[model_id]
-                    client_model = partial(
+                    model_client = partial(
                         context[model.client],
-                        model=model.client_model
+                        model=model.client_model,
                     )
+                    if model.client == "runpod":
+                        model_client = partial(
+                            model_client,
+                            endpoint_id=model.client_endpoint_id
+                        )
+                        
                     res_item = {
                         "id": task_item["id"]
                     }
                     worker_coros.append(worker(
                         bench_id, model_id,
-                        client_model, task_item, res_item,
+                        model_client, task_item, res_item,
                         context
                     ))
 

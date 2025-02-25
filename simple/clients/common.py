@@ -36,7 +36,7 @@ class RateLimiter:
 def error_trace(error):
     filename, trace = None, []
     for entry in traceback.extract_tb(error.__traceback__):
-        match = re.search(r"clients/(e2b|gigachat|openrouter|yandexgpt)\.py", entry.filename)
+        match = re.search(r"clients/(e2b|gigachat|openrouter|yandexgpt|fireworks|runpod)\.py", entry.filename)
         if match:
             filename = match.group(1)
             trace.append(entry.name)

@@ -147,7 +147,7 @@
 
 Таблица картинкой, чтобы было проще разобраться:
 - Яндекс <a href="https://habr.com/ru/companies/yandex/articles/885218/">перешел на претрен от Qwen</a> и обогнал Gigachat на англоязычных бенчмарках. Сбер остался в одиночестве с полностью отечественным претреном.
-- T-Pro и Yandexgpt 5 Pro модели близнецы на одинаковом претрене Qwen 32b. T-Pro на Runpod Serverless дешевле, чем Yandexgpt в API. T-Pro рассуждает как будто охотнее чем Yandexgpt: <a href="reports/correct/mmlu/17_yandexgpt_5_pro.md">ответы на MMLU Yandexgpt</a> / <a href="reports/correct/mmlu/20_t_pro.md">ответы T-Pro</a>. T-Pro тренили от Instruct-версии?
+- T-Pro и Yandexgpt 5 Pro модели близнецы на одинаковом претрене Qwen 32b. T-Pro на Runpod Serverless дешевле, чем Yandexgpt в API. T-Pro рассуждает как будто охотнее чем Yandexgpt: <a href="reports/correct/mmlu/17_yandexgpt_5_pro.md">ответы на MMLU Yandexgpt</a> / <a href="reports/correct/mmlu/20_t_pro.md">ответы T-Pro</a>. T-Pro тренили от Instruct-версии? Т-Банк красавцы подхватили знамя Saiga / Vikhr.
 
 <img src="images/cost_score1.svg"/>
 

@@ -1,4 +1,361 @@
 # bbh-1k / t-pro
+### date_understanding/150
+###### instruction
+<pre> Infer the date from context.
+
+Q: Today is Christmas Eve of 1937. What is the date 10 days ago in MM/DD/YYYY?
+Options:
+(A) 12/14/2026
+(B) 12/14/1950
+(C) 12/14/2007
+(D) 12/14/1937
+(E) 07/14/1938
+(F) 12/14/1988
+A: Let's think step by step.
+If today is Christmas Eve of 1937, then today's date is December 24, 1937. 10 days before today is December 14, 1937, that is 12/14/1937. So the answer is (D).
+
+Q: Tomorrow is 11/12/2019. What is the date one year ago from today in MM/DD/YYYY?
+Options:
+(A) 09/04/2018
+(B) 11/11/2018
+(C) 08/25/2018
+(D) 11/02/2018
+(E) 11/04/2018
+A: Let's think step by step.
+If tomorrow is 11/12/2019, then today is 11/11/2019. The date one year ago from today is 11/11/2018. So the answer is (B).
+
+Q: Jane and John married on Jan 2, 1958. It is their 5-year anniversary today. What is the date tomorrow in MM/DD/YYYY?
+Options:
+(A) 01/11/1961
+(B) 01/03/1963
+(C) 01/18/1961
+(D) 10/14/1960
+(E) 01/03/1982
+(F) 12/03/1960
+A: Let's think step by step.
+If Jane and John married on Jan 2, 1958, then and if it is their 5-year anniversary today, then today's date is Jan 2, 1963. The date tomorrow is Jan 3, 1963, that is 01/03/1963. So the answer is (B).
+
+Q: Jane thinks today is 6/18/2019, but John thinks today is 6/19/2019. John is correct. What is the date one year ago from today in MM/DD/YYYY?
+Options:
+(A) 06/19/2018
+(B) 05/22/2018
+(C) 06/19/1934
+(D) 06/19/1956
+(E) 06/24/2018
+(F) 06/18/2018 </pre>
+###### answer
+<pre> Let's think step by step.
+
+If John is correct and today is 6/19/2019, then one year ago from today would be 6/19/2018. So the answer is (A) 06/19/2018. </pre>
+###### pred
+<pre> (A) </pre>
+###### target
+<pre> (A) </pre>
+### navigate/15
+###### instruction
+<pre> Given a series of navigation instructions, determine whether one would end up back at the starting point.
+
+Q: If you follow these instructions, do you return to the starting point? Turn left. Turn around. Turn left. Take 7 steps. Take 2 steps. Take 4 steps. Take 8 steps.
+Options:
+- Yes
+- No
+A: Let's think step by step.
+We start at the origin (0, 0), facing the positive y-axis.
+(1) Turn left: (0, 0), facing the negative x-axis.
+(2) Turn around: (0, 0), facing the positive x-axis.
+(3) Turn left: (0, 0), facing the positive y-axis.
+(4) Take 7 steps: (0, 7), facing the positive y-axis.
+(5) Take 2 steps: (0, 9), facing the positive y-axis.
+(6) Take 4 steps: (0, 13), facing the positive y-axis.
+(7) Take 8 steps: (0, 21), facing the positive y-axis.
+Since (0, 21) is not (0, 0), we are not where we started. So the answer is No.
+
+Q: If you follow these instructions, do you return to the starting point? Turn around. Take 1 step. Take 6 steps. Turn around. Take 6 steps. Take 9 steps. Take 1 step.
+Options:
+- Yes
+- No
+A: Let's think step by step.
+We start at the origin (0, 0), facing the positive y-axis.
+(1) Turn around: (0, 0), facing the negative y-axis.
+(2) Take 1 step: (0, -1), facing the negative y-axis.
+(3) Take 6 steps: (0, -7), facing the negative y-axis.
+(4) Turn around: (0, -7), facing the positive y-axis.
+(5) Take 6 steps: (0, -1), facing the positive y-axis.
+(6) Take 9 steps: (0, 8), facing the positive y-axis.
+(7) Take 1 step: (0, 9), facing the positive y-axis.
+Since (0, 9) is not (0, 0), we are not where we started. So the answer is No.
+
+Q: If you follow these instructions, do you return to the starting point? Always face forward. Take 2 steps right. Take 9 steps left. Take 7 steps right.
+Options:
+- Yes
+- No
+A: Let's think step by step.
+We start at the origin (0, 0), facing the positive y-axis.
+(1) Always face forward: (0, 0), facing the positive y-axis.
+(2) Take 2 steps right: (0, 2), facing the positive y-axis.
+(3) Take 9 steps left: (0, -7), facing the positive y-axis.
+(4) Take 7 steps right: (0, 7), facing the positive y-axis.
+Since (0, 0) is (0, 0), we are indeed where we started. So the answer is Yes.
+
+Q: If you follow these instructions, do you return to the starting point? Turn left. Turn right. Turn around. Turn left. Take 4 steps. Turn left. Turn around. Take 3 steps.
+Options:
+- Yes
+- No </pre>
+###### answer
+<pre> Let's think step by step.
+
+We start at the origin (0, 0), facing the positive y-axis.
+
+1. Turn left: Now facing the positive x-axis, position remains (0, 0).
+2. Turn right: Now facing the positive y-axis, position remains (0, 0).
+3. Turn around: Now facing the negative y-axis, position remains (0, 0).
+4. Turn left: Now facing the negative x-axis, position remains (0, 0).
+5. Take 4 steps: Move to (-4, 0), still facing the negative x-axis.
+6. Turn left: Now facing the positive y-axis, position remains (-4, 0).
+7. Turn around: Now facing the negative y-axis, position remains (-4, 0).
+8. Take 3 steps: Move to (-4, -3), still facing the negative y-axis.
+
+Since (-4, -3) is not (0, 0), we are not where we started. So the answer is No. </pre>
+###### pred
+<pre> No </pre>
+###### target
+<pre> No </pre>
+### navigate/137
+###### instruction
+<pre> Given a series of navigation instructions, determine whether one would end up back at the starting point.
+
+Q: If you follow these instructions, do you return to the starting point? Turn left. Turn around. Turn left. Take 7 steps. Take 2 steps. Take 4 steps. Take 8 steps.
+Options:
+- Yes
+- No
+A: Let's think step by step.
+We start at the origin (0, 0), facing the positive y-axis.
+(1) Turn left: (0, 0), facing the negative x-axis.
+(2) Turn around: (0, 0), facing the positive x-axis.
+(3) Turn left: (0, 0), facing the positive y-axis.
+(4) Take 7 steps: (0, 7), facing the positive y-axis.
+(5) Take 2 steps: (0, 9), facing the positive y-axis.
+(6) Take 4 steps: (0, 13), facing the positive y-axis.
+(7) Take 8 steps: (0, 21), facing the positive y-axis.
+Since (0, 21) is not (0, 0), we are not where we started. So the answer is No.
+
+Q: If you follow these instructions, do you return to the starting point? Turn around. Take 1 step. Take 6 steps. Turn around. Take 6 steps. Take 9 steps. Take 1 step.
+Options:
+- Yes
+- No
+A: Let's think step by step.
+We start at the origin (0, 0), facing the positive y-axis.
+(1) Turn around: (0, 0), facing the negative y-axis.
+(2) Take 1 step: (0, -1), facing the negative y-axis.
+(3) Take 6 steps: (0, -7), facing the negative y-axis.
+(4) Turn around: (0, -7), facing the positive y-axis.
+(5) Take 6 steps: (0, -1), facing the positive y-axis.
+(6) Take 9 steps: (0, 8), facing the positive y-axis.
+(7) Take 1 step: (0, 9), facing the positive y-axis.
+Since (0, 9) is not (0, 0), we are not where we started. So the answer is No.
+
+Q: If you follow these instructions, do you return to the starting point? Always face forward. Take 2 steps right. Take 9 steps left. Take 7 steps right.
+Options:
+- Yes
+- No
+A: Let's think step by step.
+We start at the origin (0, 0), facing the positive y-axis.
+(1) Always face forward: (0, 0), facing the positive y-axis.
+(2) Take 2 steps right: (0, 2), facing the positive y-axis.
+(3) Take 9 steps left: (0, -7), facing the positive y-axis.
+(4) Take 7 steps right: (0, 7), facing the positive y-axis.
+Since (0, 0) is (0, 0), we are indeed where we started. So the answer is Yes.
+
+Q: If you follow these instructions, do you return to the starting point? Take 2 steps. Turn right. Take 6 steps. Take 10 steps. Take 7 steps.
+Options:
+- Yes
+- No </pre>
+###### answer
+<pre> Let's think step by step.
+
+We start at the origin (0, 0), facing the positive y-axis.
+
+1. Take 2 steps: (0, 2), facing the positive y-axis.
+2. Turn right: (0, 2), now facing the positive x-axis.
+3. Take 6 steps: (6, 2), facing the positive x-axis.
+4. Take 10 steps: (16, 2), facing the positive x-axis.
+5. Take 7 steps: (23, 2), facing the positive x-axis.
+
+Since (23, 2) is not (0, 0), we are not where we started. So the answer is No. </pre>
+###### pred
+<pre> No </pre>
+###### target
+<pre> No </pre>
+### reasoning_about_colored_objects/91
+###### instruction
+<pre> Answer extremely simple questions about the colors of objects on a surface.
+
+Q: On the nightstand, there is a red pencil, a purple mug, a burgundy keychain, a fuchsia teddy bear, a black plate, and a blue stress ball. What color is the stress ball?
+Options:
+(A) red
+(B) orange
+(C) yellow
+(D) green
+(E) blue
+(F) brown
+(G) magenta
+(H) fuchsia
+(I) mauve
+(J) teal
+(K) turquoise
+(L) burgundy
+(M) silver
+(N) gold
+(O) black
+(P) grey
+(Q) purple
+(R) pink
+A: Let's think step by step.
+According to this question, the color of the stress ball is blue. So the answer is (E).
+
+Q: On the table, you see a bunch of objects arranged in a row: a purple paperclip, a pink stress ball, a brown keychain, a green scrunchiephone charger, a mauve fidget spinner, and a burgundy pen. What is the color of the object directly to the right of the stress ball?
+Options:
+(A) red
+(B) orange
+(C) yellow
+(D) green
+(E) blue
+(F) brown
+(G) magenta
+(H) fuchsia
+(I) mauve
+(J) teal
+(K) turquoise
+(L) burgundy
+(M) silver
+(N) gold
+(O) black
+(P) grey
+(Q) purple
+(R) pink
+A: Let's think step by step.
+According to this question, the objects are arranged in a row, from left to right, as follows: (1) a purple paperclip, (2) a pink stress ball, (3) a brown keychain, (4) a green scrunchiephone charger, (5) a mauve fidget spinner, (6) a burgundy pen.
+The stress ball is the second object on the list, namely (2). The object that is to the right of the stress ball corresponds to (3), which is a brown keychain.
+The color of the keychain is brown. So the answer is (F).
+
+Q: On the nightstand, you see the following items arranged in a row: a teal plate, a burgundy keychain, a yellow scrunchiephone charger, an orange mug, a pink notebook, and a grey cup. How many non-orange items do you see to the left of the teal item?
+Options:
+(A) zero
+(B) one
+(C) two
+(D) three
+(E) four
+(F) five
+(G) six
+A: Let's think step by step.
+According to this question, the objects are arranged in a row, from left to right, as follows: (1) a teal plate, (2) a burgundy keychain, (3) a yellow scrunchiephone charger, (4) an orange mug, (5) a pink notebook, (6) a grey cup.
+The teal plate is the first item, namely (1). There is no item to the left of the teal item.
+The number of non-orange items to the left of the teal item is zero. So the answer is (A).
+
+Q: On the table, I see three teal bracelets and two grey dog leashes. If I remove all the dog leashes from the table, how many teal items remain on it?
+Options:
+(A) zero
+(B) one
+(C) two
+(D) three
+(E) four
+(F) five
+(G) six
+(H) seven
+(I) eight
+(J) nine
+(K) ten
+(L) eleven
+(M) twelve
+(N) thirteen
+(O) fourteen
+(P) fifteen
+(Q) sixteen </pre>
+###### answer
+<pre> Let's think step by step.
+
+Initially, on the table, there are three teal bracelets and two grey dog leashes. The question asks how many teal items remain after removing all the dog leashes.
+
+Since the dog leashes are grey and not teal, removing them does not affect the number of teal items. The number of teal items remains the same, which is three teal bracelets.
+
+So the answer is (D) three. </pre>
+###### pred
+<pre> (D) </pre>
+###### target
+<pre> (D) </pre>
+### movie_recommendation/138
+###### instruction
+<pre> Recommend movies similar to the given list of movies.
+
+Q: Find a movie similar to Star Wars Episode IV - A New Hope, Indiana Jones and the Last Crusade, Star Wars Episode V - The Empire Strikes Back, The Big Lebowski:
+Options:
+(A) Tetsuo
+(B) the Ironman
+(C) The Princess Bride
+(D) The Barkley Marathons The Race That Eats Its Young
+(E) Bug
+A: Let's think step by step.
+- Star Wars Episode IV - A New Hope (action, adventure, fantasy; 1977)
+- Indiana Jones and the Last Crusade (action, adventure; 1989)
+- Star Wars Episode V - The Empire Strikes Back (action, adventure, fantasy; 1980)
+- The Big Lebowski (action, drama, comedy; 1998)
+These are all famous classic American movies produced before 2000. Amongst all the options, the only movie similar to these ones seems to be The Princess Bride (1987). So the answer is (C).
+
+Q: Find a movie similar to Twister, The Silence of the Lambs, Independence Day, Braveheart:
+Options:
+(A) They Shoot Horses
+(B) Don't They
+(C) Forrest Gump
+(D) The Salton Sea
+(E) Extreme Days
+A: Let's think step by step.
+- Twister (action, adventure, thriller; 1996)
+- The Silence of the Lambs (crime, drama, thriller; 1991)
+- Independence Day (action, science-fiction, drama; 1996)
+- Braveheart (biography, drama, epic; 1995)
+These are all famous Hollywood movies produced around the 1990s. Amongst all the options, the only movie similar to these ones seems to be Forrest Gump (comedy, drama, romance; 1994). So the answer is (C).
+
+Q: Find a movie similar to Minority Report, Total Recall, Inside Out, Forrest Gump:
+Options:
+(A) Phenomena
+(B) Lilting
+(C) Catwoman
+(D) Edge of Tomorrow
+A: Let's think step by step.
+- Minority Report (action, crime, mystery; 2002)
+- Total Recall (action, adventure, science-fiction; 2012)
+- Inside Out (animation, family, comedy; 2015)
+- Forrest Gump (comedy, drama, romance; 1994)
+These are all famous movies produced in the past few decades.Amongst all the options, the only movie similar to these ones seems to be Edge of Tomorrow (action, adventure, crime, mystery; 2014), as it is also a science-fiction movie and features Tom Cruise. So the answer is (D).
+
+Q: Find a movie similar to One Flew Over the Cuckoo's Nest, Goodfellas, Rear Window, The Professional:
+Options:
+(A) A Night to Remember
+(B) The Swan Princess
+(C) Kinsey
+(D) Léon The Professional </pre>
+###### answer
+<pre> Let's think step by step:
+
+- One Flew Over the Cuckoo's Nest (drama; 1975)
+- Goodfellas (crime, drama; 1990)
+- Rear Window (mystery, thriller; 1954)
+- The Professional (action, crime, thriller; 1994)
+
+These movies are known for their strong storytelling, complex characters, and a mix of genres, with a focus on drama and crime elements. Among the options:
+
+- (A) A Night to Remember (drama, historical; 1958) is a historical drama about the Titanic.
+- (B) The Swan Princess (animation, family; 1994) is a fantasy animated film.
+- (C) Kinsey (biography, drama; 2004) is a biographical drama about Alfred Kinsey.
+- (D) Léon: The Professional (action, crime, thriller; 1994) is the original French title for "The Professional."
+
+Given the list of movies, the most similar one in terms of genre and style is "Léon: The Professional," as it is the same movie listed in the original question. However, if we are looking for a different movie that shares similar elements, "Kinsey" (C) could be a good fit due to its strong character development and dramatic storytelling, even though it is not an exact match in terms of genre.
+
+The best answer, considering the original question's intent, is (D) Léon: The Professional, as it is the same movie. If looking for a different movie, (C) Kinsey is a close match in terms of dramatic storytelling. </pre>
+###### pred
+<pre> (D) </pre>
+###### target
+<pre> (D) </pre>
 ### logical_deduction_seven_objects/248
 ###### instruction
 <pre> A logical deduction task which requires deducing the order of a sequence of objects.
@@ -84,85 +441,7 @@ So the answer is (F) The owl is the third from the right. </pre>
 <pre> (F) </pre>
 ###### target
 <pre> (F) </pre>
-### penguins_in_a_table/19
-###### instruction
-<pre> Answer questions about a table of penguins and their attributes.
-
-Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  We now add a penguin to the table:
-James, 12, 90, 12
-How many penguins are less than 8 years old?
-Options:
-(A) 1
-(B) 2
-(C) 3
-(D) 4
-(E) 5
-A: Let's think step by step.
-This question focuses on age. We know the following: Louis is 7 years old, Bernard is 5 years old, Vincent is 9 years old, and Gwen is 8 years old.
-Now, we add James to this table: James is 12 years old.
-The penguins that are less than 8 years old are Louis and Bernard.
-There are 2 penguins less than 8 years old. So the answer is (B).
-
-Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  Which is the youngest penguin?
-Options:
-(A) Louis
-(B) Bernard
-(C) Vincent
-(D) Gwen
-(E) James
-A: Let's think step by step.
-This question focuses on age. We know the following: Louis is 7 years old, Bernard is 5 years old, Vincent is 9 years old, and Gwen is 8 years old.
-According to the table, Bernard (5) is the youngest amongst them.
-The youngest penguin is Bernard. So the answer is (B).
-
-Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  What is the name of the second penguin sorted by alphabetic order?
-Options:
-(A) Louis
-(B) Bernard
-(C) Vincent
-(D) Gwen
-(E) James
-A: Let's think step by step.
-This question focuses on the name. We know the following: The names of the penguin in the table are Louis, Bernard, Vincent, and Gwen.
-When we sort their names alphabetically, we get Bernard, Gwen, Louis, Vincent.
-The name of the second penguin sorted by alphabetical order is Gwen.
-The name of the second penguin sorted by alphabetic order is Gwen. So the answer is (D).
-
-Q: Here is a table where the first line is a header and each subsequent line is a penguin:  name, age, height (cm), weight (kg) Louis, 7, 50, 11 Bernard, 5, 80, 13 Vincent, 9, 60, 11 Gwen, 8, 70, 15  For example: the age of Louis is 7, the weight of Gwen is 15 kg, the height of Bernard is 80 cm.  We then delete the penguin named Bernard from the table.
-Which is the younest penguin?
-Options:
-(A) Louis
-(B) Bernard
-(C) Vincent
-(D) Gwen
-(E) James </pre>
-###### answer
-<pre> Let's think step by step.
-
-Initially, the penguins and their ages are:
-- Louis: 7 years old
-- Bernard: 5 years old
-- Vincent: 9 years old
-- Gwen: 8 years old
-
-We are told to delete the penguin named Bernard from the table. After deleting Bernard, the remaining penguins and their ages are:
-- Louis: 7 years old
-- Vincent: 9 years old
-- Gwen: 8 years old
-
-Now, we need to determine the youngest penguin among the remaining ones:
-- Louis is 7 years old
-- Vincent is 9 years old
-- Gwen is 8 years old
-
-The youngest penguin among the remaining ones is Louis, who is 7 years old.
-
-Therefore, the answer is (A) Louis. </pre>
-###### pred
-<pre> (A) </pre>
-###### target
-<pre> (A) </pre>
-### logical_deduction_five_objects/10
+### logical_deduction_seven_objects/213
 ###### instruction
 <pre> A logical deduction task which requires deducing the order of a sequence of objects.
 
@@ -202,184 +481,161 @@ A: Let's think step by step.
 According to this ordering, the leftmost book is the white book.
 The white book is the leftmost. So the answer is (C).
 
-Q: The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells five fruits: kiwis, pears, peaches, loquats, and apples. The loquats are more expensive than the kiwis. The pears are more expensive than the peaches. The apples are more expensive than the loquats. The apples are less expensive than the peaches.
+Q: The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells seven fruits: watermelons, oranges, mangoes, cantaloupes, kiwis, pears, and peaches. The pears are the second-cheapest. The peaches are more expensive than the cantaloupes. The peaches are less expensive than the mangoes. The cantaloupes are more expensive than the kiwis. The oranges are the fourth-most expensive. The watermelons are the second-most expensive.
 Options:
-(A) The kiwis are the second-cheapest
-(B) The pears are the second-cheapest
-(C) The peaches are the second-cheapest
-(D) The loquats are the second-cheapest
-(E) The apples are the second-cheapest </pre>
+(A) The watermelons are the second-cheapest
+(B) The oranges are the second-cheapest
+(C) The mangoes are the second-cheapest
+(D) The cantaloupes are the second-cheapest
+(E) The kiwis are the second-cheapest
+(F) The pears are the second-cheapest
+(G) The peaches are the second-cheapest </pre>
 ###### answer
 <pre> Let's think step by step.
 
-(1) The loquats are more expensive than the kiwis: "kiwis &lt; loquats".
-(2) The pears are more expensive than the peaches: "peaches &lt; pears".
-(3) The apples are more expensive than the loquats: "loquats &lt; apples".
-(4) The apples are less expensive than the peaches: "apples &lt; peaches".
+1. The pears are the second-cheapest: This means there is only one fruit cheaper than pears.
+2. The peaches are more expensive than the cantaloupes: This means cantaloupes are cheaper than peaches.
+3. The peaches are less expensive than the mangoes: This means peaches are cheaper than mangoes.
+4. The cantaloupes are more expensive than the kiwis: This means kiwis are cheaper than cantaloupes.
+5. The oranges are the fourth-most expensive: This means there are three fruits more expensive than oranges.
+6. The watermelons are the second-most expensive: This means there is only one fruit more expensive than watermelons.
 
-Now let's combine these statements:
+From the information given, we can start to piece together the order:
 
-From (1) and (3), we have: "kiwis &lt; loquats &lt; apples".
-From (2) and (4), we have: "peaches &lt; pears" and "apples &lt; peaches", which together give us: "apples &lt; peaches &lt; pears".
+- Since the pears are the second-cheapest, the only fruit cheaper than pears must be the kiwis (from point 4).
+- The oranges are the fourth-most expensive, so there are three fruits more expensive than oranges. Given that watermelons are the second-most expensive, the order of the most expensive fruits must be: (most expensive) ? watermelons ? oranges ? (third-most expensive) ? (fourth-most expensive) ? (fifth-most expensive) ? (sixth-most expensive) ? (cheapest).
+- Since watermelons are the second-most expensive, the most expensive fruit must be the mangoes (from point 3).
+- The peaches are less expensive than mangoes but more expensive than cantaloupes, so they must be the third-most expensive.
+- The cantaloupes are more expensive than kiwis but less expensive than peaches, so they must be the fifth-most expensive.
+- This leaves the oranges as the fourth-most expensive, which matches the given information.
+- The only fruit left to place is the pears, which are the second-cheapest, so they must be the sixth-most expensive.
 
-Now we can combine the two chains:
+The final order from cheapest to most expensive is: kiwis, pears, cantaloupes, oranges, peaches, watermelons, mangoes.
 
-"kiwis &lt; loquats &lt; apples &lt; peaches &lt; pears".
-
-According to this ordering, the second-cheapest fruit is the loquats.
-
-The loquats are the second-cheapest. So the answer is (D). </pre>
+According to this ordering, the second-cheapest fruit is the pears. So the answer is (F). </pre>
 ###### pred
-<pre> (D) </pre>
+<pre> (F) </pre>
 ###### target
-<pre> (D) </pre>
-### snarks/107
+<pre> (F) </pre>
+### web_of_lies/182
 ###### instruction
-<pre> Determine which of two sentences is sarcastic.
+<pre> Evaluate a random boolean function expressed as a word problem.
 
-According to Cambridge University Dictionary, sarcasm is "the use of remarks that clearly mean the opposite of what they say, made in order to hurt someone's feelings or to criticize something in a humorous way." Sarcastic sentences often contain satirical or ironic utterances, hyperboles, ambivalent or witty remarks.
-
-Q: Which statement is sarcastic?
-Options:
-(A) Yes, because having interests and actively researching them is a huge waste
-(B) Yes, because having interests and actively researching them is a huge deal
+Q: Question: Fidel tells the truth. Jerry says Fidel tells the truth. Vina says Jerry tells the truth. Millicent says Vina lies. Raymond says Millicent lies. Does Raymond tell the truth?
 A: Let's think step by step.
-If we look at (A), it says that having interests and actively researching them is a huge waste, implying that it is a useless effort. However, we know that having interests and actively researching them is typically not a waste but rather is beneficial to the individual. The presence of such a juxtaposition in (A) suggests that it contains a taste of irony and sarcasm.
-If we look at (B), it says that having interests and actively researching them is a huge deal, implying that it is an important and consequential effort. This is arguably a neutral and correct statement.
-Above the above, the sarcastic option is (A). So the answer is (A).
+(1) Fidel tells the truth. So, we know that Fidel tells the truth.
+(2) Jerry says Fidel tells the truth. Since we know from (1) that Fidel tells the truth, if Jerry says that Fidel tells the truth, then Jerry tells the truth.
+(3) Vina says Jerry tells the truth. Since we know from (2) that Jerry tells the truth, if Vina says Jerry tells the truth, then Vine tells the truth.
+(4) Millicent says Vina lies. Since we know from (3) that Vina tells the truth, if Millicent says Vina lies, then Millicent lies.
+(5) Raymond says Millicent lies. Since we know from (4) that Millicent lies, if Raymond says Millicent lies, then Raymond tells the truth.
+Now, the question asks: Does Raymond tell the truth? We know from (5) that Raymond tells the truth. So the answer is Yes.
 
-Q: Which statement is sarcastic?
-Options:
-(A) No one is going to disagree with you on this. Avoiding ad hominem attacks really help your case
-(B) No one is going to disagree with you on this. Ad hominem attacks really help your case
+Q: Question: Kristian lies. Millie says Kristian lies. Maybelle says Millie tells the truth. Fidel says Maybelle lies. Leda says Fidel lies. Does Leda tell the truth?
 A: Let's think step by step.
-If we look at (A), it says that avoiding ad hominem attacks really help your case, implying that ad hominem attacks are adverse and injurious. Because ad hominem attacks are adressed at a person rather than an idea, it is indeed true that avoiding them is often useful and helpful; so, (A) is a neutral (valid and agreeable) statement.
-If we look at (B), it says that ad hominem attacks really help your case, implying that ad hominem attacks are a positive thing. However, we stated previously that ad hominem attacks are often not useful or constructive. The speaker in this sentence therefore seems to mean the opposite of what they are saying; so, there appears to have a taste of irony and sarcasm in (B).
-Above the above, the sarcastic option is (B). So the answer is (B).
+(1) Kristian lies. So, we know that Kristian lies.
+(2) Millie says Kristian lies. Since we know from (1) that Kristian lies, if Millie says Kristian lies, then Millie tells the truth.
+(3) Maybelle says Millie tells the truth. Since we know from (2) that Millie tells the truth, if Maybelle says Millie tells the truth, then Maybelle tells the truth.
+(4) Fidel says Maybelle lies. Since we know from (3) that Maybelle tells the truth, if Fidel says Maybelle lies, then Fidel lies.
+(5) Leda says Fidel lies. Since we know from (4) that Fidel lies, if Leda says Fidel lies, then Leda tells the truth.
+Now, the question asks: Does Leda tell the truth? We know from (5) that Leda tells the truth. So the answer is Yes.
 
-Q: Which statement is sarcastic?
-Options:
-(A) Consistency in the league's punishments? What do you think this is supposed to be, politics?
-(B) Consistency in the league's punishments? What do you think this is supposed to be, moral?
+Q: Question: Kristian tells the truth. Michaela says Kristian lies. Raymond says Michaela tells the truth. Osvaldo says Raymond tells the truth. Jamey says Osvaldo tells the truth. Does Jamey tell the truth?
 A: Let's think step by step.
-If we look at (A), it likens the consistency in the league's punishments with that in politics. Because politics or political affairs are often not considered to be consistent or dependable, this sentence appears to be satirical.
-If we look at (B), it likens the consistency in the league's punishments with that in morality. Discussing the consistency of the league's punishments in the context of morality, ethics, or law makes sense and does not appear to make a satirical point about anything.
-Above the above, the sarcastic option is (A). So the answer is (A).
+(1) Kristian tells the truth. So, we know that Kristian tells the truth.
+(2) Michaela says Kristian lies. Since we know from (1) that Kristian tells the truth, if Michaela says Kristian lies, then Michaela lies.
+(3) Raymond says Michaela tells the truth. Since we know from (2) that Michaela lies, if Raymond says Michaela tells the truth, then Raymond lies.
+(4) Osvaldo says Raymond tells the truth. Since we know from (3) that Raymond lies, if Osvaldo says Raymond tells the truth, then Osvaldo lies.
+(5) Jamey says Osvaldo tells the truth. Since we know from (4) that Osvaldo lies, if Jamey says Osvaldo tells the truth, then Jamey lies.
+Now, the question asks: Does Jamey tell the truth? We know from (5) that Jamey lies. So the answer is No.
 
-Q: Which statement is sarcastic?
+Q: Question: Shaunda lies. Fletcher says Shaunda lies. Jaymie says Fletcher lies. Millie says Jaymie lies. Gwenn says Millie tells the truth. Does Gwenn tell the truth? </pre>
+###### answer
+<pre> Let's evaluate the statements step by step:
+
+(1) Shaunda lies. So, we know that Shaunda lies.
+
+(2) Fletcher says Shaunda lies. Since we know from (1) that Shaunda lies, if Fletcher says Shaunda lies, then Fletcher tells the truth.
+
+(3) Jaymie says Fletcher lies. Since we know from (2) that Fletcher tells the truth, if Jaymie says Fletcher lies, then Jaymie lies.
+
+(4) Millie says Jaymie lies. Since we know from (3) that Jaymie lies, if Millie says Jaymie lies, then Millie tells the truth.
+
+(5) Gwenn says Millie tells the truth. Since we know from (4) that Millie tells the truth, if Gwenn says Millie tells the truth, then Gwenn tells the truth.
+
+Now, the question asks: Does Gwenn tell the truth? We know from (5) that Gwenn tells the truth. So the answer is Yes. </pre>
+###### pred
+<pre> Yes </pre>
+###### target
+<pre> Yes </pre>
+### disambiguation_qa/187
+###### instruction
+<pre> Clarify the meaning of sentences with ambiguous pronouns.
+
+Q: In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.
+Sentence: The chief told the counselor that they took the day off.
 Options:
-(A) Only first-world citizens deserve freedom
-(B) Not only first-world citizens deserve freedom </pre>
+(A) The chief took the day off
+(B) The counselor took the day off
+(C) Ambiguous
+A: Let's think step by step.
+Here we need to determine who the pronoun "they" might be referring to. There are two possible referents for "they", namely the chief and the counselor. The verb "told" might be able to help us determine which one is more likely (if either). Let X be the chief and Y the counselor. The sentence is then of the form "X told Y that (X or Y) did something."
+Let's consider Y first: "X told Y that Y did something." This case does not make much sense, as Y would already have the information that Y did something, because it is information about themself.
+Now, consider X: "X told Y that X did something." This makes sense, because X would be sharing some information about themself that Y might not have known before.
+Because in this context, X is the chief and Y is the counselor, the answer should be the chief. So the answer is (A).
+
+Q: In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.
+Sentence: The manager sent a message to the secretary, but he didn't reply yet.
+Options:
+(A) The secretary didn't reply yet
+(B) The manager didn't reply yet
+(C) Ambiguous
+A: Let's think step by step.
+Here we need to determine who the pronoun "he" might be referring to. There are two possible referents for "he", namely the manager and the secretary. The verbs "sent" and "reply" might be able to help us determine which one is more likely (if either). Let X be the manager and Y the secretary. The sentence is then of the form "X sent a message to Y, but (X or Y) didn't reply yet."
+Let's consider Y first: "X sent a message to Y, but Y didn't reply yet." This case makes sense, because of the implicit causality of the sentence. Y was the receiver of the message, but Y didn't get back to X yet.
+Now, consider X: "X sent a message to Y, but X didn't reply yet." This case doesn't make sense, because X was the initial sender of the message, so it is now Y's turn to write back to X.
+Because in this context, X is the manager and Y is the secretary, the answer should be the secretary. So the answer is (A).
+
+Q: In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.
+Sentence: Bailey will plan to meet the director at his office
+Options:
+(A) It will be Bailey's office
+(B) It will be the director's office
+(C) Ambiguous
+A: Let's think step by step.
+Here we need to determine who the pronoun "his" might be referring to. There are two possible referents for "his", namely Bailey's and the director's. The verb phrase "plan to meet" might be able to help us determine which one is more likely (if either). Let X be Bailey and Y the director. The sentence is then of the form "X will plan to meet Y at (X or Y)'s office."
+Let's consider Y first: "X will plan to meet Y at Y's office." This case makes sense, because X might want to meet up with Y at Y's office.
+Now, consider X: "X will plan to meet Y at X's office." This case also makes sense, because X might want to meet up with Y at X's own office.
+Because both X and Y are possible at the same time, we conclude that the antecedent of the pronoun is ambiguous. So the answer is (C).
+
+Q: In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.
+Sentence: The cleaner called the guard and asked him to open the door.
+Options:
+(A) Asked the cleaner
+(B) Asked the guard
+(C) Ambiguous </pre>
 ###### answer
 <pre> Let's think step by step.
 
-If we look at (A), it states that only first-world citizens deserve freedom. This is a controversial and extreme viewpoint, as it implies that people from other parts of the world do not deserve the same rights. Given that freedom is generally considered a universal right, this statement is likely to be ironic or meant to highlight the absurdity of such a narrow view. This suggests a sarcastic tone.
+In the sentence "The cleaner called the guard and asked him to open the door," we need to determine who the pronoun "him" refers to. The possible referents for "him" are the cleaner and the guard.
 
-If we look at (B), it states that not only first-world citizens deserve freedom. This is a more inclusive and universally accepted viewpoint, suggesting that freedom is a right that should be extended to all people, regardless of their country of origin. This statement does not contain irony or imply the opposite of what it says.
+1. Analyze the structure: "The cleaner called the guard and asked him to open the door."
+   - The cleaner is the subject performing the action of calling and asking.
+   - The guard is the object of the verb "called."
 
-Above the above, the sarcastic option is (A). So the answer is (A). </pre>
+2. Consider the logical flow:
+   - The cleaner is the one initiating the action by calling the guard.
+   - It makes more sense for the cleaner to ask someone else to perform an action, rather than asking themselves.
+
+3. Evaluate the context:
+   - If "him" referred to the cleaner, the sentence would imply that the cleaner asked themselves to open the door, which is less logical.
+   - If "him" referred to the guard, the sentence implies that the cleaner asked the guard to open the door, which is a logical request.
+
+Given this analysis, the pronoun "him" most likely refers to the guard, as it is logical for the cleaner to ask the guard to open the door. Therefore, the answer is (B) Asked the guard. </pre>
 ###### pred
-<pre> (A) </pre>
+<pre> (B) </pre>
 ###### target
-<pre> (A) </pre>
-### dyck_languages/25
-###### instruction
-<pre> Correctly close a Dyck-n word.
-
-Q: Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: [ { [
-A: Let's think step by step.
-We should process each input one by one and keep track of the stack configuration.
-0: empty stack
-1: [ ; stack: [
-2: { ; stack: [ {
-3: [ ; stack: [ { [
-Now, we have reached the end. The final stack is "[ { [".
-We will need to pop out "[", "{", "[" one by one in that order.
-So, we need "]", "}", "]". So the answer is ] } ].
-
-Q: Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: &lt; > ( ( [ [ ( { } ) [ &lt; > ] ]
-A: Let's think step by step.
-We should process each input one by one and keep track of the stack configuration.
-0: empty stack
-1: &lt; ; stack: &lt;
-2: > ; stack: empty
-3: ( ; stack: (
-4: ( ; stack: ( (
-5: [ ; stack: ( ( [
-6: [ ; stack: ( ( [ [
-7: ( ; stack: ( ( [ [ (
-8: { ; stack: ( ( [ [ ( {
-9: } ; stack: ( ( [ [ (
-10: ) ; stack: ( ( [ [
-11: [ ; stack: ( ( [ [ [
-12: &lt; ; stack: ( ( [ [ [ &lt;
-13: > ; stack: ( ( [ [ [
-14: ] ; stack: ( ( [ [
-15: ] ; stack: ( ( [
-Now, we have reached the end. The final stack is "( ( [".
-We will need to pop out "[", "(", "(" one by one in that order.
-So, we need "]", ")", ")". So the answer is ] ) ).
-
-Q: Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: &lt; [ &lt; [ { &lt; [ ] &lt; { } > > } ] > { { ( ) } { &lt; [ &lt; > ] > }
-A: Let's think step by step.
-We should process each input one by one and keep track of the stack configuration.
-0: empty stack
-1: &lt; ; stack: &lt;
-2: [ ; stack: &lt; [
-3: &lt; ; stack: &lt; [ &lt;
-4: [ ; stack: &lt; [ &lt; [
-5: { ; stack: &lt; [ &lt; [ {
-6: &lt; ; stack: &lt; [ &lt; [ { &lt;
-7: [ ; stack: &lt; [ &lt; [ { &lt; [
-8: ] ; stack: &lt; [ &lt; [ { &lt;
-9: &lt; ; stack: &lt; [ &lt; [ { &lt; &lt;
-10: { ; stack: &lt; [ &lt; [ { &lt; &lt; {
-11: } ; stack: &lt; [ &lt; [ { &lt; &lt;
-12: > ; stack: &lt; [ &lt; [ { &lt;
-13: > ; stack: &lt; [ &lt; [ {
-14: } ; stack: &lt; [ &lt; [
-15: ] ; stack: &lt; [ &lt;
-16: > ; stack: &lt; [
-17: { ; stack: &lt; [ {
-18: { ; stack: &lt; [ { {
-19: ( ; stack: &lt; [ { { (
-20: ) ; stack: &lt; [ { {
-21: } ; stack: &lt; [ {
-22: { ; stack: &lt; [ { {
-23: &lt; ; stack: &lt; [ { { &lt;
-24: [ ; stack: &lt; [ { { &lt; [
-25: &lt; ; stack: &lt; [ { { &lt; [ &lt;
-26: > ; stack: &lt; [ { { &lt; [
-27: ] ; stack: &lt; [ { { &lt;
-28: > ; stack: &lt; [ { {
-29: } ; stack: &lt; [ {
-Now, we have reached the end. The final stack is "&lt; [ {".
-We will need to pop out "{", "[", "&lt;" one by one in that order.
-So, we need "}", "]", ">". So the answer is } ] >.
-
-Q: Complete the rest of the sequence, making sure that the parentheses are closed properly. Input: [ &lt; { [ ] } > </pre>
-###### answer
-<pre> Let's process the input step by step and keep track of the stack configuration:
-
-0: empty stack
-1: [ ; stack: [
-2: &lt; ; stack: [ &lt;
-3: { ; stack: [ &lt; {
-4: [ ; stack: [ &lt; { [
-5: ] ; stack: [ &lt; { (pops the last [)
-6: } ; stack: [ &lt; (pops the last {)
-7: > ; stack: [ (pops the last &lt;)
-
-Now, we have reached the end. The final stack is "[", which means we have one "[" left to close.
-
-We will need to pop out "[" in that order. So, we need "]" to close it.
-
-Therefore, the answer is `]`. The complete sequence is `[ &lt; { [ ] } > ]`. </pre>
-###### pred
-<pre> ] </pre>
-###### target
-<pre> ] </pre>
-### boolean_expressions/98
+<pre> (B) </pre>
+### boolean_expressions/130
 ###### instruction
 <pre> Evaluate the result of a random Boolean expression.
 
@@ -405,242 +661,30 @@ We first simplify this expression "Z" as follows: "Z = not not ( not ( False ) )
 Let's evaluate A: A = not ( False ) = not False = True.
 Plugging in A, we get: Z = not not ( A ) = not not (True) = not not False = True. So the answer is True.
 
-Q: True or ( True or not True ) is </pre>
+Q: False and False and not True and False is </pre>
 ###### answer
-<pre> Let's evaluate the expression "True or ( True or not True )" step by step, following the rules of Boolean algebra:
+<pre> Let's evaluate the expression "False and False and not True and False" step by step, following the rules of Boolean algebra:
 
-1. **Identify the innermost expression**: The innermost expression is "not True". 
-   - "not True" evaluates to "False".
+1. **Order of Operations**: Remember that "not" has the highest priority, followed by "and", and then "or". However, in this expression, there is no "or", so we focus on "not" and "and".
 
-2. **Substitute the result back into the expression**:
-   - The expression now becomes "True or ( True or False )".
+2. **Simplify the "not" operation**: The expression contains "not True", which simplifies to "False". So, we can rewrite the expression as:
+   \[
+   \text{False and False and not True and False} = \text{False and False and False and False}
+   \]
 
-3. **Evaluate the expression inside the parentheses**: "True or False".
-   - "True or False" evaluates to "True" because in Boolean logic, "or" returns "True" if at least one of the operands is "True".
+3. **Evaluate the "and" operations**: The "and" operation returns "True" only if all operands are "True". Since we have multiple "False" values, the entire expression simplifies to "False". Specifically:
+   \[
+   \text{False and False} = \text{False}
+   \]
+   \[
+   \text{False and False} = \text{False}
+   \]
+   \[
+   \text{False and False} = \text{False}
+   \]
 
-4. **Substitute this result back into the expression**:
-   - The expression now simplifies to "True or True".
-
-5. **Evaluate the final expression**: "True or True".
-   - "True or True" evaluates to "True" because "or" returns "True" if both operands are "True".
-
-So, the final answer is **True**. </pre>
+Therefore, the result of the expression "False and False and not True and False" is **False**. </pre>
 ###### pred
-<pre> True </pre>
+<pre> False </pre>
 ###### target
-<pre> True </pre>
-### object_counting/90
-###### instruction
-<pre> Questions that involve enumerating objects and asking the model to count them.
-
-Q: I have a blackberry, a clarinet, a nectarine, a plum, a strawberry, a banana, a flute, an orange, and a violin. How many fruits do I have?
-A: Let's think step by step.
-We first identify the fruits on the list and include their quantity in parentheses:
-- blackberry (1)
-- nectarine (1)
-- plum (1)
-- strawberry (1)
-- banana (1)
-- orange (1)
-Now, let's add the numbers in parentheses: 1 + 1 + 1 + 1 + 1 + 1 = 6. So the answer is 6.
-
-Q: I have an orange, a raspberry, two peaches, a blackberry, an apple, a grape, a nectarine, and three plums. How many fruits do I have?
-A: Let's think step by step.
-We first identify the fruits on the list and include their quantity in parentheses:
-- orange (1)
-- raspberry (1)
-- peaches (2)
-- blackberry (1)
-- apple (1)
-- grape (1)
-- nectarine (1)
-- plums (3)
-Now, let's add the numbers in parentheses: 1 + 1 + 2 + 1 + 1 + 1 + 1 + 3 = 11. So the answer is 11.
-
-Q: I have a lettuce head, a head of broccoli, an onion, a stalk of celery, two carrots, a garlic, and a yam. How many vegetables do I have?
-A: Let's think step by step.
-We first identify the vegetables on the list and include their quantity in parentheses:
-- lettuce (1)
-- broccoli (1)
-- onion (1)
-- celery (1)
-- carrots (2)
-- garlic (1)
-- yam (1)
-Now, let's add the numbers in parentheses: 1 + 1 + 1 + 1 + 2 + 1 + 1 = 8. So the answer is 8.
-
-Q: I have a peach, an accordion, two clarinets, a drum, a raspberry, two grapes, and a nectarine. How many fruits do I have? </pre>
-###### answer
-<pre> Let's think step by step to identify the fruits in the list and count them:
-
-- peach (1)
-- raspberry (1)
-- grapes (2)
-- nectarine (1)
-
-Now, let's add the numbers in parentheses: 1 + 1 + 2 + 1 = 5.
-
-So, you have 5 fruits. </pre>
-###### pred
-<pre> 5 </pre>
-###### target
-<pre> 5 </pre>
-### movie_recommendation/124
-###### instruction
-<pre> Recommend movies similar to the given list of movies.
-
-Q: Find a movie similar to Star Wars Episode IV - A New Hope, Indiana Jones and the Last Crusade, Star Wars Episode V - The Empire Strikes Back, The Big Lebowski:
-Options:
-(A) Tetsuo
-(B) the Ironman
-(C) The Princess Bride
-(D) The Barkley Marathons The Race That Eats Its Young
-(E) Bug
-A: Let's think step by step.
-- Star Wars Episode IV - A New Hope (action, adventure, fantasy; 1977)
-- Indiana Jones and the Last Crusade (action, adventure; 1989)
-- Star Wars Episode V - The Empire Strikes Back (action, adventure, fantasy; 1980)
-- The Big Lebowski (action, drama, comedy; 1998)
-These are all famous classic American movies produced before 2000. Amongst all the options, the only movie similar to these ones seems to be The Princess Bride (1987). So the answer is (C).
-
-Q: Find a movie similar to Twister, The Silence of the Lambs, Independence Day, Braveheart:
-Options:
-(A) They Shoot Horses
-(B) Don't They
-(C) Forrest Gump
-(D) The Salton Sea
-(E) Extreme Days
-A: Let's think step by step.
-- Twister (action, adventure, thriller; 1996)
-- The Silence of the Lambs (crime, drama, thriller; 1991)
-- Independence Day (action, science-fiction, drama; 1996)
-- Braveheart (biography, drama, epic; 1995)
-These are all famous Hollywood movies produced around the 1990s. Amongst all the options, the only movie similar to these ones seems to be Forrest Gump (comedy, drama, romance; 1994). So the answer is (C).
-
-Q: Find a movie similar to Minority Report, Total Recall, Inside Out, Forrest Gump:
-Options:
-(A) Phenomena
-(B) Lilting
-(C) Catwoman
-(D) Edge of Tomorrow
-A: Let's think step by step.
-- Minority Report (action, crime, mystery; 2002)
-- Total Recall (action, adventure, science-fiction; 2012)
-- Inside Out (animation, family, comedy; 2015)
-- Forrest Gump (comedy, drama, romance; 1994)
-These are all famous movies produced in the past few decades.Amongst all the options, the only movie similar to these ones seems to be Edge of Tomorrow (action, adventure, crime, mystery; 2014), as it is also a science-fiction movie and features Tom Cruise. So the answer is (D).
-
-Q: Find a movie similar to Star Wars Episode V - The Empire Strikes Back, The Usual Suspects, Star Wars Episode IV - A New Hope, The Lord of the Rings The Return of the King:
-Options:
-(A) LA Confidential
-(B) PS I Love You
-(C) Boyz N the Hood
-(D) Let It Ride </pre>
-###### answer
-<pre> Let's think step by step:
-
-- Star Wars Episode V - The Empire Strikes Back (action, adventure, fantasy; 1980)
-- The Usual Suspects (crime, mystery, thriller; 1995)
-- Star Wars Episode IV - A New Hope (action, adventure, fantasy; 1977)
-- The Lord of the Rings: The Return of the King (action, adventure, fantasy; 2003)
-
-These movies are known for their epic storytelling, strong character development, and a blend of action and fantasy elements (with the exception of The Usual Suspects, which is more focused on crime and mystery). Among the options provided:
-
-- (A) LA Confidential (crime, drama, mystery; 1997) - This is a crime drama with a strong narrative, but it does not have the fantasy or epic elements.
-- (B) PS I Love You (drama, romance; 2007) - This is a romantic drama and does not fit the action or fantasy themes.
-- (C) Boyz n the Hood (crime, drama; 1991) - This is a crime drama focused on urban life and does not match the epic or fantasy themes.
-- (D) Let It Ride (crime, drama; 1998) - This is a crime drama with a strong narrative, but it does not have the epic or fantasy elements.
-
-None of the options perfectly match the blend of action, adventure, and fantasy found in the given movies. However, if we consider the strong narrative and character-driven elements, the closest match might be (A) LA Confidential, as it is a well-regarded film with a complex narrative and strong characters, even though it lacks the fantasy aspect. 
-
-Given the options, the best choice is (A) LA Confidential, but it is not a perfect match. </pre>
-###### pred
-<pre> (A) </pre>
-###### target
-<pre> (A) </pre>
-### tracking_shuffled_objects_three_objects/237
-###### instruction
-<pre> A task requiring determining the final positions of a set of objects given their initial positions and a description of a sequence of swaps.
-
-Q: Alice, Bob, and Claire are playing a game. At the start of the game, they are each holding a ball: Alice has a yellow ball, Bob has a blue ball, and Claire has a pink ball.
-As the game progresses, pairs of players trade balls. First, Claire and Alice swap balls. Then, Alice and Bob swap balls. Finally, Claire and Bob swap balls. At the end of the game, Bob has the
-Options:
-(A) yellow ball
-(B) blue ball
-(C) pink ball
-A: Let's think step by step.
-(0) At the start: Alice: yellow, Bob: blue, Claire: pink.
-(1) Claire and Alice swap balls: Alice: pink, Bob: blue, Claire: yellow.
-(2)  Alice and Bob swap balls: Alice: blue, Bob: pink, Claire: yellow.
-(3) Claire and Bob swap balls: Alice: blue, Bob: yellow, Claire: pink.
-At the end of the game, Bob has the yellow ball. So the answer is (A).
-
-Q: Alice, Bob, and Claire are playing a game. At the start of the game, they are each holding a ball: Alice has a white ball, Bob has a purple ball, and Claire has a pink ball.
-As the game progresses, pairs of players trade balls. First, Bob and Alice swap balls. Then, Bob and Claire swap balls. Finally, Bob and Alice swap balls. At the end of the game, Alice has the
-Options:
-(A) white ball
-(B) purple ball
-(C) pink ball
-A: Let's think step by step.
-(0) At the start: Alice: white, Bob: purple, Claire: pink.
-(1) Bob and Alice swap balls: Alice: purple, Bob: white, Claire: pink.
-(2) Bob and Claire swap balls: Alice: purple, Bob: pink, Claire: white.
-(3) Bob and Alice swap balls: Alice: pink, Bob: purple, Claire: white.
-At the end of the game, Alice has the pink ball. So the answer is (C).
-
-Q: Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Lola, Bob is dancing with Rodrigo, and Claire is dancing with Patrick.
-Throughout the song, the dancers often trade partners. First, Alice and Bob switch partners. Then, Claire and Bob switch partners. Finally, Bob and Alice switch partners. At the end of the dance, Alice is dancing with
-Options:
-(A) Lola
-(B) Rodrigo
-(C) Patrick
-A: Let's think step by step.
-(0) At the start: Alice: Lola, Bob: Rodrigo, Claire: Patrick.
-(1) Alice and Bob switch partners: Alice: Rodrigo, Bob: Lola, Claire: Patrick.
-(2) Claire and Bob switch partners: Alice: Rodrigo, Bob: Patrick, Claire: Lola.
-(3) Bob and Alice switch partners: Alice: Patrick, Bob: Rodrigo, Claire: Lola.
-At the end of the dance, Alice is dancing with Patrick. So the answer is (C).
-
-Q: Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Lola, Bob is dancing with Patrick, and Claire is dancing with Melissa.
-Throughout the song, the dancers often trade partners. First, Alice and Claire switch partners. Then, Bob and Claire switch partners. Finally, Claire and Alice switch partners. At the end of the dance, Alice is dancing with
-Options:
-(A) Lola
-(B) Patrick
-(C) Melissa </pre>
-###### answer
-<pre> Let's think step by step.
-
-(0) At the start: Alice: Lola, Bob: Patrick, Claire: Melissa.
-
-(1) Alice and Claire switch partners: Alice: Melissa, Bob: Patrick, Claire: Lola.
-
-(2) Bob and Claire switch partners: Alice: Melissa, Bob: Lola, Claire: Patrick.
-
-(3) Claire and Alice switch partners: Alice: Patrick, Bob: Lola, Claire: Melissa.
-
-At the end of the dance, Alice is dancing with Patrick. So the answer is (B).
- </pre>
-###### pred
-<pre> (B) </pre>
-###### target
-<pre> (B) </pre>
-### sports_understanding/162
-###### instruction
-<pre> Determine whether an artificially constructed sentence relating to sports is plausible or not.
-
-Q: Is the following sentence plausible? "Bam Adebayo scored a reverse layup in the Western Conference Finals."
-A: Let's think step by step. Bam Adebayo is an American basketball player. Scoring a reverse layup in the Western Conference Finals is part of the NBA Finals. So the answer is yes.
-
-Q: Is the following sentence plausible? "Santi Cazorla scored a touchdown."
-A: Let's think step by step. Santi Cazorla is a soccer player. Touchdown is part of American football and rugby. So the answer is no.
-
-Q: Is the following sentence plausible? "DeMar DeRozan was called for the goal tend."
-A: Let's think step by step. DeMar DeRozan is an American basketball player. Goal tending is part of basketball. So the answer is yes.
-
-Q: Is the following sentence plausible? "Gerrit Cole set the hard screen." </pre>
-###### answer
-<pre> Let's think step by step. Gerrit Cole is a professional baseball player, specifically a pitcher. "Setting the hard screen" is not a term used in baseball; it's more related to cricket. So the answer is no. </pre>
-###### pred
-<pre> no </pre>
-###### target
-<pre> no </pre>
+<pre> False </pre>

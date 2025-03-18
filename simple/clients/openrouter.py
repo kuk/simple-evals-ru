@@ -1,6 +1,5 @@
 
 import re
-import asyncio
 
 import aiohttp
 
@@ -16,7 +15,6 @@ class OpenrouterClient:
         self.session = aiohttp.ClientSession()
 
         self.rate_limiter = RateLimiter()
-        self.lock = asyncio.Lock()
         self.model_pricing = {}
 
     async def proc_response(self, response):

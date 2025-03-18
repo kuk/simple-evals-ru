@@ -14,12 +14,6 @@ from simple.registry import (
 CUR_DIR = Path(__file__).parent
 PROJ_DIR = CUR_DIR.parent
 
-RUNPOD_COSTS = {
-    "20_t_pro": 1.351 + 3.069 + 1.635 + 0.677,
-    "19_t_lite": 0.434 + 0.732 + 0.031 + 0.017,
-    "18_cotype_nano": 0.032 + 0.622 + 0.034 + 0.031,
-}
-
 
 if __name__ == "__main__":
     bench_model_stats = defaultdict(dict)
@@ -86,9 +80,6 @@ if __name__ == "__main__":
             cost += stats["cost"]
             scores.append(stats["score"])
             stds.append(stats["std"])
-
-        if model.client == "runpod":
-            cost = RUNPOD_COSTS[model.id]
 
         model_stats[model.id] = {
             "name": model.name,

@@ -27,120 +27,174 @@
 </tr>
 <tr>
 <th> gigachat-lite, 2.00$ </th>
-<td>44.2±5.8%</td>
-<td>71.0±5.0%</td>
-<td>27.3±5.3%</td>
+<td>44.2±5.5%</td>
+<td>71.0±5.5%</td>
+<td>27.3±4.8%</td>
 <td>37.7±6.8%</td>
-<td>36.0±6.5%</td>
-<td>49.2±5.3%</td>
+<td>36.0±5.0%</td>
+<td>49.2±5.0%</td>
 </tr>
 <tr>
 <th> gigachat-pro, 15.00$ </th>
-<td>55.1±5.6%</td>
+<td>55.1±5.3%</td>
 <td>78.5±4.7%</td>
-<td>42.5±4.8%</td>
-<td>45.1±5.8%</td>
-<td>45.5±6.5%</td>
-<td>64.0±5.8%</td>
+<td>42.5±5.0%</td>
+<td>45.1±6.1%</td>
+<td>45.5±5.3%</td>
+<td>64.0±5.0%</td>
 </tr>
 <tr>
 <th> gigachat-max, 19.50$ </th>
-<td>72.2±5.1%</td>
-<td>93.5±3.0%</td>
+<td>72.2±4.9%</td>
+<td>93.5±2.7%</td>
 <td>55.0±6.0%</td>
-<td>72.0±6.7%</td>
-<td>65.0±5.0%</td>
-<td>75.5±4.0%</td>
+<td>72.0±5.2%</td>
+<td>65.0±4.8%</td>
+<td>75.5±5.3%</td>
 </tr>
 <tr>
 <th> yandexgpt-4-lite, 2.00$ </th>
 <td>39.1±5.2%</td>
-<td>67.0±5.5%</td>
-<td>16.0±3.8%</td>
-<td>26.8±5.8%</td>
-<td>30.5±5.8%</td>
-<td>55.0±4.8%</td>
+<td>67.0±5.8%</td>
+<td>16.0±3.3%</td>
+<td>26.8±5.5%</td>
+<td>30.5±5.0%</td>
+<td>55.0±5.8%</td>
 </tr>
 <tr>
 <th> yandexgpt-4-pro, 12.00$ </th>
-<td>54.3±5.5%</td>
-<td>78.5±4.7%</td>
-<td>31.0±5.0%</td>
-<td>42.7±6.4%</td>
-<td>48.5±6.3%</td>
-<td>71.0±5.0%</td>
+<td>54.3±5.4%</td>
+<td>78.5±4.5%</td>
+<td>31.0±5.8%</td>
+<td>42.7±6.1%</td>
+<td>48.5±5.0%</td>
+<td>71.0±5.3%</td>
 </tr>
 <tr>
 <th> yandexgpt-5-pro, 12.00$ </th>
 <td>78.9±4.5%</td>
 <td>93.5±2.5%</td>
-<td>57.5±6.0%</td>
-<td>89.6±3.4%</td>
-<td>70.0±5.3%</td>
-<td>84.0±4.3%</td>
-</tr>
-<tr>
-<th> t-pro, 9.46$ </th>
-<td>80.3±4.4%</td>
-<td>95.0±2.5%</td>
-<td>68.0±5.0%</td>
-<td>81.1±4.3%</td>
-<td>71.0±5.5%</td>
-<td>86.5±4.0%</td>
+<td>57.5±5.5%</td>
+<td>89.6±4.0%</td>
+<td>70.0±5.8%</td>
+<td>84.0±4.0%</td>
 </tr>
 <tr>
 <th> llama-3.1-8b, 0.04$ </th>
-<td>60.1±5.3%</td>
-<td>84.5±4.2%</td>
+<td>60.1±5.2%</td>
+<td>84.5±3.5%</td>
 <td>45.5±4.8%</td>
-<td>63.4±6.1%</td>
-<td>48.5±5.3%</td>
+<td>63.4±5.8%</td>
+<td>48.5±5.8%</td>
 <td>58.5±5.8%</td>
 </tr>
 <tr>
 <th> llama-3.1-8b:yandex, 2.00$ </th>
-<td>63.7±5.2%</td>
-<td>85.4±4.7%</td>
-<td>48.0±5.6%</td>
-<td>70.1±4.9%</td>
-<td>48.5±5.8%</td>
-<td>66.3±4.9%</td>
+<td>63.7±5.0%</td>
+<td>85.4±4.4%</td>
+<td>48.0±4.8%</td>
+<td>70.1±4.6%</td>
+<td>48.5±5.5%</td>
+<td>66.3±5.4%</td>
 </tr>
 <tr>
 <th> llama-3.3-70b, 0.21$ </th>
 <td>84.2±4.2%</td>
-<td>96.0±2.2%</td>
-<td>75.0±5.0%</td>
-<td>86.0±4.6%</td>
-<td>76.4±4.8%</td>
-<td>87.5±4.0%</td>
+<td>96.0±2.0%</td>
+<td>75.0±5.3%</td>
+<td>86.0±4.0%</td>
+<td>76.4±5.0%</td>
+<td>87.5±3.8%</td>
 </tr>
 <tr>
 <th> llama-3.3-70b:yandex, 12.00$ </th>
 <td>83.2±4.3%</td>
 <td>96.0±2.5%</td>
-<td>74.0±4.5%</td>
-<td>84.1±5.2%</td>
-<td>75.5±5.0%</td>
-<td>86.5±3.8%</td>
+<td>74.0±4.8%</td>
+<td>84.1±4.3%</td>
+<td>75.5±5.3%</td>
+<td>86.5±4.0%</td>
 </tr>
 <tr>
 <th> qwen-2.5-72b, 0.28$ </th>
-<td>84.9±4.3%</td>
+<td>84.9±3.8%</td>
 <td>96.5±2.0%</td>
-<td>82.0±4.5%</td>
+<td>82.0±4.0%</td>
 <td>88.4±4.0%</td>
-<td>74.0±5.2%</td>
-<td>83.5±4.8%</td>
+<td>74.0±4.8%</td>
+<td>83.5±3.5%</td>
 </tr>
 <tr>
 <th> deepseek-v3, 0.72$ </th>
-<td>87.8±3.8%</td>
+<td>87.8±3.7%</td>
 <td>96.5±2.0%</td>
-<td>83.0±4.1%</td>
-<td>90.9±3.4%</td>
-<td>79.5±4.8%</td>
-<td>89.0±4.0%</td>
+<td>83.0±4.7%</td>
+<td>90.9±3.7%</td>
+<td>79.5±4.0%</td>
+<td>89.0±3.5%</td>
+</tr>
+<tr>
+<th> cotype-nano, 71.27$ </th>
+<td>33.6±5.2%</td>
+<td>15.5±3.8%</td>
+<td>32.0±5.2%</td>
+<td>52.4±6.2%</td>
+<td>25.5±5.5%</td>
+<td>42.5±5.0%</td>
+</tr>
+<tr>
+<th> t-lite, 0.00$ </th>
+<td>75.2±5.0%</td>
+<td>91.0±3.5%</td>
+<td>68.5±5.6%</td>
+<td>82.3±5.4%</td>
+<td>61.1±5.3%</td>
+<td>73.4±5.1%</td>
+</tr>
+<tr>
+<th> t-pro, 0.00$ </th>
+<td>80.9±4.4%</td>
+<td>95.0±2.5%</td>
+<td>67.2±5.8%</td>
+<td>85.4±4.1%</td>
+<td>70.5±5.3%</td>
+<td>86.5±3.5%</td>
+</tr>
+<tr>
+<th> saiga-yandexgpt, 0.00$ </th>
+<td>70.2±4.9%</td>
+<td>88.5±3.5%</td>
+<td>64.3±4.8%</td>
+<td>73.8±4.9%</td>
+<td>53.0±5.8%</td>
+<td>71.5±5.0%</td>
+</tr>
+<tr>
+<th> saiga-nemo, 0.00$ </th>
+<td>59.4±5.5%</td>
+<td>76.5±4.8%</td>
+<td>38.2±6.3%</td>
+<td>67.1±4.9%</td>
+<td>46.5±5.3%</td>
+<td>68.7±6.1%</td>
+</tr>
+<tr>
+<th> vikhr-yandexgpt, 0.00$ </th>
+<td>57.1±5.4%</td>
+<td>34.0±5.0%</td>
+<td>57.3±5.0%</td>
+<td>73.8±5.8%</td>
+<td>52.3±5.6%</td>
+<td>68.2±5.6%</td>
+</tr>
+<tr>
+<th> ruadapt-qwen, 0.00$ </th>
+<td>82.7±4.4%</td>
+<td>96.5±2.0%</td>
+<td>73.5±5.3%</td>
+<td>88.4±4.3%</td>
+<td>70.4±5.6%</td>
+<td>84.5±3.8%</td>
 </tr>
 </table>
 </section>
@@ -221,14 +275,6 @@
 <td> <a href="reports/correct/bbh/17_yandexgpt_5_pro.md"> 168 ✓ </a> / <a href="reports/errors/bbh/17_yandexgpt_5_pro.md"> 32 ✗</a> </td>
 </tr>
 <tr>
-<th> t-pro </th>
-<td> <a href="reports/correct/mgsm/20_t_pro.md"> 190 ✓ </a> / <a href="reports/errors/mgsm/20_t_pro.md"> 10 ✗</a> </td>
-<td> <a href="reports/correct/math/20_t_pro.md"> 136 ✓ </a> / <a href="reports/errors/math/20_t_pro.md"> 64 ✗</a> </td>
-<td> <a href="reports/correct/humaneval/20_t_pro.md"> 133 ✓ </a> / <a href="reports/errors/humaneval/20_t_pro.md"> 31 ✗</a> </td>
-<td> <a href="reports/correct/mmlu/20_t_pro.md"> 142 ✓ </a> / <a href="reports/errors/mmlu/20_t_pro.md"> 58 ✗</a> </td>
-<td> <a href="reports/correct/bbh/20_t_pro.md"> 173 ✓ </a> / <a href="reports/errors/bbh/20_t_pro.md"> 27 ✗</a> </td>
-</tr>
-<tr>
 <th> llama-3.1-8b </th>
 <td> <a href="reports/correct/mgsm/04_llama_3_1_8b.md"> 169 ✓ </a> / <a href="reports/errors/mgsm/04_llama_3_1_8b.md"> 31 ✗</a> </td>
 <td> <a href="reports/correct/math/04_llama_3_1_8b.md"> 91 ✓ </a> / <a href="reports/errors/math/04_llama_3_1_8b.md"> 109 ✗</a> </td>
@@ -275,6 +321,62 @@
 <td> <a href="reports/correct/humaneval/16_deepseek_v3.md"> 149 ✓ </a> / <a href="reports/errors/humaneval/16_deepseek_v3.md"> 15 ✗</a> </td>
 <td> <a href="reports/correct/mmlu/16_deepseek_v3.md"> 159 ✓ </a> / <a href="reports/errors/mmlu/16_deepseek_v3.md"> 41 ✗</a> </td>
 <td> <a href="reports/correct/bbh/16_deepseek_v3.md"> 178 ✓ </a> / <a href="reports/errors/bbh/16_deepseek_v3.md"> 22 ✗</a> </td>
+</tr>
+<tr>
+<th> cotype-nano </th>
+<td> <a href="reports/correct/mgsm/18_cotype_nano.md"> 31 ✓ </a> / <a href="reports/errors/mgsm/18_cotype_nano.md"> 169 ✗</a> </td>
+<td> <a href="reports/correct/math/18_cotype_nano.md"> 64 ✓ </a> / <a href="reports/errors/math/18_cotype_nano.md"> 136 ✗</a> </td>
+<td> <a href="reports/correct/humaneval/18_cotype_nano.md"> 86 ✓ </a> / <a href="reports/errors/humaneval/18_cotype_nano.md"> 78 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/18_cotype_nano.md"> 51 ✓ </a> / <a href="reports/errors/mmlu/18_cotype_nano.md"> 149 ✗</a> </td>
+<td> <a href="reports/correct/bbh/18_cotype_nano.md"> 85 ✓ </a> / <a href="reports/errors/bbh/18_cotype_nano.md"> 115 ✗</a> </td>
+</tr>
+<tr>
+<th> t-lite </th>
+<td> <a href="reports/correct/mgsm/19_t_lite.md"> 182 ✓ </a> / <a href="reports/errors/mgsm/19_t_lite.md"> 18 ✗</a> </td>
+<td> <a href="reports/correct/math/19_t_lite.md"> 135 ✓ </a> / <a href="reports/errors/math/19_t_lite.md"> 62 ✗</a> </td>
+<td> <a href="reports/correct/humaneval/19_t_lite.md"> 130 ✓ </a> / <a href="reports/errors/humaneval/19_t_lite.md"> 28 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/19_t_lite.md"> 116 ✓ </a> / <a href="reports/errors/mmlu/19_t_lite.md"> 74 ✗</a> </td>
+<td> <a href="reports/correct/bbh/19_t_lite.md"> 146 ✓ </a> / <a href="reports/errors/bbh/19_t_lite.md"> 53 ✗</a> </td>
+</tr>
+<tr>
+<th> t-pro </th>
+<td> <a href="reports/correct/mgsm/20_t_pro.md"> 190 ✓ </a> / <a href="reports/errors/mgsm/20_t_pro.md"> 10 ✗</a> </td>
+<td> <a href="reports/correct/math/20_t_pro.md"> 129 ✓ </a> / <a href="reports/errors/math/20_t_pro.md"> 63 ✗</a> </td>
+<td> <a href="reports/correct/humaneval/20_t_pro.md"> 135 ✓ </a> / <a href="reports/errors/humaneval/20_t_pro.md"> 23 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/20_t_pro.md"> 141 ✓ </a> / <a href="reports/errors/mmlu/20_t_pro.md"> 59 ✗</a> </td>
+<td> <a href="reports/correct/bbh/20_t_pro.md"> 173 ✓ </a> / <a href="reports/errors/bbh/20_t_pro.md"> 27 ✗</a> </td>
+</tr>
+<tr>
+<th> saiga-yandexgpt </th>
+<td> <a href="reports/correct/mgsm/21_saiga.md"> 177 ✓ </a> / <a href="reports/errors/mgsm/21_saiga.md"> 23 ✗</a> </td>
+<td> <a href="reports/correct/math/21_saiga.md"> 128 ✓ </a> / <a href="reports/errors/math/21_saiga.md"> 71 ✗</a> </td>
+<td> <a href="reports/correct/humaneval/21_saiga.md"> 121 ✓ </a> / <a href="reports/errors/humaneval/21_saiga.md"> 43 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/21_saiga.md"> 106 ✓ </a> / <a href="reports/errors/mmlu/21_saiga.md"> 94 ✗</a> </td>
+<td> <a href="reports/correct/bbh/21_saiga.md"> 143 ✓ </a> / <a href="reports/errors/bbh/21_saiga.md"> 57 ✗</a> </td>
+</tr>
+<tr>
+<th> saiga-nemo </th>
+<td> <a href="reports/correct/mgsm/23_saiga.md"> 153 ✓ </a> / <a href="reports/errors/mgsm/23_saiga.md"> 47 ✗</a> </td>
+<td> <a href="reports/correct/math/23_saiga.md"> 76 ✓ </a> / <a href="reports/errors/math/23_saiga.md"> 123 ✗</a> </td>
+<td> <a href="reports/correct/humaneval/23_saiga.md"> 110 ✓ </a> / <a href="reports/errors/humaneval/23_saiga.md"> 54 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/23_saiga.md"> 92 ✓ </a> / <a href="reports/errors/mmlu/23_saiga.md"> 106 ✗</a> </td>
+<td> <a href="reports/correct/bbh/23_saiga.md"> 136 ✓ </a> / <a href="reports/errors/bbh/23_saiga.md"> 62 ✗</a> </td>
+</tr>
+<tr>
+<th> vikhr-yandexgpt </th>
+<td> <a href="reports/correct/mgsm/22_vikhr.md"> 68 ✓ </a> / <a href="reports/errors/mgsm/22_vikhr.md"> 132 ✗</a> </td>
+<td> <a href="reports/correct/math/22_vikhr.md"> 114 ✓ </a> / <a href="reports/errors/math/22_vikhr.md"> 85 ✗</a> </td>
+<td> <a href="reports/correct/humaneval/22_vikhr.md"> 121 ✓ </a> / <a href="reports/errors/humaneval/22_vikhr.md"> 43 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/22_vikhr.md"> 104 ✓ </a> / <a href="reports/errors/mmlu/22_vikhr.md"> 95 ✗</a> </td>
+<td> <a href="reports/correct/bbh/22_vikhr.md"> 135 ✓ </a> / <a href="reports/errors/bbh/22_vikhr.md"> 63 ✗</a> </td>
+</tr>
+<tr>
+<th> ruadapt-qwen </th>
+<td> <a href="reports/correct/mgsm/24_ruadapt.md"> 193 ✓ </a> / <a href="reports/errors/mgsm/24_ruadapt.md"> 7 ✗</a> </td>
+<td> <a href="reports/correct/math/24_ruadapt.md"> 147 ✓ </a> / <a href="reports/errors/math/24_ruadapt.md"> 53 ✗</a> </td>
+<td> <a href="reports/correct/humaneval/24_ruadapt.md"> 145 ✓ </a> / <a href="reports/errors/humaneval/24_ruadapt.md"> 19 ✗</a> </td>
+<td> <a href="reports/correct/mmlu/24_ruadapt.md"> 140 ✓ </a> / <a href="reports/errors/mmlu/24_ruadapt.md"> 59 ✗</a> </td>
+<td> <a href="reports/correct/bbh/24_ruadapt.md"> 169 ✓ </a> / <a href="reports/errors/bbh/24_ruadapt.md"> 31 ✗</a> </td>
 </tr>
 </table>
 </section>
@@ -366,14 +468,6 @@
 <td> 200 / 2.8$ </td>
 </tr>
 <tr>
-<th> t-pro </th>
-<td> 200 / 0.0$ </td>
-<td> 200 / 0.0$ </td>
-<td> 164 / 0.0$ </td>
-<td> 200 / 0.0$ </td>
-<td> 200 / 0.0$ </td>
-</tr>
-<tr>
 <th> llama-3.1-8b </th>
 <td> 200 / 0.0$ </td>
 <td> 200 / 0.0$ </td>
@@ -421,6 +515,62 @@
 <td> 200 / 0.1$ </td>
 <td> 200 / 0.1$ </td>
 </tr>
+<tr>
+<th> cotype-nano </th>
+<td> 200 / 0.0$ </td>
+<td> 200 / 0.0$ </td>
+<td> 164 / 0.0$ </td>
+<td> 200 / 0.0$ </td>
+<td> 200 / 0.0$ </td>
+</tr>
+<tr>
+<th> t-lite </th>
+<td> 200 / 0.0$ </td>
+<td> 197 / 0.0$ </td>
+<td> 158 / 0.0$ </td>
+<td> 190 / 0.0$ </td>
+<td> 199 / 0.0$ </td>
+</tr>
+<tr>
+<th> t-pro </th>
+<td> 200 / 0.0$ </td>
+<td> 192 / 0.0$ </td>
+<td> 158 / 0.0$ </td>
+<td> 200 / 0.0$ </td>
+<td> 200 / 0.0$ </td>
+</tr>
+<tr>
+<th> saiga-yandexgpt </th>
+<td> 200 / 0.0$ </td>
+<td> 199 / 0.0$ </td>
+<td> 164 / 0.0$ </td>
+<td> 200 / 0.0$ </td>
+<td> 200 / 0.0$ </td>
+</tr>
+<tr>
+<th> saiga-nemo </th>
+<td> 200 / 0.0$ </td>
+<td> 199 / 0.0$ </td>
+<td> 164 / 0.0$ </td>
+<td> 198 / 0.0$ </td>
+<td> 198 / 0.0$ </td>
+</tr>
+<tr>
+<th> vikhr-yandexgpt </th>
+<td> 200 / 0.0$ </td>
+<td> 199 / 0.0$ </td>
+<td> 164 / 0.0$ </td>
+<td> 199 / 0.0$ </td>
+<td> 198 / 0.0$ </td>
+</tr>
+<tr>
+<th> ruadapt-qwen </th>
+<td> 200 / 0.0$ </td>
+<td> 200 / 0.0$ </td>
+<td> 164 / 0.0$ </td>
+<td> 199 / 0.0$ </td>
+<td> 200 / 0.0$ </td>
+</tr>
 </table>
 </section>
 
@@ -463,6 +613,8 @@ head -3 data/benches/bbh.jsonl | jq .
 uv run scripts/run_benches.py -k 1
 uv run scripts/run_benches.py -k 100 -b{mgsm,math,mmlu,bbh}
 uv run scripts/run_benches.py -k 200 -m{07_yandexgpt_4_lite,08_gigachat_lite,10_llama_3_1_8b,11_yandexgpt_4_pro,12_gigachat_pro,13_llama_3_3_70b,14_gigachat_max}
+
+uv run scripts/run_benches.py -k 10 -m 19_t_lite
 ```
 
 ```
@@ -488,3 +640,29 @@ uv run ruff check $(find $PROJ/simple $PROJ/scripts $PROJ/tests -name '*.py')
 uv run pytest -s $PROJ/tests/*.py
 ```
 
+```
+H100 / A100, 80+ gb VRAM, spot
+vllm/vllm-openai:v0.7.3
+HF_TOKEN
+TCP port 8000
+
+--model IlyaGusev/saiga_yandexgpt_8b  --dtype bfloat16 --max-model-len 8192 --gpu-memory-utilization 0.95 --host 0.0.0.0 --port 8000
+volume 25 Gb
+
+--model IlyaGusev/saiga_nemo_12b --revision d4f39574 --dtype bfloat16 --max-model-len 8192 --gpu-memory-utilization 0.95 --host 0.0.0.0 --port 8000
+volume 30 Gb
+
+--model Vikhrmodels/Vikhr-YandexGPT-5-Lite-8B-it --dtype bfloat16 --max-model-len 8192 --gpu-memory-utilization 0.95 --host 0.0.0.0 --port 8000
+volume 20 Gb
+
+--model t-tech/T-lite-it-1.0 --revision fbabc76 --dtype bfloat16 --max-model-len 8192 --gpu-memory-utilization 0.95 --host 0.0.0.0 --port 8000
+volume 20 Gb
+
+--model t-tech/T-pro-it-1.0 --revision f88b5bf --dtype bfloat16 --max-model-len 8192 --gpu-memory-utilization 0.95 --host 0.0.0.0 --port 8000
+volume 75 Gb
+
+--model msu-rcc-lair/RuadaptQwen2.5-32B-Instruct --revision a8e35ac --dtype bfloat16 --max-model-len 8192 --gpu-memory-utilization 0.95 --host 0.0.0.0 --port 8000
+volume 75 Gb
+
+
+```

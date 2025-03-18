@@ -59,7 +59,7 @@ class GigachatClient:
         return await response.json()
 
     @retrying
-    async def completions(self, model, messages, temperature=0, max_tokens=16000):
+    async def completions(self, model, messages, temperature=0, max_tokens=4000):
         # curl "https://gigachat.devices.sberbank.ru/api/v1/chat/completions" \
         # -H "Content-Type: application/json" \
         # -H "Accept: application/json" \
@@ -96,7 +96,7 @@ class GigachatClient:
                     "max_tokens": max_tokens,
                     "stream": False,
                 },
-                timeout=aiohttp.ClientTimeout(total=120),
+                timeout=aiohttp.ClientTimeout(total=300),
             )
 
             # {"choices": [{"message": {"content": "$1 + 1 = 2$.", "role": "assistant"},

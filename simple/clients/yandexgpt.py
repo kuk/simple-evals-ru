@@ -33,7 +33,7 @@ class YandexgptClient:
         self.semaphore = asyncio.Semaphore(10)
 
     @retrying
-    async def completion(self, model, messages, temperature=0, max_tokens=8000):
+    async def completion(self, model, messages, temperature=0, max_tokens=4000):
         # https://yandex.cloud/ru/docs/foundation-models/text-generation/api-ref/TextGeneration/completion
 
         async with self.semaphore:
@@ -51,7 +51,7 @@ class YandexgptClient:
                     },
                     "messages": messages
                 },
-                timeout=aiohttp.ClientTimeout(total=120)
+                timeout=aiohttp.ClientTimeout(total=300)
             )
             response.raise_for_status()
             data = await response.json()

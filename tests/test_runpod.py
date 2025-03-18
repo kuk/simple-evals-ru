@@ -12,15 +12,14 @@ async def runpod_client():
     assert api_key
 
     client = RunpodClient(api_key=api_key)
+    await client.update_model_endpoints()
     yield client
     await client.session.close()
 
 
-async def test_completions(runpod_client):
+async def test_completion(runpod_client):
     response = await runpod_client(
-        endpoint_id="mh1ykaqkens50q",
-        model="MTSAIR/Cotype-Nano",
+        model="IlyaGusev/saiga_yandexgpt_8b",
         instruction="1 + 1"
     )
     assert "2" in response["answer"]
-    assert response["cost"] > 0

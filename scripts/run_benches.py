@@ -90,7 +90,7 @@ async def monitor(context):
         await asyncio.sleep(.1)
 
 
-def init_context(context, bench_ids, model_ids):
+async def init_context(context, bench_ids, model_ids):
     for bench_id in bench_ids:
         bench = ID_BENCHES[bench_id]
         for req in bench.reqs:
@@ -146,12 +146,31 @@ def init_context(context, bench_ids, model_ids):
         else:
             raise ValueError(model.client)
 
+    client = context.get("openrouter")
+    if client:
+        logger.info("Openrouter update model pricing")
+        await client.update_model_pricing()
+
+    client = context.get("runpod")
+    if client:
+        logger.info("Runpod update model endpoints")
+        await client.update_model_endpoints()
+
+    for model_id in model_ids:
+        model = ID_MODELS[model_id]
+
+        if model.client == "openrouter":
+            model_exists = model.client_model in client.model_pricing
+            assert model_exists, f'Openrouter non exist "{model.client_model}"'
+
+        elif model.client == "runpod":
+            model_exists = model.client_model in client.model_endpoints
+            assert model_exists, f'Runpod non exist "{model.client_model}"'
+
 
 async def update_context(context):
     client = context.get("openrouter")
     if client:
-        if not client.model_pricing:
-            await client.update_model_pricing()
         await client.update_rate_limit()
         logger.info(
             "Openrouter rate limit %d reqs / %d secs",
@@ -211,8 +230,9 @@ async def main(args):
         "bench_cost": 0,
     }
     try:
-        init_context(context, args.bench_ids, args.model_ids)
+        await init_context(context, args.bench_ids, args.model_ids)
         await update_context(context)
+
         worker_coros = []
         for bench_id in args.bench_ids:
             task_items = load_task_items(bench_id, args.first_k_tasks)
@@ -231,12 +251,6 @@ async def main(args):
                         context[model.client],
                         model=model.client_model,
                     )
-                    if model.client == "runpod":
-                        model_client = partial(
-                            model_client,
-                            endpoint_id=model.client_endpoint_id
-                        )
-                        
                     res_item = {
                         "id": task_item["id"]
                     }
@@ -255,7 +269,7 @@ async def main(args):
         if context["total"] == 0:
             logger.into("Nothing to do, total=0")
         elif context["total"] == context["in_cache"]:
-            logger.info("Nothing to do, in_cache=%d", context["in_cache"])
+            logger.info("Nothing to do, total=in_cache=%d", context["in_cache"])
 
     finally:
         await close_context(context)

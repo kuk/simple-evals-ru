@@ -1,4 +1,4 @@
-# mgsm-en / ruadapt-qwen
+# mgsm-en / ruadapt-qwen-32b
 ### 100
 ###### instruction
 <pre> Solve this math problem. Give the reasoning steps before giving the final answer on the last line by itself in the format of "Answer:". Do not add anything other than the integer answer after "Answer:".

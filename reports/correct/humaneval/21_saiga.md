@@ -1,4 +1,4 @@
-# humaneval / saiga-yandexgpt
+# humaneval / saiga-yandexgpt-8b
 ### HumanEval/122
 ###### instruction
 <pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.

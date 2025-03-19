@@ -1,4 +1,4 @@
-# math-500 / vikhr-yandexgpt
+# math-500 / vikhr-yandexgpt-8b
 ### 3484
 ###### instruction
 <pre> Solve the following math problem step by step. The last line of your response should be of the form Answer: $ANSWER (without quotes) where $ANSWER is the answer to the problem.

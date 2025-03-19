@@ -1,4 +1,4 @@
-# bbh-1k / t-lite
+# bbh-1k / t-lite-8b
 ### dyck_languages/245
 ###### instruction
 <pre> Correctly close a Dyck-n word.

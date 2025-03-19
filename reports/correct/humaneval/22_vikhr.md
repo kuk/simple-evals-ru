@@ -1,4 +1,4 @@
-# humaneval / vikhr-yandexgpt
+# humaneval / vikhr-yandexgpt-8b
 ### HumanEval/18
 ###### instruction
 <pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.

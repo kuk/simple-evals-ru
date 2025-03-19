@@ -1,13 +1,37 @@
 {
   "bench_model_stats": {
     "mgsm": {
+      "25_gigachat_lite": {
+        "model_name": "gigachat-2-lite",
+        "bench_name": "mgsm-en",
+        "tokens": 60385,
+        "cost": 0.12076999999999993,
+        "score": 0.875,
+        "std": 0.040000000000000036
+      },
+      "26_gigachat_pro": {
+        "model_name": "gigachat-2-pro",
+        "bench_name": "mgsm-en",
+        "tokens": 68591,
+        "cost": 1.0288649999999995,
+        "score": 0.945,
+        "std": 0.025124999999999953
+      },
+      "27_gigachat_max": {
+        "model_name": "gigachat-2-max",
+        "bench_name": "mgsm-en",
+        "tokens": 66632,
+        "cost": 1.2993239999999993,
+        "score": 0.935,
+        "std": 0.03262499999999996
+      },
       "08_gigachat_lite": {
         "model_name": "gigachat-lite",
         "bench_name": "mgsm-en",
         "tokens": 87334,
         "cost": 0.17466800000000002,
         "score": 0.71,
-        "std": 0.05262499999999998
+        "std": 0.05287499999999995
       },
       "12_gigachat_pro": {
         "model_name": "gigachat-pro",
@@ -15,7 +39,7 @@
         "tokens": 79235,
         "cost": 1.1885250000000003,
         "score": 0.785,
-        "std": 0.04262499999999997
+        "std": 0.050124999999999975
       },
       "14_gigachat_max": {
         "model_name": "gigachat-max",
@@ -23,23 +47,7 @@
         "tokens": 53329,
         "cost": 1.0399155,
         "score": 0.935,
-        "std": 0.030124999999999957
-      },
-      "07_yandexgpt_4_lite": {
-        "model_name": "yandexgpt-4-lite",
-        "bench_name": "mgsm-en",
-        "tokens": 48660,
-        "cost": 0.09731999999999993,
-        "score": 0.67,
-        "std": 0.05762499999999998
-      },
-      "11_yandexgpt_4_pro": {
-        "model_name": "yandexgpt-4-pro",
-        "bench_name": "mgsm-en",
-        "tokens": 50505,
-        "cost": 0.6060599999999999,
-        "score": 0.785,
-        "std": 0.050124999999999975
+        "std": 0.02524999999999994
       },
       "17_yandexgpt_5_pro": {
         "model_name": "yandexgpt-5-pro",
@@ -49,64 +57,24 @@
         "score": 0.935,
         "std": 0.02999999999999997
       },
-      "04_llama_3_1_8b": {
-        "model_name": "llama-3.1-8b",
+      "07_yandexgpt_4_lite": {
+        "model_name": "yandexgpt-4-lite",
         "bench_name": "mgsm-en",
-        "tokens": 92800,
-        "cost": 0.0039029900000000007,
-        "score": 0.845,
-        "std": 0.040124999999999966
+        "tokens": 48660,
+        "cost": 0.09731999999999993,
+        "score": 0.67,
+        "std": 0.05774999999999997
       },
-      "10_llama_3_1_8b": {
-        "model_name": "llama-3.1-8b:yandex",
+      "11_yandexgpt_4_pro": {
+        "model_name": "yandexgpt-4-pro",
         "bench_name": "mgsm-en",
-        "tokens": 55976,
-        "cost": 0.11195200000000001,
-        "score": 0.8541666666666666,
-        "std": 0.04179687500000001
-      },
-      "05_llama_3_3_70b": {
-        "model_name": "llama-3.3-70b",
-        "bench_name": "mgsm-en",
-        "tokens": 59797,
-        "cost": 0.013667700000000012,
-        "score": 0.96,
-        "std": 0.020000000000000018
-      },
-      "13_llama_3_3_70b": {
-        "model_name": "llama-3.3-70b:yandex",
-        "bench_name": "mgsm-en",
-        "tokens": 58277,
-        "cost": 0.6993240000000001,
-        "score": 0.96,
-        "std": 0.022499999999999964
-      },
-      "15_qwen_2_5_72b": {
-        "model_name": "qwen-2.5-72b",
-        "bench_name": "mgsm-en",
-        "tokens": 70804,
-        "cost": 0.02226091,
-        "score": 0.965,
-        "std": 0.020125000000000004
-      },
-      "16_deepseek_v3": {
-        "model_name": "deepseek-v3",
-        "bench_name": "mgsm-en",
-        "tokens": 56748,
-        "cost": 0.04216171999999999,
-        "score": 0.965,
-        "std": 0.02250000000000002
-      },
-      "18_cotype_nano": {
-        "model_name": "cotype-nano",
-        "bench_name": "mgsm-en",
-        "tokens": 28017,
-        "cost": 8.287334905784979,
-        "score": 0.155,
-        "std": 0.04
+        "tokens": 50505,
+        "cost": 0.6060599999999999,
+        "score": 0.785,
+        "std": 0.042749999999999955
       },
       "19_t_lite": {
-        "model_name": "t-lite",
+        "model_name": "t-lite-8b",
         "bench_name": "mgsm-en",
         "tokens": 76948,
         "cost": 0,
@@ -114,54 +82,102 @@
         "std": 0.03249999999999997
       },
       "20_t_pro": {
-        "model_name": "t-pro",
+        "model_name": "t-pro-32b",
         "bench_name": "mgsm-en",
         "tokens": 78233,
         "cost": 0,
         "score": 0.95,
-        "std": 0.022499999999999964
+        "std": 0.02262499999999995
       },
       "21_saiga": {
-        "model_name": "saiga-yandexgpt",
+        "model_name": "saiga-yandexgpt-8b",
         "bench_name": "mgsm-en",
         "tokens": 52417,
         "cost": 0,
         "score": 0.885,
-        "std": 0.040000000000000036
-      },
-      "23_saiga": {
-        "model_name": "saiga-nemo",
-        "bench_name": "mgsm-en",
-        "tokens": 63984,
-        "cost": 0,
-        "score": 0.765,
-        "std": 0.040000000000000036
+        "std": 0.03762500000000002
       },
       "22_vikhr": {
-        "model_name": "vikhr-yandexgpt",
+        "model_name": "vikhr-yandexgpt-8b",
         "bench_name": "mgsm-en",
         "tokens": 30477,
         "cost": 0,
         "score": 0.34,
-        "std": 0.05049999999999999
+        "std": 0.06
       },
       "24_ruadapt": {
-        "model_name": "ruadapt-qwen",
+        "model_name": "ruadapt-qwen-32b",
         "bench_name": "mgsm-en",
         "tokens": 63485,
         "cost": 0,
         "score": 0.965,
+        "std": 0.020000000000000018
+      },
+      "06_qwen_2_5_7b": {
+        "model_name": "qwen-2.5-7b",
+        "bench_name": "mgsm-en",
+        "tokens": 70815,
+        "cost": 0.0029857499999999997,
+        "score": 0.92,
+        "std": 0.02999999999999997
+      },
+      "28_qwen_2_5_32b": {
+        "model_name": "qwen-2.5-32b",
+        "bench_name": "mgsm-en",
+        "tokens": 64306,
+        "cost": 0.050801739999999984,
+        "score": 0.96,
+        "std": 0.022749999999999937
+      },
+      "15_qwen_2_5_72b": {
+        "model_name": "qwen-2.5-72b",
+        "bench_name": "mgsm-en",
+        "tokens": 70804,
+        "cost": 0.02226091,
+        "score": 0.965,
         "std": 0.022625000000000006
+      },
+      "16_deepseek_v3": {
+        "model_name": "deepseek-v3",
+        "bench_name": "mgsm-en",
+        "tokens": 56748,
+        "cost": 0.04216171999999999,
+        "score": 0.965,
+        "std": 0.020000000000000018
       }
     },
     "math": {
+      "25_gigachat_lite": {
+        "model_name": "gigachat-2-lite",
+        "bench_name": "math-500",
+        "tokens": 119463,
+        "cost": 0.23892600000000006,
+        "score": 0.6,
+        "std": 0.05499999999999999
+      },
+      "26_gigachat_pro": {
+        "model_name": "gigachat-2-pro",
+        "bench_name": "math-500",
+        "tokens": 125875,
+        "cost": 1.8881250000000005,
+        "score": 0.715,
+        "std": 0.04512499999999997
+      },
+      "27_gigachat_max": {
+        "model_name": "gigachat-2-max",
+        "bench_name": "math-500",
+        "tokens": 113361,
+        "cost": 2.2105395000000003,
+        "score": 0.675,
+        "std": 0.04774999999999996
+      },
       "08_gigachat_lite": {
         "model_name": "gigachat-lite",
         "bench_name": "math-500",
         "tokens": 140901,
         "cost": 0.281802,
         "score": 0.2727272727272727,
-        "std": 0.050505050505050525
+        "std": 0.04558080808080808
       },
       "12_gigachat_pro": {
         "model_name": "gigachat-pro",
@@ -169,7 +185,7 @@
         "tokens": 134354,
         "cost": 2.0153099999999986,
         "score": 0.425,
-        "std": 0.060124999999999984
+        "std": 0.045125
       },
       "14_gigachat_max": {
         "model_name": "gigachat-max",
@@ -177,23 +193,7 @@
         "tokens": 111107,
         "cost": 2.1665864999999997,
         "score": 0.55,
-        "std": 0.05762499999999998
-      },
-      "07_yandexgpt_4_lite": {
-        "model_name": "yandexgpt-4-lite",
-        "bench_name": "math-500",
-        "tokens": 68968,
-        "cost": 0.13793599999999995,
-        "score": 0.16,
-        "std": 0.03275
-      },
-      "11_yandexgpt_4_pro": {
-        "model_name": "yandexgpt-4-pro",
-        "bench_name": "math-500",
-        "tokens": 88692,
-        "cost": 1.0643040000000001,
-        "score": 0.31,
-        "std": 0.05499999999999999
+        "std": 0.05262499999999998
       },
       "17_yandexgpt_5_pro": {
         "model_name": "yandexgpt-5-pro",
@@ -201,39 +201,79 @@
         "tokens": 95106,
         "cost": 1.1412720000000007,
         "score": 0.575,
-        "std": 0.044999999999999984
+        "std": 0.06
       },
-      "04_llama_3_1_8b": {
-        "model_name": "llama-3.1-8b",
+      "07_yandexgpt_4_lite": {
+        "model_name": "yandexgpt-4-lite",
         "bench_name": "math-500",
-        "tokens": 292432,
-        "cost": 0.01368986000000001,
-        "score": 0.455,
-        "std": 0.05762499999999998
+        "tokens": 68968,
+        "cost": 0.13793599999999995,
+        "score": 0.16,
+        "std": 0.04024999999999998
       },
-      "10_llama_3_1_8b": {
-        "model_name": "llama-3.1-8b:yandex",
+      "11_yandexgpt_4_pro": {
+        "model_name": "yandexgpt-4-pro",
         "bench_name": "math-500",
-        "tokens": 189422,
-        "cost": 0.378844,
-        "score": 0.48,
-        "std": 0.05762500000000001
+        "tokens": 88692,
+        "cost": 1.0643040000000001,
+        "score": 0.31,
+        "std": 0.05262499999999998
       },
-      "05_llama_3_3_70b": {
-        "model_name": "llama-3.3-70b",
+      "19_t_lite": {
+        "model_name": "t-lite-8b",
         "bench_name": "math-500",
-        "tokens": 150633,
-        "cost": 0.03973859999999998,
-        "score": 0.75,
-        "std": 0.04750000000000004
+        "tokens": 172052,
+        "cost": 0,
+        "score": 0.675,
+        "std": 0.050124999999999975
       },
-      "13_llama_3_3_70b": {
-        "model_name": "llama-3.3-70b:yandex",
+      "20_t_pro": {
+        "model_name": "t-pro-32b",
         "bench_name": "math-500",
-        "tokens": 147139,
-        "cost": 1.7656680000000002,
-        "score": 0.74,
-        "std": 0.04525000000000001
+        "tokens": 144280,
+        "cost": 0,
+        "score": 0.675,
+        "std": 0.04774999999999996
+      },
+      "21_saiga": {
+        "model_name": "saiga-yandexgpt-8b",
+        "bench_name": "math-500",
+        "tokens": 134319,
+        "cost": 0,
+        "score": 0.6432160804020101,
+        "std": 0.06293969849246234
+      },
+      "22_vikhr": {
+        "model_name": "vikhr-yandexgpt-8b",
+        "bench_name": "math-500",
+        "tokens": 147081,
+        "cost": 0,
+        "score": 0.5728643216080402,
+        "std": 0.05050251256281413
+      },
+      "24_ruadapt": {
+        "model_name": "ruadapt-qwen-32b",
+        "bench_name": "math-500",
+        "tokens": 123629,
+        "cost": 0,
+        "score": 0.735,
+        "std": 0.055249999999999966
+      },
+      "06_qwen_2_5_7b": {
+        "model_name": "qwen-2.5-7b",
+        "bench_name": "math-500",
+        "tokens": 151797,
+        "cost": 0.0068655500000000015,
+        "score": 0.73,
+        "std": 0.04262499999999997
+      },
+      "28_qwen_2_5_32b": {
+        "model_name": "qwen-2.5-32b",
+        "bench_name": "math-500",
+        "tokens": 134385,
+        "cost": 0.10616414999999996,
+        "score": 0.77,
+        "std": 0.04275000000000001
       },
       "15_qwen_2_5_72b": {
         "model_name": "qwen-2.5-72b",
@@ -241,81 +281,49 @@
         "tokens": 153751,
         "cost": 0.05360775999999999,
         "score": 0.82,
-        "std": 0.040124999999999966
+        "std": 0.03774999999999995
       },
       "16_deepseek_v3": {
         "model_name": "deepseek-v3",
         "bench_name": "math-500",
-        "tokens": 111716,
-        "cost": 0.08971883999999998,
-        "score": 0.8296703296703297,
-        "std": 0.04684065934065934
-      },
-      "18_cotype_nano": {
-        "model_name": "cotype-nano",
-        "bench_name": "math-500",
-        "tokens": 141599,
-        "cost": 8.47351053605299,
-        "score": 0.32,
-        "std": 0.047874999999999945
-      },
-      "19_t_lite": {
-        "model_name": "t-lite",
-        "bench_name": "math-500",
-        "tokens": 172052,
-        "cost": 0,
-        "score": 0.675,
-        "std": 0.050375
-      },
-      "20_t_pro": {
-        "model_name": "t-pro",
-        "bench_name": "math-500",
-        "tokens": 144280,
-        "cost": 0,
-        "score": 0.675,
-        "std": 0.04999999999999999
-      },
-      "21_saiga": {
-        "model_name": "saiga-yandexgpt",
-        "bench_name": "math-500",
-        "tokens": 134319,
-        "cost": 0,
-        "score": 0.6432160804020101,
-        "std": 0.06293969849246228
-      },
-      "23_saiga": {
-        "model_name": "saiga-nemo",
-        "bench_name": "math-500",
-        "tokens": 122561,
-        "cost": 0,
-        "score": 0.38190954773869346,
-        "std": 0.05301507537688441
-      },
-      "22_vikhr": {
-        "model_name": "vikhr-yandexgpt",
-        "bench_name": "math-500",
-        "tokens": 147081,
-        "cost": 0,
-        "score": 0.5728643216080402,
-        "std": 0.05791457286432161
-      },
-      "24_ruadapt": {
-        "model_name": "ruadapt-qwen",
-        "bench_name": "math-500",
-        "tokens": 123629,
-        "cost": 0,
-        "score": 0.735,
-        "std": 0.05024999999999996
+        "tokens": 137617,
+        "cost": 0.12143623999999999,
+        "score": 0.8131313131313131,
+        "std": 0.04292929292929293
       }
     },
     "humaneval": {
+      "25_gigachat_lite": {
+        "model_name": "gigachat-2-lite",
+        "bench_name": "humaneval",
+        "tokens": 45107,
+        "cost": 0.09021399999999997,
+        "score": 0.6951219512195121,
+        "std": 0.04908536585365847
+      },
+      "26_gigachat_pro": {
+        "model_name": "gigachat-2-pro",
+        "bench_name": "humaneval",
+        "tokens": 43325,
+        "cost": 0.649875,
+        "score": 0.8658536585365854,
+        "std": 0.04268292682926833
+      },
+      "27_gigachat_max": {
+        "model_name": "gigachat-2-max",
+        "bench_name": "humaneval",
+        "tokens": 46343,
+        "cost": 0.9036885000000007,
+        "score": 0.8414634146341463,
+        "std": 0.045731707317073156
+      },
       "08_gigachat_lite": {
         "model_name": "gigachat-lite",
         "bench_name": "humaneval",
         "tokens": 54432,
         "cost": 0.10886400000000003,
         "score": 0.3765432098765432,
-        "std": 0.06203703703703703
+        "std": 0.06219135802469136
       },
       "12_gigachat_pro": {
         "model_name": "gigachat-pro",
@@ -323,7 +331,7 @@
         "tokens": 52317,
         "cost": 0.784755,
         "score": 0.45121951219512196,
-        "std": 0.06707317073170732
+        "std": 0.06417682926829268
       },
       "14_gigachat_max": {
         "model_name": "gigachat-max",
@@ -331,7 +339,15 @@
         "tokens": 42404,
         "cost": 0.826878,
         "score": 0.7195121951219512,
-        "std": 0.0548780487804878
+        "std": 0.0553353658536585
+      },
+      "17_yandexgpt_5_pro": {
+        "model_name": "yandexgpt-5-pro",
+        "bench_name": "humaneval",
+        "tokens": 46665,
+        "cost": 0.5599799999999999,
+        "score": 0.8963414634146342,
+        "std": 0.03963414634146345
       },
       "07_yandexgpt_4_lite": {
         "model_name": "yandexgpt-4-lite",
@@ -347,47 +363,63 @@
         "tokens": 51406,
         "cost": 0.6168719999999999,
         "score": 0.4268292682926829,
-        "std": 0.06402439024390244
+        "std": 0.05807926829268292
       },
-      "17_yandexgpt_5_pro": {
-        "model_name": "yandexgpt-5-pro",
+      "19_t_lite": {
+        "model_name": "t-lite-8b",
         "bench_name": "humaneval",
-        "tokens": 46665,
-        "cost": 0.5599799999999999,
-        "score": 0.8963414634146342,
-        "std": 0.039634146341463394
+        "tokens": 109813,
+        "cost": 0,
+        "score": 0.8170731707317073,
+        "std": 0.05182926829268292
       },
-      "04_llama_3_1_8b": {
-        "model_name": "llama-3.1-8b",
+      "20_t_pro": {
+        "model_name": "t-pro-32b",
         "bench_name": "humaneval",
-        "tokens": 54991,
-        "cost": 0.0018562699999999997,
-        "score": 0.6341463414634146,
-        "std": 0.05823170731707317
+        "tokens": 89631,
+        "cost": 0,
+        "score": 0.8353658536585366,
+        "std": 0.04588414634146337
       },
-      "10_llama_3_1_8b": {
-        "model_name": "llama-3.1-8b:yandex",
+      "21_saiga": {
+        "model_name": "saiga-yandexgpt-8b",
         "bench_name": "humaneval",
-        "tokens": 54631,
-        "cost": 0.109262,
-        "score": 0.7012195121951219,
-        "std": 0.04618902439024386
+        "tokens": 53983,
+        "cost": 0,
+        "score": 0.7378048780487805,
+        "std": 0.0548780487804878
       },
-      "05_llama_3_3_70b": {
-        "model_name": "llama-3.3-70b",
+      "22_vikhr": {
+        "model_name": "vikhr-yandexgpt-8b",
         "bench_name": "humaneval",
-        "tokens": 61310,
-        "cost": 0.013194960000000002,
-        "score": 0.8597560975609756,
+        "tokens": 64976,
+        "cost": 0,
+        "score": 0.7378048780487805,
+        "std": 0.058079268292682895
+      },
+      "24_ruadapt": {
+        "model_name": "ruadapt-qwen-32b",
+        "bench_name": "humaneval",
+        "tokens": 60785,
+        "cost": 0,
+        "score": 0.8841463414634146,
+        "std": 0.04573170731707321
+      },
+      "06_qwen_2_5_7b": {
+        "model_name": "qwen-2.5-7b",
+        "bench_name": "humaneval",
+        "tokens": 52837,
+        "cost": 0.0019521250000000003,
+        "score": 0.8109756097560976,
         "std": 0.045731707317073156
       },
-      "13_llama_3_3_70b": {
-        "model_name": "llama-3.3-70b:yandex",
+      "28_qwen_2_5_32b": {
+        "model_name": "qwen-2.5-32b",
         "bench_name": "humaneval",
-        "tokens": 59067,
-        "cost": 0.708804,
-        "score": 0.8414634146341463,
-        "std": 0.03978658536585361
+        "tokens": 58758,
+        "cost": 0.04641882000000001,
+        "score": 0.8902439024390244,
+        "std": 0.039786585365853666
       },
       "15_qwen_2_5_72b": {
         "model_name": "qwen-2.5-72b",
@@ -395,7 +427,7 @@
         "tokens": 58474,
         "cost": 0.015883869999999998,
         "score": 0.8841463414634146,
-        "std": 0.036737804878048785
+        "std": 0.033689024390243905
       },
       "16_deepseek_v3": {
         "model_name": "deepseek-v3",
@@ -403,73 +435,41 @@
         "tokens": 43467,
         "cost": 0.028013229999999993,
         "score": 0.9085365853658537,
-        "std": 0.039634146341463394
-      },
-      "18_cotype_nano": {
-        "model_name": "cotype-nano",
-        "bench_name": "humaneval",
-        "tokens": 44814,
-        "cost": 7.409505281456884,
-        "score": 0.524390243902439,
-        "std": 0.06128048780487799
-      },
-      "19_t_lite": {
-        "model_name": "t-lite",
-        "bench_name": "humaneval",
-        "tokens": 109813,
-        "cost": 0,
-        "score": 0.8170731707317073,
-        "std": 0.04283536585365849
-      },
-      "20_t_pro": {
-        "model_name": "t-pro",
-        "bench_name": "humaneval",
-        "tokens": 89631,
-        "cost": 0,
-        "score": 0.8353658536585366,
-        "std": 0.04283536585365849
-      },
-      "21_saiga": {
-        "model_name": "saiga-yandexgpt",
-        "bench_name": "humaneval",
-        "tokens": 53983,
-        "cost": 0,
-        "score": 0.7378048780487805,
-        "std": 0.051981707317073134
-      },
-      "23_saiga": {
-        "model_name": "saiga-nemo",
-        "bench_name": "humaneval",
-        "tokens": 61051,
-        "cost": 0,
-        "score": 0.6707317073170732,
-        "std": 0.052134146341463405
-      },
-      "22_vikhr": {
-        "model_name": "vikhr-yandexgpt",
-        "bench_name": "humaneval",
-        "tokens": 64976,
-        "cost": 0,
-        "score": 0.7378048780487805,
-        "std": 0.04939024390243901
-      },
-      "24_ruadapt": {
-        "model_name": "ruadapt-qwen",
-        "bench_name": "humaneval",
-        "tokens": 60785,
-        "cost": 0,
-        "score": 0.8841463414634146,
-        "std": 0.03963414634146345
+        "std": 0.03368902439024385
       }
     },
     "mmlu": {
+      "25_gigachat_lite": {
+        "model_name": "gigachat-2-lite",
+        "bench_name": "mmlu-pro-1k",
+        "tokens": 123176,
+        "cost": 0.24635200000000007,
+        "score": 0.52,
+        "std": 0.052749999999999936
+      },
+      "26_gigachat_pro": {
+        "model_name": "gigachat-2-pro",
+        "bench_name": "mmlu-pro-1k",
+        "tokens": 131228,
+        "cost": 1.9684200000000005,
+        "score": 0.685,
+        "std": 0.057499999999999996
+      },
+      "27_gigachat_max": {
+        "model_name": "gigachat-2-max",
+        "bench_name": "mmlu-pro-1k",
+        "tokens": 107655,
+        "cost": 2.0992725,
+        "score": 0.675,
+        "std": 0.050375
+      },
       "08_gigachat_lite": {
         "model_name": "gigachat-lite",
         "bench_name": "mmlu-pro-1k",
         "tokens": 202336,
         "cost": 0.40467200000000014,
         "score": 0.36,
-        "std": 0.05512499999999998
+        "std": 0.05262499999999998
       },
       "12_gigachat_pro": {
         "model_name": "gigachat-pro",
@@ -477,7 +477,7 @@
         "tokens": 166112,
         "cost": 2.491680000000001,
         "score": 0.455,
-        "std": 0.05262499999999998
+        "std": 0.060124999999999984
       },
       "14_gigachat_max": {
         "model_name": "gigachat-max",
@@ -485,23 +485,7 @@
         "tokens": 122316,
         "cost": 2.385162,
         "score": 0.65,
-        "std": 0.05249999999999999
-      },
-      "07_yandexgpt_4_lite": {
-        "model_name": "yandexgpt-4-lite",
-        "bench_name": "mmlu-pro-1k",
-        "tokens": 72378,
-        "cost": 0.14475600000000002,
-        "score": 0.305,
-        "std": 0.04999999999999999
-      },
-      "11_yandexgpt_4_pro": {
-        "model_name": "yandexgpt-4-pro",
-        "bench_name": "mmlu-pro-1k",
-        "tokens": 80841,
-        "cost": 0.9700920000000001,
-        "score": 0.485,
-        "std": 0.07025
+        "std": 0.05262499999999998
       },
       "17_yandexgpt_5_pro": {
         "model_name": "yandexgpt-5-pro",
@@ -509,39 +493,79 @@
         "tokens": 98189,
         "cost": 1.1782679999999999,
         "score": 0.7,
-        "std": 0.05262499999999998
+        "std": 0.050124999999999975
       },
-      "04_llama_3_1_8b": {
-        "model_name": "llama-3.1-8b",
+      "07_yandexgpt_4_lite": {
+        "model_name": "yandexgpt-4-lite",
         "bench_name": "mmlu-pro-1k",
-        "tokens": 268686,
-        "cost": 0.011928989999999997,
+        "tokens": 72378,
+        "cost": 0.14475600000000002,
+        "score": 0.305,
+        "std": 0.060124999999999984
+      },
+      "11_yandexgpt_4_pro": {
+        "model_name": "yandexgpt-4-pro",
+        "bench_name": "mmlu-pro-1k",
+        "tokens": 80841,
+        "cost": 0.9700920000000001,
         "score": 0.485,
-        "std": 0.06525
+        "std": 0.06762500000000002
       },
-      "10_llama_3_1_8b": {
-        "model_name": "llama-3.1-8b:yandex",
+      "19_t_lite": {
+        "model_name": "t-lite-8b",
         "bench_name": "mmlu-pro-1k",
-        "tokens": 129995,
-        "cost": 0.2599900000000001,
-        "score": 0.485,
-        "std": 0.06525
+        "tokens": 191771,
+        "cost": 0,
+        "score": 0.585,
+        "std": 0.06
       },
-      "05_llama_3_3_70b": {
-        "model_name": "llama-3.3-70b",
+      "20_t_pro": {
+        "model_name": "t-pro-32b",
         "bench_name": "mmlu-pro-1k",
-        "tokens": 147069,
-        "cost": 0.03515921999999999,
-        "score": 0.7638190954773869,
-        "std": 0.0453517587939698
+        "tokens": 155534,
+        "cost": 0,
+        "score": 0.705,
+        "std": 0.05024999999999996
       },
-      "13_llama_3_3_70b": {
-        "model_name": "llama-3.3-70b:yandex",
+      "21_saiga": {
+        "model_name": "saiga-yandexgpt-8b",
         "bench_name": "mmlu-pro-1k",
-        "tokens": 151199,
-        "cost": 1.814387999999999,
-        "score": 0.755,
-        "std": 0.0625
+        "tokens": 146861,
+        "cost": 0,
+        "score": 0.53,
+        "std": 0.05512499999999998
+      },
+      "22_vikhr": {
+        "model_name": "vikhr-yandexgpt-8b",
+        "bench_name": "mmlu-pro-1k",
+        "tokens": 144203,
+        "cost": 0,
+        "score": 0.5226130653266332,
+        "std": 0.06293969849246231
+      },
+      "24_ruadapt": {
+        "model_name": "ruadapt-qwen-32b",
+        "bench_name": "mmlu-pro-1k",
+        "tokens": 128360,
+        "cost": 0,
+        "score": 0.7035175879396985,
+        "std": 0.060301507537688426
+      },
+      "06_qwen_2_5_7b": {
+        "model_name": "qwen-2.5-7b",
+        "bench_name": "mmlu-pro-1k",
+        "tokens": 147130,
+        "cost": 0.006141525000000003,
+        "score": 0.605,
+        "std": 0.050124999999999975
+      },
+      "28_qwen_2_5_32b": {
+        "model_name": "qwen-2.5-32b",
+        "bench_name": "mmlu-pro-1k",
+        "tokens": 142155,
+        "cost": 0.11230245000000007,
+        "score": 0.725,
+        "std": 0.04249999999999998
       },
       "15_qwen_2_5_72b": {
         "model_name": "qwen-2.5-72b",
@@ -549,7 +573,7 @@
         "tokens": 166705,
         "cost": 0.05356243000000003,
         "score": 0.74,
-        "std": 0.04999999999999999
+        "std": 0.045125000000000026
       },
       "16_deepseek_v3": {
         "model_name": "deepseek-v3",
@@ -557,73 +581,41 @@
         "tokens": 146682,
         "cost": 0.13201380000000001,
         "score": 0.795,
-        "std": 0.04512499999999997
-      },
-      "18_cotype_nano": {
-        "model_name": "cotype-nano",
-        "bench_name": "mmlu-pro-1k",
-        "tokens": 113038,
-        "cost": 8.446271698195305,
-        "score": 0.255,
-        "std": 0.05750000000000001
-      },
-      "19_t_lite": {
-        "model_name": "t-lite",
-        "bench_name": "mmlu-pro-1k",
-        "tokens": 191771,
-        "cost": 0,
-        "score": 0.585,
-        "std": 0.04999999999999999
-      },
-      "20_t_pro": {
-        "model_name": "t-pro",
-        "bench_name": "mmlu-pro-1k",
-        "tokens": 155534,
-        "cost": 0,
-        "score": 0.705,
-        "std": 0.042749999999999955
-      },
-      "21_saiga": {
-        "model_name": "saiga-yandexgpt",
-        "bench_name": "mmlu-pro-1k",
-        "tokens": 146861,
-        "cost": 0,
-        "score": 0.53,
-        "std": 0.0625
-      },
-      "23_saiga": {
-        "model_name": "saiga-nemo",
-        "bench_name": "mmlu-pro-1k",
-        "tokens": 128957,
-        "cost": 0,
-        "score": 0.46464646464646464,
-        "std": 0.053282828282828265
-      },
-      "22_vikhr": {
-        "model_name": "vikhr-yandexgpt",
-        "bench_name": "mmlu-pro-1k",
-        "tokens": 144203,
-        "cost": 0,
-        "score": 0.5226130653266332,
-        "std": 0.05778894472361806
-      },
-      "24_ruadapt": {
-        "model_name": "ruadapt-qwen",
-        "bench_name": "mmlu-pro-1k",
-        "tokens": 128360,
-        "cost": 0,
-        "score": 0.7035175879396985,
-        "std": 0.045351758793969854
+        "std": 0.04774999999999996
       }
     },
     "bbh": {
+      "25_gigachat_lite": {
+        "model_name": "gigachat-2-lite",
+        "bench_name": "bbh-1k",
+        "tokens": 162208,
+        "cost": 0.3244160000000002,
+        "score": 0.67,
+        "std": 0.04999999999999999
+      },
+      "26_gigachat_pro": {
+        "model_name": "gigachat-2-pro",
+        "bench_name": "bbh-1k",
+        "tokens": 190958,
+        "cost": 2.864369999999999,
+        "score": 0.785,
+        "std": 0.04249999999999998
+      },
+      "27_gigachat_max": {
+        "model_name": "gigachat-2-max",
+        "bench_name": "bbh-1k",
+        "tokens": 233871,
+        "cost": 4.5604845,
+        "score": 0.79,
+        "std": 0.04524999999999996
+      },
       "08_gigachat_lite": {
         "model_name": "gigachat-lite",
         "bench_name": "bbh-1k",
         "tokens": 233197,
         "cost": 0.46639399999999986,
         "score": 0.49246231155778897,
-        "std": 0.07035175879396985
+        "std": 0.05314070351758793
       },
       "12_gigachat_pro": {
         "model_name": "gigachat-pro",
@@ -631,7 +623,7 @@
         "tokens": 251422,
         "cost": 3.771329999999998,
         "score": 0.64,
-        "std": 0.05250000000000005
+        "std": 0.05499999999999999
       },
       "14_gigachat_max": {
         "model_name": "gigachat-max",
@@ -639,23 +631,7 @@
         "tokens": 219782,
         "cost": 4.285748999999999,
         "score": 0.755,
-        "std": 0.05262500000000003
-      },
-      "07_yandexgpt_4_lite": {
-        "model_name": "yandexgpt-4-lite",
-        "bench_name": "bbh-1k",
-        "tokens": 231952,
-        "cost": 0.4639040000000001,
-        "score": 0.55,
-        "std": 0.05512499999999998
-      },
-      "11_yandexgpt_4_pro": {
-        "model_name": "yandexgpt-4-pro",
-        "bench_name": "bbh-1k",
-        "tokens": 235625,
-        "cost": 2.8275,
-        "score": 0.71,
-        "std": 0.04774999999999996
+        "std": 0.042625000000000024
       },
       "17_yandexgpt_5_pro": {
         "model_name": "yandexgpt-5-pro",
@@ -663,39 +639,79 @@
         "tokens": 236099,
         "cost": 2.833187999999998,
         "score": 0.84,
-        "std": 0.04249999999999998
+        "std": 0.04512499999999997
       },
-      "04_llama_3_1_8b": {
-        "model_name": "llama-3.1-8b",
+      "07_yandexgpt_4_lite": {
+        "model_name": "yandexgpt-4-lite",
         "bench_name": "bbh-1k",
-        "tokens": 246620,
-        "cost": 0.006926620000000003,
-        "score": 0.585,
-        "std": 0.06274999999999997
+        "tokens": 231952,
+        "cost": 0.4639040000000001,
+        "score": 0.55,
+        "std": 0.06049999999999994
       },
-      "10_llama_3_1_8b": {
-        "model_name": "llama-3.1-8b:yandex",
+      "11_yandexgpt_4_pro": {
+        "model_name": "yandexgpt-4-pro",
         "bench_name": "bbh-1k",
-        "tokens": 216399,
-        "cost": 0.43279800000000007,
-        "score": 0.6632653061224489,
-        "std": 0.05382653061224485
+        "tokens": 235625,
+        "cost": 2.8275,
+        "score": 0.71,
+        "std": 0.057874999999999954
       },
-      "05_llama_3_3_70b": {
-        "model_name": "llama-3.3-70b",
+      "19_t_lite": {
+        "model_name": "t-lite-8b",
         "bench_name": "bbh-1k",
-        "tokens": 235234,
-        "cost": 0.038267039999999995,
-        "score": 0.875,
-        "std": 0.03512500000000002
+        "tokens": 245916,
+        "cost": 0,
+        "score": 0.73,
+        "std": 0.05024999999999996
       },
-      "13_llama_3_3_70b": {
-        "model_name": "llama-3.3-70b:yandex",
+      "20_t_pro": {
+        "model_name": "t-pro-32b",
         "bench_name": "bbh-1k",
-        "tokens": 237903,
-        "cost": 2.8548359999999984,
+        "tokens": 232254,
+        "cost": 0,
         "score": 0.865,
         "std": 0.037750000000000006
+      },
+      "21_saiga": {
+        "model_name": "saiga-yandexgpt-8b",
+        "bench_name": "bbh-1k",
+        "tokens": 241422,
+        "cost": 0,
+        "score": 0.715,
+        "std": 0.05762499999999998
+      },
+      "22_vikhr": {
+        "model_name": "vikhr-yandexgpt-8b",
+        "bench_name": "bbh-1k",
+        "tokens": 244973,
+        "cost": 0,
+        "score": 0.6818181818181818,
+        "std": 0.04823232323232329
+      },
+      "24_ruadapt": {
+        "model_name": "ruadapt-qwen-32b",
+        "bench_name": "bbh-1k",
+        "tokens": 225867,
+        "cost": 0,
+        "score": 0.845,
+        "std": 0.044999999999999984
+      },
+      "06_qwen_2_5_7b": {
+        "model_name": "qwen-2.5-7b",
+        "bench_name": "bbh-1k",
+        "tokens": 255429,
+        "cost": 0.008197674999999996,
+        "score": 0.75,
+        "std": 0.05012500000000003
+      },
+      "28_qwen_2_5_32b": {
+        "model_name": "qwen-2.5-32b",
+        "bench_name": "bbh-1k",
+        "tokens": 232446,
+        "cost": 0.18363234000000014,
+        "score": 0.85,
+        "std": 0.037624999999999964
       },
       "15_qwen_2_5_72b": {
         "model_name": "qwen-2.5-72b",
@@ -703,7 +719,7 @@
         "tokens": 238283,
         "cost": 0.04587755000000002,
         "score": 0.835,
-        "std": 0.034999999999999976
+        "std": 0.035374999999999934
       },
       "16_deepseek_v3": {
         "model_name": "deepseek-v3",
@@ -711,199 +727,136 @@
         "tokens": 216150,
         "cost": 0.12206470000000003,
         "score": 0.89,
-        "std": 0.03025
-      },
-      "18_cotype_nano": {
-        "model_name": "cotype-nano",
-        "bench_name": "bbh-1k",
-        "tokens": 253514,
-        "cost": 8.789298556201581,
-        "score": 0.425,
-        "std": 0.05262499999999998
-      },
-      "19_t_lite": {
-        "model_name": "t-lite",
-        "bench_name": "bbh-1k",
-        "tokens": 245916,
-        "cost": 0,
-        "score": 0.73,
-        "std": 0.04262499999999997
-      },
-      "20_t_pro": {
-        "model_name": "t-pro",
-        "bench_name": "bbh-1k",
-        "tokens": 232254,
-        "cost": 0,
-        "score": 0.865,
-        "std": 0.045125000000000026
-      },
-      "21_saiga": {
-        "model_name": "saiga-yandexgpt",
-        "bench_name": "bbh-1k",
-        "tokens": 241422,
-        "cost": 0,
-        "score": 0.715,
-        "std": 0.055249999999999966
-      },
-      "23_saiga": {
-        "model_name": "saiga-nemo",
-        "bench_name": "bbh-1k",
-        "tokens": 231291,
-        "cost": 0,
-        "score": 0.6868686868686869,
-        "std": 0.05303030303030304
-      },
-      "22_vikhr": {
-        "model_name": "vikhr-yandexgpt",
-        "bench_name": "bbh-1k",
-        "tokens": 244973,
-        "cost": 0,
-        "score": 0.6818181818181818,
-        "std": 0.0505050505050505
-      },
-      "24_ruadapt": {
-        "model_name": "ruadapt-qwen",
-        "bench_name": "bbh-1k",
-        "tokens": 225867,
-        "cost": 0,
-        "score": 0.845,
-        "std": 0.04512499999999997
+        "std": 0.03762500000000002
       }
     }
   },
   "model_stats": {
+    "25_gigachat_lite": {
+      "name": "gigachat-2-lite",
+      "tokens": 510339,
+      "cost": 1.0206780000000002,
+      "avg_score": 0.6720243902439024,
+      "avg_std": 0.049632520872886346
+    },
+    "26_gigachat_pro": {
+      "name": "gigachat-2-pro",
+      "tokens": 559977,
+      "cost": 8.399655,
+      "avg_score": 0.7991707317073171,
+      "avg_std": 0.0438220572148608
+    },
+    "27_gigachat_max": {
+      "name": "gigachat-2-max",
+      "tokens": 567862,
+      "cost": 11.073309000000002,
+      "avg_score": 0.7832926829268294,
+      "avg_std": 0.04476839354753403
+    },
     "08_gigachat_lite": {
       "name": "gigachat-lite",
       "tokens": 718200,
       "cost": 1.4364000000000001,
       "avg_score": 0.442346558832321,
-      "avg_std": 0.058577948592038145
+      "avg_std": 0.05354337624505757
     },
     "12_gigachat_pro": {
       "name": "gigachat-pro",
       "tokens": 683440,
       "cost": 10.251599999999998,
       "avg_score": 0.5512439024390244,
-      "avg_std": 0.05559920342415844
+      "avg_std": 0.055330755082379966
     },
     "14_gigachat_max": {
       "name": "gigachat-max",
       "tokens": 548938,
       "cost": 10.704290999999998,
       "avg_score": 0.7219024390243902,
-      "avg_std": 0.05052800631917629
-    },
-    "07_yandexgpt_4_lite": {
-      "name": "yandexgpt-4-lite",
-      "tokens": 467332,
-      "cost": 0.9346639999999999,
-      "avg_score": 0.39065853658536587,
-      "avg_std": 0.05026741816643829
-    },
-    "11_yandexgpt_4_pro": {
-      "name": "yandexgpt-4-pro",
-      "tokens": 507069,
-      "cost": 6.084828,
-      "avg_score": 0.5433658536585366,
-      "avg_std": 0.058054738258136174
+      "avg_std": 0.047021775996145085
     },
     "17_yandexgpt_5_pro": {
       "name": "yandexgpt-5-pro",
       "tokens": 527055,
       "cost": 6.324659999999999,
       "avg_score": 0.7892682926829269,
-      "avg_std": 0.04259461510852406
+      "avg_std": 0.046086108115605796
     },
-    "04_llama_3_1_8b": {
-      "name": "llama-3.1-8b",
-      "tokens": 955529,
-      "cost": 0.03830473000000001,
-      "avg_score": 0.6008292682926829,
-      "avg_std": 0.05747471267794431
+    "07_yandexgpt_4_lite": {
+      "name": "yandexgpt-4-lite",
+      "tokens": 467332,
+      "cost": 0.9346639999999999,
+      "avg_score": 0.39065853658536587,
+      "avg_std": 0.05464885821423508
     },
-    "10_llama_3_1_8b": {
-      "name": "llama-3.1-8b:yandex",
-      "tokens": 646423,
-      "cost": 1.2928460000000002,
-      "avg_score": 0.6367302969968474,
-      "avg_std": 0.053583399027383655
+    "11_yandexgpt_4_pro": {
+      "name": "yandexgpt-4-pro",
+      "tokens": 507069,
+      "cost": 6.084828,
+      "avg_score": 0.5433658536585366,
+      "avg_std": 0.056378738510919936
     },
-    "05_llama_3_3_70b": {
-      "name": "llama-3.3-70b",
-      "tokens": 654043,
-      "cost": 0.14002752,
-      "avg_score": 0.8417150386076726,
-      "avg_std": 0.04009535310940874
+    "19_t_lite": {
+      "name": "t-lite-8b",
+      "tokens": 796500,
+      "cost": 0,
+      "avg_score": 0.7434146341463415,
+      "avg_std": 0.04975962454993988
     },
-    "13_llama_3_3_70b": {
-      "name": "llama-3.3-70b:yandex",
-      "tokens": 653585,
-      "cost": 7.843019999999997,
-      "avg_score": 0.8322926829268292,
-      "avg_std": 0.04351573824508636
+    "20_t_pro": {
+      "name": "t-pro-32b",
+      "tokens": 699932,
+      "cost": 0,
+      "avg_score": 0.8060731707317073,
+      "avg_std": 0.042065265981531166
+    },
+    "21_saiga": {
+      "name": "saiga-yandexgpt-8b",
+      "tokens": 629002,
+      "cost": 0,
+      "avg_score": 0.702204191690158,
+      "avg_std": 0.05431031717689681
+    },
+    "22_vikhr": {
+      "name": "vikhr-yandexgpt-8b",
+      "tokens": 631710,
+      "cost": 0,
+      "avg_score": 0.5710200893603272,
+      "avg_std": 0.05623427394619764
+    },
+    "24_ruadapt": {
+      "name": "ruadapt-qwen-32b",
+      "tokens": 602126,
+      "cost": 0,
+      "avg_score": 0.8265327858806225,
+      "avg_std": 0.04733967335217331
+    },
+    "06_qwen_2_5_7b": {
+      "name": "qwen-2.5-7b",
+      "tokens": 678008,
+      "cost": 0.026142625000000003,
+      "avg_score": 0.7631951219512195,
+      "avg_std": 0.0443470651320568
+    },
+    "28_qwen_2_5_32b": {
+      "name": "qwen-2.5-32b",
+      "tokens": 632050,
+      "cost": 0.49931950000000014,
+      "avg_score": 0.8390487804878048,
+      "avg_std": 0.03781530906940826
     },
     "15_qwen_2_5_72b": {
       "name": "qwen-2.5-72b",
       "tokens": 688017,
       "cost": 0.19119252000000003,
       "avg_score": 0.8488292682926829,
-      "avg_std": 0.03765553759344721
+      "avg_std": 0.03566387454937123
     },
     "16_deepseek_v3": {
       "name": "deepseek-v3",
-      "tokens": 574763,
-      "cost": 0.41397229,
-      "avg_score": 0.8776413830072366,
-      "avg_std": 0.03800655482593557
-    },
-    "18_cotype_nano": {
-      "name": "cotype-nano",
-      "tokens": 580982,
-      "cost": 41.405920977691736,
-      "avg_score": 0.3358780487804878,
-      "avg_std": 0.05238884315501497
-    },
-    "19_t_lite": {
-      "name": "t-lite",
-      "tokens": 796500,
-      "cost": 0,
-      "avg_score": 0.7434146341463415,
-      "avg_std": 0.044148952009796946
-    },
-    "20_t_pro": {
-      "name": "t-pro",
-      "tokens": 699932,
-      "cost": 0,
-      "avg_score": 0.8060731707317073,
-      "avg_std": 0.04172516433237086
-    },
-    "21_saiga": {
-      "name": "saiga-yandexgpt",
-      "tokens": 629002,
-      "cost": 0,
-      "avg_score": 0.702204191690158,
-      "avg_std": 0.05517665455955066
-    },
-    "23_saiga": {
-      "name": "saiga-nemo",
-      "tokens": 607844,
-      "cost": 0,
-      "avg_score": 0.5938312813141836,
-      "avg_std": 0.05055658267975199
-    },
-    "22_vikhr": {
-      "name": "vikhr-yandexgpt",
-      "tokens": 631710,
-      "cost": 0,
-      "avg_score": 0.5710200893603272,
-      "avg_std": 0.05335553617308389
-    },
-    "24_ruadapt": {
-      "name": "ruadapt-qwen",
-      "tokens": 602126,
-      "cost": 0,
-      "avg_score": 0.8265327858806225,
-      "avg_std": 0.04171538404934792
+      "tokens": 600664,
+      "cost": 0.44568969,
+      "avg_score": 0.8743335796994334,
+      "avg_std": 0.03761270445148948
     }
   }
 }

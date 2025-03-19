@@ -1,4 +1,4 @@
-# bbh-1k / ruadapt-qwen
+# bbh-1k / ruadapt-qwen-32b
 ### hyperbaton/155
 ###### instruction
 <pre> Order adjectives correctly in English sentences.

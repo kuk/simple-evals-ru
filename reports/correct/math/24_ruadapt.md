@@ -1,4 +1,4 @@
-# math-500 / ruadapt-qwen
+# math-500 / ruadapt-qwen-32b
 ### 913
 ###### instruction
 <pre> Solve the following math problem step by step. The last line of your response should be of the form Answer: $ANSWER (without quotes) where $ANSWER is the answer to the problem.

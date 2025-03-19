@@ -1,4 +1,4 @@
-# mmlu-pro-1k / vikhr-yandexgpt
+# mmlu-pro-1k / vikhr-yandexgpt-8b
 ### psychology/2027
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.

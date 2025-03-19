@@ -1,4 +1,4 @@
-# bbh-1k / vikhr-yandexgpt
+# bbh-1k / vikhr-yandexgpt-8b
 ### temporal_sequences/100
 ###### instruction
 <pre> Task description: Answer questions about which times certain events could have occurred.

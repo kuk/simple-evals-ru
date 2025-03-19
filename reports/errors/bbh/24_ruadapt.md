@@ -1,4 +1,4 @@
-# bbh-1k / ruadapt-qwen
+# bbh-1k / ruadapt-qwen-32b
 ### dyck_languages/186
 ###### instruction
 <pre> Correctly close a Dyck-n word.

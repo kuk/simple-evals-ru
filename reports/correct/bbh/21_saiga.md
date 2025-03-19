@@ -1,4 +1,4 @@
-# bbh-1k / saiga-yandexgpt
+# bbh-1k / saiga-yandexgpt-8b
 ### movie_recommendation/38
 ###### instruction
 <pre> Recommend movies similar to the given list of movies.

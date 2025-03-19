@@ -1,4 +1,4 @@
-# bbh-1k / saiga-yandexgpt
+# bbh-1k / saiga-yandexgpt-8b
 ### logical_deduction_seven_objects/213
 ###### instruction
 <pre> A logical deduction task which requires deducing the order of a sequence of objects.

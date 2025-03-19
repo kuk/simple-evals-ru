@@ -1,4 +1,4 @@
-# bbh-1k / t-pro
+# bbh-1k / t-pro-32b
 ### date_understanding/150
 ###### instruction
 <pre> Infer the date from context.

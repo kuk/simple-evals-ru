@@ -1,4 +1,4 @@
-# humaneval / t-lite
+# humaneval / t-lite-8b
 ### HumanEval/144
 ###### instruction
 <pre> Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.

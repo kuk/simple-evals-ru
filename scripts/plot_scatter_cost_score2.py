@@ -1,8 +1,7 @@
 
+import re
 import json
 from pathlib import Path
-
-import numpy as np
 
 from matplotlib import pyplot as plt
 
@@ -20,9 +19,17 @@ CUR_DIR = Path(__file__).parent
 PROJ_DIR = CUR_DIR.parent
 
 GROUP_COLORS = {
-    "other": "tab:blue",
-    "openrouter": "tab:orange",
+    "qwen": "tab:orange",
+    "deepseek": "tab:orange",
+
+    "yandexgpt-5": "tab:blue",
+    "yandexgpt-4-lite": "tab:blue",
+    "gigachat-2": "tab:blue",
+
+    "yandexgpt-4": "silver",
+    "gigachat": "silver",
 }
+GROUP_PATTERN = "(" + "|".join(sorted(GROUP_COLORS.keys(), key=len, reverse=True)) + ")"
 
 path = PROJ_DIR / "data" / "stats.json"
 with path.open() as file:
@@ -32,19 +39,20 @@ with path.open() as file:
 xs, ys, colors, labels = [], [], [], []
 model_xys = {}
 for model_id in [
-        "04_llama_3_1_8b",
-        "10_llama_3_1_8b",
-        "05_llama_3_3_70b",
-        "13_llama_3_3_70b",
-
+        "06_qwen_2_5_7b",
         "15_qwen_2_5_72b",
+        "28_qwen_2_5_32b",
         "16_deepseek_v3",
 
-        "07_yandexgpt_4_lite", "08_gigachat_lite",
-        "11_yandexgpt_4_pro", "12_gigachat_pro", "14_gigachat_max",
+        "08_gigachat_lite",
+        "12_gigachat_pro",
+        "14_gigachat_max",
+        "25_gigachat_lite",
+        "26_gigachat_pro",
+        "27_gigachat_max",
 
+        "11_yandexgpt_4_pro",
         "17_yandexgpt_5_pro",
-        "20_t_pro",
 ]:
     model = ID_MODELS[model_id]
 
@@ -55,9 +63,9 @@ for model_id in [
     y = stats["avg_score"]
     ys.append(y)
 
-    group = "other"
-    if model.client == "openrouter":
-        group = "openrouter"
+    match = re.search(GROUP_PATTERN, model.name)
+    assert match, model.name
+    group = match.group(0)
     color = GROUP_COLORS[group]
     colors.append(color)
 
@@ -71,26 +79,8 @@ ax.scatter(
 )
 
 x_lines, y_lines = [], []
-x1, y1 = model_xys["04_llama_3_1_8b"]
-x2, y2 = model_xys["10_llama_3_1_8b"]
-ax.plot(
-    [x1, x2],
-    [y1, y2],
-    linestyle=":",
-    linewidth=1,
-    color="silver"
-)
-x_lines.append((x1, x2))
-y_lines.append((y1, y2))
-ax.text(
-    (x1 + x2) / 2,
-    (y1 + y2) / 2,
-    f"x{x2 / x1:0.0f}",
-    va="center",
-    ha="center",
-)
-x1, y1 = model_xys["05_llama_3_3_70b"]
-x2, y2 = model_xys["13_llama_3_3_70b"]
+x1, y1 = model_xys["28_qwen_2_5_32b"]
+x2, y2 = model_xys["17_yandexgpt_5_pro"]
 ax.plot(
     [x1, x2],
     [y1, y2],
@@ -108,6 +98,7 @@ ax.text(
     ha="center",
 )
 
+ax.set_ylim(.35, .99)
 ta.allocate(
     ax, xs, ys,
     labels,
@@ -115,7 +106,7 @@ ta.allocate(
     x_lines=x_lines, y_lines=y_lines,
     linecolor="silver",
     avoid_crossing_label_lines=True,
-    ylims=(0.2, 1)
+    ylims=ax.get_ylim()
 )
 
 
@@ -131,14 +122,11 @@ for value in values:
 ax.set_xticklabels(labels)
 
 ax.set_xlabel("cost per 1m input + output tokens")
-
-ax.set_ylim(0.2, 1)
-values = np.arange(0.2, 1.1, 0.2)
-ax.set_yticks(values)
-ax.set_yticklabels([f"{_:0.1f}" for _ in values])
 ax.set_ylabel(f"avg score on {len(BENCHES)} benches: math-500, humaneval, ..")
-
 ax.set_title("ru vs world")
+
+fig.set_size_inches(6, 5)
+fig.tight_layout()
 
 path = PROJ_DIR / "images" / "cost_score2.svg"
 print('Write "%s"' % path)

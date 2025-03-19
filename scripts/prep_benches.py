@@ -156,7 +156,7 @@ def prep_mmlu():
         options = item["options"].tolist()
         assert len(options) <= len(letters), len(options)
         assert len(options) == len(set(options)), options
-        
+
         answer_option = options[item["answer_index"]]
 
         random.seed(0)

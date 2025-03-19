@@ -146,25 +146,25 @@ async def init_context(context, bench_ids, model_ids):
         else:
             raise ValueError(model.client)
 
-    client = context.get("openrouter")
-    if client:
+    openrouter_client = context.get("openrouter")
+    if openrouter_client:
         logger.info("Openrouter update model pricing")
-        await client.update_model_pricing()
+        await openrouter_client.update_model_pricing()
 
-    client = context.get("runpod")
-    if client:
+    runpod_client = context.get("runpod")
+    if runpod_client:
         logger.info("Runpod update model endpoints")
-        await client.update_model_endpoints()
+        await runpod_client.update_model_endpoints()
 
     for model_id in model_ids:
         model = ID_MODELS[model_id]
 
-        if model.client == "openrouter":
-            model_exists = model.client_model in client.model_pricing
+        if model.client == "openrouter" and openrouter_client:
+            model_exists = model.client_model in openrouter_client.model_pricing
             assert model_exists, f'Openrouter non exist "{model.client_model}"'
 
-        elif model.client == "runpod":
-            model_exists = model.client_model in client.model_endpoints
+        elif model.client == "runpod" and runpod_client:
+            model_exists = model.client_model in runpod_client.model_endpoints
             assert model_exists, f'Runpod non exist "{model.client_model}"'
 
 

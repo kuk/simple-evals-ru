@@ -36,10 +36,10 @@ def load_jsonl(path):
 
 
 def print_scores_table(stats_data, _, __):
-
     print("<table>")
     print("<tr>")
     print("<th></th>")
+    print("<th>$ / m tokens</th>")
     print("<th>avg</th>")
     for bench in BENCHES:
         print("<th>", bench.name, "</th>")
@@ -49,12 +49,15 @@ def print_scores_table(stats_data, _, __):
         stats = stats_data["model_stats"][model.id]
 
         print("<tr>")
+        print(f"<th>{model.name}</th>")
 
-        cost = stats["cost"]
-        if stats["tokens"]:
-            cost = cost / stats["tokens"] * 1_000_000
+        if model.client == "runpod":
+            print("<td>selfhost</td>")
 
-        print("<th>", f"{model.name}, {cost:.2f}$", "</th>")
+        else:
+            cost = stats["cost"] / stats["tokens"] * 1_000_000
+            print(f"<td>${cost:.2f}</td>")
+
         print(f'<td>{stats["avg_score"] * 100:.1f}±{stats["avg_std"] * 100:.1f}%</td>')
 
         for bench in BENCHES:
@@ -65,7 +68,7 @@ def print_scores_table(stats_data, _, __):
     print("</table>")
 
 
-def print_results_table(stats_data, bench_task_items, bench_model_res_items):
+def print_results_table(_, bench_task_items, bench_model_res_items):
     print("<table>")
     print("<tr>")
     print("<th></th>")
@@ -98,7 +101,7 @@ def print_results_table(stats_data, bench_task_items, bench_model_res_items):
     print("</table>")
 
 
-def print_cov_table(stats_data, bench_task_items, bench_model_res_items):
+def print_cov_table(_, bench_task_items, bench_model_res_items):
     print("<table>")
     print("<tr>")
     print("<th></th>")

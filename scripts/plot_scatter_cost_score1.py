@@ -3,8 +3,6 @@ import re
 import json
 from pathlib import Path
 
-import numpy as np
-
 from matplotlib import pyplot as plt
 
 import textalloc as ta
@@ -21,10 +19,13 @@ PROJ_DIR = CUR_DIR.parent
 
 
 GROUP_COLORS = {
-    "yandexgpt": "tab:blue",
-    "t_pro": "tab:purple",
-    "gigachat": "tab:orange",
+    "yandexgpt-4": "silver",
+    "yandexgpt-4-lite": "tab:blue",
+    "gigachat": "silver",
+    "yandexgpt-5": "tab:blue",
+    "gigachat-2": "tab:orange",
 }
+GROUP_PATTERN = "(" + "|".join(sorted(GROUP_COLORS.keys(), key=len, reverse=True)) + ")"
 
 
 path = PROJ_DIR / "data" / "stats.json"
@@ -35,17 +36,13 @@ with path.open() as file:
 xs, ys, yerrs, colors, labels = [], [], [], [], []
 for model_id in [
         "07_yandexgpt_4_lite", "08_gigachat_lite",
-        # "10_llama_3_1_8b",
+        "25_gigachat_lite",
 
         "11_yandexgpt_4_pro", "12_gigachat_pro",
-        # "13_llama_3_3_70b",
+        "17_yandexgpt_5_pro", "26_gigachat_pro",
+
+        "27_gigachat_max",
         "14_gigachat_max",
-
-        "17_yandexgpt_5_pro",
-
-        # "18_cotype_nano",
-        # "19_t_lite",
-        "20_t_pro",
 ]:
     model = ID_MODELS[model_id]
 
@@ -59,15 +56,30 @@ for model_id in [
     ys.append(y)
     yerrs.append(std)
 
-    match = re.search(r"(yandexgpt|gigachat|t_pro)", model_id)
-    assert match, model_id
-    group = match.group(1)
+    match = re.search(GROUP_PATTERN, model.name)
+    assert match, model.name
+    group = match.group(0)
     color = GROUP_COLORS[group]
     colors.append(color)
-
     labels.append(model.name)
 
 fig, ax = plt.subplots()
+ax2 = ax.twinx()
+ax2.set_ylim(ax.get_ylim())
+
+ys2, labels2 = [], []
+for model_id in ["21_saiga", "20_t_pro"]:
+    model = ID_MODELS[model_id]
+
+    y = data["model_stats"][model_id]["avg_score"]
+    ax2.axhline(y=y, color="silver", linestyle=":", linewidth=1)
+
+    ys2.append(y)
+    labels2.append(model.name)
+
+ax2.set_yticks(ys2)
+ax2.set_yticklabels(labels2)
+
 for x, y, yerr, color in zip(xs, ys, yerrs, colors):
     ax.errorbar(
         x, y,
@@ -76,25 +88,26 @@ for x, y, yerr, color in zip(xs, ys, yerrs, colors):
         fmt="o",
     )
 
+ax.set_ylim(.25, .9)
 ta.allocate(
     ax, xs, ys,
     labels,
     x_scatter=xs, y_scatter=ys,
-    draw_lines=False
+    linecolor="silver",
+    avoid_crossing_label_lines=True,
+    ylims=ax.get_ylim()
 )
 
 values = sorted({round(_, 1) for _ in xs})
 ax.set_xticks(values)
 ax.set_xticklabels([f"{_:0.1f}$" for _ in values])
+
 ax.set_xlabel("cost per 1m input + output tokens")
-
-ax.set_ylim(0.2, 1)
-values = np.arange(0.2, 1.1, 0.2)
-ax.set_yticks(values)
-ax.set_yticklabels([f"{_:0.2f}" for _ in values])
 ax.set_ylabel(f"avg score on {len(BENCHES)} benches: math-500, humaneval, ..")
+ax.set_title("gigachat / yandexgpt")
 
-ax.set_title("ru")
+fig.set_size_inches(8, 5)
+fig.tight_layout()
 
 path = PROJ_DIR / "images" / "cost_score1.svg"
 print('Write "%s"' % path)

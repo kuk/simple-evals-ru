@@ -12,6 +12,10 @@ from .common import (
 
 # https://developers.sber.ru/docs/ru/gigachat/api/tariffs
 GIGACHAT_MODEL_PRICING = {
+    "GigaChat-2": 1000 / 5_000_000,
+    "GigaChat-2-Pro": 1500 / 1_000_000,
+    "GigaChat-2-Max": 1950 / 1_000_000,
+
     "GigaChat": 1000 / 5_000_000,
     "GigaChat-Pro": 1500 / 1_000_000,
     "GigaChat-Max": 1950 / 1_000_000,

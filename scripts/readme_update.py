@@ -35,6 +35,14 @@ def load_jsonl(path):
     return items
 
 
+def nb(string):
+    return (
+        string
+        .replace(" ", "&nbsp;")
+        .replace("-", "&#8209;")
+    )
+
+
 def print_scores_table(stats_data, _, __):
     print("<table>")
     print("<tr>")
@@ -42,14 +50,15 @@ def print_scores_table(stats_data, _, __):
     print("<th>$ / m tokens</th>")
     print("<th>avg</th>")
     for bench in BENCHES:
-        print("<th>", bench.name, "</th>")
+        print("<th>", nb(bench.name), "</th>")
+    print("<th></th>")
     print("</tr>")
 
     for model in MODELS:
         stats = stats_data["model_stats"][model.id]
 
         print("<tr>")
-        print(f"<th>{model.name}</th>")
+        print("<th>", nb(model.name), "</th>")
 
         if model.client == "runpod":
             print("<td>selfhost</td>")
@@ -64,6 +73,7 @@ def print_scores_table(stats_data, _, __):
             stats = stats_data["bench_model_stats"][bench.id][model.id]
             print(f'<td>{stats["score"] * 100:.1f}±{stats["std"] * 100:.1f}%</td>')
 
+        print("<th>", nb(model.name), "</th>")
         print("</tr>")
     print("</table>")
 
@@ -73,12 +83,19 @@ def print_results_table(_, bench_task_items, bench_model_res_items):
     print("<tr>")
     print("<th></th>")
     for bench in BENCHES:
-        print("<th>", f"{bench.name}, {len(bench_task_items[bench.id])}", "</th>")
+        print(
+            "<th>",
+            nb(bench.name),
+            "<br/>",
+            len(bench_task_items[bench.id]),
+            "</th>"
+        )
+    print("<th></th>")
     print("</tr>")
 
     for model in MODELS:
         print("<tr>")
-        print("<th>", model.name, "</th>")
+        print("<th>", nb(model.name), "</th>")
 
         for bench in BENCHES:
             counts = Counter()
@@ -87,16 +104,17 @@ def print_results_table(_, bench_task_items, bench_model_res_items):
 
             print(
                 "<td>",
-
                 f'<a href="reports/correct/{bench.id}/{model.id}.md">',
                 counts[True], "✓", "</a>",
                 "/",
                 f'<a href="reports/errors/{bench.id}/{model.id}.md">',
                 counts[False], "✗"
                 "</a>",
-
-                "</td>"
+                "</td>",
+                sep="&nbsp;"
             )
+
+        print("<th>", nb(model.name), "</th>")
         print("</tr>")
     print("</table>")
 
@@ -106,12 +124,18 @@ def print_cov_table(_, bench_task_items, bench_model_res_items):
     print("<tr>")
     print("<th></th>")
     for bench in BENCHES:
-        print("<th>", f"{bench.name}, {len(bench_task_items[bench.id])}", "</th>")
+        print(
+            "<th>",
+            nb(bench.name),
+            "<br/>",
+            len(bench_task_items[bench.id]),
+            "</th>"
+        )
     print("</tr>")
 
     for model in MODELS:
         print("<tr>")
-        print("<th>", model.name, "</th>")
+        print("<th>", nb(model.name), "</th>")
 
         for bench in BENCHES:
             cov, cost = 0, 0
@@ -125,7 +149,11 @@ def print_cov_table(_, bench_task_items, bench_model_res_items):
             if model.client == "runpod":
                 cost = 0
 
-            print("<td>", f"{cov} / {cost:.1f}$", "</td>")
+            print(
+                "<td>",
+                nb(f"{cov} / {cost:.1f}$"),
+                "</td>"
+            )
         print("</tr>")
     print("</table>")
 

@@ -98,7 +98,7 @@ ax.text(
     ha="center",
 )
 
-ax.set_ylim(.35, .99)
+ax.set_ylim(.35, .9)
 ta.allocate(
     ax, xs, ys,
     labels,

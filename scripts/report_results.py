@@ -41,7 +41,7 @@ def print_section(item, key):
 def print_result(bench_id, task_item, res_item):
     print("###", task_item["id"])
 
-    if bench_id == "humaneval":
+    if bench_id in ("humaneval", "mbpp"):
         print_section(res_item, "instruction")
         print_section(res_item, "answer")
 

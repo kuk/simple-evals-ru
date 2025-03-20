@@ -56,6 +56,9 @@ query myself {
         # https://blog.runpod.io/when-to-use-or-not-use-the-proxy-on-runpod/
 
         for pod_item in await self.myself_pods():
+            if not pod_item["runtime"]:
+                continue
+
             for port_item in pod_item["runtime"]["ports"]:
                 if port_item["type"] == "tcp" and port_item["privatePort"] == 8000:
                     ip = port_item["ip"]

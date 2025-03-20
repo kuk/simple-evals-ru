@@ -49,7 +49,7 @@ def plot(title, model_ids, filename):
     ax.set_ylabel("bench score")
 
     ax.legend(loc="upper left", bbox_to_anchor=(1, 1))
-    fig.set_size_inches(7, 4)
+    fig.set_size_inches(8, 4)
     fig.tight_layout()
 
     path = PROJ_DIR / "images" / filename
@@ -66,7 +66,7 @@ plot("yandexgpt 8b base", [
 plot("qwen 32b base", [
     "17_yandexgpt_5_pro",
     "20_t_pro",
-    "24_ruadapt",
+    "29_ruadapt",
     "28_qwen_2_5_32b",
 ], "parallel2.svg")
 
@@ -80,4 +80,10 @@ plot("qwen 7b base", [
     "19_t_lite",
     "06_qwen_2_5_7b",
 ], "parallel4.svg")
+
+plot("ruadapt", [
+    "20_t_pro",
+    "24_ruadapt",
+    "29_ruadapt",
+], "parallel5.svg")
 

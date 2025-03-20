@@ -23,6 +23,8 @@ from simple.benches.math import math_worker
 from simple.benches.mgsm import mgsm_worker
 from simple.benches.mmlu import mmlu_worker
 from simple.benches.simpleqa import simpleqa_worker
+from simple.benches.gpqa import gpqa_worker
+from simple.benches.mbpp import mbpp_worker
 
 
 logger = logging.getLogger("simple")
@@ -38,7 +40,9 @@ BENCH_WORKERS = {
     "mgsm": mgsm_worker,
     "mmlu": mmlu_worker,
     "simpleqa": simpleqa_worker,
-}
+    "gpqa": gpqa_worker,
+    "mbpp": mbpp_worker,
+ }
 for bench in registry.BENCHES:
     assert bench.id in BENCH_WORKERS, f'No worker for "{bench.id}"'
 

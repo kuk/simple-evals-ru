@@ -11,6 +11,30 @@ class Bench:
 
 BENCHES = [
     Bench(
+        id="humaneval",
+        name="humaneval",
+        reqs=[
+            "e2b"
+        ]
+    ),
+    Bench(
+        id="mbpp",
+        name="mbpp",
+        reqs=[
+            "e2b"
+        ]
+    ),
+
+    Bench(
+        id="bbh",
+        name="bbh",
+        reqs=[
+            "openrouter",
+            "bbh_prompts"
+        ]
+    ),
+
+    Bench(
         id="mgsm",
         name="mgsm-en",
         reqs=[
@@ -19,21 +43,22 @@ BENCHES = [
     ),
     Bench(
         id="math",
-        name="math-500",
+         name="math-500",
+        reqs=[
+            "openrouter",
+        ]
+    ),
+
+    Bench(
+        id="mmlu",
+        name="mmlu-pro",
         reqs=[
             "openrouter",
         ]
     ),
     Bench(
-        id="humaneval",
-        name="humaneval",
-        reqs=[
-            "e2b"
-        ]
-    ),
-    Bench(
-        id="mmlu",
-        name="mmlu-pro-1k",
+        id="gpqa",
+        name="gpqa-diam",
         reqs=[
             "openrouter",
         ]
@@ -45,49 +70,8 @@ BENCHES = [
     #         "openrouter",
     #     ]
     # ),
-    Bench(
-        id="bbh",
-        name="bbh-1k",
-        reqs=[
-            "openrouter",
-            "bbh_prompts"
-        ]
-    ),
 
 ]
-
-# openai
-#  4o
-#  4o-mini
-# anthropic
-#  sonnet-3.5
-#  haiku-3.5
-# gemini
-# . flash-1.5
-#  flash-2.0
-#  flash-2.0-turbo?
-#  pro-1.5
-# llama
-# . 3.3-70b
-# . 3.1-8b
-# .
-# mistral
-#  nemo
-#  ?
-# qwen
-# . 2.5-7b
-#  2.5-32b
-#  2.5-72b
-# deepseek
-#  v3
-
-# yandexgpt
-# . pro
-# . lite
-# gigachat
-# . max
-# . pro
-# . lite
 
 
 @dataclass
@@ -97,7 +81,6 @@ class Model:
     client: str
     client_model: str
     currency: str = "usd"
-    size: int = 0
 
 
 MODELS = [
@@ -192,14 +175,12 @@ MODELS = [
         name="t-lite-8b",
         client="runpod",
         client_model="t-tech/T-lite-it-1.0",
-        size=8
     ),
     Model(
         id="20_t_pro",
         name="t-pro-32b",
         client="runpod",
         client_model="t-tech/T-pro-it-1.0",
-        size=32
     ),
 
     Model(
@@ -207,7 +188,6 @@ MODELS = [
         name="saiga-yandexgpt-8b",
         client="runpod",
         client_model="IlyaGusev/saiga_yandexgpt_8b",
-        size=8,
     ),
 
     Model(
@@ -215,15 +195,19 @@ MODELS = [
         name="vikhr-yandexgpt-8b",
         client="runpod",
         client_model="Vikhrmodels/Vikhr-YandexGPT-5-Lite-8B-it",
-        size=8
     ),
 
+    # Model(
+    #     id="24_ruadapt",
+    #     name="ruadapt-qwen-32b",
+    #     client="runpod",
+    #     client_model="msu-rcc-lair/RuadaptQwen2.5-32B-Instruct",
+    # ),
     Model(
-        id="24_ruadapt",
-        name="ruadapt-qwen-32b",
+        id="29_ruadapt",
+        name="ruadapt-qwen-pro-32b",
         client="runpod",
-        client_model="msu-rcc-lair/RuadaptQwen2.5-32B-Instruct",
-        size=32
+        client_model="RefalMachine/RuadaptQwen2.5-32B-Pro-Beta",
     ),
 
     #######
@@ -259,12 +243,14 @@ MODELS = [
         client_model="deepseek/deepseek-chat",
     ),
 
+
+
+
     # Model(
     #     id="23_saiga",
     #     name="saiga-nemo-12b",
     #     client="runpod",
     #     client_model="IlyaGusev/saiga_nemo_12b",
-    #     size=12
     # ),
 
     # Model(
@@ -272,7 +258,6 @@ MODELS = [
     #     name="cotype-nano",
     #     client="runpod",
     #     client_model="MTSAIR/Cotype-Nano",
-    #     size=1
     # ),
 
     # Model(

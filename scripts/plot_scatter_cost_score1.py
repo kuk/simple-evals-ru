@@ -64,6 +64,8 @@ for model_id in [
     labels.append(model.name)
 
 fig, ax = plt.subplots()
+ax.set_ylim(.25, .85)
+
 ax2 = ax.twinx()
 ax2.set_ylim(ax.get_ylim())
 
@@ -88,7 +90,6 @@ for x, y, yerr, color in zip(xs, ys, yerrs, colors):
         fmt="o",
     )
 
-ax.set_ylim(.25, .9)
 ta.allocate(
     ax, xs, ys,
     labels,

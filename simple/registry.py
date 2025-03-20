@@ -197,12 +197,12 @@ MODELS = [
         client_model="Vikhrmodels/Vikhr-YandexGPT-5-Lite-8B-it",
     ),
 
-    # Model(
-    #     id="24_ruadapt",
-    #     name="ruadapt-qwen-32b",
-    #     client="runpod",
-    #     client_model="msu-rcc-lair/RuadaptQwen2.5-32B-Instruct",
-    # ),
+    Model(
+        id="24_ruadapt",
+        name="ruadapt-qwen-32b",
+        client="runpod",
+        client_model="msu-rcc-lair/RuadaptQwen2.5-32B-Instruct",
+    ),
     Model(
         id="29_ruadapt",
         name="ruadapt-qwen-pro-32b",

@@ -85,5 +85,6 @@ plot("ruadapt", [
     "20_t_pro",
     "24_ruadapt",
     "29_ruadapt",
+    "28_qwen_2_5_32b",
 ], "parallel5.svg")
 

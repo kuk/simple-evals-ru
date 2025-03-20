@@ -32,235 +32,248 @@
 <tr>
 <th> gigachat&#8209;2&#8209;lite </th>
 <td>$2.00</td>
-<td>63.3±5.1%</td>
+<td>63.3±5.0%</td>
 <td>69.5±5.2%</td>
-<td>75.1±3.9%</td>
-<td>67.0±5.5%</td>
-<td>87.5±4.5%</td>
-<td>60.0±5.5%</td>
-<td>52.0±5.3%</td>
-<td>31.8±5.3%</td>
+<td>75.1±3.7%</td>
+<td>67.0±5.3%</td>
+<td>87.5±3.8%</td>
+<td>60.0±5.8%</td>
+<td>52.0±5.5%</td>
+<td>31.8±5.1%</td>
 <th> gigachat&#8209;2&#8209;lite </th>
 </tr>
 <tr>
 <th> gigachat&#8209;2&#8209;pro </th>
 <td>$15.00</td>
 <td>74.3±4.4%</td>
-<td>86.6±3.7%</td>
-<td>82.5±3.9%</td>
-<td>78.5±4.7%</td>
+<td>86.6±4.3%</td>
+<td>82.5±3.5%</td>
+<td>78.5±4.5%</td>
 <td>94.5±2.7%</td>
-<td>71.5±4.8%</td>
-<td>68.5±5.2%</td>
-<td>37.9±5.3%</td>
+<td>71.5±5.8%</td>
+<td>68.5±4.8%</td>
+<td>37.9±4.8%</td>
 <th> gigachat&#8209;2&#8209;pro </th>
 </tr>
 <tr>
 <th> gigachat&#8209;2&#8209;max </th>
 <td>$19.50</td>
-<td>74.5±4.7%</td>
+<td>74.5±4.6%</td>
 <td>84.1±4.6%</td>
-<td>84.0±3.3%</td>
-<td>79.0±4.0%</td>
-<td>93.5±2.7%</td>
-<td>67.5±6.0%</td>
-<td>67.5±5.5%</td>
-<td>46.0±5.6%</td>
+<td>84.0±3.9%</td>
+<td>79.0±4.5%</td>
+<td>93.5±3.0%</td>
+<td>67.5±5.0%</td>
+<td>67.5±4.8%</td>
+<td>46.0±5.8%</td>
 <th> gigachat&#8209;2&#8209;max </th>
 </tr>
 <tr>
 <th> gigachat&#8209;lite </th>
 <td>$2.00</td>
-<td>43.1±5.3%</td>
-<td>37.7±6.8%</td>
-<td>51.0±4.5%</td>
-<td>49.2±4.5%</td>
-<td>71.0±5.5%</td>
-<td>27.3±4.8%</td>
-<td>36.0±5.8%</td>
-<td>29.8±4.8%</td>
+<td>43.1±5.1%</td>
+<td>37.7±5.6%</td>
+<td>51.0±5.1%</td>
+<td>49.2±5.3%</td>
+<td>71.0±5.0%</td>
+<td>27.3±4.6%</td>
+<td>36.0±4.8%</td>
+<td>29.8±5.6%</td>
 <th> gigachat&#8209;lite </th>
 </tr>
 <tr>
 <th> gigachat&#8209;pro </th>
 <td>$15.00</td>
 <td>52.1±5.5%</td>
-<td>45.1±5.5%</td>
+<td>45.1±5.8%</td>
 <td>56.0±5.5%</td>
-<td>64.0±5.8%</td>
-<td>78.5±4.5%</td>
+<td>64.0±6.0%</td>
+<td>78.5±5.3%</td>
 <td>42.5±5.8%</td>
-<td>45.5±5.8%</td>
-<td>33.3±5.8%</td>
+<td>45.5±6.0%</td>
+<td>33.3±4.3%</td>
 <th> gigachat&#8209;pro </th>
 </tr>
 <tr>
 <th> gigachat&#8209;max </th>
 <td>$19.50</td>
-<td>68.2±5.2%</td>
-<td>72.0±5.5%</td>
+<td>68.2±4.9%</td>
+<td>72.0±4.9%</td>
 <td>74.7±4.7%</td>
-<td>75.5±4.5%</td>
-<td>93.5±2.5%</td>
-<td>55.0±6.2%</td>
+<td>75.5±5.0%</td>
+<td>93.5±2.8%</td>
+<td>55.0±5.5%</td>
 <td>65.0±5.5%</td>
-<td>41.4±6.3%</td>
+<td>41.4±5.6%</td>
 <th> gigachat&#8209;max </th>
 </tr>
 <tr>
 <th> yandexgpt&#8209;5&#8209;pro </th>
 <td>$12.00</td>
-<td>74.8±4.7%</td>
-<td>89.6±3.7%</td>
-<td>84.0±3.7%</td>
-<td>84.0±4.5%</td>
-<td>93.5±2.5%</td>
-<td>57.5±5.0%</td>
-<td>70.0±6.0%</td>
-<td>44.9±6.1%</td>
+<td>74.8±4.4%</td>
+<td>89.6±4.0%</td>
+<td>84.0±3.3%</td>
+<td>84.0±3.5%</td>
+<td>93.5±2.7%</td>
+<td>57.5±5.5%</td>
+<td>70.0±5.5%</td>
+<td>44.9±5.1%</td>
 <th> yandexgpt&#8209;5&#8209;pro </th>
 </tr>
 <tr>
 <th> yandexgpt&#8209;4&#8209;lite </th>
 <td>$2.00</td>
 <td>38.4±5.2%</td>
-<td>26.8±6.1%</td>
+<td>26.8±5.5%</td>
 <td>45.9±4.9%</td>
-<td>55.0±5.5%</td>
-<td>67.0±4.8%</td>
-<td>16.0±4.7%</td>
-<td>30.5±4.8%</td>
-<td>27.8±5.3%</td>
+<td>55.0±5.8%</td>
+<td>67.0±5.0%</td>
+<td>16.0±4.2%</td>
+<td>30.5±6.0%</td>
+<td>27.8±4.8%</td>
 <th> yandexgpt&#8209;4&#8209;lite </th>
 </tr>
 <tr>
 <th> yandexgpt&#8209;4&#8209;pro </th>
 <td>$12.00</td>
-<td>51.3±5.6%</td>
-<td>42.7±7.0%</td>
-<td>53.7±5.1%</td>
-<td>71.0±5.0%</td>
-<td>78.5±4.3%</td>
-<td>31.0±5.5%</td>
-<td>48.5±5.8%</td>
-<td>33.8±6.1%</td>
+<td>51.3±5.0%</td>
+<td>42.7±5.5%</td>
+<td>53.7±4.5%</td>
+<td>71.0±4.7%</td>
+<td>78.5±4.8%</td>
+<td>31.0±5.0%</td>
+<td>48.5±5.3%</td>
+<td>33.8±5.1%</td>
 <th> yandexgpt&#8209;4&#8209;pro </th>
 </tr>
 <tr>
 <th> t&#8209;lite&#8209;8b </th>
 <td>selfhost</td>
-<td>67.8±4.9%</td>
+<td>67.8±4.7%</td>
 <td>81.7±4.6%</td>
-<td>75.9±4.5%</td>
-<td>73.0±5.5%</td>
-<td>91.0±3.5%</td>
-<td>67.5±5.3%</td>
-<td>58.5±5.3%</td>
-<td>26.8±5.6%</td>
+<td>75.9±4.1%</td>
+<td>73.0±5.0%</td>
+<td>91.0±3.2%</td>
+<td>67.5±5.0%</td>
+<td>58.5±6.3%</td>
+<td>26.8±4.3%</td>
 <th> t&#8209;lite&#8209;8b </th>
 </tr>
 <tr>
 <th> t&#8209;pro&#8209;32b </th>
 <td>selfhost</td>
-<td>75.5±4.6%</td>
-<td>83.5±4.3%</td>
-<td>82.9±3.5%</td>
+<td>75.5±4.3%</td>
+<td>83.5±4.0%</td>
+<td>82.9±3.7%</td>
 <td>86.5±3.5%</td>
-<td>95.0±2.0%</td>
+<td>95.0±2.5%</td>
 <td>67.5±5.3%</td>
-<td>70.5±5.0%</td>
-<td>42.7±6.8%</td>
+<td>70.5±4.5%</td>
+<td>42.7±5.5%</td>
 <th> t&#8209;pro&#8209;32b </th>
 </tr>
 <tr>
 <th> saiga&#8209;yandexgpt&#8209;8b </th>
 <td>selfhost</td>
-<td>65.9±5.0%</td>
-<td>73.8±5.2%</td>
-<td>71.6±5.5%</td>
-<td>71.5±4.5%</td>
-<td>88.5±3.5%</td>
-<td>64.3±5.6%</td>
-<td>53.0±4.8%</td>
-<td>38.4±5.8%</td>
+<td>65.9±5.4%</td>
+<td>73.8±5.8%</td>
+<td>71.6±4.9%</td>
+<td>71.5±5.5%</td>
+<td>88.5±4.0%</td>
+<td>64.3±5.5%</td>
+<td>53.0±6.0%</td>
+<td>38.4±6.1%</td>
 <th> saiga&#8209;yandexgpt&#8209;8b </th>
 </tr>
 <tr>
 <th> vikhr&#8209;yandexgpt&#8209;8b </th>
 <td>selfhost</td>
-<td>55.3±5.7%</td>
-<td>73.8±6.4%</td>
-<td>70.4±4.7%</td>
-<td>68.2±4.8%</td>
-<td>34.0±4.8%</td>
-<td>57.3±6.0%</td>
-<td>52.3±6.8%</td>
-<td>31.3±6.1%</td>
+<td>55.3±5.4%</td>
+<td>73.8±4.9%</td>
+<td>70.4±4.1%</td>
+<td>68.2±6.1%</td>
+<td>34.0±5.0%</td>
+<td>57.3±5.8%</td>
+<td>52.3±5.8%</td>
+<td>31.3±5.6%</td>
 <th> vikhr&#8209;yandexgpt&#8209;8b </th>
+</tr>
+<tr>
+<th> ruadapt&#8209;qwen&#8209;32b </th>
+<td>selfhost</td>
+<td>78.2±4.1%</td>
+<td>88.4±3.7%</td>
+<td>88.3±2.5%</td>
+<td>84.5±4.3%</td>
+<td>96.5±2.0%</td>
+<td>73.5±5.0%</td>
+<td>70.4±4.8%</td>
+<td>46.0±5.3%</td>
+<th> ruadapt&#8209;qwen&#8209;32b </th>
 </tr>
 <tr>
 <th> ruadapt&#8209;qwen&#8209;pro&#8209;32b </th>
 <td>selfhost</td>
-<td>77.7±4.2%</td>
-<td>85.4±4.0%</td>
-<td>84.0±3.9%</td>
-<td>86.0±3.5%</td>
-<td>97.5±1.5%</td>
-<td>75.0±4.5%</td>
-<td>70.9±5.0%</td>
+<td>77.7±4.3%</td>
+<td>85.4±4.6%</td>
+<td>84.0±3.1%</td>
+<td>86.0±4.0%</td>
+<td>97.5±1.8%</td>
+<td>75.0±4.8%</td>
+<td>70.9±5.3%</td>
 <td>45.5±5.6%</td>
 <th> ruadapt&#8209;qwen&#8209;pro&#8209;32b </th>
 </tr>
 <tr>
 <th> qwen&#8209;2.5&#8209;7b </th>
 <td>$0.04</td>
-<td>69.4±4.8%</td>
-<td>81.1±5.2%</td>
-<td>71.6±4.5%</td>
+<td>69.4±4.7%</td>
+<td>81.1±4.9%</td>
+<td>71.6±3.7%</td>
 <td>75.0±5.0%</td>
 <td>92.0±3.2%</td>
-<td>73.0±5.0%</td>
-<td>60.5±4.8%</td>
-<td>32.8±5.6%</td>
+<td>73.0±5.5%</td>
+<td>60.5±5.3%</td>
+<td>32.8±5.1%</td>
 <th> qwen&#8209;2.5&#8209;7b </th>
 </tr>
 <tr>
 <th> qwen&#8209;2.5&#8209;32b </th>
 <td>$0.79</td>
-<td>78.4±4.2%</td>
-<td>89.0±4.0%</td>
-<td>85.6±3.7%</td>
-<td>85.0±3.8%</td>
-<td>96.0±2.3%</td>
+<td>78.4±4.3%</td>
+<td>89.0±3.7%</td>
+<td>85.6±3.3%</td>
+<td>85.0±4.0%</td>
+<td>96.0±1.8%</td>
 <td>77.0±5.0%</td>
-<td>72.5±4.5%</td>
-<td>43.9±5.3%</td>
+<td>72.5±6.0%</td>
+<td>43.9±5.1%</td>
 <th> qwen&#8209;2.5&#8209;32b </th>
 </tr>
 <tr>
 <th> qwen&#8209;2.5&#8209;72b </th>
 <td>$0.29</td>
-<td>79.9±4.2%</td>
+<td>79.9±4.1%</td>
 <td>88.4±3.7%</td>
-<td>87.2±3.3%</td>
-<td>83.5±4.0%</td>
-<td>96.5±2.3%</td>
-<td>82.0±4.3%</td>
+<td>87.2±3.7%</td>
+<td>83.5±3.8%</td>
+<td>96.5±2.0%</td>
+<td>82.0±4.0%</td>
 <td>74.0±5.3%</td>
-<td>48.0±5.8%</td>
+<td>48.0±5.6%</td>
 <th> qwen&#8209;2.5&#8209;72b </th>
 </tr>
 <tr>
 <th> deepseek&#8209;v3 </th>
 <td>$0.80</td>
 <td>82.7±4.2%</td>
-<td>90.9±4.3%</td>
-<td>88.3±2.9%</td>
+<td>90.9±4.0%</td>
+<td>88.3±3.1%</td>
 <td>89.0±4.0%</td>
-<td>96.5±2.0%</td>
-<td>81.3±5.3%</td>
-<td>79.5±5.0%</td>
-<td>53.5±5.1%</td>
+<td>96.5±2.3%</td>
+<td>81.3±4.5%</td>
+<td>79.5±3.7%</td>
+<td>53.5±6.6%</td>
 <th> deepseek&#8209;v3 </th>
 </tr>
 </table>
@@ -463,6 +476,17 @@ Saiga лучше затюнила Yandexgpt 8b, у Vikhr что-то слома�
 <td>&nbsp;<a href="reports/correct/mmlu/22_vikhr.md">&nbsp;104&nbsp;✓&nbsp;</a>&nbsp;/&nbsp;<a href="reports/errors/mmlu/22_vikhr.md">&nbsp;95&nbsp;✗</a>&nbsp;</td>
 <td>&nbsp;<a href="reports/correct/gpqa/22_vikhr.md">&nbsp;62&nbsp;✓&nbsp;</a>&nbsp;/&nbsp;<a href="reports/errors/gpqa/22_vikhr.md">&nbsp;136&nbsp;✗</a>&nbsp;</td>
 <th> vikhr&#8209;yandexgpt&#8209;8b </th>
+</tr>
+<tr>
+<th> ruadapt&#8209;qwen&#8209;32b </th>
+<td>&nbsp;<a href="reports/correct/humaneval/24_ruadapt.md">&nbsp;145&nbsp;✓&nbsp;</a>&nbsp;/&nbsp;<a href="reports/errors/humaneval/24_ruadapt.md">&nbsp;19&nbsp;✗</a>&nbsp;</td>
+<td>&nbsp;<a href="reports/correct/mbpp/24_ruadapt.md">&nbsp;227&nbsp;✓&nbsp;</a>&nbsp;/&nbsp;<a href="reports/errors/mbpp/24_ruadapt.md">&nbsp;30&nbsp;✗</a>&nbsp;</td>
+<td>&nbsp;<a href="reports/correct/bbh/24_ruadapt.md">&nbsp;169&nbsp;✓&nbsp;</a>&nbsp;/&nbsp;<a href="reports/errors/bbh/24_ruadapt.md">&nbsp;31&nbsp;✗</a>&nbsp;</td>
+<td>&nbsp;<a href="reports/correct/mgsm/24_ruadapt.md">&nbsp;193&nbsp;✓&nbsp;</a>&nbsp;/&nbsp;<a href="reports/errors/mgsm/24_ruadapt.md">&nbsp;7&nbsp;✗</a>&nbsp;</td>
+<td>&nbsp;<a href="reports/correct/math/24_ruadapt.md">&nbsp;147&nbsp;✓&nbsp;</a>&nbsp;/&nbsp;<a href="reports/errors/math/24_ruadapt.md">&nbsp;53&nbsp;✗</a>&nbsp;</td>
+<td>&nbsp;<a href="reports/correct/mmlu/24_ruadapt.md">&nbsp;140&nbsp;✓&nbsp;</a>&nbsp;/&nbsp;<a href="reports/errors/mmlu/24_ruadapt.md">&nbsp;59&nbsp;✗</a>&nbsp;</td>
+<td>&nbsp;<a href="reports/correct/gpqa/24_ruadapt.md">&nbsp;91&nbsp;✓&nbsp;</a>&nbsp;/&nbsp;<a href="reports/errors/gpqa/24_ruadapt.md">&nbsp;107&nbsp;✗</a>&nbsp;</td>
+<th> ruadapt&#8209;qwen&#8209;32b </th>
 </tr>
 <tr>
 <th> ruadapt&#8209;qwen&#8209;pro&#8209;32b </th>
@@ -683,6 +707,16 @@ Saiga лучше затюнила Yandexgpt 8b, у Vikhr что-то слома�
 <td> 198&nbsp;/&nbsp;0.0$ </td>
 <td> 200&nbsp;/&nbsp;0.0$ </td>
 <td> 199&nbsp;/&nbsp;0.0$ </td>
+<td> 199&nbsp;/&nbsp;0.0$ </td>
+<td> 198&nbsp;/&nbsp;0.0$ </td>
+</tr>
+<tr>
+<th> ruadapt&#8209;qwen&#8209;32b </th>
+<td> 164&nbsp;/&nbsp;0.0$ </td>
+<td> 257&nbsp;/&nbsp;0.0$ </td>
+<td> 200&nbsp;/&nbsp;0.0$ </td>
+<td> 200&nbsp;/&nbsp;0.0$ </td>
+<td> 200&nbsp;/&nbsp;0.0$ </td>
 <td> 199&nbsp;/&nbsp;0.0$ </td>
 <td> 198&nbsp;/&nbsp;0.0$ </td>
 </tr>

@@ -1,4 +1,4 @@
-# bbh-1k / yandexgpt-4-lite
+# bbh / yandexgpt-4-lite
 ### multistep_arithmetic_two/9
 ###### instruction
 <pre> Solve multi-step arithmetic problems.

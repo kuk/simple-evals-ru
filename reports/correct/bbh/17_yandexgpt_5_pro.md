@@ -1,4 +1,4 @@
-# bbh-1k / yandexgpt-5-pro
+# bbh / yandexgpt-5-pro
 ### temporal_sequences/76
 ###### instruction
 <pre> Task description: Answer questions about which times certain events could have occurred.

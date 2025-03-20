@@ -1,4 +1,4 @@
-# bbh-1k / yandexgpt-5-pro
+# bbh / yandexgpt-5-pro
 ### sports_understanding/219
 ###### instruction
 <pre> Determine whether an artificially constructed sentence relating to sports is plausible or not.

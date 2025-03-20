@@ -1,4 +1,4 @@
-# bbh-1k / deepseek-v3
+# bbh / deepseek-v3
 ### disambiguation_qa/100
 ###### instruction
 <pre> Clarify the meaning of sentences with ambiguous pronouns.

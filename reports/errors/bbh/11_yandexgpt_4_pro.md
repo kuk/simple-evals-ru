@@ -1,4 +1,4 @@
-# bbh-1k / yandexgpt-4-pro
+# bbh / yandexgpt-4-pro
 ### tracking_shuffled_objects_five_objects/36
 ###### instruction
 <pre> A task requiring determining the final positions of a set of objects given their initial positions and a description of a sequence of swaps.

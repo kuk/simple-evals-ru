@@ -1,4 +1,4 @@
-# bbh-1k / gigachat-lite
+# bbh / gigachat-lite
 ### logical_deduction_three_objects/74
 ###### instruction
 <pre> A logical deduction task which requires deducing the order of a sequence of objects.

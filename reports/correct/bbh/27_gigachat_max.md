@@ -1,4 +1,4 @@
-# bbh-1k / gigachat-2-max
+# bbh / gigachat-2-max
 ### object_counting/90
 ###### instruction
 <pre> Questions that involve enumerating objects and asking the model to count them.

@@ -1,4 +1,4 @@
-# bbh-1k / gigachat-2-lite
+# bbh / gigachat-2-lite
 ### penguins_in_a_table/91
 ###### instruction
 <pre> Answer questions about a table of penguins and their attributes.

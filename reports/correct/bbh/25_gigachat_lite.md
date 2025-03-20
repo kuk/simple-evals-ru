@@ -1,4 +1,4 @@
-# bbh-1k / gigachat-2-lite
+# bbh / gigachat-2-lite
 ### navigate/98
 ###### instruction
 <pre> Given a series of navigation instructions, determine whether one would end up back at the starting point.

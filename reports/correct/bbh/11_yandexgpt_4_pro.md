@@ -1,4 +1,4 @@
-# bbh-1k / yandexgpt-4-pro
+# bbh / yandexgpt-4-pro
 ### disambiguation_qa/100
 ###### instruction
 <pre> Clarify the meaning of sentences with ambiguous pronouns.

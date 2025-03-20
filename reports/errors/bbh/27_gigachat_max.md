@@ -1,4 +1,4 @@
-# bbh-1k / gigachat-2-max
+# bbh / gigachat-2-max
 ### ruin_names/116
 ###### instruction
 <pre> Select the humorous edit that 'ruins' the input movie or musical artist name.

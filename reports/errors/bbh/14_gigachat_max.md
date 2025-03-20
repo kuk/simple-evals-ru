@@ -1,4 +1,4 @@
-# bbh-1k / gigachat-max
+# bbh / gigachat-max
 ### dyck_languages/87
 ###### instruction
 <pre> Correctly close a Dyck-n word.

@@ -1,4 +1,4 @@
-# bbh-1k / gigachat-lite
+# bbh / gigachat-lite
 ### causal_judgement/20
 ###### instruction
 <pre> Answer questions about causal attribution.

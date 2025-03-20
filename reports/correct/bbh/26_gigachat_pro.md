@@ -1,4 +1,4 @@
-# bbh-1k / gigachat-2-pro
+# bbh / gigachat-2-pro
 ### boolean_expressions/228
 ###### instruction
 <pre> Evaluate the result of a random Boolean expression.

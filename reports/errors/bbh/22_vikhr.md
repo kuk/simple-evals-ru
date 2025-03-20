@@ -1,4 +1,4 @@
-# bbh-1k / vikhr-yandexgpt-8b
+# bbh / vikhr-yandexgpt-8b
 ### date_understanding/150
 ###### instruction
 <pre> Infer the date from context.

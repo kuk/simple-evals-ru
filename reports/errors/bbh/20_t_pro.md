@@ -1,4 +1,4 @@
-# bbh-1k / t-pro-32b
+# bbh / t-pro-32b
 ### formal_fallacies/172
 ###### instruction
 <pre> Distinguish deductively valid arguments from formal fallacies.

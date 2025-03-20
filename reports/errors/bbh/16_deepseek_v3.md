@@ -1,4 +1,4 @@
-# bbh-1k / deepseek-v3
+# bbh / deepseek-v3
 ### causal_judgement/20
 ###### instruction
 <pre> Answer questions about causal attribution.

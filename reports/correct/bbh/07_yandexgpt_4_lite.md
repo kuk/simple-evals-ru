@@ -1,4 +1,4 @@
-# bbh-1k / yandexgpt-4-lite
+# bbh / yandexgpt-4-lite
 ### hyperbaton/102
 ###### instruction
 <pre> Order adjectives correctly in English sentences.

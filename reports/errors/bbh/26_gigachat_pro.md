@@ -1,4 +1,4 @@
-# bbh-1k / gigachat-2-pro
+# bbh / gigachat-2-pro
 ### sports_understanding/74
 ###### instruction
 <pre> Determine whether an artificially constructed sentence relating to sports is plausible or not.

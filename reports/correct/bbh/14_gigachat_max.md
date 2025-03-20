@@ -1,4 +1,4 @@
-# bbh-1k / gigachat-max
+# bbh / gigachat-max
 ### penguins_in_a_table/19
 ###### instruction
 <pre> Answer questions about a table of penguins and their attributes.

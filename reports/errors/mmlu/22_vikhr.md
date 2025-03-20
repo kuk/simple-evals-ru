@@ -1,4 +1,4 @@
-# mmlu-pro-1k / vikhr-yandexgpt-8b
+# mmlu-pro / vikhr-yandexgpt-8b
 ### math/8094
 ###### instruction
 <pre> Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCDEFGHIJ. Think step by step before answering.

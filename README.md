@@ -294,7 +294,7 @@
 <img src="images/parallel3.svg"/>
 <br/>
 
-- Беда с ценой за токен. Yandexgpt 5 Pro в 15 раз дороже Qwen 2.5 32b Instruct, претрен одинаковый.
+- Беда с ценой за токен. Yandexgpt 5 Pro в 15 раз дороже Qwen 2.5 32b Instruct, претрен одинаковый. Странновато что Qwen 32b дороже Qwen 72b, у Qwen 32b один провайдер, у Qwen 72b - 7.
 - Отечественые модели догоняют китайские по скору, но не по цене.
 
 <img src="images/cost_score2.svg"/>

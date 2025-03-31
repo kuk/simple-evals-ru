@@ -20,7 +20,6 @@ PROJ_DIR = CUR_DIR.parent
 
 GROUP_COLORS = {
     "yandexgpt-4": "silver",
-    "yandexgpt-4-lite": "tab:blue",
     "gigachat": "silver",
     "yandexgpt-5": "tab:blue",
     "gigachat-2": "tab:orange",
@@ -36,7 +35,7 @@ with path.open() as file:
 xs, ys, yerrs, colors, labels = [], [], [], [], []
 for model_id in [
         "07_yandexgpt_4_lite", "08_gigachat_lite",
-        "25_gigachat_lite",
+        "25_gigachat_lite", "30_yandexgpt_5_lite",
 
         "11_yandexgpt_4_pro", "12_gigachat_pro",
         "17_yandexgpt_5_pro", "26_gigachat_pro",

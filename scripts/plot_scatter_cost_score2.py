@@ -23,7 +23,6 @@ GROUP_COLORS = {
     "deepseek": "tab:orange",
 
     "yandexgpt-5": "tab:blue",
-    "yandexgpt-4-lite": "tab:blue",
     "gigachat-2": "tab:blue",
 
     "yandexgpt-4": "silver",
@@ -51,6 +50,8 @@ for model_id in [
         "26_gigachat_pro",
         "27_gigachat_max",
 
+        "07_yandexgpt_4_lite",
+        "30_yandexgpt_5_lite",
         "11_yandexgpt_4_pro",
         "17_yandexgpt_5_pro",
 ]:

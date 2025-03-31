@@ -61,6 +61,7 @@ def plot(title, model_ids, filename):
 plot("yandexgpt 8b base", [
     "21_saiga",
     "22_vikhr",
+    "30_yandexgpt_5_lite",
 ], "parallel1.svg")
 
 plot("qwen 32b base", [

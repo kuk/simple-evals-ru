@@ -142,6 +142,13 @@ MODELS = [
     ####
 
     Model(
+        id="30_yandexgpt_5_lite",
+        name="yandexgpt-5-lite",
+        client="yandexgpt",
+        client_model="yandexgpt-lite/rc",
+        currency="rub",
+    ),
+    Model(
         id="17_yandexgpt_5_pro",
         name="yandexgpt-5-pro",
         client="yandexgpt",
